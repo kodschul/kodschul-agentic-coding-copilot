@@ -2,6 +2,7 @@
 
 ## Kontext bewusst steuern
 
+- Nur die tatsächlich relevanten Dateien referenzieren, statt ganze Ordner in den Chat zu ziehen: jede zusätzliche Datei verbraucht Platz im Kontextfenster, der für die eigentliche Anfrage fehlt (Modul 1, Modul 2, Modul 10).
 - Bei wachsendem Kontextbedarf gezielt `#file`/`#selection` statt impliziten Workspace-Kontext nutzen, da explizite Referenzen reproduzierbarer sind als implizit mitgeladener Editor-Zustand (Modul 2).
 
 ## Ownership nie an das Modell abgeben
