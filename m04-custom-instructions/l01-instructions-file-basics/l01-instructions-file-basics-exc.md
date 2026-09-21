@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-`sample-project/` (dasselbe wie in Modul 2) ohne jegliche Instructions-Datei.
+[`project/sample-project/`](../../project/sample-project/) (dasselbe wie in Modul 2) ohne jegliche Instructions-Datei.
 
 ## Aufgaben
 

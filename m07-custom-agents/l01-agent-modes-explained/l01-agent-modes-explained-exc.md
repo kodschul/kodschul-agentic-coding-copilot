@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-`sample-project/` (bekannt aus vorherigen Modulen).
+[`project/sample-project/`](../../project/sample-project/) (bekannt aus vorherigen Modulen).
 
 ## Aufgaben
 

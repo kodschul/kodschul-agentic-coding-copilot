@@ -1,5 +1,7 @@
 # Kursüberblick: Agentic Coding mit GitHub Copilot
 
+Dieser Überblick begleitet den gesamten Kurs: Ziel, Agenda, Arbeitsweise und Rahmenbedingungen stehen hier an einem Ort, unabhängig vom jeweils behandelten Modul.
+
 ## Kursziel
 
 Teilnehmer:innen bauen ein einziges durchgängiges Projekt (FocusList, eine CLI-Aufgabenverwaltung) über zehn Module von einer ungeleiteten Basisversion (v0) zu einem voll agentischen, spec-getriebenen Workflow (v7) aus. Am Ende ist begründbar, wann welche Copilot-Fähigkeit (Instructions, Skills, Prompts, Agents, Automatisierung, MCP, Spec-Driven Development) sich lohnt und wann nicht.
@@ -40,8 +42,6 @@ Beobachtbares Ergebnis: eine vollständige FocusList-Versionskette (v0-v7) inklu
 | 15:00-16:30 | Modul 8 `m08-automation-hooks-mcp` – Automatisierung & MCP             |
 | Puffer      | Modul 9 `m09-spec-driven-development` + Modul 10 `m10-lessons-learned` |
 
-Modul 8, 9 und 2 sind bei Zeitdruck kürz-/straffbar; Modul 4, 7 und 9 gelten als Kernkette und werden nicht gekürzt.
-
 ## Modul- und Projektstruktur
 
 Jedes Modul enthält zwei bis vier Labs. Jedes Lab folgt dem Muster generische Übung (risikofrei, projektunabhängig) gefolgt von Aufbau-Übung an FocusList. FocusList durchläuft dabei folgende Versionsstufen:
@@ -67,7 +67,7 @@ Modul 1 (Story & Mindset) und Modul 10 (Rückblick) haben keinen eigenen Version
 
 ## Vorstellungsrunde
 
-Zu Beginn stellt sich jede:r Teilnehmer:in kurz vor:
+Der Kurs beginnt mit einer kurzen Vorstellungsrunde. Jede:r Teilnehmer:in teilt dabei in eigenen Worten:
 
 - Name und Rolle,
 - fachlicher Hintergrund und Weg in den Beruf,
@@ -77,4 +77,4 @@ Zu Beginn stellt sich jede:r Teilnehmer:in kurz vor:
 - Erwartungen an den Kurs,
 - ein mögliches Einsatzszenario für das Gelernte.
 
-Persönliche Angaben können übersprungen werden.
+Alle persönlichen Angaben sind optional und können übersprungen werden.

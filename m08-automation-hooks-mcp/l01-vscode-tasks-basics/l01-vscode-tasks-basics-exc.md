@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-`sample-project/` mit vorhandenen Lint- und Test-Skripten in `package.json`.
+[`project/sample-project/`](../../project/sample-project/) mit vorhandenen Lint- und Test-Skripten in `package.json`.
 
 ## Aufgaben
 

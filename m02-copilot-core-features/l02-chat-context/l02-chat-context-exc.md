@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-`sample-project/` mit einer Datenmodell-Datei und einer leeren Implementierungsdatei.
+[`project/sample-project/`](../../project/sample-project/) mit einer Datenmodell-Datei (`src/models.ts`) und einer leeren Implementierungsdatei (`src/validators.ts`).
 
 ## Aufgaben
 

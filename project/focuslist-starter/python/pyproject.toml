@@ -1,0 +1,9 @@
+[project]
+name = "focuslist"
+version = "0.0.0"
+description = "Persönliche Aufgabenliste (CLI) — Startpunkt, noch ohne Implementierung."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = true

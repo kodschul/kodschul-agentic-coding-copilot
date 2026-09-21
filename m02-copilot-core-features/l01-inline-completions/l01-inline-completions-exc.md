@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-Ein kleines, bereits vorhandenes Fremdprojekt (`sample-project/`) mit 2-3 leeren Funktionsrümpfen liegt bereit.
+Ein kleines, bereits vorhandenes Fremdprojekt ([`project/sample-project/`](../../project/sample-project/)) mit 2-3 leeren Funktionsrümpfen liegt bereit (`src/formatters.ts`).
 
 ## Aufgaben
 

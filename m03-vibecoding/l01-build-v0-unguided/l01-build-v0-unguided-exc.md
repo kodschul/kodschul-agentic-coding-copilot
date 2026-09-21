@@ -4,7 +4,7 @@
 
 ## Ausgangslage
 
-Das leere Starter-Repo für den gewählten Stack (JS/TS oder Python) sowie `focuslist-concept.md` aus Lab 1.3.
+Das leere Starter-Repo für den gewählten Stack ([`project/focuslist-starter/js-ts/`](../../project/focuslist-starter/js-ts/) oder [`project/focuslist-starter/python/`](../../project/focuslist-starter/python/)) sowie `focuslist-concept.md` aus Lab 1.3.
 
 ## Prerequisites
 

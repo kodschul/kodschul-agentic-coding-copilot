@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "focuslist-search": {
+      "command": "npx",
+      "args": ["-y", "@example/mcp-search-server", "--root", "."]
+    }
+  }
+}
