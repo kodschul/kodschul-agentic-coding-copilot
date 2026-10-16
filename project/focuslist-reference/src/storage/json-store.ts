@@ -1,13 +1,17 @@
 import fs from "node:fs";
 import type { Task } from "../models/task.js";
 
-const FILE = "tasks.json";
+// FOCUSLIST_FILE erlaubt Tests eine eigene, temporäre Datei.
+function dataFile(): string {
+  return process.env.FOCUSLIST_FILE ?? "tasks.json";
+}
 
 export function readTasks(): Task[] {
-  if (!fs.existsSync(FILE)) return [];
-  return JSON.parse(fs.readFileSync(FILE, "utf-8"));
+  const file = dataFile();
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, "utf-8")) as Task[];
 }
 
 export function writeTasks(tasks: Task[]): void {
-  fs.writeFileSync(FILE, JSON.stringify(tasks, null, 2));
+  fs.writeFileSync(dataFile(), JSON.stringify(tasks, null, 2));
 }

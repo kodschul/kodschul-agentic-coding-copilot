@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node .github/hooks/run-tests.mjs",
+        "timeout": 120
+      }
+    ]
+  }
+}

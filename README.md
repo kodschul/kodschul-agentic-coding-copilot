@@ -1,71 +1,42 @@
-# Projekt-Assets
+# Agentic Coding mit GitHub Copilot
 
-Geteilte Startzustände für Übungen, die über mehrere Module hinweg dasselbe Projekt referenzieren. Kein Modul dupliziert diese Dateien; Labs verlinken hierher.
+Einstiegspunkt für Teilnehmer:innen. Start hier: [m00-overview/overview.md](m00-overview/overview.md) (Kursziel, Agenda, Arbeitsweise).
 
-```
-project/
-├── sample-project/            # Fremdprojekt für Module 2, 4, 6, 7, 8
-│   ├── src/
-│   │   ├── formatters.ts
-│   │   ├── formatters.test.ts
-│   │   ├── models.ts
-│   │   └── validators.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── eslint.config.js
-├── focuslist-starter/         # leeres FocusList-Repo für Modul 3
-│   ├── js-ts/
-│   │   ├── src/.gitkeep
-│   │   ├── package.json
-│   │   └── tsconfig.json
-│   └── python/
-│       ├── focuslist/__init__.py
-│       └── pyproject.toml
-└── focuslist-reference/       # fertige v7-Referenz (Modul 4-9)
-    ├── src/
-    │   ├── models/task.ts
-    │   ├── storage/json-store.ts
-    │   ├── actions/*.ts
-    │   └── cli.ts
-    ├── tests/actions/*.test.ts
-    ├── .github/
-    │   ├── copilot-instructions.md
-    │   ├── skills/add-focuslist-action/SKILL.md
-    │   ├── prompts/*.prompt.md
-    │   ├── agents/*.agent.md
-    │   ├── hooks/pre-commit-test.md
-    │   └── mcp/focuslist-mcp-config.json
-    ├── .vscode/tasks.json
-    ├── scripts/git-hooks/pre-commit
-    ├── openspec/{archive,in-progress,changes}/
-    └── package.json
-```
+## Orientierung
 
-## `sample-project/`
+| Ressource              | Pfad                                                             |
+| ---------------------- | ---------------------------------------------------------------- |
+| Kursüberblick & Agenda | [m00-overview/overview.md](m00-overview/overview.md)             |
+| Glossar                | [m00-overview/glossary.md](m00-overview/glossary.md)             |
+| Themenübersicht        | [m00-overview/topics.md](m00-overview/topics.md)                 |
+| Best Practices         | [m00-overview/best-practices.md](m00-overview/best-practices.md) |
+| FAQ                    | [m00-overview/faq.md](m00-overview/faq.md)                       |
 
-Kleines, projektunabhängiges Fremdprojekt (JS/TS). Bleibt über den Kurs hinweg unverändert und wird ausschließlich für generische Übungen genutzt, die die FocusList-Basis nicht verändern:
+## Module
 
-- Lab 2.1 (`l01-inline-completions`) — leere Funktionsrümpfe in `src/formatters.ts`.
-- Lab 2.2 (`l02-chat-context`) — Datenmodell (`src/models.ts`) + leere Implementierungsdatei (`src/validators.ts`).
-- Lab 4.1 (`l01-instructions-file-basics`) — dasselbe Projekt, zu Beginn ohne jede Instructions-Datei.
-- Lab 6.1 (`l01-prompt-file-basics`) — dasselbe Projekt.
-- Lab 7.1 (`l01-agent-modes-explained`) — dasselbe Projekt.
-- Lab 8.1 (`l01-vscode-tasks-basics`) — Lint-/Test-Skripte in `package.json`.
+| #   | Modul                                           | Ordner                                                       |
+| --- | ----------------------------------------------- | ------------------------------------------------------------ |
+| 1   | AI in der Softwareentwicklung – Story & Mindset | [m01-ai-coding/](m01-ai-coding/)                             |
+| 2   | Copilot-Werkzeugkasten                          | [m02-copilot-core-features/](m02-copilot-core-features/)     |
+| 3   | FocusList v0 bauen                              | [m03-vibecoding/](m03-vibecoding/)                           |
+| 4   | Custom Instructions                             | [m04-custom-instructions/](m04-custom-instructions/)         |
+| 5   | Skills                                          | [m05-skills/](m05-skills/)                                   |
+| 6   | Custom Prompts                                  | [m06-custom-prompts/](m06-custom-prompts/)                   |
+| 7   | Custom Agents                                   | [m07-custom-agents/](m07-custom-agents/)                     |
+| 8   | Automatisierung & MCP                           | [m08-automation-hooks-mcp/](m08-automation-hooks-mcp/)       |
+| 9   | Spec-Driven Development                         | [m09-spec-driven-development/](m09-spec-driven-development/) |
+| 10  | Rückblick & Ausblick                            | [m10-lessons-learned/](m10-lessons-learned/)                 |
 
-Jede:r Teilnehmer:in arbeitet mit einer eigenen Kopie; Änderungen aus einem Lab werden vor dem nächsten Lab, das dasselbe Projekt nutzt, zurückgesetzt (frische Kopie aus diesem Ordner).
+In jedem Modul stehen pro Lab Theorie (`-thx.md`), Übung (`-exc.md`) und Lösung (`-sol.md`) bereit. Lösungen zeigen Code und Befehle für beide Stacks. Ab Modul 2 gibt es je Modul ein Cheatsheet zum Nachschlagen; Modul 6 und 8 enthalten zusätzlich eine Transfer-Übung (`mNN-exc.md`).
 
-## `focuslist-starter/`
+## Projekt-Assets
 
-Leerer Startpunkt für das durchgängige FocusList-Projekt (Modul 3, Lab 3.1). Zwei gleichwertige Stack-Varianten, von denen **eine** pro Kursdurchführung verbindlich für alle gilt (siehe `00-intake.md`):
+Alle Dateien für die Übungen, je Stack doppelt (JS/TS und Python), siehe [project/README.md](project/README.md):
 
-- `js-ts/` — Node.js LTS + TypeScript, Ausführung via `tsx`.
-- `python/` — Python 3, Ausführung via `python`/`uv run`.
-
-Beide Varianten sind bewusst leer (kein Code, keine Logik) und enthalten nur Projekt-Grundgerüst. Der eigentliche FocusList-Code (v0 bis v7) entsteht live im Kurs — er wird nicht vorgefertigt bereitgestellt, weil das genau die Übung ist. `focuslist-concept.md` (Lab 1.3) legt jede:r Teilnehmer:in ebenfalls selbst an; es gibt keine vorgefertigte Vorlage, um das Ergebnis nicht vorwegzunehmen.
-
-## `focuslist-reference/`
-
-Fertiger v7-Stand von FocusList (JS/TS), siehe [focuslist-reference/README.md](focuslist-reference/README.md). Enthält nicht nur den fertigen Code (`src/models/`, `src/storage/`, `src/actions/`, `src/cli.ts`, `tests/`), sondern auch alle agentischen Artefakte, die im Kurs modulweise entstehen: `.github/copilot-instructions.md` (Modul 4), `.github/skills/` (Modul 5), `.github/prompts/` (Modul 6), `.github/agents/` (Modul 7), `.vscode/tasks.json` + Git-Hook + MCP-Konfiguration (Modul 8), `openspec/` (Modul 9).
-
-Dient als Vergleichspunkt bei Unsicherheit oder als Fallback-Demo, nicht als Vorlage zum Abschreiben — die Teilnehmer:innen bauen ihre eigene FocusList-Version im `focuslist-starter/` auf.
-
+| Ordner | Zweck |
+| --- | --- |
+| [project/snippets/](project/snippets/) | KI-generierte Snippets für Lab 1.1 |
+| [project/sample-project/](project/sample-project/), [project/sample-project-python/](project/sample-project-python/) | Fremdprojekt für die generischen Übungen |
+| [project/focuslist-starter/](project/focuslist-starter/) | leeres FocusList-Repo, Start in Lab 3.1 |
+| [project/focuslist-tickets/](project/focuslist-tickets/) | externe Tickets für den MCP-Server (Modul 8, 9) |
+| [project/focuslist-reference/](project/focuslist-reference/), [project/focuslist-reference-python/](project/focuslist-reference-python/) | fertiger Stand v7 zum Vergleichen |

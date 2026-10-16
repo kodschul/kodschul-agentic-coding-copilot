@@ -1,8 +1,22 @@
-# Proposal: Mehrere Aufgaben gleichzeitig abschließen
+# Proposal
 
-Nutzer sollen mehrere Aufgaben-IDs in einem Aufruf als erledigt markieren
-können, statt `complete-task` einzeln je Aufgabe aufzurufen.
+## Why
 
-## Status
+Nach einem Arbeitstag sind oft mehrere Aufgaben erledigt. `complete-task` einzeln pro id aufzurufen ist umständlich und fehleranfällig.
 
-Vorgeschlagen — Platzhalter für das OpenSpec-Dashboard, noch nicht in Arbeit.
+## What Changes
+
+- Neuer Befehl `complete-tasks <id> [<id> ...]` markiert mehrere Aufgaben in einem Aufruf als erledigt.
+- Unbekannte ids brechen den ganzen Aufruf ab, ohne etwas zu speichern.
+
+## Capabilities
+
+### New Capabilities
+- `task-completion`: Aufgaben einzeln oder gesammelt als erledigt markieren.
+
+### Modified Capabilities
+
+## Impact
+
+- neue Datei `src/actions/complete-tasks.ts` mit Tests
+- `src/cli.ts` (neuer Unterbefehl)

@@ -1,14 +1,18 @@
 ---
 name: add-focuslist-action
-description: Fügt FocusList eine neue Aktion hinzu (Datenmodell → Logik → CLI → Test).
+description: Fügt FocusList eine neue CLI-Aktion hinzu, z. B. "Priorität ändern" oder "Aufgabe umbenennen". Verwenden, wenn eine neue Aktion, ein neuer Unterbefehl oder eine neue Operation auf Tasks gebaut werden soll.
 ---
 
 # Neue FocusList-Aktion hinzufügen
 
-1. Prüfe, ob das `Task`-Datenmodell erweitert werden muss.
-2. Implementiere die Aktion in `src/actions/`, folge `copilot-instructions.md`
-   (wirft `Error` bei ungültiger Eingabe, nutzt ausschließlich
-   `readTasks`/`writeTasks`).
-3. Verdrahte die Aktion als neuen CLI-Unterbefehl in `src/cli.ts`.
-4. Ergänze einen Test, der sowohl den Erfolgsfall als auch den Fehlerfall
-   (ungültige `id`) abdeckt.
+Folge diesen Schritten in genau dieser Reihenfolge.
+
+1. **Datenmodell prüfen:** Braucht die Aktion ein neues Feld in `src/models/task.ts`? Wenn ja, optional (`?`) ergänzen, damit bestehende Daten gültig bleiben.
+2. **Aktion schreiben:** Neue Datei `src/actions/<aktion>.ts` nach dem Muster in [action-template.ts](./action-template.ts). Eingaben über `src/actions/validation.ts` prüfen, Fehler als `Error` werfen.
+3. **CLI verdrahten:** In `src/cli.ts` einen `case` für den Unterbefehl ergänzen und die Zeile in `USAGE` erweitern.
+4. **Test schreiben:** `tests/actions/<aktion>.test.ts` mit Erfolgsfall und Fehlerfall (unbekannte id oder ungültige Eingabe).
+5. **Prüfen:** `npm run lint` und `npm test` ausführen. Erst fertig melden, wenn beides grün ist.
+
+## Ergebnis
+
+Am Ende nennst du die geänderten Dateien und den CLI-Aufruf, mit dem die Aktion ausprobiert werden kann.

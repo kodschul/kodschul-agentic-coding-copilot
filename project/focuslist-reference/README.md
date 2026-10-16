@@ -1,31 +1,35 @@
-# FocusList — Referenz (v7)
+# FocusList – Referenzstand v7 (JS/TS)
 
-Vollständig fertiger Stand von FocusList, wie er sich ergibt, wenn alle Fähigkeiten aus Modul 4-9 tatsächlich angewendet wurden. Kein Startzustand — dient als Vergleichspunkt/Fallback, nicht als Vorlage zum Abschreiben.
+Fertiger Stand nach Modul 9. Dient zum Vergleichen und als Rettungsanker, wenn ein eigener Zwischenstand nicht weiterkommt. Python-Fassung: [`../focuslist-reference-python/`](../focuslist-reference-python/).
 
-## Code
+## Setup und Befehle
 
-- `src/models/task.ts` — Datenmodell (inkl. `dueDate`, ergänzt in v7).
-- `src/storage/json-store.ts` — einziger Zugriffspunkt auf `tasks.json`.
-- `src/actions/` — `add-task`, `list-tasks`, `complete-task` (v0/v1), `set-priority` (v2), `sort-by-due-date` (v7).
-- `src/cli.ts` — CLI-Einstiegspunkt, verdrahtet alle Aktionen.
-- `tests/actions/` — Erfolgs- und Fehlerfall je Aktion.
-
-## Agentische Fähigkeiten je Modul
-
-| Modul                       | Artefakt                                                                                                                                                                                                                                       |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 4 – Custom Instructions     | [.github/copilot-instructions.md](.github/copilot-instructions.md)                                                                                                                                                                             |
-| 5 – Skills                  | [.github/skills/add-focuslist-action/SKILL.md](.github/skills/add-focuslist-action/SKILL.md)                                                                                                                                                   |
-| 6 – Custom Prompts          | [.github/prompts/](.github/prompts/) — `explain-selection`, `focuslist-code-review`, `add-missing-tests`, `generate-docs`                                                                                                                      |
-| 7 – Custom Agents           | [.github/agents/](.github/agents/) — `explain-only`, `focuslist-test-agent`                                                                                                                                                                    |
-| 8 – Automatisierung & MCP   | [.vscode/tasks.json](.vscode/tasks.json), [.github/hooks/pre-commit-test.md](.github/hooks/pre-commit-test.md) (+ Quelltext in `scripts/git-hooks/pre-commit`), [.github/mcp/focuslist-mcp-config.json](.github/mcp/focuslist-mcp-config.json) |
-| 9 – Spec-Driven Development | [openspec/](openspec/) — `archive/sort-by-due-date` (umgesetzt, ergibt v7), `in-progress/recurring-tasks`, `changes/bulk-complete-tasks` (Platzhalter)                                                                                         |
-
-## Setup
-
-```
+```bash
 npm install
-npm run lint
-npm test
+npm run lint            # ESLint 9
+npm test                # node:test über tsx, jede Datei mit eigener temporärer tasks.json
 npm start -- list-tasks
 ```
+
+| Befehl | Wirkung | Seit |
+| --- | --- | --- |
+| `add-task <titel> [low\|medium\|high] [JJJJ-MM-TT]` | Aufgabe anlegen | v0, Datum ab v7 |
+| `list-tasks [--status open\|done] [--priority …] [--sort due-date]` | Aufgaben anzeigen, mit id | v0, Sortierung ab v7 |
+| `complete-task <id>` | Aufgabe erledigen | v0 |
+| `set-priority <id> <prio>` | Priorität ändern | v2 (Skill) |
+| `search-tasks <begriff>` | im Titel suchen | v3 (Transfer-Skill) |
+| `bulk-set-priority <prio> <id> …` | Priorität mehrerer Aufgaben ändern | v5 (Transfer-Skill) |
+| `complete-tasks <id> …` | mehrere Aufgaben erledigen | v7 (Agenten-Kette) |
+
+## Artefakte je Modul
+
+| Modul | Datei(en) |
+| --- | --- |
+| 4 Instructions | `.github/copilot-instructions.md`, `.github/instructions/tests.instructions.md` |
+| 5 Skills | `.github/skills/add-focuslist-action/` (SKILL.md + `action-template.ts`) |
+| 6 Prompts | `.github/prompts/focuslist-code-review.prompt.md`, `add-missing-tests.prompt.md`, `generate-docs.prompt.md`; Transfer: `.github/skills/filter-and-search-tasks/` |
+| 7 Agents | `.github/agents/focuslist-test-agent.agent.md` (live gebaut), `focuslist-docs-agent`, `focuslist-review-agent`, `focuslist-code-agent`, `focuslist-feature-team` (Kette) |
+| 8 Automatisierung | `.vscode/tasks.json`, `.github/hooks/run-tests.json` + `run-tests.mjs` (Stop-Hook), `.vscode/mcp.json`; Transfer: `.github/skills/bulk-priority-update/` |
+| 9 Spec-Driven | `openspec/` (archiviert: `sort-by-due-date`, umgesetzt: `bulk-complete-tasks`, Entwurf: `recurring-tasks`), `.github/prompts/opsx-*.prompt.md` + `.github/skills/openspec-*` aus `openspec init`, Dashboard-Bilder in `docs/screenshots/` |
+
+`.vscode/mcp.json` erwartet den Ordner `focuslist-tickets/` neben dem Projektordner.

@@ -1,8 +1,7 @@
-// Eigenständiger Test, unabhängig von den leeren Rümpfen in formatters.ts,
-// damit "npm test" im Ausgangszustand des Projekts sauber durchläuft.
-import test from "node:test";
+// Prüft nur, dass der Test-Runner läuft. Eigene Tests entstehen in den Übungen.
 import assert from "node:assert/strict";
+import test from "node:test";
 
-test("project test runner is wired up correctly", () => {
+test("Test-Runner ist eingerichtet", () => {
   assert.equal(1 + 1, 2);
 });

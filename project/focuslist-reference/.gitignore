@@ -1,3 +1,4 @@
 node_modules/
 dist/
-tasks.json
+/tasks.json
+.github/hooks/*.log

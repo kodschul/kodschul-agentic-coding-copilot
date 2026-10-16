@@ -1,0 +1,18 @@
+
+OpenSpec Dashboard
+
+════════════════════════════════════════════════════════════
+Summary:
+  ● Specifications: 0 specs, 0 requirements
+  ● Active Changes: 1 in progress
+  ● Completed Changes: 0
+  ● Task Progress: 0/5 (0% complete)
+
+Active Changes
+────────────────────────────────────────────────────────────
+  ◉ sort-by-due-date               [░░░░░░░░░░░░░░░░░░░░] 0%
+    └─ [spec-driven] proposal✓ specs✓ design✓ tasks✓
+
+════════════════════════════════════════════════════════════
+
+Use openspec list --changes or openspec list --specs for detailed views

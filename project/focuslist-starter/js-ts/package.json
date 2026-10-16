@@ -5,9 +5,11 @@
   "type": "module",
   "description": "Persönliche Aufgabenliste (CLI) — Startpunkt, noch ohne Implementierung.",
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/cli.ts",
+    "test": "tsx --test \"tests/**/*.test.ts\""
   },
   "devDependencies": {
+    "@types/node": "^22.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.5.0"
   }

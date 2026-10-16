@@ -1,71 +1,34 @@
-# Projekt-Assets
+# Projektdateien
 
-Geteilte Startzustände für Übungen, die über mehrere Module hinweg dasselbe Projekt referenzieren. Kein Modul dupliziert diese Dateien; Labs verlinken hierher.
+Alle Dateien, die die Übungen brauchen. Jede Stack-Variante liegt doppelt vor: JS/TS und Python. Pro Kursdurchführung gilt ein Stack für alle.
 
-```
-project/
-├── sample-project/            # Fremdprojekt für Module 2, 4, 6, 7, 8
-│   ├── src/
-│   │   ├── formatters.ts
-│   │   ├── formatters.test.ts
-│   │   ├── models.ts
-│   │   └── validators.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── eslint.config.js
-├── focuslist-starter/         # leeres FocusList-Repo für Modul 3
-│   ├── js-ts/
-│   │   ├── src/.gitkeep
-│   │   ├── package.json
-│   │   └── tsconfig.json
-│   └── python/
-│       ├── focuslist/__init__.py
-│       └── pyproject.toml
-└── focuslist-reference/       # fertige v7-Referenz (Modul 4-9)
-    ├── src/
-    │   ├── models/task.ts
-    │   ├── storage/json-store.ts
-    │   ├── actions/*.ts
-    │   └── cli.ts
-    ├── tests/actions/*.test.ts
-    ├── .github/
-    │   ├── copilot-instructions.md
-    │   ├── skills/add-focuslist-action/SKILL.md
-    │   ├── prompts/*.prompt.md
-    │   ├── agents/*.agent.md
-    │   ├── hooks/pre-commit-test.md
-    │   └── mcp/focuslist-mcp-config.json
-    ├── .vscode/tasks.json
-    ├── scripts/git-hooks/pre-commit
-    ├── openspec/{archive,in-progress,changes}/
-    └── package.json
+| Ordner | Inhalt | Genutzt in |
+| --- | --- | --- |
+| `snippets/` | drei KI-generierte Snippets mit versteckten Schwächen | Lab 1.1 |
+| `sample-project/`, `sample-project-python/` | Fremdprojekt (Ticket-Modell) für alle generischen Übungen | Lab 2.1, 2.2, 4.1, 6.1, 7.1, 8.1, 8.2 |
+| `focuslist-starter/js-ts/`, `focuslist-starter/python/` | leeres FocusList-Repo | ab Lab 3.1 |
+| `focuslist-tickets/` | externe Ticket-Ablage für den MCP-Server | Lab 8.3, 8.4, Modul 9 |
+| `focuslist-reference/`, `focuslist-reference-python/` | fertiger Stand v7 mit allen `.github`-Artefakten | Vergleich und Rettungsanker |
+
+## Ordner nebeneinander anlegen
+
+Der MCP-Server erwartet die Tickets neben dem eigenen FocusList-Ordner:
+
+```text
+arbeitsordner/
+├── focuslist/            # Kopie von focuslist-starter/<stack>/
+└── focuslist-tickets/    # Kopie von focuslist-tickets/
 ```
 
-## `sample-project/`
+## Versionsstufen von FocusList
 
-Kleines, projektunabhängiges Fremdprojekt (JS/TS). Bleibt über den Kurs hinweg unverändert und wird ausschließlich für generische Übungen genutzt, die die FocusList-Basis nicht verändern:
-
-- Lab 2.1 (`l01-inline-completions`) — leere Funktionsrümpfe in `src/formatters.ts`.
-- Lab 2.2 (`l02-chat-context`) — Datenmodell (`src/models.ts`) + leere Implementierungsdatei (`src/validators.ts`).
-- Lab 4.1 (`l01-instructions-file-basics`) — dasselbe Projekt, zu Beginn ohne jede Instructions-Datei.
-- Lab 6.1 (`l01-prompt-file-basics`) — dasselbe Projekt.
-- Lab 7.1 (`l01-agent-modes-explained`) — dasselbe Projekt.
-- Lab 8.1 (`l01-vscode-tasks-basics`) — Lint-/Test-Skripte in `package.json`.
-
-Jede:r Teilnehmer:in arbeitet mit einer eigenen Kopie; Änderungen aus einem Lab werden vor dem nächsten Lab, das dasselbe Projekt nutzt, zurückgesetzt (frische Kopie aus diesem Ordner).
-
-## `focuslist-starter/`
-
-Leerer Startpunkt für das durchgängige FocusList-Projekt (Modul 3, Lab 3.1). Zwei gleichwertige Stack-Varianten, von denen **eine** pro Kursdurchführung verbindlich für alle gilt (siehe `00-intake.md`):
-
-- `js-ts/` — Node.js LTS + TypeScript, Ausführung via `tsx`.
-- `python/` — Python 3, Ausführung via `python`/`uv run`.
-
-Beide Varianten sind bewusst leer (kein Code, keine Logik) und enthalten nur Projekt-Grundgerüst. Der eigentliche FocusList-Code (v0 bis v7) entsteht live im Kurs — er wird nicht vorgefertigt bereitgestellt, weil das genau die Übung ist. `focuslist-concept.md` (Lab 1.3) legt jede:r Teilnehmer:in ebenfalls selbst an; es gibt keine vorgefertigte Vorlage, um das Ergebnis nicht vorwegzunehmen.
-
-## `focuslist-reference/`
-
-Fertiger v7-Stand von FocusList (JS/TS), siehe [focuslist-reference/README.md](focuslist-reference/README.md). Enthält nicht nur den fertigen Code (`src/models/`, `src/storage/`, `src/actions/`, `src/cli.ts`, `tests/`), sondern auch alle agentischen Artefakte, die im Kurs modulweise entstehen: `.github/copilot-instructions.md` (Modul 4), `.github/skills/` (Modul 5), `.github/prompts/` (Modul 6), `.github/agents/` (Modul 7), `.vscode/tasks.json` + Git-Hook + MCP-Konfiguration (Modul 8), `openspec/` (Modul 9).
-
-Dient als Vergleichspunkt bei Unsicherheit oder als Fallback-Demo, nicht als Vorlage zum Abschreiben — die Teilnehmer:innen bauen ihre eigene FocusList-Version im `focuslist-starter/` auf.
-
+| Stufe | Entsteht in | Neu |
+| --- | --- | --- |
+| v0 | Lab 3.1 | anlegen, auflisten, erledigen, ohne Vorgaben gebaut |
+| v1 | Modul 4 | `copilot-instructions.md`, Code an Regeln angepasst |
+| v2 | Lab 5.2 | Skill `add-focuslist-action`, Aktion `set-priority` |
+| v3 | Modul 6 | Prompt-Dateien, README per Prompt, Transfer: Suche |
+| v4 | Lab 7.2 | Test-Agent und vollständige Tests |
+| v5 | Lab 8.1, 8.2 | Task "Lint + Test", Stop-Hook, Transfer: Massenänderung |
+| v6 | Lab 8.4 | Ticket-Zugriff über MCP |
+| v7 | Modul 9 | OpenSpec, Sortierung nach Datum, Agenten-Kette für `complete-tasks` |

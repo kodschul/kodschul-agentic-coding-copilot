@@ -1,7 +1,8 @@
 ---
-description: Prüft referenzierten Code gegen copilot-instructions.md und listet Abweichungen.
+description: Prüft die geöffnete Datei gegen die FocusList-Projektregeln
+agent: ask
 ---
 
-Prüfe die referenzierte Datei ausschließlich gegen die Regeln in
-`.github/copilot-instructions.md`. Liste jede Regel einzeln auf und
-vermerke "eingehalten" oder "verletzt (Grund)". Ändere den Code nicht.
+Prüfe ${file} gegen jede Regel in [copilot-instructions.md](../copilot-instructions.md).
+
+Antworte als Tabelle mit den Spalten **Regel**, **Ergebnis** (eingehalten / verletzt / nicht relevant) und **Fundstelle** (Zeilennummer). Schlage für jede Verletzung eine konkrete Änderung vor. Ändere selbst keine Datei.

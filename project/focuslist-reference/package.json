@@ -3,18 +3,18 @@
   "version": "7.0.0",
   "private": true,
   "type": "module",
-  "description": "Persönliche Aufgabenliste (CLI) — vollständig fertige Referenz (Stand v7).",
+  "description": "Persönliche Aufgabenliste (CLI), Referenzstand v7.",
   "scripts": {
     "start": "tsx src/cli.ts",
-    "lint": "eslint src --ext .ts",
-    "test": "node --test --loader ts-node/esm tests/**/*.test.ts"
+    "lint": "eslint src tests",
+    "test": "tsx --test \"tests/**/*.test.ts\""
   },
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.5.0",
-    "ts-node": "^10.9.0",
-    "eslint": "^9.0.0",
-    "@eslint/js": "^9.0.0",
     "typescript-eslint": "^8.0.0"
   }
 }

@@ -1,9 +1,13 @@
 ---
-description: Erzeugt/aktualisiert README, Changelog-Eintrag und Docstrings aus dem aktuellen Codestand.
+description: Aktualisiert README, Changelog und Doc-Kommentare aus dem aktuellen Code
+agent: agent
+tools: ['read', 'search', 'edit']
 ---
 
-Analysiere alle Dateien in `src/actions/`. Aktualisiere in `README.md`
-den Abschnitt "Verfügbare Aktionen" so, dass er exakt den tatsächlich
-vorhandenen Aktionen entspricht. Ergänze einen neuen Changelog-Eintrag
-für die zuletzt hinzugefügte Aktion. Ergänze fehlende Docstrings an
-öffentlichen Funktionen, ohne bestehende Kommentare zu entfernen.
+Bringe die Dokumentation auf den Stand des Codes:
+
+1. **README.md**, Abschnitt "Befehle": eine Zeile pro Unterbefehl aus `src/cli.ts` mit einem Beispielaufruf. Nichts aufnehmen, was es im Code nicht gibt.
+2. **CHANGELOG.md**: einen Eintrag unter `## [Unreleased]` für jede Aktion in `src/actions/`, die im Changelog noch fehlt.
+3. **Doc-Kommentare**: jede exportierte Funktion in `src/actions/` bekommt einen einzeiligen `/** ... */`-Kommentar, falls er fehlt. Bestehende Kommentare nicht löschen.
+
+Nenne am Ende jede geänderte Datei.

@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "FocusList: Lint + Test",
+      "type": "shell",
+      "command": "npm run lint && npm test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": ["$eslint-stylish"]
+    }
+  ]
+}

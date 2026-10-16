@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "uv run python .github/hooks/run_tests.py",
+        "timeout": 120
+      }
+    ]
+  }
+}
