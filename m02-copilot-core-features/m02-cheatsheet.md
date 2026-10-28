@@ -2,6 +2,8 @@
 
 Stand: 10/2026, VS Code Standardbelegung. Quellen: https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features, https://code.visualstudio.com/docs/copilot/ai-powered-suggestions, https://code.visualstudio.com/docs/agents/reference/tools-reference, https://code.visualstudio.com/docs/copilot/reference/copilot-settings. Namen und Belegungen ändern sich mit VS-Code-Versionen; abweichende Belegungen zeigt **Einstellungen → Tastenkombinationen**.
 
+> Mit OpenAI Codex statt Copilot: [codex-cheatsheet.md](codex/codex-cheatsheet.md).
+
 ## Tastenkürzel
 
 | Aktion | macOS | Windows / Linux |

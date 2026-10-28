@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 09:00–09:20 | Start | Vorstellung, Setup-Check |
 | 09:20–10:30 | Modul 1 `m01-ai-coding` | Was ist ein LLM, wie hilft es beim Programmieren, Sicherheit und Verantwortung |
-| 10:45–12:15 | Modul 2 `m02-copilot-core-features` | Inline-Vorschläge, Chat und Kontext, Befehle und Konfiguration |
+| 10:45–12:15 | Modul 2 `m02-copilot-core-features` | Inline-Vorschläge, Chat und Kontext, Befehle und Konfiguration; dieselben Themen für Codex in `codex/` |
 | 13:15–14:45 | Modul 3 `m03-vibecoding` | erster großer Praxisteil: frei vibecoden, Vibe-Log, Ergebnis reviewen (v0) |
 | 15:00–16:30 | Modul 4 `m04-custom-instructions` | Projektregeln in `copilot-instructions.md`, v0 → v1 |
 

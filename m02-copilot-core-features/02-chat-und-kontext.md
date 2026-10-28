@@ -2,6 +2,8 @@
 
 Copilot Chat arbeitet mit dem Kontext, der mit der Anfrage mitgeht: implizit (aktive Datei, Markierung) und explizit über `#`-Referenzen. Der gewählte Modus legt fest, ob der Chat nur antwortet, plant oder Dateien ändert.
 
+> Mit OpenAI Codex statt Copilot: [02-chat-und-kontext.md](codex/02-chat-und-kontext.md).
+
 ## Leitfragen
 
 <details>

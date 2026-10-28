@@ -8,4 +8,4 @@ KI-generierte Vorschläge zu kleinen, abgeschlossenen Aufgaben. Jeder läuft, je
 | `snippet-2-price.ts` / `.py` | Gesamtpreis eines Warenkorbs inklusive Rabatt berechnen | M1 `04-sicherheit-und-verantwortung.md`, M6 `01-prompt-dateien.md`, `03-doku-mit-ki.md` |
 | `snippet-3-auth.ts` / `.py` | Prüfen, ob eine Person ein Dokument löschen darf | M1 `04-sicherheit-und-verantwortung.md`, M6 `01-prompt-dateien.md` |
 | `szenario-passwort-speicherung.md` | Passwort für die Datenbank aufbereiten und beim Login prüfen (Szenario mit Code in beiden Sprachen) | M1 `04-sicherheit-und-verantwortung.md` |
-| `snippet-4-loop.ts` / `.py` | Einträge einer Seite zurückgeben (Paging) | M2 `03-befehle-und-konfiguration.md` |
+| `snippet-4-loop.ts` / `.py` | Einträge einer Seite zurückgeben (Paging) | M2 `03-befehle-und-konfiguration.md` und `codex/03-befehle-und-konfiguration.md` |

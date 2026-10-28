@@ -2,6 +2,8 @@
 
 Inline-Vorschläge (Ghost Text) erscheinen grau an der Cursorposition und werden erst durch Annahme Teil des Codes. Next Edit Suggestions schlagen zusätzlich die nächste passende Änderung an einer anderen Stelle vor.
 
+> Mit OpenAI Codex statt Copilot: [01-vorschlaege-und-edits.md](codex/01-vorschlaege-und-edits.md).
+
 ## Leitfragen
 
 <details>

@@ -2,6 +2,8 @@
 
 Slash-Befehle (`/` im Chat-Eingabefeld) sind vordefinierte Aufträge, die mit der Markierung oder der aktiven Datei arbeiten. Die Basiskonfiguration in den VS-Code-Einstellungen steuert, wo und wie Copilot aktiv ist.
 
+> Mit OpenAI Codex statt Copilot: [03-befehle-und-konfiguration.md](codex/03-befehle-und-konfiguration.md).
+
 ## Leitfragen
 
 <details>
