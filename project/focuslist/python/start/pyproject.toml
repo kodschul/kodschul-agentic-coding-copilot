@@ -1,0 +1,21 @@
+[project]
+name = "focuslist"
+version = "0.0.0"
+description = "Persönliche Aufgabenliste (CLI), Start für Modul 3, noch ohne Implementierung."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+focuslist = "focuslist.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+include = ["focuslist*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

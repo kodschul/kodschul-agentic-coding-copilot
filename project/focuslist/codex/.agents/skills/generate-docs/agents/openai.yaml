@@ -1,0 +1,3 @@
+# Nur explizit aufrufen (wie ein Prompt-File in Copilot): $<skill-name>
+policy:
+  allow_implicit_invocation: false

@@ -1,4 +1,4 @@
-"""Formatierungs-Helfer für Anzeigezwecke. Rümpfe sind Platzhalter für Lab 2.1."""
+"""Formatierungs-Helfer für Anzeigezwecke. Rümpfe sind Platzhalter für Modul 2."""
 
 
 def format_duration(seconds: int) -> str:

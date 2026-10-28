@@ -1,4 +1,4 @@
-// Validierungslogik für Ticket-Eingaben. Rumpf ist Platzhalter für Lab 2.2.
+// Validierungslogik für Ticket-Eingaben. Rumpf ist Platzhalter für Modul 2.
 
 import type { Ticket } from "./models.js";
 

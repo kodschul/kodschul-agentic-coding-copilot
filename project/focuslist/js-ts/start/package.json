@@ -1,0 +1,20 @@
+{
+  "name": "focuslist",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Persönliche Aufgabenliste (CLI), Start für Modul 3, noch ohne Implementierung.",
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "lint": "eslint src tests --no-error-on-unmatched-pattern",
+    "test": "tsx --test \"tests/**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

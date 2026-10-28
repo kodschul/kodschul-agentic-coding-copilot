@@ -1,80 +1,76 @@
 # Kursüberblick: Agentic Coding mit GitHub Copilot
 
-Dieser Überblick begleitet den gesamten Kurs: Ziel, Agenda, Arbeitsweise und Rahmenbedingungen stehen hier an einem Ort, unabhängig vom jeweils behandelten Modul.
-
 ## Kursziel
 
-Teilnehmer:innen bauen ein einziges durchgängiges Projekt (FocusList, eine CLI-Aufgabenverwaltung) über zehn Module von einer ungeleiteten Basisversion (v0) zu einem voll agentischen, spec-getriebenen Workflow (v7) aus. Am Ende ist begründbar, wann welche Copilot-Fähigkeit (Instructions, Skills, Prompts, Agents, Automatisierung, MCP, Spec-Driven Development) sich lohnt und wann nicht.
+- Vom Autocomplete zum agentischen Workflow mit GitHub Copilot in VS Code.
+- Ein durchgängiges Projekt: FocusList, eine CLI-Aufgabenverwaltung mit JSON-Datei, in JS/TS oder Python.
+- Erst ungeleitet vibecoden (v0), dann Schritt für Schritt Leitplanken ins Repo legen (v1 bis v7).
+- Am Ende begründbar: wann sich Instructions, Skills, Prompts, Custom Agents, Tasks/Hooks, MCP und Spec-Driven Development lohnen und wann nicht.
 
-Beobachtbares Ergebnis: eine vollständige FocusList-Versionskette (v0-v7) inklusive `copilot-instructions.md`, mindestens einer eigenen Skill, mindestens einem `*.prompt.md`, einem Custom Agent, einem VS-Code-Task/Hook, einer MCP-Anbindung und einer über OpenSpec umgesetzten Erweiterung.
+## Tag 1: vom Autocomplete zum Agenten
 
-## Zielgruppe & Voraussetzungen
+| Zeit | Modul | Inhalt |
+| --- | --- | --- |
+| 09:00–09:20 | Start | Vorstellung, Setup-Check |
+| 09:20–10:30 | Modul 1 `m01-ai-coding` | Was ist ein LLM, wie hilft es beim Programmieren, Sicherheit und Verantwortung |
+| 10:45–12:15 | Modul 2 `m02-copilot-core-features` | Inline-Vorschläge, Chat und Kontext, Befehle und Konfiguration |
+| 13:15–14:45 | Modul 3 `m03-vibecoding` | erster großer Praxisteil: frei vibecoden, Vibe-Log, Ergebnis reviewen (v0) |
+| 15:00–16:30 | Modul 4 `m04-custom-instructions` | Projektregeln in `copilot-instructions.md`, v0 → v1 |
 
-- Entwickler:innen mit Copilot-Alltagserfahrung (Autocomplete, Chat).
-- Kein Vorwissen zu Instructions, Skills, Custom Agents, MCP oder Spec-Driven Development vorausgesetzt.
-- Grundlegende Git-/Terminal-Kenntnisse sowie ein lauffähiges VS-Code-Setup mit Copilot-Zugang werden erwartet.
+## Tag 2: agentischer Workflow
 
-## Agenda
+| Zeit | Modul | Inhalt |
+| --- | --- | --- |
+| 09:00–10:30 | Modul 5 `m05-skills` | Was ist ein Skill, eigenen Skill schreiben (v2) |
+| 10:45–12:15 | Modul 6 `m06-custom-prompts` | Prompt-Dateien, Prompt-Bibliothek, Doku mit KI (v3) |
+| 13:15–14:45 | Modul 7 `m07-custom-agents` | Agent-Modi, eigener Custom Agent (v4) |
+| 15:00–16:30 | Modul 8 `m08-automation-hooks-mcp` | VS Code Tasks, Agent Hooks, MCP (v5, v6) |
+| Puffer | Modul 9 `m09-spec-driven-development` | Spec-Driven Development mit OpenSpec (v7) |
+| Puffer | Modul 10 `m10-lessons-learned` | Rückblick, Best Practices, Ausblick |
 
-### Tag 1
+Pausen: 10:30–10:45, 12:15–13:15, 14:45–15:00.
 
-| Zeit        | Modul                                                         |
-| ----------- | ------------------------------------------------------------- |
-| 09:00-09:20 | Vorstellung & Setup-Check                                     |
-| 09:20-10:30 | Modul 1 `m01-ai-coding` – Story & Mindset                     |
-| 10:30-10:45 | Pause                                                         |
-| 10:45-12:15 | Modul 2 `m02-copilot-core-features` – Copilot-Kernfeatures    |
-| 12:15-13:15 | Mittagspause                                                  |
-| 13:15-14:45 | Modul 3 `m03-vibecoding` – FocusList v0 bauen                 |
-| 14:45-15:00 | Pause                                                         |
-| 15:00-16:30 | Modul 4 `m04-custom-instructions` – `copilot-instructions.md` |
+## Aufbau der Unterlagen
 
-### Tag 2
+- Pro Modul ein Ordner `mNN-…/` mit nummerierten Themendateien (`01-….md`, `02-….md`, …).
+- Jede Themendatei: Leitfragen (aufklappbar) → Stichpunkte, Tabellen, echter Code für beide Stacks → `## Selbst ausprobieren` oder `## Übung` → `## Fazit`.
+- Konzeptthemen (Module 1, 2, 10 und die "Was ist …"-Teile) enden mit "Selbst ausprobieren": kurze Versuche am Beispielprojekt, erwartete Beobachtung steht direkt dabei.
+- Bauthemen (Module 3–9) enden mit einer Übung: **Start**-Ordner, **Referenz**-Ordner, Dauer, Schritte, Checkpoint, "Falls es hakt".
+- Pro Modul ein Cheatsheet `mNN-cheatsheet.md`; Modul 2 enthält das vollständige Copilot-Cheatsheet (Tastenkürzel, Slash-Befehle, `#`-Kontext, Modi, Einstellungen).
+- Nachschlagen: [glossary.md](glossary.md), [faq.md](faq.md), [best-practices.md](best-practices.md).
 
-| Zeit        | Modul                                                                  |
-| ----------- | ---------------------------------------------------------------------- |
-| 09:00-10:30 | Modul 5 `m05-skills` – Skills                                          |
-| 10:30-10:45 | Pause                                                                  |
-| 10:45-12:15 | Modul 6 `m06-custom-prompts` – Custom Prompts & AI-Doku                |
-| 12:15-13:15 | Mittagspause                                                           |
-| 13:15-14:45 | Modul 7 `m07-custom-agents` – Custom Agents                            |
-| 14:45-15:00 | Pause                                                                  |
-| 15:00-16:30 | Modul 8 `m08-automation-hooks-mcp` – Automatisierung & MCP             |
-| Puffer      | Modul 9 `m09-spec-driven-development` + Modul 10 `m10-lessons-learned` |
+## So funktioniert das Projekt
 
-## Modul- und Projektstruktur
+- Alle Projektdateien liegen in [`../project/`](../project/README.md), FocusList je Stack in `project/focuslist/js-ts/` und `project/focuslist/python/`.
+- `start/` ist das leere Projekt für Modul 3. `steps/mNN/` enthält nur die Dateien, die Modul NN hinzufügt oder ändert (gelöschte Dateien stehen in `_entfernt.txt`).
+- `node project/focuslist/catch-up.mjs <stack> mNN focuslist` erzeugt den vollständigen Stand zu Beginn von Modul NN (`start/` plus alle früheren Schritte); `final` erzeugt den Endstand nach Modul 9.
 
-Jedes Modul enthält zwei bis vier Labs. Jedes Lab folgt dem Muster generische Übung (risikofrei, projektunabhängig) gefolgt von Aufbau-Übung an FocusList. FocusList durchläuft dabei folgende Versionsstufen:
+| Modul | Start | Referenz | Neu im Modul |
+| --- | --- | --- | --- |
+| 3 Vibecoding | `start/` (leer) | `steps/m03/` | v0, frei vibecodet |
+| 4 Instructions | v0 (`m04`) | `steps/m04/` | v1: Regeln, Validierung, Tests |
+| 5 Skills | v1 (`m05`) | `steps/m05/` | v2: Skill `add-focuslist-action`, `set-priority` |
+| 6 Prompts | v2 (`m06`) | `steps/m06/` | v3: Prompt-Dateien, README, CHANGELOG |
+| 7 Agents | v3 (`m07`) | `steps/m07/` | v4: Custom Agents |
+| 8 Tasks, Hooks, MCP | v4 (`m08`) | `steps/m08/` | v5/v6: `tasks.json`, Stop-Hook, `mcp.json` |
+| 9 OpenSpec | v6 (`m09`) | `steps/m09/` | v7: Spec-getriebene Erweiterung |
 
-```
-v0 (ungeleitet) → v1 (Instructions) → v2 (Skills) → v3 (Prompts)
-  → v4 (Agents) → v5 (Hooks) → v6 (MCP) → v7 (Spec-Driven)
-```
+- Arbeitsweise: Stand mit `catch-up.mjs` nach `arbeitsordner/focuslist/` erzeugen, daneben `arbeitsordner/focuslist-tickets/` (für MCP ab Modul 8).
+- Weitergearbeitet wird am eigenen Stand. Wer hängt, erzeugt den nächsten Stand mit `catch-up.mjs <stack> m(NN+1) focuslist --force` und steigt dort wieder ein.
+- Modul 1 und 2 brauchen kein FocusList: dort dienen [`../project/sample-project/`](../project/sample-project/), [`../project/sample-project-python/`](../project/sample-project-python/) und [`../project/snippets/`](../project/snippets/) als Spielwiese.
+- Vergleich am Ende: [`../project/focuslist/codex/`](../project/focuslist/codex/) zeigt dieselbe Kette mit OpenAI Codex.
 
-Modul 1 (Story & Mindset) und Modul 10 (Rückblick) haben keinen eigenen Versionssprung; sie rahmen die Kette ein. Modul 1 enthält zusätzlich flache Hintergrundmaterialien (`01-`..`04-*.md`) zu LLM-Grundlagen, KI im Workflow, KI in Softwareprojekten sowie Recht/Sicherheit/Datenschutz.
+## Voraussetzungen
 
-## Arbeitsweise & Übungskonventionen
+- Copilot-Alltagserfahrung (Autocomplete, Chat); kein Vorwissen zu Instructions, Skills, Agents, MCP oder Spec-Driven Development nötig.
+- Grundlegende Git- und Terminal-Kenntnisse.
 
-- Jedes Lab besteht aus Theorie (`-thx.md`), Übung (`-exc.md`) und Lösung (`-sol.md`).
-- Kurze Übungen (5-20 Min.) liefern ein konkretes Analyse- oder Konfigurationsergebnis; Projekt-Labs (45-90 Min.) verändern FocusList direkt.
-- Lösungen werden erst nach Abschluss der Übung geöffnet.
+| Werkzeug | JS/TS-Stack | Python-Stack |
+| --- | --- | --- |
+| VS Code mit GitHub Copilot (Plan mit Agent-Modus) | ja | ja |
+| Node.js ≥ 20.19 | ja | ja (für MCP-Server per `npx` und OpenSpec-CLI) |
+| Python 3.11+ und `uv` | – | ja |
+| Git | ja | ja |
 
-## Umgebung & Sicherheit
-
-- VS Code mit aktivem GitHub-Copilot-Zugang, Node.js oder Python (je nach FocusList-Stack der Gruppe), Git.
-- Ab Modul 8 zusätzlich: lokale Berechtigung zum Einrichten von Git-Hooks und zum Starten eines MCP-Servers.
-- Keine produktiven oder personenbezogenen Daten werden im Kurs verwendet; FocusList arbeitet ausschließlich mit Beispieldaten.
-
-## Vorstellungsrunde
-
-Der Kurs beginnt mit einer kurzen Vorstellungsrunde. Jede:r Teilnehmer:in teilt dabei in eigenen Worten:
-
-- Name und Rolle,
-- fachlicher Hintergrund und Weg in den Beruf,
-- Organisation und Zugehörigkeitsdauer,
-- optional Stadt/Region und aktuelles Wetter vor Ort,
-- bisherige Erfahrung mit Copilot/AI-Coding-Tools,
-- Erwartungen an den Kurs,
-- ein mögliches Einsatzszenario für das Gelernte.
-
-Alle persönlichen Angaben sind optional und können übersprungen werden.
+- Ab Modul 8 zusätzlich: Workspace als vertrauenswürdig markiert, Agent-Hooks (`.github/hooks/*.json`, Preview-Funktion) erlaubt, `npx` darf einen lokalen MCP-Server starten.
+- Keine produktiven oder personenbezogenen Daten im Kurs; FocusList arbeitet ausschließlich mit Beispieldaten.

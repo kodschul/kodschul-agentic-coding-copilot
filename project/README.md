@@ -1,34 +1,84 @@
 # Projektdateien
 
-Alle Dateien, die die Übungen brauchen. Jede Stack-Variante liegt doppelt vor: JS/TS und Python. Pro Kursdurchführung gilt ein Stack für alle.
+Alle Dateien für die Übungen. Hauptprojekt ist **FocusList**, eine kleine CLI-Aufgabenliste, die von Modul 3 bis Modul 9 Schritt für Schritt wächst. FocusList liegt in zwei Sprachen vor, JS/TS und Python; pro Kursdurchführung gilt ein Stack für alle.
 
-| Ordner | Inhalt | Genutzt in |
-| --- | --- | --- |
-| `snippets/` | drei KI-generierte Snippets mit versteckten Schwächen | Lab 1.1 |
-| `sample-project/`, `sample-project-python/` | Fremdprojekt (Ticket-Modell) für alle generischen Übungen | Lab 2.1, 2.2, 4.1, 6.1, 7.1, 8.1, 8.2 |
-| `focuslist-starter/js-ts/`, `focuslist-starter/python/` | leeres FocusList-Repo | ab Lab 3.1 |
-| `focuslist-tickets/` | externe Ticket-Ablage für den MCP-Server | Lab 8.3, 8.4, Modul 9 |
-| `focuslist-reference/`, `focuslist-reference-python/` | fertiger Stand v7 mit allen `.github`-Artefakten | Vergleich und Rettungsanker |
+## FocusList: Start und Schritte
 
-## Ordner nebeneinander anlegen
+Jede Datei liegt nur einmal vor. `start/` ist das leere Projekt, `steps/mNN/` enthält nur die Dateien, die Modul NN hinzufügt oder ändert (gelöschte Dateien stehen in `_entfernt.txt`). Ein vollständiger Stand entsteht mit [`focuslist/catch-up.mjs`](focuslist/catch-up.mjs): `start/` plus alle Schritte bis zum gewünschten Modul.
 
-Der MCP-Server erwartet die Tickets neben dem eigenen FocusList-Ordner:
+```text
+focuslist/
+├── catch-up.mjs        baut einen Stand zusammen
+├── js-ts/
+│   ├── start/          leeres Projekt mit Lint und Testrunner
+│   └── steps/
+│       ├── m03/ … m09/ nur die Änderungen des jeweiligen Moduls
+├── python/             gleich aufgebaut
+└── codex/              nur die Codex-Dateien, auf den JS/TS-Endstand gelegt
+```
+
+| Schritt (`focuslist/<stack>/…`) | ergibt Stand | Neu in diesem Schritt | Tests danach |
+| --- | --- | --- | --- |
+| `start/` | Start Modul 3 | leeres Projekt mit Lint und Testrunner | 0 |
+| `steps/m03/` | v0 | `add-task`, `list-tasks`, `complete-task`, per Vibecoding ohne Vorgaben gebaut, mit typischen Schwächen | 0 |
+| `steps/m04/` | v1 | `copilot-instructions.md`, `tests.instructions.md`, `validation`, zentrale Speicherung, erste Tests | 8 |
+| `steps/m05/` | v2 | Skill `add-focuslist-action`, Aktion `set-priority` | 10 |
+| `steps/m06/` | v3 | Prompt-Dateien (Review, Tests, Refactoring, Doku), README-Abschnitt "Befehle", `CHANGELOG.md`, zwei Zusatztests für `set-priority`; Transfer: Skill `filter-and-search-tasks` mit `search-tasks` | 15 |
+| `steps/m07/` | v4 | fünf Agents: Test-Agent (in der Übung gebaut), Code-, Review-, Docs-Agent, Kette `focuslist-feature-team` | 15 |
+| `steps/m08/` | v6 | v5: `.vscode/tasks.json`, Stop-Hook, Regel 4 (alles-oder-nichts), Transfer: Skill `bulk-priority-update` mit `bulk-set-priority`; v6: `.vscode/mcp.json` für die Tickets | 18 |
+| `steps/m09/` | v7 (Endstand) | OpenSpec (`openspec/`, `opsx-*`-Prompts, `openspec-*`-Skills), Fälligkeitsdatum mit `list-tasks --sort due-date`, `complete-tasks` über die Agenten-Kette | 23 |
+
+- **Referenz einer Übung:** `steps/mNN/` des eigenen Moduls zeigt genau, was sich geändert hat.
+- **Versionsnummern** in `package.json` bzw. `pyproject.toml`: `0.0.0` (leer), `0.1.0` (v0), `1.0.0` (v1) bis `4.0.0` (v4), `6.0.0` (v6), `7.0.0` (v7).
+- **Fälligkeitsdatum:** `dueDate` bzw. `due_date`, `assertIsoDate` bzw. `assert_iso_date` und Regel 3 "Prioritäten und Datumswerte" gehören zum OpenSpec-Change `sort-by-due-date` ([`tasks.md`](focuslist/js-ts/steps/m09/openspec/changes/archive/2026-10-14-sort-by-due-date/tasks.md)) und kommen deshalb erst mit `steps/m09/`. Bis v6 kennt `add-task` nur Titel und Priorität.
+
+## Stand erzeugen
+
+Gearbeitet wird nicht im Kurs-Repo, sondern in einem eigenen Arbeitsordner, den Ticket-Ordner daneben:
 
 ```text
 arbeitsordner/
-├── focuslist/            # Kopie von focuslist-starter/<stack>/
-└── focuslist-tickets/    # Kopie von focuslist-tickets/
+├── focuslist/            # eigener Stand oder per catch-up.mjs erzeugt
+└── focuslist-tickets/    # Kopie von project/focuslist-tickets/
 ```
 
-## Versionsstufen von FocusList
+```bash
+# Start von Modul 5 (Stand v1), JS/TS
+node <kursmaterial>/project/focuslist/catch-up.mjs js-ts m05 arbeitsordner/focuslist
+cp -R <kursmaterial>/project/focuslist-tickets arbeitsordner/focuslist-tickets
 
-| Stufe | Entsteht in | Neu |
+# Endstand v7, Python
+node <kursmaterial>/project/focuslist/catch-up.mjs python final arbeitsordner/focuslist-final
+
+# Codex-Variante des Endstands
+node <kursmaterial>/project/focuslist/catch-up.mjs codex arbeitsordner/focuslist-codex
+```
+
+| Aufruf | Ergebnis |
+| --- | --- |
+| `catch-up.mjs <js-ts\|python> mNN <ziel>` | Stand zu Beginn von Modul NN (`start/` plus `steps/m03/` bis `steps/m(NN−1)/`) |
+| `catch-up.mjs <js-ts\|python> final <ziel>` | Endstand v7 nach Modul 9 |
+| `catch-up.mjs codex <ziel>` | Endstand v7 mit Codex-Dateien statt `.github/` und `.vscode/` |
+| `… --force` | schreibt in einen nicht leeren Ordner und überschreibt vorhandene Dateien |
+
+Ohne `--force` bricht das Skript ab, wenn der Zielordner nicht leer ist. Danach den Zielordner als eigenen Ordner in VS Code öffnen, damit Copilot `.github/` und `.vscode/` dieses Projekts liest.
+
+**MCP-Pfad:** Ab v6 startet `.vscode/mcp.json` den Filesystem-Server mit `${workspaceFolder}/../focuslist-tickets`. Der Pfad funktioniert im Arbeitsordner oben, in dem beide Ordner nebeneinanderliegen. Beim Wechsel auf einen späteren Stand nur `arbeitsordner/focuslist/` ersetzen, `focuslist-tickets/` bleibt.
+
+## Setup
+
+- **Node.js ab 20.19** für beide Stacks: `catch-up.mjs`, der MCP-Server (`npx`) und die OpenSpec-CLI brauchen es.
+- **JS/TS:** im erzeugten Ordner `npm install && npm run lint && npm test`.
+- **Python:** Python ab 3.11 und `uv`, dann `uv sync && uv run ruff check . && uv run pytest`.
+- **MCP-Server:** `@modelcontextprotocol/server-filesystem` (2.0.1 und 2.1.0 vom 28.10.2026) deklariert in `package.json` Node.js ab 24, läuft aber auch mit Node.js 20; `npx` gibt dann nur eine Warnung `EBADENGINE` aus. `npx -y` lädt immer die neueste Version (Stand: 10/2026, Quelle: <https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem>, Start mit Node.js 20.20 getestet).
+- Im leeren Projekt und in v0 gibt es noch keine Tests: `npm test` bzw. `uv run pytest` laufen erst, sobald die erste Testdatei existiert.
+
+## Weitere Ordner
+
+| Ordner | Inhalt | Genutzt in |
 | --- | --- | --- |
-| v0 | Lab 3.1 | anlegen, auflisten, erledigen, ohne Vorgaben gebaut |
-| v1 | Modul 4 | `copilot-instructions.md`, Code an Regeln angepasst |
-| v2 | Lab 5.2 | Skill `add-focuslist-action`, Aktion `set-priority` |
-| v3 | Modul 6 | Prompt-Dateien, README per Prompt, Transfer: Suche |
-| v4 | Lab 7.2 | Test-Agent und vollständige Tests |
-| v5 | Lab 8.1, 8.2 | Task "Lint + Test", Stop-Hook, Transfer: Massenänderung |
-| v6 | Lab 8.4 | Ticket-Zugriff über MCP |
-| v7 | Modul 9 | OpenSpec, Sortierung nach Datum, Agenten-Kette für `complete-tasks` |
+| `snippets/` | vier KI-generierte Snippets mit versteckten Schwächen (TS und Python) und das Szenario `szenario-passwort-speicherung.md` | Modul 1 (`04-sicherheit-und-verantwortung.md`), Modul 2 (`03-befehle-und-konfiguration.md`, Snippet 4), Modul 6 (Prompt-Dateien am Fremdcode) |
+| `sample-project/`, `sample-project-python/` | Fremdprojekt (Ticket-Modell) zum freien Ausprobieren | "Selbst ausprobieren" in Modul 2 und in den "Was ist …"-Teilen der Module 4 bis 8 |
+| `practice/` | `mcp-scenarios.md`, `neues-projekt-brief.md` | Modul 8 (`03-mcp.md`), Modul 10 (`02-best-practices-und-ausblick.md`) |
+| `focuslist-tickets/` | externe Ticket-Ablage (FL-101 bis FL-103) für den MCP-Server | Modul 8 und 9; im Arbeitsordner neben `focuslist/` ablegen |
+| `focuslist/codex/` | nur die Codex-Dateien (`AGENTS.md`, `.agents/skills/`, `.codex/`) und die Zuordnung Copilot → Codex; vollständig mit `catch-up.mjs codex <ziel>` | Modul 10 (Ausblick); für MCP ebenfalls neben `focuslist-tickets/` ablegen |

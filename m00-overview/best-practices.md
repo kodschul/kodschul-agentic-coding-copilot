@@ -3,7 +3,7 @@
 ## Kontext bewusst steuern
 
 - Nur die tatsächlich relevanten Dateien referenzieren, statt ganze Ordner in den Chat zu ziehen: jede zusätzliche Datei verbraucht Platz im Kontextfenster, der für die eigentliche Anfrage fehlt (Modul 1, Modul 2, Modul 10).
-- Bei wachsendem Kontextbedarf gezielt `#file`/`#selection` statt impliziten Workspace-Kontext nutzen, da explizite Referenzen reproduzierbarer sind als implizit mitgeladener Editor-Zustand (Modul 2).
+- Bei wachsendem Kontextbedarf gezielt `#file`, `#selection` oder `#codebase` nutzen statt sich auf die gerade aktive Datei zu verlassen, da explizite Referenzen reproduzierbarer sind (Modul 2).
 
 ## Ownership nie an das Modell abgeben
 
@@ -22,13 +22,13 @@
 
 ## Automatisierung schrittweise einführen
 
-- Neue Hooks zunächst als warnend statt blockierend einführen, um Fehlalarme zu erkennen, bevor ein Hook Commits verhindern kann (Modul 8).
+- Neue Agent-Hooks zunächst nur melden lassen statt blockieren, um Fehlalarme zu erkennen, bevor ein Stop-Hook jede Agent-Runde verlängert und zusätzliche Anfragen kostet (Modul 8).
 - Eine MCP-Anbindung erst nach einem erfolgreichen lokalen Testlauf des Servers im Chat verwenden, um Fehlkonfigurationen früh zu erkennen (Modul 8).
 
 ## Spezifikation vor Implementierung bei größeren Änderungen
 
 - Für Features, die mehrere Dateien oder Verhaltensänderungen betreffen, zuerst eine Spec schreiben und prüfen, statt direkt zu implementieren: das reduziert nachträgliche Fehlinterpretationen des Auftrags (Modul 9).
-- Abgeschlossene Specs archivieren (`openspec/archive/`), damit spätere Änderungen an derselben Fläche den ursprünglichen Entscheidungsgrund nachvollziehen können (Modul 9).
+- Abgeschlossene Änderungen archivieren (`openspec/changes/archive/YYYY-MM-DD-<name>/`); ihre Specs landen in `openspec/specs/`, damit spätere Änderungen an derselben Stelle den Entscheidungsgrund nachvollziehen können (Modul 9).
 
 ## Rückblick als Diff-Denken statt Bauchgefühl
 

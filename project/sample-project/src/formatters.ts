@@ -1,4 +1,4 @@
-// Kleine Formatierungs-Helfer für Anzeigezwecke. Rümpfe sind Platzhalter für Lab 2.1.
+// Kleine Formatierungs-Helfer für Anzeigezwecke. Rümpfe sind Platzhalter für Modul 2.
 
 export function formatDuration(seconds: number): string {
   throw new Error("Noch nicht implementiert");

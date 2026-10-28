@@ -11,6 +11,9 @@ dev = ["pytest>=8", "ruff>=0.6"]
 [tool.uv]
 package = true
 
+[tool.setuptools.packages.find]
+include = ["sample*"]
+
 [tool.ruff.lint]
 select = ["E", "F", "I", "B"]
 ignore = ["ARG"]

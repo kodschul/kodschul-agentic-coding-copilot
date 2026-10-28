@@ -1,0 +1,25 @@
+
+OpenSpec Dashboard
+
+════════════════════════════════════════════════════════════
+Summary:
+  ● Specifications: 1 specs, 3 requirements
+  ● Draft Changes: 1
+  ● Active Changes: 0 in progress
+  ● Completed Changes: 1
+
+Draft Changes
+────────────────────────────────────────────────────────────
+  ○ recurring-tasks
+
+Completed Changes
+────────────────────────────────────────────────────────────
+  ✓ bulk-complete-tasks
+
+Specifications
+────────────────────────────────────────────────────────────
+  ▪ task-sorting                   3 requirements
+
+════════════════════════════════════════════════════════════
+
+Use openspec list --changes or openspec list --specs for detailed views
