@@ -1,2 +1,0 @@
-# Dateien, die dieser Schritt entfernt (catch-up.mjs löscht sie)
-focuslist-concept.md

@@ -1,76 +1,135 @@
-# Kursüberblick: Agentic Coding mit GitHub Copilot
+# Agentic Coding mit GitHub Copilot
 
-## Kursziel
+## Worum es geht
 
-- Vom Autocomplete zum agentischen Workflow mit GitHub Copilot in VS Code.
-- Ein durchgängiges Projekt: FocusList, eine CLI-Aufgabenverwaltung mit JSON-Datei, in JS/TS oder Python.
-- Erst ungeleitet vibecoden (v0), dann Schritt für Schritt Leitplanken ins Repo legen (v1 bis v7).
-- Am Ende begründbar: wann sich Instructions, Skills, Prompts, Custom Agents, Tasks/Hooks, MCP und Spec-Driven Development lohnen und wann nicht.
+- KI schreibt nicht mehr nur Vorschläge, sondern erledigt Aufgaben selbst
+- Gute Ergebnisse brauchen Leitplanken im Repo
+- Zwei Tage: vom ungeleiteten Agenten zum abgesicherten Agenten-Team
 
-## Tag 1: vom Autocomplete zum Agenten
+> **Leitmotiv:** Der Agent ist so gut wie das, was im Repo steht.
 
-| Zeit | Modul | Inhalt |
-| --- | --- | --- |
-| 09:00–09:20 | Start | Vorstellung, Setup-Check |
-| 09:20–10:30 | Modul 1 `m01-ai-coding` | Was ist ein LLM, wie hilft es beim Programmieren, Sicherheit und Verantwortung |
-| 10:45–12:15 | Modul 2 `m02-copilot-core-features` | Inline-Vorschläge, Chat und Kontext, Befehle und Konfiguration; dieselben Themen für Codex in `codex/` |
-| 13:15–14:45 | Modul 3 `m03-vibecoding` | erster großer Praxisteil: frei vibecoden, Vibe-Log, Ergebnis reviewen (v0) |
-| 15:00–16:30 | Modul 4 `m04-custom-instructions` | Projektregeln in `copilot-instructions.md`, v0 → v1 |
+## Die Entwicklung von Agentic Coding
 
-## Tag 2: agentischer Workflow
+| Jahr | Stufe |
+| --- | --- |
+| 2021 | **Vorschlag:** Copilot ergänzt Code im Editor |
+| 2023 | **Chat:** Fragen stellen, Code bekommen |
+| 2025 | **Agent:** liest, ändert, testet selbst (Copilot Agent Mode, Claude Code, Codex) |
+| 2024–2025 | **Standards:** MCP, `AGENTS.md`, Skills |
+| 2026 | **Harnesses:** Copilot, Claude, Codex in einem Editor |
 
-| Zeit | Modul | Inhalt |
-| --- | --- | --- |
-| 09:00–10:30 | Modul 5 `m05-skills` | Was ist ein Skill, eigenen Skill schreiben (v2) |
-| 10:45–12:15 | Modul 6 `m06-custom-prompts` | Prompt-Dateien, Prompt-Bibliothek, Doku mit KI (v3) |
-| 13:15–14:45 | Modul 7 `m07-custom-agents` | Agent-Modi, eigener Custom Agent (v4) |
-| 15:00–16:30 | Modul 8 `m08-automation-hooks-mcp` | VS Code Tasks, Agent Hooks, MCP (v5, v6) |
-| Puffer | Modul 9 `m09-spec-driven-development` | Spec-Driven Development mit OpenSpec (v7) |
-| Puffer | Modul 10 `m10-lessons-learned` | Rückblick, Best Practices, Ausblick |
+Details: [Lab 1.2](../m01-ai-coding/l02-timeline.md)
 
-Pausen: 10:30–10:45, 12:15–13:15, 14:45–15:00.
+## Was ist Agentic Coding?
 
-## Aufbau der Unterlagen
+- Ein KI-Agent erledigt eine Aufgabe in Schritten
+- Loop: **planen → Werkzeug nutzen → prüfen → wiederholen**
+- Mensch: Ziel vorgeben, Grenzen setzen, Ergebnis abnehmen
 
-- Pro Modul ein Ordner `mNN-…/` mit nummerierten Themendateien (`01-….md`, `02-….md`, …).
-- Jede Themendatei: Leitfragen (aufklappbar) → Stichpunkte, Tabellen, echter Code für beide Stacks → `## Selbst ausprobieren` oder `## Übung` → `## Fazit`.
-- Konzeptthemen (Module 1, 2, 10 und die "Was ist …"-Teile) enden mit "Selbst ausprobieren": kurze Versuche am Beispielprojekt, erwartete Beobachtung steht direkt dabei.
-- Bauthemen (Module 3–9) enden mit einer Übung: **Start**-Ordner, **Referenz**-Ordner, Dauer, Schritte, Checkpoint, "Falls es hakt".
-- Pro Modul ein Cheatsheet `mNN-cheatsheet.md`; Modul 2 enthält das vollständige Copilot-Cheatsheet (Tastenkürzel, Slash-Befehle, `#`-Kontext, Modi, Einstellungen).
-- Nachschlagen: [glossary.md](glossary.md), [faq.md](faq.md), [best-practices.md](best-practices.md).
+<img src="../assets/images/m02/agent-loop.png" alt="Agent-Loop: Prompt → Understand → Act → Validate → Result, mit Rücksprung „iterate“ und Werkzeugen zum Lesen, Ändern und Ausführen" width="600">
 
-## So funktioniert das Projekt
+_Quelle: VS Code Docs, Agents (https://code.visualstudio.com/docs/agents/concepts/agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
-- Alle Projektdateien liegen in [`../project/`](../project/README.md), FocusList je Stack in `project/focuslist/js-ts/` und `project/focuslist/python/`.
-- `start/` ist das leere Projekt für Modul 3. `steps/mNN/` enthält nur die Dateien, die Modul NN hinzufügt oder ändert (gelöschte Dateien stehen in `_entfernt.txt`).
-- `node project/focuslist/catch-up.mjs <stack> mNN focuslist` erzeugt den vollständigen Stand zu Beginn von Modul NN (`start/` plus alle früheren Schritte); `final` erzeugt den Endstand nach Modul 9.
+## Warum Agentic Coding?
 
-| Modul | Start | Referenz | Neu im Modul |
+- Agent übernimmt Lesen, Boilerplate, Tests, Fehlersuche
+- Rolle wechselt: Auftrag geben, Rahmen setzen, prüfen
+
+| | Vorschlag | Chat | Agent |
 | --- | --- | --- | --- |
-| 3 Vibecoding | `start/` (leer) | `steps/m03/` | v0, frei vibecodet |
-| 4 Instructions | v0 (`m04`) | `steps/m04/` | v1: Regeln, Validierung, Tests |
-| 5 Skills | v1 (`m05`) | `steps/m05/` | v2: Skill `add-focuslist-action`, `set-priority` |
-| 6 Prompts | v2 (`m06`) | `steps/m06/` | v3: Prompt-Dateien, README, CHANGELOG |
-| 7 Agents | v3 (`m07`) | `steps/m07/` | v4: Custom Agents |
-| 8 Tasks, Hooks, MCP | v4 (`m08`) | `steps/m08/` | v5/v6: `tasks.json`, Stop-Hook, `mcp.json` |
-| 9 OpenSpec | v6 (`m09`) | `steps/m09/` | v7: Spec-getriebene Erweiterung |
+| Wer handelt | Mensch | Mensch | KI im Loop |
+| KI sieht | aktuelle Datei | Frage + Kontext | Projekt, Terminal |
+| Prüfung | jede Zeile lesen | selbst testen | Diff abnehmen |
 
-- Arbeitsweise: Stand mit `catch-up.mjs` nach `arbeitsordner/focuslist/` erzeugen, daneben `arbeitsordner/focuslist-tickets/` (für MCP ab Modul 8).
-- Weitergearbeitet wird am eigenen Stand. Wer hängt, erzeugt den nächsten Stand mit `catch-up.mjs <stack> m(NN+1) focuslist --force` und steigt dort wieder ein.
-- Modul 1 und 2 brauchen kein FocusList: dort dienen [`../project/sample-project/`](../project/sample-project/), [`../project/sample-project-python/`](../project/sample-project-python/) und [`../project/snippets/`](../project/snippets/) als Spielwiese.
-- Vergleich am Ende: [`../project/focuslist/codex/`](../project/focuslist/codex/) zeigt dieselbe Kette mit OpenAI Codex.
+Details: [Lab 1.1](../m01-ai-coding/l01-llm-basics.md)
+
+## Vibecoding oder agentisch?
+
+| | Vibecoding | Agentic Coding |
+| --- | --- | --- |
+| Eingabe | ein Prompt | Prompt + Regeln aus dem Repo |
+| Prüfung | Blick in den Browser | Diff, Tests, Abnahme |
+| Geeignet für | Prototyp, Demo | Team-Code, Produktion |
+
+Details: [Lab 3.1](../m03-vibecoding/l01-two-ways.md)
+
+## Die sechs Bausteine
+
+| Baustein | Frage | Modul |
+| --- | --- | --- |
+| Instructions | Was muss der Agent immer wissen? | 4 |
+| Skills | Wie geht eine wiederkehrende Aufgabe? | 5 |
+| Custom Agents | Wer darf was? | 6 |
+| Hooks | Was muss immer / darf nie passieren? | 7 |
+| MCP | Welche Werkzeuge außerhalb des Editors? | 7 |
+| Spec | Was genau soll gebaut werden? | 8 |
+
+<img src="../assets/images/m09/agents-window-customizations.png" alt="VS-Code-Agents-Fenster: links unter „Customizations“ die Einträge Agents, Skills, Instructions, Hooks und MCP Servers" width="600">
+
+_Quelle: VS Code Blog, Modern UI (https://code.visualstudio.com/blogs/2026/10/15/modern-ui), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
+
+Gleiche Idee bei Claude Code und Codex, andere Ordner: [Lab 1.3](../m01-ai-coding/l03-landscape.md)
+
+## Ziel nach zwei Tagen
+
+- Harness wählen, Agent sicher steuern
+- Vibecoding und agentischen Weg unterscheiden, Status quo bewerten
+- Jeden Baustein selbst schreiben und einsetzen
+- Transfer-Plan für das eigene Projekt
+
+## Projekt FocusList
+
+- Kleine Web-App für Aufgaben, mit Tailwind CSS
+- Python (Flask) **oder** Node.js (ohne Framework)
+- Wächst in Versionen:
+
+`start` → **v0** vibecodet → **v1** Instructions → **v2** Skills → **v3** Agents → **v4** Hooks + MCP → **v5** Spec
+
+Details: [project/README.md](../project/README.md)
+
+## Tag 1 – Überblick, Copilot, erste Leitplanken
+
+| Zeit | Thema |
+| --- | --- |
+| 09:00 | Auftakt |
+| 09:25 | **Modul 1** KI in der Softwareentwicklung |
+| 10:30 | *Pause* |
+| 10:45 | Modul 1: Verantwortung · **Modul 2** Copilot heute |
+| 12:15 | *Mittag* |
+| 13:15 | Modul 2: Agent steuern · **Modul 3** Vibecoding oder Agentic Coding → v0 |
+| 14:45 | *Pause* |
+| 15:00 | **Modul 4** Instructions → v1 |
+| 16:15 | Tagesabschluss |
+
+## Tag 2 – Skills, Agents, Automatisierung, Spec
+
+| Zeit | Thema |
+| --- | --- |
+| 09:00 | Rückblick |
+| 09:15 | **Modul 5** Skills → v2 |
+| 10:30 | *Pause* |
+| 10:45 | **Modul 6** Custom Agents → v3 |
+| 12:15 | *Mittag* |
+| 13:15 | **Modul 7** Hooks und MCP → v4 |
+| 14:45 | *Pause* |
+| 15:00 | **Modul 8** Spec-Driven Development → v5 |
+| 16:00 | **Modul 9** Rückblick, Transfer, Ausblick |
+
+Alle Labs mit Zeiten: [topics.md](topics.md)
+
+## So arbeiten wir
+
+- Eine Datei pro Lab, ein Cheatsheet pro Modul
+- Standard: **Copilot-Harness**, Autopilot aus
+- Jeden Diff lesen, dann Keep oder Undo; Checkpoints zum Zurücksetzen
+- Rückstand? Stand per `catch-up.mjs` holen:
+
+```bash
+node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist
+```
 
 ## Voraussetzungen
 
-- Copilot-Alltagserfahrung (Autocomplete, Chat); kein Vorwissen zu Instructions, Skills, Agents, MCP oder Spec-Driven Development nötig.
-- Grundlegende Git- und Terminal-Kenntnisse.
-
-| Werkzeug | JS/TS-Stack | Python-Stack |
-| --- | --- | --- |
-| VS Code mit GitHub Copilot (Plan mit Agent-Modus) | ja | ja |
-| Node.js ≥ 20.19 | ja | ja (für MCP-Server per `npx` und OpenSpec-CLI) |
-| Python 3.11+ und `uv` | – | ja |
-| Git | ja | ja |
-
-- Ab Modul 8 zusätzlich: Workspace als vertrauenswürdig markiert, Agent-Hooks (`.github/hooks/*.json`, Preview-Funktion) erlaubt, `npx` darf einen lokalen MCP-Server starten.
-- Keine produktiven oder personenbezogenen Daten im Kurs; FocusList arbeitet ausschließlich mit Beispieldaten.
+- Programmieren in Python oder JavaScript, HTML-Grundlagen
+- VS Code + aktive Copilot-Lizenz, Node.js 22+, ggf. Python 3.12+
+- Einrichtung: [00-setup-and-installation.md](../00-setup-and-installation.md)

@@ -1,9 +1,0 @@
-{
-  "servers": {
-    "focuslist-tickets": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${workspaceFolder}/../focuslist-tickets"]
-    }
-  }
-}

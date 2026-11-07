@@ -10,60 +10,58 @@
 
 ---
 
-Teilnehmerunterlagen des Kurses **„Agentic Coding mit GitHub Copilot“**. Teilnehmende bauen über zwei Tage die **FocusList**, eine CLI-Aufgabenverwaltung mit JSON-Datei: erst ungeleitet per Vibecoding (v0), dann Schritt für Schritt mit Leitplanken im Repo (v1 bis v7) – von Custom Instructions über Skills, Prompts und Custom Agents bis zu Hooks, MCP und Spec-Driven Development.
+Teilnehmerunterlagen des Kurses **„Agentic Coding mit GitHub Copilot“**. Teilnehmende bauen über zwei Tage die **FocusList**, eine kleine Web-App mit Tailwind CSS (Python oder Node.js): erst per One-Shot-Prompt vibecodet, dann agentisch, Schritt für Schritt mit Instructions, Skills, Custom Agents, Hooks, MCP und einer Spec bis zur Version v5.
 
-Start hier: [m00-overview/overview.md](m00-overview/overview.md) (Kursziel, Tag 1, Tag 2, Aufbau, Projekt).
+Jedes Lab ist eine Datei (`lNN-<thema>.md`) mit Leitfragen, Inhalt, Übung bzw. „Selbst ausprobieren“ und Lösungsweg; jedes Modul hat einen Spickzettel (`mNN-cheatsheet.md`). Alle Pfade in dieser Datei sind relativ zu diesem Ordner. Alle Befehle sind Bash-Befehle (Windows: Git Bash).
 
 ## Auf einen Blick
 
 | | |
 | --- | --- |
 | **Dauer** | 2 Tage |
-| **Zielgruppe** | Softwareentwickler:innen, die GitHub Copilot bereits im Alltag nutzen |
-| **Niveau** | Mittelstufe: Programmiererfahrung und Copilot-Grundnutzung (Autocomplete, Chat) vorausgesetzt |
+| **Zielgruppe** | Softwareentwickler:innen mit Python- oder JavaScript-Erfahrung, die Copilot höchstens als Autocomplete oder Chat kennen |
+| **Vorkenntnisse** | Programmieren, HTML-Grundlagen |
 | **Sprache** | Deutsch |
-| **Projekt** | FocusList (JS/TS-CLI oder Python-CLI, VS Code mit GitHub Copilot) |
+| **Projekt** | FocusList: Flask + Jinja2 oder Node.js ohne Framework, Tailwind CSS v4, VS Code mit GitHub Copilot (Copilot-Harness) |
 
-## Orientierung
+Details zu Zielen, Voraussetzungen und Tagesablauf: [`m00-overview/overview.md`](m00-overview/overview.md).
 
-| Ressource | Pfad |
+## Einstieg
+
+| Datei | Inhalt |
 | --- | --- |
-| Kursüberblick | [m00-overview/overview.md](m00-overview/overview.md) |
-| Glossar | [m00-overview/glossary.md](m00-overview/glossary.md) |
-| Best Practices | [m00-overview/best-practices.md](m00-overview/best-practices.md) |
-| FAQ | [m00-overview/faq.md](m00-overview/faq.md) |
-| Projektdateien | [project/README.md](project/README.md) |
+| [`00-setup-and-installation.md`](00-setup-and-installation.md) | VS Code, Copilot, Node.js, Python prüfen; Startgerüst holen |
+| [`m00-overview/overview.md`](m00-overview/overview.md) | Entwicklung, Begriff, Ziel, Zielgruppe, Projekt, Tagesablauf |
+| [`m00-overview/topics.md`](m00-overview/topics.md) | Module, Labs und Kernthemen |
+| [`m00-overview/glossary.md`](m00-overview/glossary.md) | Begriffe mit Fundstelle |
+| [`m00-overview/best-practices.md`](m00-overview/best-practices.md) | Regeln aus allen Modulen |
+| [`m00-overview/faq.md`](m00-overview/faq.md) | Häufige Fragen und Probleme |
+| [`project/README.md`](project/README.md) | FocusList: Stacks, Stände v0–v5, `catch-up.mjs` |
 
-## Module
+## Tag 1
 
-Jede Themendatei endet mit `## Selbst ausprobieren` (Konzept) oder `## Übung` (Bauen). Übungen nennen einen **Start**-Stand und als **Referenz** den Schritt `project/focuslist/<stack>/steps/mNN/` (`<stack>` = `js-ts` oder `python`); jeden Stand erzeugt `node project/focuslist/catch-up.mjs <stack> mNN focuslist`.
+| Modul | Ordner | Spickzettel | Labs |
+| --- | --- | --- | --- |
+| 1 KI in der Softwareentwicklung | [`m01-ai-coding/`](m01-ai-coding/) | [`m01-cheatsheet.md`](m01-ai-coding/m01-cheatsheet.md) | `l01-llm-basics`, `l02-timeline`, `l03-landscape`, `l04-responsibility` |
+| 2 Copilot heute | [`m02-copilot-today/`](m02-copilot-today/) | [`m02-cheatsheet.md`](m02-copilot-today/m02-cheatsheet.md) | `l01-project-tour`, `l02-harnesses`, `l03-suggestions`, `l04-chat-agents`, `l05-agent-control` |
+| 3 Vibecoding oder Agentic Coding | [`m03-vibecoding/`](m03-vibecoding/) | [`m03-cheatsheet.md`](m03-vibecoding/m03-cheatsheet.md) | `l01-two-ways`, `l02-one-shot`, `l03-status-quo` |
+| 4 Instructions | [`m04-instructions/`](m04-instructions/) | [`m04-cheatsheet.md`](m04-instructions/m04-cheatsheet.md) | `l01-project-instructions`, `l02-scoped-instructions`, `l03-compare` |
 
-| # | Modul | Themendateien | Cheatsheet | Start → Referenz |
-| --- | --- | --- | --- | --- |
-| 0 | [Überblick](m00-overview/) | [overview](m00-overview/overview.md), [glossary](m00-overview/glossary.md), [faq](m00-overview/faq.md), [best-practices](m00-overview/best-practices.md) | – | – |
-| 1 | [KI in der Softwareentwicklung](m01-ai-coding/) | [01 LLM-Grundlagen](m01-ai-coding/01-llm-grundlagen.md), [02 KI beim Programmieren](m01-ai-coding/02-ki-beim-programmieren.md), [03 KI in Softwareprojekten](m01-ai-coding/03-ki-in-softwareprojekten.md), [04 Sicherheit und Verantwortung](m01-ai-coding/04-sicherheit-und-verantwortung.md) | [m01-cheatsheet](m01-ai-coding/m01-cheatsheet.md) | `snippets/`, `sample-project/` |
-| 2 | [Copilot-Kernfeatures](m02-copilot-core-features/) | [01 Inline-Vorschläge](m02-copilot-core-features/01-inline-vorschlaege.md), [02 Chat und Kontext](m02-copilot-core-features/02-chat-und-kontext.md), [03 Befehle und Konfiguration](m02-copilot-core-features/03-befehle-und-konfiguration.md); für Codex: [codex/](m02-copilot-core-features/codex/README.md) | [m02-cheatsheet](m02-copilot-core-features/m02-cheatsheet.md) (vollständiges Copilot-Cheatsheet), [codex-cheatsheet](m02-copilot-core-features/codex/codex-cheatsheet.md) | `sample-project/`, `snippets/` |
-| 3 | [Vibecoding](m03-vibecoding/) | [01 Vibecoding](m03-vibecoding/01-vibecoding.md), [02 Ergebnis reviewen](m03-vibecoding/02-ergebnis-reviewen.md) | [m03-cheatsheet](m03-vibecoding/m03-cheatsheet.md) | `start/` → `steps/m03/` |
-| 4 | [Custom Instructions](m04-custom-instructions/) | [01 copilot-instructions.md](m04-custom-instructions/01-copilot-instructions.md), [02 Instructions-Dateien](m04-custom-instructions/02-instructions-dateien.md), [03 Regeln anwenden](m04-custom-instructions/03-regeln-anwenden.md) | [m04-cheatsheet](m04-custom-instructions/m04-cheatsheet.md) | v0 → `steps/m04/` |
-| 5 | [Skills](m05-skills/) | [01 Was ist ein Skill](m05-skills/01-was-ist-ein-skill.md), [02 Skill schreiben](m05-skills/02-skill-schreiben.md) | [m05-cheatsheet](m05-skills/m05-cheatsheet.md) | v1 → `steps/m05/` |
-| 6 | [Custom Prompts](m06-custom-prompts/) | [01 Prompt-Dateien](m06-custom-prompts/01-prompt-dateien.md), [02 Prompt-Bibliothek](m06-custom-prompts/02-prompt-bibliothek.md), [03 Doku mit KI](m06-custom-prompts/03-doku-mit-ki.md), [04 Transfer: Suche](m06-custom-prompts/04-transfer-suche.md) (optional) | [m06-cheatsheet](m06-custom-prompts/m06-cheatsheet.md) | v2 → `steps/m06/` |
-| 7 | [Custom Agents](m07-custom-agents/) | [01 Agent-Modi](m07-custom-agents/01-agent-modi.md), [02 Eigener Agent](m07-custom-agents/02-eigener-agent.md) | [m07-cheatsheet](m07-custom-agents/m07-cheatsheet.md) | v3 → `steps/m07/` |
-| 8 | [Automatisierung & MCP](m08-automation-hooks-mcp/) | [01 VS Code Tasks](m08-automation-hooks-mcp/01-vscode-tasks.md), [02 Agent Hooks](m08-automation-hooks-mcp/02-agent-hooks.md), [03 MCP](m08-automation-hooks-mcp/03-mcp.md), [04 Transfer: Massenänderung](m08-automation-hooks-mcp/04-transfer-massenaenderung.md) (optional) | [m08-cheatsheet](m08-automation-hooks-mcp/m08-cheatsheet.md) | v4 → `steps/m08/` |
-| 9 | [Spec-Driven Development](m09-spec-driven-development/) | [01 Spec-Driven-Prinzip](m09-spec-driven-development/01-spec-driven-prinzip.md), [02 OpenSpec-Workflow](m09-spec-driven-development/02-openspec-workflow.md) | [m09-cheatsheet](m09-spec-driven-development/m09-cheatsheet.md) | v6 → `steps/m09/` |
-| 10 | [Rückblick & Ausblick](m10-lessons-learned/) | [01 Rückblick](m10-lessons-learned/01-rueckblick.md), [02 Best Practices und Ausblick](m10-lessons-learned/02-best-practices-und-ausblick.md) | – | Endstand v7 (`catch-up.mjs <stack> final`), `focuslist/codex/` |
+## Tag 2
+
+| Modul | Ordner | Spickzettel | Labs |
+| --- | --- | --- | --- |
+| 5 Skills | [`m05-skills/`](m05-skills/) | [`m05-cheatsheet.md`](m05-skills/m05-cheatsheet.md) | `l01-skill-basics`, `l02-test-writer`, `l03-security-checker` |
+| 6 Custom Agents | [`m06-custom-agents/`](m06-custom-agents/) | [`m06-cheatsheet.md`](m06-custom-agents/m06-cheatsheet.md) | `l01-agent-basics`, `l02-reviewer`, `l03-agent-team` |
+| 7 Hooks und MCP | [`m07-hooks-mcp/`](m07-hooks-mcp/) | [`m07-cheatsheet.md`](m07-hooks-mcp/m07-cheatsheet.md) | `l01-guard-hook`, `l02-check-hook`, `l03-mcp-basics`, `l04-playwright-mcp` |
+| 8 Spec-Driven Development | [`m08-spec-driven/`](m08-spec-driven/) | [`m08-cheatsheet.md`](m08-spec-driven/m08-cheatsheet.md) | `l01-spec-first`, `l02-openspec` |
+| 9 Abschluss | [`m09-wrap-up/`](m09-wrap-up/) | – | `l01-recap`, `l02-outlook` |
+
+Lab-Schema: eine Datei pro Lab im Modulordner, `m<NN>-<modul>/l<NN>-<lab>.md`. Beispiel: [`l02-harnesses.md`](m02-copilot-today/l02-harnesses.md).
 
 ## Projektdateien
 
-Details, Setup und Ordnerlayout: [project/README.md](project/README.md).
-
-| Ordner | Zweck |
-| --- | --- |
-| [project/focuslist/js-ts/](project/focuslist/js-ts/), [project/focuslist/python/](project/focuslist/python/) | FocusList je Stack: `start/` + Schritte `steps/m03/` … `steps/m09/` (nur Änderungen), zusammengesetzt mit [`catch-up.mjs`](project/focuslist/catch-up.mjs) |
-| [project/focuslist/codex/](project/focuslist/codex/) | Vergleich: fertige Kette mit OpenAI Codex (Modul 10) |
-| [project/sample-project/](project/sample-project/), [project/sample-project-python/](project/sample-project-python/) | Beispielprojekt für "Selbst ausprobieren" |
-| [project/snippets/](project/snippets/) | KI-generierte Snippets und Passwort-Szenario (Module 1, 2) |
-| [project/practice/](project/practice/) | Arbeitsmaterial für Konzeptteile (Module 8, 10) |
-| [project/focuslist-tickets/](project/focuslist-tickets/) | externe Tickets für den MCP-Server (Module 8, 9); liegt neben dem eigenen `focuslist/`-Ordner |
+[`project/`](project/) enthält FocusList in zwei Stacks (`focuslist/python/`, `focuslist/node/`): das Startgerüst `start/`, je Modul die Änderungen in `steps/m03/` … `steps/m08/` (Referenz für jede Übung) und das Skript `catch-up.mjs`, das jeden Stand in einen eigenen Ordner baut. Dazu der One-Shot-Prompt für das Vibecoding (`focuslist/vibecoding-prompt.md`). Details: [`project/README.md`](project/README.md).
 
 ---
 

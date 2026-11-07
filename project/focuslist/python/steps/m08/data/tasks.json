@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Kursunterlagen lesen",
+    "priority": "high",
+    "done": false,
+    "due": null
+  },
+  {
+    "id": 2,
+    "title": "Tailwind ausprobieren",
+    "priority": "medium",
+    "done": false,
+    "due": null
+  },
+  {
+    "id": 3,
+    "title": "Agent-Modus testen",
+    "priority": "low",
+    "done": true,
+    "due": null
+  }
+]

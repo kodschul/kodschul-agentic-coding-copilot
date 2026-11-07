@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set labels = {"low": "niedrig", "medium": "mittel", "high": "hoch"} %}
+{% set colors = {
+  "high": "bg-red-100 text-red-700",
+  "medium": "bg-yellow-100 text-yellow-800",
+  "low": "bg-slate-200 text-slate-700",
+} %}
+
+{% block content %}
+<h1 class="mb-6 text-2xl font-bold">Meine Aufgaben</h1>
+
+{% if errors %}
+<div class="mb-4 rounded bg-red-100 px-4 py-2 text-red-800" role="alert">
+  <ul>
+    {% for error in errors %}<li>{{ error }}</li>{% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<form action="{{ url_for('tasks.create') }}" method="post" class="mb-6 flex flex-col gap-2 sm:flex-row">
+  <input name="title" placeholder="Neue Aufgabe" aria-label="Titel" maxlength="100" required
+         value="{{ form.get('title', '') }}" class="w-full rounded border border-slate-300 px-3 py-2 sm:flex-1">
+  <select name="priority" aria-label="Priorität" class="w-full rounded border border-slate-300 px-3 py-2 sm:w-40">
+    {% for key in ["low", "medium", "high"] %}
+    <option value="{{ key }}" {{ 'selected' if form.get('priority', 'medium') == key }}>{{ labels[key] }}</option>
+    {% endfor %}
+  </select>
+  <button class="rounded bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-700">Hinzufügen</button>
+</form>
+
+<nav class="mb-4 flex gap-4 text-sm">
+  {% for key, label in [("all", "Alle"), ("open", "Offen"), ("done", "Erledigt")] %}
+  <a href="{{ url_for('tasks.index', status=key) }}" class="{{ 'font-bold text-indigo-700' if status == key else 'text-slate-600 hover:text-indigo-700' }}">{{ label }}</a>
+  {% endfor %}
+</nav>
+
+<ul class="space-y-2">
+  {% for task in tasks %}
+  <li class="flex flex-col gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+      <span class="font-medium break-words {{ 'text-slate-400 line-through' if task.done }}">{{ task.title }}</span>
+      <span class="rounded-full px-2 py-0.5 text-xs font-semibold {{ colors.get(task.priority, colors['low']) }}">{{ labels.get(task.priority, task.priority) }}</span>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <a href="{{ url_for('tasks.edit', task_id=task.id) }}" class="rounded border border-slate-400 px-3 py-1 text-sm text-slate-700 hover:bg-slate-100">Bearbeiten</a>
+      {% if not task.done %}
+      <form action="{{ url_for('tasks.complete', task_id=task.id) }}" method="post">
+        <button class="rounded border border-green-600 px-3 py-1 text-sm text-green-700 hover:bg-green-50">Erledigt</button>
+      </form>
+      {% else %}
+      <span class="text-sm text-green-700">✓ erledigt</span>
+      {% endif %}
+      <form action="{{ url_for('tasks.delete', task_id=task.id) }}" method="post">
+        <button class="rounded border border-red-600 px-3 py-1 text-sm text-red-700 hover:bg-red-50">Löschen</button>
+      </form>
+    </div>
+  </li>
+  {% else %}
+  <li class="text-slate-500">Keine Aufgaben vorhanden.</li>
+  {% endfor %}
+</ul>
+
+<footer class="mt-6 text-sm text-slate-500">{{ tasks|length }} Aufgaben</footer>
+{% endblock %}

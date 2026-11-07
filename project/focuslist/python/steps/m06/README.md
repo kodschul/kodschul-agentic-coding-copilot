@@ -1,24 +1,53 @@
 # FocusList (Python)
 
-Persönliche Aufgabenliste als CLI, Kursprojekt „Agentic Coding mit GitHub Copilot“.
+Kleine Web-App für persönliche Aufgaben: Flask 3, Jinja2-Templates, Tailwind CSS v4, Daten in `data/tasks.json`.
 
-## Starten
+## Start
 
 ```bash
-uv sync && uv run ruff check . && uv run pytest
-uv run focuslist list-tasks
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env              # danach FOCUSLIST_SECRET setzen
+npm install
+npm run build:css
+flask --app focuslist run --debug
 ```
 
-Erwartet: Lint ohne Befund, `uv run pytest` → `15 passed`.
+Danach im Browser: <http://127.0.0.1:5000>
 
-## Befehle
+## Konfiguration
 
-| Befehl | Wirkung | Beispiel |
-| --- | --- | --- |
-| `add-task <titel> [low\|medium\|high]` | Aufgabe anlegen, Priorität Standard `medium` | `uv run focuslist add-task "Steuererklärung" high` |
-| `list-tasks [--status open\|done] [--priority low\|medium\|high]` | Aufgaben mit id anzeigen, optional gefiltert | `uv run focuslist list-tasks --status open` |
-| `complete-task <id>` | Aufgabe als erledigt markieren | `uv run focuslist complete-task 800d79d5` |
-| `set-priority <id> <low\|medium\|high>` | Priorität einer Aufgabe ändern | `uv run focuslist set-priority 800d79d5 low` |
-| `search-tasks <begriff>` | Aufgaben über einen Begriff im Titel finden | `uv run focuslist search-tasks steuer` |
+| Variable | Zweck |
+| --- | --- |
+| `FOCUSLIST_SECRET` | Schlüssel für Session-Cookies und Hinweise (`flash`). `flask run` liest ihn aus `.env` (python-dotenv). Ohne Wert gilt ein zufälliger Schlüssel pro Start. |
 
-Die id im Beispiel ist ein Platzhalter; gültige ids zeigt `list-tasks`.
+## Test
+
+```bash
+pytest
+```
+
+## CSS
+
+- `npm run build:css` baut `static/app.css` einmal (minifiziert).
+- `npm run css` beobachtet die Templates und baut bei jeder Änderung neu (eigenes Terminal).
+- `static/app.css` ist ein Build-Ergebnis und steht in `.gitignore`.
+
+## Ordner
+
+| Pfad | Inhalt |
+| --- | --- |
+| `AGENTS.md` | Regeln für Agenten (Stack, Befehle, Konventionen, Verbote) |
+| `.github/instructions/` | Regeln nur für bestimmte Dateien (`applyTo`) |
+| `.github/skills/` | Skills `test-writer` und `security-checker` |
+| `.github/agents/` | Custom Agents `reviewer`, `tester`, `feature-lead` |
+| `docs/` | Berichte (z. B. `security-report.md`) |
+| `focuslist/__init__.py` | `create_app()` |
+| `focuslist/routes.py` | Routen (Blueprint `tasks`) |
+| `focuslist/tasks.py` | Fachlogik: prüfen, filtern, anlegen, bearbeiten, erledigen, löschen |
+| `focuslist/store.py` | Laden und Speichern der JSON-Datei |
+| `focuslist/templates/` | Jinja2-Templates (`base.html`, `index.html`, `edit.html`) |
+| `static/src/input.css` | Tailwind-Eingabe |
+| `data/tasks.json` | Beispielaufgaben |
+| `tests/` | pytest-Tests |

@@ -1,12 +1,43 @@
 # FocusList (Python)
 
-Persönliche Aufgabenliste als CLI, Kursprojekt „Agentic Coding mit GitHub Copilot“.
+Kleine Web-App für persönliche Aufgaben: Flask 3, Jinja2-Templates, Tailwind CSS v4, Daten in `data/tasks.json`.
 
-## Starten
+## Start
 
 ```bash
-uv sync && uv run ruff check . && uv run pytest
-uv run focuslist list-tasks
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+npm install
+npm run build:css
+flask --app focuslist run --debug
 ```
 
-Erwartet: Lint ohne Befund, `uv run pytest` → `8 passed`.
+Danach im Browser: <http://127.0.0.1:5000>
+
+## Test
+
+```bash
+pytest
+```
+
+## CSS
+
+- `npm run build:css` baut `static/app.css` einmal (minifiziert).
+- `npm run css` beobachtet die Templates und baut bei jeder Änderung neu (eigenes Terminal).
+- `static/app.css` ist ein Build-Ergebnis und steht in `.gitignore`.
+
+## Ordner
+
+| Pfad | Inhalt |
+| --- | --- |
+| `AGENTS.md` | Regeln für Agenten (Stack, Befehle, Konventionen, Verbote) |
+| `.github/instructions/` | Regeln nur für bestimmte Dateien (`applyTo`) |
+| `focuslist/__init__.py` | `create_app()` |
+| `focuslist/routes.py` | Routen (Blueprint `tasks`) |
+| `focuslist/tasks.py` | Fachlogik: filtern, anlegen, erledigen, löschen |
+| `focuslist/store.py` | Laden und Speichern der JSON-Datei |
+| `focuslist/templates/` | Jinja2-Templates (`base.html`, `index.html`) |
+| `static/src/input.css` | Tailwind-Eingabe |
+| `data/tasks.json` | Beispielaufgaben |
+| `tests/` | pytest-Tests |

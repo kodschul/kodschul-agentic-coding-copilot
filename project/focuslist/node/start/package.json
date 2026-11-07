@@ -1,0 +1,21 @@
+{
+  "name": "focuslist",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FocusList – kleine Aufgabenliste als Kursprojekt",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node --test",
+    "css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --watch",
+    "build:css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

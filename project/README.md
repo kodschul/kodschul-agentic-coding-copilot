@@ -1,84 +1,59 @@
-# Projektdateien
+# Projektdateien: FocusList
 
-Alle Dateien für die Übungen. Hauptprojekt ist **FocusList**, eine kleine CLI-Aufgabenliste, die von Modul 3 bis Modul 9 Schritt für Schritt wächst. FocusList liegt in zwei Sprachen vor, JS/TS und Python; pro Kursdurchführung gilt ein Stack für alle.
+FocusList ist eine kleine Web-App für persönliche Aufgaben und das durchgehende Kursprojekt. Sie wächst vom Startgerüst bis v5; jede Version bringt einen neuen Baustein aus der Landkarte von Lab 1.3.
 
-## FocusList: Start und Schritte
+## Zwei Stacks, ein Fachmodell
 
-Jede Datei liegt nur einmal vor. `start/` ist das leere Projekt, `steps/mNN/` enthält nur die Dateien, die Modul NN hinzufügt oder ändert (gelöschte Dateien stehen in `_entfernt.txt`). Ein vollständiger Stand entsteht mit [`focuslist/catch-up.mjs`](focuslist/catch-up.mjs): `start/` plus alle Schritte bis zum gewünschten Modul.
+| | Python | Node.js |
+| --- | --- | --- |
+| Ordner | `focuslist/python/` | `focuslist/node/` |
+| Server | Flask 3 + Jinja2-Templates | `node:http` ohne Framework, HTML aus Template-Funktionen |
+| Styling | Tailwind CSS v4 über `@tailwindcss/cli` | Tailwind CSS v4 über `@tailwindcss/cli` |
+| Daten | `data/tasks.json` | `data/tasks.json` |
+| Tests | `pytest` | `node:test` (`npm test`) |
+| Start | `flask --app focuslist run --debug` | `npm run dev` |
+| Adresse | <http://127.0.0.1:5000> | <http://localhost:3000> |
 
-```text
-focuslist/
-├── catch-up.mjs        baut einen Stand zusammen
-├── js-ts/
-│   ├── start/          leeres Projekt mit Lint und Testrunner
-│   └── steps/
-│       ├── m03/ … m09/ nur die Änderungen des jeweiligen Moduls
-├── python/             gleich aufgebaut
-└── codex/              nur die Codex-Dateien, auf den JS/TS-Endstand gelegt
-```
+Eine Aufgabe hat `id`, `title` (1–100 Zeichen), `priority` (`low`, `medium`, `high`), `done` und ab v5 `due` (Datum oder `null`).
 
-| Schritt (`focuslist/<stack>/…`) | ergibt Stand | Neu in diesem Schritt | Tests danach |
+## Stände und Module
+
+| Stand | Entsteht in | Inhalt | Ordner |
 | --- | --- | --- | --- |
-| `start/` | Start Modul 3 | leeres Projekt mit Lint und Testrunner | 0 |
-| `steps/m03/` | v0 | `add-task`, `list-tasks`, `complete-task`, per Vibecoding ohne Vorgaben gebaut, mit typischen Schwächen | 0 |
-| `steps/m04/` | v1 | `copilot-instructions.md`, `tests.instructions.md`, `validation`, zentrale Speicherung, erste Tests | 8 |
-| `steps/m05/` | v2 | Skill `add-focuslist-action`, Aktion `set-priority` | 10 |
-| `steps/m06/` | v3 | Prompt-Dateien (Review, Tests, Refactoring, Doku), README-Abschnitt "Befehle", `CHANGELOG.md`, zwei Zusatztests für `set-priority`; Transfer: Skill `filter-and-search-tasks` mit `search-tasks` | 15 |
-| `steps/m07/` | v4 | fünf Agents: Test-Agent (in der Übung gebaut), Code-, Review-, Docs-Agent, Kette `focuslist-feature-team` | 15 |
-| `steps/m08/` | v6 | v5: `.vscode/tasks.json`, Stop-Hook, Regel 4 (alles-oder-nichts), Transfer: Skill `bulk-priority-update` mit `bulk-set-priority`; v6: `.vscode/mcp.json` für die Tickets | 18 |
-| `steps/m09/` | v7 (Endstand) | OpenSpec (`openspec/`, `opsx-*`-Prompts, `openspec-*`-Skills), Fälligkeitsdatum mit `list-tasks --sort due-date`, `complete-tasks` über die Agenten-Kette | 23 |
+| start | Lab 2.1 | Server, Layout mit Tailwind, Liste aus JSON, ein Test | `<stack>/start/` |
+| v0 | Lab 3.2 | vibecodet mit dem Prompt aus `vibecoding-prompt.md`: Formular, Badges, Erledigt, Filter, `/api/tasks`; bewusst mit typischen Mängeln (bewertet in Lab 3.3) | `<stack>/steps/m03/` |
+| v1 | Modul 4 | `AGENTS.md`, `.github/instructions/`, aufgeräumte Schichten, Löschen mit Tests | `<stack>/steps/m04/` |
+| v2 | Modul 5 | Skills `test-writer` und `security-checker`, Sicherheitsfunde behoben, `docs/security-report.md` | `<stack>/steps/m05/` |
+| v3 | Modul 6 | Agents `reviewer`, `tester`, `feature-lead`, Bearbeiten mit Tests, `docs/review-edit-task.md` | `<stack>/steps/m06/` |
+| v4 | Modul 7 | Hooks `guard` und `checks`, `.mcp.json` (Playwright), Layout für Handybreite | `<stack>/steps/m07/` |
+| v5 | Modul 8 | `openspec/` mit archiviertem Change `add-due-date`, Fälligkeitsdatum und „überfällig“ | `<stack>/steps/m08/` |
 
-- **Referenz einer Übung:** `steps/mNN/` des eigenen Moduls zeigt genau, was sich geändert hat.
-- **Versionsnummern** in `package.json` bzw. `pyproject.toml`: `0.0.0` (leer), `0.1.0` (v0), `1.0.0` (v1) bis `4.0.0` (v4), `6.0.0` (v6), `7.0.0` (v7).
-- **Fälligkeitsdatum:** `dueDate` bzw. `due_date`, `assertIsoDate` bzw. `assert_iso_date` und Regel 3 "Prioritäten und Datumswerte" gehören zum OpenSpec-Change `sort-by-due-date` ([`tasks.md`](focuslist/js-ts/steps/m09/openspec/changes/archive/2026-10-14-sort-by-due-date/tasks.md)) und kommen deshalb erst mit `steps/m09/`. Bis v6 kennt `add-task` nur Titel und Priorität.
+`steps/mNN/` enthält nur die Dateien, die sich in diesem Modul ändern oder neu dazukommen. Gelöschte Dateien stehen in `steps/mNN/_entfernt.txt`.
 
-## Stand erzeugen
-
-Gearbeitet wird nicht im Kurs-Repo, sondern in einem eigenen Arbeitsordner, den Ticket-Ordner daneben:
-
-```text
-arbeitsordner/
-├── focuslist/            # eigener Stand oder per catch-up.mjs erzeugt
-└── focuslist-tickets/    # Kopie von project/focuslist-tickets/
-```
+## Einen Stand herstellen: `catch-up.mjs`
 
 ```bash
-# Start von Modul 5 (Stand v1), JS/TS
-node <kursmaterial>/project/focuslist/catch-up.mjs js-ts m05 arbeitsordner/focuslist
-cp -R <kursmaterial>/project/focuslist-tickets arbeitsordner/focuslist-tickets
-
-# Endstand v7, Python
-node <kursmaterial>/project/focuslist/catch-up.mjs python final arbeitsordner/focuslist-final
-
-# Codex-Variante des Endstands
-node <kursmaterial>/project/focuslist/catch-up.mjs codex arbeitsordner/focuslist-codex
+node project/focuslist/catch-up.mjs <python|node> <modul> <zielordner> [--force]
 ```
+
+`<modul>` ist das Modul, mit dem es weitergeht:
 
 | Aufruf | Ergebnis |
 | --- | --- |
-| `catch-up.mjs <js-ts\|python> mNN <ziel>` | Stand zu Beginn von Modul NN (`start/` plus `steps/m03/` bis `steps/m(NN−1)/`) |
-| `catch-up.mjs <js-ts\|python> final <ziel>` | Endstand v7 nach Modul 9 |
-| `catch-up.mjs codex <ziel>` | Endstand v7 mit Codex-Dateien statt `.github/` und `.vscode/` |
-| `… --force` | schreibt in einen nicht leeren Ordner und überschreibt vorhandene Dateien |
+| `… python m03 ~/kurs/focuslist` | Startgerüst (für Modul 2 und 3) |
+| `… python m04 ~/kurs/focuslist-v0` | v0, Start für Modul 4 |
+| `… node m05 ~/kurs/focuslist` | v1, Start für Modul 5 |
+| `… node m07 ~/kurs/focuslist` | v3, Start für Modul 7 |
+| `… python final ~/kurs/focuslist-v5` | Endstand v5 |
 
-Ohne `--force` bricht das Skript ab, wenn der Zielordner nicht leer ist. Danach den Zielordner als eigenen Ordner in VS Code öffnen, damit Copilot `.github/` und `.vscode/` dieses Projekts liest.
+- Der Zielordner muss leer sein; `--force` kopiert in einen bestehenden Ordner.
+- Nach dem Herstellen: Abhängigkeiten installieren und CSS bauen wie in `README.md` des Stands beschrieben.
+- Wer in einer Übung hängen bleibt oder ein Modul verpasst hat, holt sich den Stand für das nächste Modul und macht dort weiter.
 
-**MCP-Pfad:** Ab v6 startet `.vscode/mcp.json` den Filesystem-Server mit `${workspaceFolder}/../focuslist-tickets`. Der Pfad funktioniert im Arbeitsordner oben, in dem beide Ordner nebeneinanderliegen. Beim Wechsel auf einen späteren Stand nur `arbeitsordner/focuslist/` ersetzen, `focuslist-tickets/` bleibt.
+## Weitere Dateien
 
-## Setup
+| Datei | Zweck |
+| --- | --- |
+| `focuslist/vibecoding-prompt.md` | One-Shot-Prompt für Lab 3.2, unverändert zu senden |
 
-- **Node.js ab 20.19** für beide Stacks: `catch-up.mjs`, der MCP-Server (`npx`) und die OpenSpec-CLI brauchen es.
-- **JS/TS:** im erzeugten Ordner `npm install && npm run lint && npm test`.
-- **Python:** Python ab 3.11 und `uv`, dann `uv sync && uv run ruff check . && uv run pytest`.
-- **MCP-Server:** `@modelcontextprotocol/server-filesystem` (2.0.1 und 2.1.0 vom 28.10.2026) deklariert in `package.json` Node.js ab 24, läuft aber auch mit Node.js 20; `npx` gibt dann nur eine Warnung `EBADENGINE` aus. `npx -y` lädt immer die neueste Version (Stand: 10/2026, Quelle: <https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem>, Start mit Node.js 20.20 getestet).
-- Im leeren Projekt und in v0 gibt es noch keine Tests: `npm test` bzw. `uv run pytest` laufen erst, sobald die erste Testdatei existiert.
-
-## Weitere Ordner
-
-| Ordner | Inhalt | Genutzt in |
-| --- | --- | --- |
-| `snippets/` | vier KI-generierte Snippets mit versteckten Schwächen (TS und Python) und das Szenario `szenario-passwort-speicherung.md` | Modul 1 (`04-sicherheit-und-verantwortung.md`), Modul 2 (`03-befehle-und-konfiguration.md`, Snippet 4), Modul 6 (Prompt-Dateien am Fremdcode) |
-| `sample-project/`, `sample-project-python/` | Fremdprojekt (Ticket-Modell) zum freien Ausprobieren | "Selbst ausprobieren" in Modul 2 und in den "Was ist …"-Teilen der Module 4 bis 8 |
-| `practice/` | `mcp-scenarios.md`, `neues-projekt-brief.md` | Modul 8 (`03-mcp.md`), Modul 10 (`02-best-practices-und-ausblick.md`) |
-| `focuslist-tickets/` | externe Ticket-Ablage (FL-101 bis FL-103) für den MCP-Server | Modul 8 und 9; im Arbeitsordner neben `focuslist/` ablegen |
-| `focuslist/codex/` | nur die Codex-Dateien (`AGENTS.md`, `.agents/skills/`, `.codex/`) und die Zuordnung Copilot → Codex; vollständig mit `catch-up.mjs codex <ziel>` | Modul 10 (Ausblick); für MCP ebenfalls neben `focuslist-tickets/` ablegen |
+Jeder Stand bringt eine eigene `.gitignore` mit (`node_modules/`, `.venv/`, `static/app.css`, `.env` …), weil die Ordner aus dem Kursmaterial herauskopiert werden.

@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Templates, in denen Tailwind nach Klassen sucht */
+@source "../../focuslist/templates";

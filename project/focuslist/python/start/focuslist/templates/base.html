@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}FocusList{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+  <header class="bg-indigo-600 text-white shadow">
+    <div class="mx-auto max-w-3xl px-4 py-4">
+      <a href="/" class="text-xl font-semibold tracking-tight">FocusList</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-3xl px-4 py-8">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -1,23 +1,22 @@
 #!/usr/bin/env node
 // Baut einen FocusList-Stand aus start/ und den Schritten steps/mNN/ zusammen.
 //
-//   node catch-up.mjs <js-ts|python> <m03…m10|final> <zielordner> [--force]
-//   node catch-up.mjs codex <zielordner> [--force]
+//   node catch-up.mjs <python|node> <m03…m09|final> <zielordner> [--force]
 //
-// <modul> = Modul, mit dem es weitergeht: "m06" liefert den Stand nach Modul 5.
-// "final" (= m10) liefert den Endstand nach Modul 9.
+// <modul> = Modul, mit dem es weitergeht: "m05" liefert den Stand nach Modul 4 (v1).
+// "m03" liefert das Startgerüst, "final" (= m09) den Endstand v5.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DELETE_FILE = "_entfernt.txt";
-const MODULES = ["m03", "m04", "m05", "m06", "m07", "m08", "m09"];
+const STEPS = ["m03", "m04", "m05", "m06", "m07", "m08"];
+const STACKS = ["python", "node"];
 
 function fail(msg) {
   console.error(`Fehler: ${msg}`);
-  console.error("Aufruf: node catch-up.mjs <js-ts|python> <m03…m10|final> <zielordner> [--force]");
-  console.error("        node catch-up.mjs codex <zielordner> [--force]");
+  console.error("Aufruf: node catch-up.mjs <python|node> <m03…m09|final> <zielordner> [--force]");
   process.exit(1);
 }
 
@@ -50,26 +49,26 @@ function copyTree(from, to) {
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
-const pos = args.filter((a) => a !== "--force");
-let layers;
-let target;
-if (pos[0] === "codex") {
-  if (pos.length !== 2) fail("Zielordner fehlt.");
-  layers = ["js-ts/start", ...MODULES.map((m) => `js-ts/steps/${m}`), "codex"];
-  target = pos[1];
-} else {
-  const [stack, modul, dir] = pos;
-  if (!["js-ts", "python"].includes(stack) || !modul || !dir) fail("Stack, Modul oder Zielordner fehlt.");
-  const until = modul === "final" ? 10 : Number(modul.replace(/^m/, ""));
-  if (!(until >= 3 && until <= 10)) fail(`Unbekanntes Modul "${modul}".`);
-  layers = [`${stack}/start`, ...MODULES.filter((m) => Number(m.slice(1)) < until).map((m) => `${stack}/steps/${m}`)];
-  target = dir;
+const [stack, moduleArg, target] = args.filter((a) => a !== "--force");
+
+if (!STACKS.includes(stack)) fail(`Unbekannter Stack "${stack ?? ""}". Erlaubt: ${STACKS.join(", ")}.`);
+const mod = moduleArg === "final" ? "m09" : moduleArg;
+if (!/^m0[3-9]$/.test(mod ?? "")) fail(`Unbekanntes Modul "${moduleArg ?? ""}". Erlaubt: m03 … m09 oder final.`);
+if (!target) fail("Zielordner fehlt.");
+
+const dest = path.resolve(target);
+if (fs.existsSync(dest) && fs.readdirSync(dest).length > 0 && !force) {
+  fail(`Zielordner ${dest} ist nicht leer. Mit --force wird hineinkopiert.`);
+}
+fs.mkdirSync(dest, { recursive: true });
+
+// Schritte vor dem Zielmodul: für m05 also m03 und m04
+const layers = ["start", ...STEPS.filter((s) => s < mod)];
+for (const layer of layers) {
+  const dir = path.join(here, stack, layer === "start" ? "start" : path.join("steps", layer));
+  if (!fs.existsSync(dir)) fail(`Ordner fehlt: ${dir}`);
+  copyTree(dir, dest);
 }
 
-target = path.resolve(target);
-if (fs.existsSync(target) && fs.readdirSync(target).length > 0 && !force) {
-  fail(`${target} ist nicht leer. Mit --force werden vorhandene Dateien überschrieben.`);
-}
-fs.mkdirSync(target, { recursive: true });
-for (const layer of layers) copyTree(path.join(here, layer), target);
-console.log(`Stand erstellt in ${target} (${layers.length} Schichten: ${layers.join(", ")})`);
+console.log(`FocusList (${stack}) für ${moduleArg} erstellt in ${dest}`);
+console.log(`Schichten: ${layers.join(" + ")}`);

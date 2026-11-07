@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Tailwind sucht Klassen in den View-Funktionen */
+@source "../../src";

@@ -1,36 +1,47 @@
 # Best Practices
 
-## Kontext bewusst steuern
+## Grundhaltung
 
-- Nur die tatsächlich relevanten Dateien referenzieren, statt ganze Ordner in den Chat zu ziehen: jede zusätzliche Datei verbraucht Platz im Kontextfenster, der für die eigentliche Anfrage fehlt (Modul 1, Modul 2, Modul 10).
-- Bei wachsendem Kontextbedarf gezielt `#file`, `#selection` oder `#codebase` nutzen statt sich auf die gerade aktive Datei zu verlassen, da explizite Referenzen reproduzierbarer sind (Modul 2).
+| Regel | Warum |
+| --- | --- |
+| Nichts übernehmen, was nicht verstanden und getestet ist | Verantwortlich ist, wer den Code übernimmt |
+| Grenzfälle testen, nicht nur den Normalfall | KI-Code scheitert an den Rändern |
+| Datum und Harness jeder Anleitung prüfen | Vieles im Netz beschreibt den Local-Harness |
+| Keine Secrets in Prompts oder angehängte Dateien | Was im Chat steht, hat das Netz verlassen |
 
-## Ownership nie an das Modell abgeben
+## Copilot bedienen
 
-- Jede AI-generierte Änderung vor der Übernahme lesen und bewerten: die Verantwortung für Korrektheit, Sicherheit und Wartbarkeit bleibt bei der Person, die den Code freigibt (Modul 1).
-- Ungewöhnliche oder nicht angefragte fachliche Entscheidungen im generierten Code als Warnsignal behandeln, nicht als Zusatzleistung (Modul 3).
+| Regel | Warum |
+| --- | --- |
+| Erst Ask oder Plan, dann Agent | Annahmen werden sichtbar, bevor sie Code werden |
+| Jeden Terminal-Befehl vor der Freigabe lesen | Die teuersten Fehler passieren im Terminal |
+| Jeden Diff lesen, dann Keep oder Undo | Letzte Stelle, an der Unbestelltes auffällt |
+| Verunglückte Runde per Checkpoint zurücksetzen | Setzt alle Dateien der Anfrage auf einmal zurück |
+| Löschende Terminal-Befehle nicht freigeben | Checkpoints holen gelöschte Dateien nicht sicher zurück |
+| Autopilot erst mit Regeln, Tests und Hooks | Sonst bleiben Fehler unsichtbar |
+| Nach Änderungen an Regeln: neue Chat-Sitzung | Alte Sitzungen kennen neue Dateien oft nicht |
 
-## Leitplanken schriftlich fixieren statt wiederholt zu erklären
+## Bausteine
 
-- Wiederkehrende Konventionen in `copilot-instructions.md` statt in jedem Prompt neu zu formulieren: das reduziert Prompt-Länge und sorgt für konsistente Ergebnisse über die Zeit (Modul 4).
-- Regeln so konkret formulieren, dass sie in einem Diff überprüfbar sind (z. B. "Aktionen werfen `Error`, nie `null`"), statt vage Stilwünsche zu äußern, die nicht objektiv prüfbar sind (Modul 4).
+| Regel | Warum |
+| --- | --- |
+| Eine Projektdatei: `AGENTS.md` **oder** `copilot-instructions.md` | Zwei Dateien widersprechen sich |
+| Instructions kurz und prüfbar | Jede Zeile kostet Kontext bei jeder Anfrage |
+| Regeln in Instructions, Abläufe in Skills | Skills laden nur bei Bedarf |
+| `description` eines Skills: konkret „was“ und „wann“ | Entscheidet, ob der Skill greift |
+| Prüf-Skills und Reviewer berichten nur | Prüfen und Reparieren getrennt halten |
+| Prüfrollen nur mit `read` und `search` | Grenze gilt technisch, nicht nur als Bitte |
+| Team für Features, Einzelagent für Kleinigkeiten | Jeder Subagent kostet Zeit und Anfragen |
+| Harte Verbote als Hook, Erklärungen als Instruction | Instructions bitten, Hooks erzwingen |
+| Hooks ohne Agent testen: JSON rein, JSON raus | Fehler fallen sonst erst im Ernstfall auf |
+| Nur geprüfte MCP-Server, Tokens nie im Repo | Jeder Server läuft mit den Rechten des Rechners |
+| Spec nur für Features mit offenen Fragen | Für Kleinigkeiten reicht ein Prompt |
+| Change freigeben, bevor Code entsteht | Missverständnisse sind dann noch billig |
 
-## Werkzeug passend zur Aufgabenart wählen
+## Im eigenen Projekt
 
-- Eine Skill für mehrstufige, wiederkehrende Aufgaben nutzen, einen Prompt für einmalig auslösbare Vorlagen mit Variablen, und Instructions für dauerhafte Repo-Regeln — die drei Mechanismen sind nicht austauschbar (Modul 4, Modul 5, Modul 6).
-- Einen Custom Agent nur einsetzen, wenn eine feste Rolle mit eingeschränktem Werkzeugzugriff einen echten Sicherheits- oder Fokusvorteil bringt, nicht als Ersatz für einen einfachen Prompt (Modul 7).
-
-## Automatisierung schrittweise einführen
-
-- Neue Agent-Hooks zunächst nur melden lassen statt blockieren, um Fehlalarme zu erkennen, bevor ein Stop-Hook jede Agent-Runde verlängert und zusätzliche Anfragen kostet (Modul 8).
-- Eine MCP-Anbindung erst nach einem erfolgreichen lokalen Testlauf des Servers im Chat verwenden, um Fehlkonfigurationen früh zu erkennen (Modul 8).
-
-## Spezifikation vor Implementierung bei größeren Änderungen
-
-- Für Features, die mehrere Dateien oder Verhaltensänderungen betreffen, zuerst eine Spec schreiben und prüfen, statt direkt zu implementieren: das reduziert nachträgliche Fehlinterpretationen des Auftrags (Modul 9).
-- Abgeschlossene Änderungen archivieren (`openspec/changes/archive/YYYY-MM-DD-<name>/`); ihre Specs landen in `openspec/specs/`, damit spätere Änderungen an derselben Stelle den Entscheidungsgrund nachvollziehen können (Modul 9).
-
-## Rückblick als Diff-Denken statt Bauchgefühl
-
-- Den eigenen Fortschritt anhand der Versionskette (v0 → v7) bewerten: konkret benennen, was sich an der Interaktion mit Copilot geändert hat, nicht nur was zusätzlich existiert (Modul 10).
-- Feedback auf konkrete Module/Übungen beziehen statt auf den Kurs pauschal, damit es umsetzbar bleibt (Modul 10).
+| Regel | Warum |
+| --- | --- |
+| Mit `AGENTS.md` und einem Skill anfangen | Kostet wenig, wirkt überall |
+| Weitere Bausteine erst bei konkretem Problem | Jeder Baustein will gepflegt werden |
+| Wirkung messen: gleiche Aufgabe vorher/nachher | Bauchgefühl ersetzt keinen Diff |

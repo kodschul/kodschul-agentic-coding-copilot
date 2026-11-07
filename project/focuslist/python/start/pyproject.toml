@@ -1,21 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "focuslist"
-version = "0.0.0"
-description = "Persönliche Aufgabenliste (CLI), Start für Modul 3, noch ohne Implementierung."
-requires-python = ">=3.11"
-dependencies = []
+version = "0.1.0"
+description = "FocusList – kleine Aufgabenliste für den Kurs Agentic Coding mit GitHub Copilot"
+requires-python = ">=3.12"
+dependencies = ["flask>=3.1"]
 
-[project.scripts]
-focuslist = "focuslist.cli:main"
+[project.optional-dependencies]
+dev = ["pytest>=8"]
 
-[dependency-groups]
-dev = ["pytest>=8", "ruff>=0.6"]
-
-[tool.uv]
-package = true
-
-[tool.setuptools.packages.find]
-include = ["focuslist*"]
+[tool.setuptools]
+packages = ["focuslist"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]

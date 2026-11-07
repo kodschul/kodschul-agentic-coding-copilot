@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "agentStop": [
+      {
+        "type": "command",
+        "command": "python .github/hooks/checks.py",
+        "timeoutSec": 60
+      }
+    ]
+  }
+}

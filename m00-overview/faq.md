@@ -1,31 +1,93 @@
 # FAQ
 
-**Muss vorher schon mit Copilot Instructions/Skills/Agents gearbeitet worden sein?**
-Nein. Der Kurs setzt nur Alltagserfahrung mit Autocomplete/Chat voraus; alle weiterführenden Mechanismen werden ab Modul 4 aufgebaut.
+## Copilot
 
-**Warum wird FocusList absichtlich zuerst ungeleitet (v0) vibecodet?**
-Nur so wird sichtbar, welche Schwächen ungeleitetes Prompting erzeugt (Stilinkonsistenz, falsche Annahmen, Halluzinationen). Ohne diesen Referenzpunkt lässt sich der Nutzen von Instructions, Skills und Co. in den folgenden Modulen nicht konkret zeigen.
+**Copilot-Harness oder Local-Harness?**
 
-**Ist FocusList in JavaScript/TypeScript oder Python?**
-Beides liegt vollständig vor (`project/focuslist/js-ts/` und `project/focuslist/python/`); pro Durchführung arbeiten alle im selben Stack. Die Unterlagen zeigen Code und Befehle für beide Stacks, das Konzept (Aufgabenverwaltung mit JSON-Datei) ist identisch.
+- Copilot: Standard, alle Übungen laufen hier
+- Local: nur für `/explain`, `/fix`, `@terminal`, Prompt-Dateien, Handoffs
+- → [Lab 2.2](../m02-copilot-today/l02-harnesses.md)
 
-**Was passiert, wenn der MCP-Server in Modul 8 nicht startet?**
-Der Kurs bindet einen fertigen Server ein (`@modelcontextprotocol/server-filesystem`, gestartet per `npx`), es wird kein eigener Server programmiert. Startet er nicht, sind meist Node.js < 20.19 oder ein blockierter npm-Zugriff (Proxy) die Ursache; `m08-automation-hooks-mcp/03-mcp.md` nennt einen Fallback. Die Versionsstufen bis v5 bleiben davon unberührt.
+**Warum fehlt `/explain` im Chat?**
 
-**Muss jede Übung am eigenen FocusList-Stand durchgeführt werden?**
-Nein. "Selbst ausprobieren"-Abschnitte laufen am Beispielprojekt `sample-project` und sind unabhängig vom eigenen Fortschritt. Jede Übung nennt einen **Start**-Stand; wer hängt, erzeugt ihn mit `node project/focuslist/catch-up.mjs <stack> mNN focuslist` und steigt dort ein.
+- Gibt es nur im Local-Harness
+- Im Copilot-Harness: Frage in Ask stellen, Datei anhängen
 
-**Was, wenn eine Copilot-Antwort im Kurs vom Referenzstand abweicht?**
-Abweichungen sind normal, da LLM-Ausgaben nicht deterministisch sind. Relevant ist, ob das Ergebnis den Checkpoint der Übung erfüllt, nicht ob es wortgleich zum Referenzstand ist.
+**Wann Claude, Codex oder Cloud?**
 
-**Werden echte/personenbezogene Projektdaten verwendet?**
-Nein. FocusList arbeitet ausschließlich mit Beispieldaten ohne Personenbezug; das gilt als Praxisregel auch über den Kurs hinaus.
+- Claude / Codex: wenn das Team diese Werkzeuge schon nutzt
+- Cloud: lange Aufgaben, Ergebnis als Pull Request
 
-**Was, wenn für Modul 9 (Spec-Driven Development) im Kurs keine Zeit bleibt?**
-Modul 9 liegt im Puffer am Ende von Tag 2. Beide Themendateien sind vollständig beschrieben und lassen sich mit Stand v6 (`catch-up.mjs <stack> m09 focuslist`) als Start und `steps/m09/` als Referenz selbstständig durcharbeiten.
+**Warum bleibt Autopilot aus?**
 
-**Ist ein bestimmtes Copilot-Abo/Modell vorausgesetzt?**
-Ein GitHub-Copilot-Plan mit Agent-Modus wird vorausgesetzt. Stand 10/2026 gibt es Copilot Free (mit begrenztem Kontingent), Pro, Pro+, Business und Enterprise; bei Business/Enterprise kann die Organisation einzelne Funktionen (z. B. MCP, Hooks) per Richtlinie sperren (Quelle: https://docs.github.com/en/copilot/get-started/plans). Das konkrete Modell ist für die Übungen nicht entscheidend.
+- Er erteilt Freigaben selbst, Fehler bleiben unsichtbar
+- Erst sinnvoll mit Regeln, Tests und Hooks
 
-**Was, wenn ein generierter Vorschlag lizenzrechtlich unklar ist?**
-Im Zweifel den Vorschlag nicht ungeprüft übernehmen; `m01-ai-coding/04-sicherheit-und-verantwortung.md` ordnet Urheberrechts- und Haftungsfragen genauer ein, ersetzt aber keine rechtliche Einzelfallprüfung.
+## Bausteine
+
+**`AGENTS.md` oder `copilot-instructions.md`?**
+
+- Beide wirken gleich; nur eine pflegen
+- Kursstandard `AGENTS.md`: lesen auch andere Agenten
+
+**Prompt-Datei oder Skill?**
+
+- Prompt-Dateien laden nur im Local-Harness
+- Im Copilot-Harness übernehmen Skills ihre Rolle
+- → [Lab 5.1](../m05-skills/l01-skill-basics.md)
+
+**Instruction, Skill oder Agent?**
+
+- Instruction: was immer gilt
+- Skill: wie eine Aufgabe abläuft
+- Agent: wer was darf
+
+**Skill oder Agent greift nicht?**
+
+- Neue Chat-Sitzung öffnen
+- Skill: `name` = Ordnername, Datei `SKILL.md`, klare `description`
+- Agent: `.github/agents/<name>.agent.md`
+
+**Was kostet ein Agenten-Team?**
+
+- Jeder Subagent ist eine eigene Modell-Sitzung
+- Review-Runden begrenzen, Team nur für echte Features
+
+## Hooks und MCP
+
+**Hooks sind Preview – trotzdem nutzen?**
+
+- Ja, als Sicherheitsnetz; Format kann sich noch ändern
+- In Firmen muss die Organisation Hooks erlauben
+
+**Schützt ein Guard-Hook vollständig?**
+
+- Nein: prüft nur, was im Skript steht
+- Freigaben bleiben aktiv
+
+**Ist MCP sicher?**
+
+- Ein MCP-Server ist Code mit den Rechten des Rechners
+- Nur bekannte Server, Tokens mit minimalen Rechten
+
+## Projekt
+
+**`/opsx-propose` ist unbekannt?**
+
+- Prompt-Datei, lädt nur im Local-Harness
+- Im Copilot-Harness: OpenSpec-Skills in `.github/skills/`
+
+**Übung verpasst – wie weiter?**
+
+```bash
+node project/focuslist/catch-up.mjs <python|node> <modul> <zielordner>
+```
+
+**Python oder Node.js?**
+
+- Gleichwertig: gleiche Übungen, gleiche Stände
+- Node.js wird in beiden gebraucht (Tailwind, MCP, OpenSpec)
+
+**Port 5000 belegt (macOS)?**
+
+- `flask --app focuslist run --port 5001`

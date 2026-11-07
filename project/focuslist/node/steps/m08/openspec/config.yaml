@@ -1,0 +1,22 @@
+schema: spec-driven
+
+# Projektkontext: wird bei jedem Artefakt (Proposal, Specs, Design, Tasks) mitgegeben
+context: |
+  FocusList: kleine Web-App für persönliche Aufgaben (Kursprojekt).
+  Stack: Node.js 22+ ohne Framework (node:http), ES-Module, HTML aus Template-Funktionen in src/views/,
+  Tailwind CSS v4, Daten in data/tasks.json, Tests mit node:test (npm test).
+  Schichten: src/app.js (Routing) → src/tasks.js (Logik, Validierung) → src/store.js (JSON-Datei).
+  Projektregeln stehen in AGENTS.md und .github/instructions/.
+  Specs und UI-Texte auf Deutsch, Code-Bezeichner auf Englisch.
+
+rules:
+  proposal:
+    - Höchstens eine Seite; Abschnitt "Nicht im Umfang" ist Pflicht
+  specs:
+    - Jede Anforderung hat mindestens ein Szenario für Normalfall und Fehler- oder Grenzfall
+    - Szenarien so konkret, dass daraus direkt ein Test entsteht (Beispielwerte nennen)
+  design:
+    - Änderungen am Datenmodell in data/tasks.json ausdrücklich beschreiben
+  tasks:
+    - Tests als eigene Aufgaben aufführen
+    - Letzte Aufgaben immer npm test, Review durch den Agent reviewer und Prüfung im Browser

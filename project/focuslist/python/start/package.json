@@ -1,0 +1,13 @@
+{
+  "name": "focuslist-css",
+  "private": true,
+  "description": "Nur für den Tailwind-Build von FocusList",
+  "scripts": {
+    "css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --watch",
+    "build:css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

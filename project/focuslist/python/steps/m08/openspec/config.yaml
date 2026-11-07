@@ -1,0 +1,20 @@
+schema: spec-driven
+
+context: |
+  FocusList ist eine kleine Web-App für persönliche Aufgaben.
+  Stack: Python 3.12+, Flask 3 mit Jinja2-Templates, Tailwind CSS v4 (@tailwindcss/cli), Daten in data/tasks.json, Tests mit pytest.
+  Schichten: focuslist/routes.py → focuslist/tasks.py → focuslist/store.py.
+  Projektregeln stehen in AGENTS.md und .github/instructions/. UI-Texte Deutsch, Code Englisch.
+  Umsetzung mit dem Agenten feature-lead (ruft tester und reviewer als Subagents).
+
+rules:
+  proposal:
+    - Auf Deutsch schreiben, maximal eine Seite.
+    - Unter "Impact" alle betroffenen Routen und Templates nennen.
+  specs:
+    - Jede Anforderung hat mindestens ein Szenario mit WHEN und THEN.
+    - Grenzfälle (leere Eingabe, Datum heute, unbekannte ID) als eigene Szenarien.
+  design:
+    - Keine neuen Abhängigkeiten ohne Begründung.
+  tasks:
+    - Letzte Aufgaben immer: Tests (tester), Review (reviewer), pytest grün.

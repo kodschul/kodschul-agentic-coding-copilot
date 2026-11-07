@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set labels = {"low": "niedrig", "medium": "mittel", "high": "hoch"} %}
+{% set colors = {
+  "high": "bg-red-100 text-red-700",
+  "medium": "bg-yellow-100 text-yellow-800",
+  "low": "bg-slate-200 text-slate-700",
+} %}
+
+{% block content %}
+<h1 class="mb-6 text-2xl font-bold">Meine Aufgaben</h1>
+
+{% if request.args.get('created') %}
+<div class="mb-4 rounded bg-green-100 px-4 py-2 text-green-800">
+  Aufgabe „{{ request.args.get('created')|safe }}“ angelegt.
+</div>
+{% endif %}
+
+<form action="{{ url_for('tasks.create') }}" method="post" class="mb-6 flex gap-2">
+  <input name="title" placeholder="Neue Aufgabe" aria-label="Titel" class="w-96 rounded border border-slate-300 px-3 py-2">
+  <select name="priority" aria-label="Priorität" class="w-40 rounded border border-slate-300 px-3 py-2">
+    <option value="low">niedrig</option>
+    <option value="medium" selected>mittel</option>
+    <option value="high">hoch</option>
+  </select>
+  <button class="rounded bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-700">Hinzufügen</button>
+</form>
+
+<nav class="mb-4 flex gap-4 text-sm">
+  {% for key, label in [("all", "Alle"), ("open", "Offen"), ("done", "Erledigt")] %}
+  <a href="{{ url_for('tasks.index', status=key) }}" class="{{ 'font-bold text-indigo-700' if status == key else 'text-slate-600 hover:text-indigo-700' }}">{{ label }}</a>
+  {% endfor %}
+</nav>
+
+<ul class="space-y-2">
+  {% for task in tasks %}
+  <li class="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-3">
+    <div class="flex items-center gap-3">
+      <span class="font-medium {{ 'text-slate-400 line-through' if task.done }}">{{ task.title }}</span>
+      <span class="rounded-full px-2 py-0.5 text-xs font-semibold {{ colors.get(task.priority, colors['low']) }}">{{ labels.get(task.priority, task.priority) }}</span>
+    </div>
+    <div class="flex items-center gap-2">
+      {% if not task.done %}
+      <form action="{{ url_for('tasks.complete', task_id=task.id) }}" method="post">
+        <button class="rounded border border-green-600 px-3 py-1 text-sm text-green-700 hover:bg-green-50">Erledigt</button>
+      </form>
+      {% else %}
+      <span class="text-sm text-green-700">✓ erledigt</span>
+      {% endif %}
+      <form action="{{ url_for('tasks.delete', task_id=task.id) }}" method="post">
+        <button class="rounded border border-red-600 px-3 py-1 text-sm text-red-700 hover:bg-red-50">Löschen</button>
+      </form>
+    </div>
+  </li>
+  {% else %}
+  <li class="text-slate-500">Keine Aufgaben vorhanden.</li>
+  {% endfor %}
+</ul>
+
+<footer class="mt-6 text-sm text-slate-500">{{ tasks|length }} Aufgaben</footer>
+{% endblock %}

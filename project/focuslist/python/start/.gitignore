@@ -1,7 +1,8 @@
-__pycache__/
-*.pyc
+node_modules/
 .venv/
+__pycache__/
 .pytest_cache/
-.ruff_cache/
-/tasks.json
-*.egg-info/
+static/app.css
+.env
+!.env.example
+.DS_Store
