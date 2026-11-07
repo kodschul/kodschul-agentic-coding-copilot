@@ -1,4 +1,4 @@
-# Cheatsheet Modul 1: KI in der Softwareentwicklung
+# Cheatsheet Modul 1: KI-Grundlagen für die Softwareentwicklung
 
 Stand: 11/2026
 

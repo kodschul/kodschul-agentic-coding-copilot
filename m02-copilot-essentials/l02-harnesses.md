@@ -1,4 +1,4 @@
-# Lab 2.2: Harnesses: welcher wann
+# Lab 2.2: Harnesses: Copilot, Local, Claude, Codex
 
 **Leitfragen:**
 

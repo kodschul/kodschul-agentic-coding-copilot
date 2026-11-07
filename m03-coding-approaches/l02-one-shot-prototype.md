@@ -1,4 +1,4 @@
-# Lab 3.2: FocusList per One-Shot-Prompt
+# Lab 3.2: Prototyp per One-Shot-Prompt
 
 **Leitfragen:**
 
@@ -151,7 +151,7 @@ node project/focuslist/catch-up.mjs python m04 ~/kurs/referenz-v0   # bzw. node 
 
 Erwartung im Browser: wie im Screenshot oben. `/api/tasks` liefert die drei Beispielaufgaben plus jede neu angelegte.
 
-Wer den gespeicherten Plan aus Lab 2.4 (`~/kurs/notizen/plan-formular.md`) danebenlegt, sieht den Unterschied schon jetzt: Der Plan nannte Tests und offene Fragen zur Validierung, der One-Shot-Prompt nicht. Bewertet wird das in Lab 3.3.
+Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan nennt meist Tests und offene Fragen zur Validierung, der One-Shot-Prompt nicht. Bewertet wird das in Lab 3.3.
 
 </details>
 

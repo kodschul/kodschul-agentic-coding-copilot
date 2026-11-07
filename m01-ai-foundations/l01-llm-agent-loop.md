@@ -1,4 +1,4 @@
-# Lab 1.1: Wie ein LLM Code schreibt
+# Lab 1.1: LLM-Grundlagen und Agenten-Loop
 
 **Leitfragen:**
 

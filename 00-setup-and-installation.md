@@ -11,7 +11,12 @@ Vor Tag 1 einrichten. Jeder Schritt endet mit einem Prüfbefehl; die erwartete A
 | Node.js | 22 LTS oder neuer (OpenSpec braucht ≥ 22.12) | Tailwind-Build, Playwright-MCP, OpenSpec; im Node-Stack auch die App | ja | ja |
 | Python | 3.12 oder neuer | die App | ja | – |
 
-Shell: macOS und Linux nutzen das Terminal (bash/zsh), Windows nutzt **Git Bash** (kommt mit Git für Windows und dient im Kurs nur als Shell; Git-Befehle kommen nicht vor). Alle Befehle im Kurs sind für diese Shells geschrieben.
+Shell: das integrierte Terminal von VS Code. macOS und Linux: bash/zsh; Windows: PowerShell (vorinstalliert). Alle Befehle im Kurs laufen in beiden; einziger Unterschied ist das Aktivieren der Python-Umgebung:
+
+| | macOS/Linux | Windows (PowerShell) |
+| --- | --- | --- |
+| venv aktivieren | `source .venv/bin/activate` | `.venv\Scripts\Activate.ps1` |
+| Fehler „Ausführen von Skripts ist deaktiviert“ | – | einmalig `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
 
 ## 1. VS Code und Copilot
 

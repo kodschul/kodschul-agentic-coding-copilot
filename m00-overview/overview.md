@@ -18,7 +18,7 @@
 | 2024–2025 | **Standards:** MCP, `AGENTS.md`, Skills |
 | 2026 | **Harnesses:** Copilot, Claude, Codex in einem Editor |
 
-Details: [Lab 1.2](../m01-ai-coding/l02-timeline.md)
+Details: [Lab 1.2](../m01-ai-foundations/l02-evolution.md)
 
 ## Was ist Agentic Coding?
 
@@ -41,7 +41,7 @@ _Quelle: VS Code Docs, Agents (https://code.visualstudio.com/docs/agents/concept
 | KI sieht | aktuelle Datei | Frage + Kontext | Projekt, Terminal |
 | Prüfung | jede Zeile lesen | selbst testen | Diff abnehmen |
 
-Details: [Lab 1.1](../m01-ai-coding/l01-llm-basics.md)
+Details: [Lab 1.1](../m01-ai-foundations/l01-llm-agent-loop.md)
 
 ## Vibecoding oder agentisch?
 
@@ -51,7 +51,7 @@ Details: [Lab 1.1](../m01-ai-coding/l01-llm-basics.md)
 | Prüfung | Blick in den Browser | Diff, Tests, Abnahme |
 | Geeignet für | Prototyp, Demo | Team-Code, Produktion |
 
-Details: [Lab 3.1](../m03-vibecoding/l01-two-ways.md)
+Details: [Lab 3.1](../m03-coding-approaches/l01-comparison.md)
 
 ## Die sechs Bausteine
 
@@ -68,12 +68,12 @@ Details: [Lab 3.1](../m03-vibecoding/l01-two-ways.md)
 
 _Quelle: VS Code Blog, Modern UI (https://code.visualstudio.com/blogs/2026/10/15/modern-ui), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
-Gleiche Idee bei Claude Code und Codex, andere Ordner: [Lab 1.3](../m01-ai-coding/l03-landscape.md)
+Gleiche Idee bei Claude Code und Codex, andere Ordner: [Lab 1.3](../m01-ai-foundations/l03-ecosystem.md)
 
 ## Ziel nach zwei Tagen
 
 - Harness wählen, Agent sicher steuern
-- Vibecoding und agentischen Weg unterscheiden, Status quo bewerten
+- Vibecoding und agentischen Weg unterscheiden, Code-Bewertung des Prototyps
 - Jeden Baustein selbst schreiben und einsetzen
 - Transfer-Plan für das eigene Projekt
 
@@ -92,11 +92,11 @@ Details: [project/README.md](../project/README.md)
 | Zeit | Thema |
 | --- | --- |
 | 09:00 | Auftakt |
-| 09:25 | **Modul 1** KI in der Softwareentwicklung |
+| 09:25 | **Modul 1** KI-Grundlagen für die Softwareentwicklung |
 | 10:30 | *Pause* |
-| 10:45 | Modul 1: Verantwortung · **Modul 2** Copilot heute |
+| 10:45 | Modul 1: Verantwortung · **Modul 2** GitHub Copilot in VS Code |
 | 12:15 | *Mittag* |
-| 13:15 | Modul 2: Agent steuern · **Modul 3** Vibecoding oder Agentic Coding → v0 |
+| 13:15 | Modul 2: Agent steuern · **Modul 3** Vibecoding vs. Agentic Coding → v0 |
 | 14:45 | *Pause* |
 | 15:00 | **Modul 4** Instructions → v1 |
 | 16:15 | Tagesabschluss |

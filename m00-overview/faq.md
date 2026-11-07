@@ -6,7 +6,7 @@
 
 - Copilot: Standard, alle Übungen laufen hier
 - Local: nur für `/explain`, `/fix`, `@terminal`, Prompt-Dateien, Handoffs
-- → [Lab 2.2](../m02-copilot-today/l02-harnesses.md)
+- → [Lab 2.2](../m02-copilot-essentials/l02-harnesses.md)
 
 **Warum fehlt `/explain` im Chat?**
 

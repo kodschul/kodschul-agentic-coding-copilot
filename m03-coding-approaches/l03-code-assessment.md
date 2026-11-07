@@ -1,4 +1,4 @@
-# Lab 3.3: Status quo bewerten
+# Lab 3.3: Code-Bewertung des Prototyps
 
 **Leitfragen:**
 
@@ -26,7 +26,7 @@ Meist eine Sicherheitslücke: Ein präparierter Link oder eine Eingabe kann frem
 | Begriff | Bedeutung |
 | --- | --- |
 | Status quo | der aktuelle Zustand, ehrlich beschrieben; Ausgangspunkt für jede Verbesserung |
-| Status-quo-Liste | Liste der wichtigsten Mängel von v0, jeder mit Fehlerklasse und Baustein; Ablage `~/kurs/notizen/status-quo.md` |
+| Status-quo-Liste | Liste der wichtigsten Mängel von v0, jeder mit Fehlerklasse und Baustein; entsteht gemeinsam und begleitet die Module 4–9 |
 | Fehlerklasse | Gruppe ähnlicher Fehler mit gemeinsamer Ursache |
 | Inkonsistenz | dasselbe Problem an zwei Stellen unterschiedlich gelöst |
 | Falsche Annahme | der Agent rät etwas über das Projekt, das niemand gesagt hat |
@@ -103,9 +103,9 @@ Faustregel: Was mit einem Satz erklärbar ist → Instructions. Was eine Checkli
 2. Führe die Tests aus und lege im Browser eine Aufgabe mit dem Titel `<b>fett</b>` an. Notiere, was passiert.
 3. Sammle gemeinsam die Befunde aller Teilnehmenden und fasse doppelte zusammen.
 4. Wähle die Top 5–8 Mängel, sortiert nach „teuer in Produktion“, und ordne jeder Zeile einen Baustein aus der Tabelle „Vom Mangel zum Baustein“ zu.
-5. Speichere die Liste als `~/kurs/notizen/status-quo.md` mit den Spalten `# | Mangel | Fehlerklasse | Baustein | Modul`.
+5. Halte die gemeinsame Liste mit den Spalten `# | Mangel | Fehlerklasse | Baustein | Modul` fest (z. B. am Whiteboard).
 
-**Checkpoint:** `~/kurs/notizen/status-quo.md` enthält 5–8 Zeilen, jede mit Fehlerklasse, Baustein und Modul; mindestens eine Zeile ist eine Sicherheitslücke; mindestens eine Zeile trägt den Baustein „Instructions“.
+**Checkpoint:** Die Status-quo-Liste enthält 5–8 Zeilen, jede mit Fehlerklasse, Baustein und Modul; mindestens eine Zeile ist eine Sicherheitslücke; mindestens eine Zeile trägt den Baustein „Instructions“.
 
 <details>
 <summary>Lösungsweg</summary>
@@ -152,7 +152,7 @@ Der erste Fund aus der Tabelle im Browser: Das Skript aus dem URL-Parameter `?cr
 
 Überflüssige Abhängigkeit: Im Referenzlauf kam kein Paket dazu (`package.json` und `requirements.txt` unverändert). In anderen Läufen schlägt der Agent im Node.js-Stack vor, Express zu installieren, „damit das Routing einfacher wird“; das Projekt kommt bewusst ohne Laufzeit-Pakete aus. Baustein: Instructions mit Verbot (m04), Guard-Hook (m07).
 
-Beispiel einer gemeinsamen Status-quo-Liste (`~/kurs/notizen/status-quo.md`), sortiert nach Kosten in Produktion:
+Beispiel einer gemeinsamen Status-quo-Liste, sortiert nach Kosten in Produktion:
 
 | # | Mangel | Fehlerklasse | Baustein | Modul |
 | --- | --- | --- | --- | --- |

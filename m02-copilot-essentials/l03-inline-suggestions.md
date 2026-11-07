@@ -1,4 +1,4 @@
-# Lab 2.3: Vorschläge im Editor
+# Lab 2.3: Inline-Vorschläge und Next Edit Suggestions
 
 **Leitfragen:**
 

@@ -130,7 +130,7 @@ In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis
 
 2. Öffne `ohne/` und `mit/` in je einem eigenen VS-Code-Fenster, wähle in beiden **Agent** und dasselbe Modell. Sende in beiden wörtlich: „Füge einen Button "Löschen" hinzu, der eine Aufgabe entfernt.“ Übernimm das Ergebnis mit **Keep**, bessere nichts von Hand nach, führe die Tests aus.
 3. Öffne `~/kurs/vergleich` in einem dritten Fenster. Vergleiche die geänderten Dateien: Rechtsklick auf die Datei in `ohne/` → „Select for Compare“, dann auf dieselbe Datei in `mit/` → „Compare with Selected“. Trage das Ergebnis je Kriterium der Checkliste in eine Tabelle ein (Kriterium | ohne | mit).
-4. Hake in der Status-quo-Liste `~/kurs/notizen/status-quo.md` jede Zeile ab, die mit Regeln behoben ist; markiere offene Zeilen mit dem Baustein, der sie lösen soll.
+4. Hake in der Status-quo-Liste aus Lab 3.3 jede Zeile ab, die mit Regeln behoben ist; markiere offene Zeilen mit dem Baustein, der sie lösen soll.
 5. Sende im Fenster von `mit/` einen zweiten Prompt: „Bringe den bestehenden Code in Einklang mit AGENTS.md, ohne das Verhalten zu ändern. Führe danach die Tests aus.“ Prüfe die Änderungen und übernimm sie mit **Keep**. Der Ordner `mit/` ist jetzt FocusList v1.
 
 ![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)

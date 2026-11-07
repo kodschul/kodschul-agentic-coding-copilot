@@ -1,4 +1,4 @@
-# Lab 1.4: Verantwortung und Risiken
+# Lab 1.4: Verantwortung, Sicherheit und Risiken
 
 **Leitfragen:**
 

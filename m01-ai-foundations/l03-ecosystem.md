@@ -1,4 +1,4 @@
-# Lab 1.3: Landkarte: Werkzeuge und Bausteine
+# Lab 1.3: Werkzeuge und Bausteine im Überblick
 
 **Leitfragen:**
 
@@ -115,7 +115,7 @@ Hooks, MCP und Specs gibt es in den anderen Werkzeugen ebenfalls, mit eigener Ko
 | Modul | Was passiert | Baustein |
 | --- | --- | --- |
 | m02 | Copilot bedienen, Harness wählen, Agent steuern | – |
-| m03 | Vibecoding oder agentisch: FocusList per One-Shot-Prompt, Status quo bewerten | – |
+| m03 | Vibecoding oder agentisch: Prototyp per One-Shot-Prompt, Code-Bewertung des Prototyps | – |
 | m04 | Projektregeln schreiben | Instructions |
 | m05 | `test-writer` und `security-checker` | Skills |
 | m06 | `reviewer`, `tester`, `feature-lead` | Custom Agents |

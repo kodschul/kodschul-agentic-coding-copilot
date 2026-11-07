@@ -1,4 +1,4 @@
-# Lab 2.4: Ask, Plan, Agent
+# Lab 2.4: Chat-Modi: Ask, Plan und Agent
 
 **Leitfragen:**
 

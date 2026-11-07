@@ -138,7 +138,7 @@ Gleiche Idee, andere Ordner, wie in der Landkarte aus Lab 1.3. Projekt-Skills ge
 
 ## Selbst ausprobieren
 
-**Dauer:** ca. 10 Minuten · **Start:** eigene Status-quo-Liste aus Lab 3.3 (`~/kurs/notizen/status-quo.md`) oder die Python-Funde im Lösungsweg von Lab 3.3 · **Referenz:** Lösungsweg unten
+**Dauer:** ca. 10 Minuten · **Start:** Status-quo-Liste aus Lab 3.3 oder die Python-Funde im Lösungsweg von Lab 3.3 · **Referenz:** Lösungsweg unten
 
 1. Gehe die Status-quo-Liste Zeile für Zeile durch.
 2. Markiere jede Zeile: **Regel** (der Agent muss es immer wissen), **Ablauf** (wiederkehrende Aufgabe mit mehreren Schritten) oder **anderes** (Rolle, Erzwingen, Werkzeug).

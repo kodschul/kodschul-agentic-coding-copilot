@@ -4,21 +4,21 @@
 
 | Zeit | Lab | Ergebnis |
 | --- | --- | --- |
-| | **Modul 1 · KI in der Softwareentwicklung** · [Cheatsheet](../m01-ai-coding/m01-cheatsheet.md) | |
-| 09:25 | [1.1 Wie ein LLM Code schreibt](../m01-ai-coding/l01-llm-basics.md) | Agenten-Loop |
-| 09:45 | [1.2 Wie Agentic Coding entstand](../m01-ai-coding/l02-timeline.md) | Zeitleiste |
-| 10:05 | [1.3 Landkarte: Werkzeuge und Bausteine](../m01-ai-coding/l03-landscape.md) | sechs Bausteine |
-| 10:45 | [1.4 Verantwortung und Risiken](../m01-ai-coding/l04-responsibility.md) | Top-3-Regeln |
-| | **Modul 2 · Copilot heute** · [Cheatsheet](../m02-copilot-today/m02-cheatsheet.md) | |
-| 11:00 | [2.1 FocusList kennenlernen](../m02-copilot-today/l01-project-tour.md) | App läuft |
-| 11:20 | [2.2 Harnesses: welcher wann](../m02-copilot-today/l02-harnesses.md) | eigener Standard |
-| 11:40 | [2.3 Vorschläge im Editor](../m02-copilot-today/l03-suggestions.md) | Tab, Esc |
-| 11:50 | [2.4 Ask, Plan, Agent](../m02-copilot-today/l04-chat-agents.md) | Ask vs. Plan |
-| 13:15 | [2.5 Den Agenten steuern](../m02-copilot-today/l05-agent-control.md) | Fußzeile, Rest per Undo/Checkpoint zurück |
-| | **Modul 3 · Vibecoding oder Agentic Coding** · [Cheatsheet](../m03-vibecoding/m03-cheatsheet.md) | |
-| 13:35 | [3.1 Zwei Wege: Vibecoding oder Agentic Coding](../m03-vibecoding/l01-two-ways.md) | Entscheidungshilfe |
-| 13:55 | [3.2 FocusList per One-Shot-Prompt](../m03-vibecoding/l02-one-shot.md) | v0 |
-| 14:20 | [3.3 Status quo bewerten](../m03-vibecoding/l03-status-quo.md) | Status-quo-Liste |
+| | **Modul 1 · KI-Grundlagen für die Softwareentwicklung** · [Cheatsheet](../m01-ai-foundations/m01-cheatsheet.md) | |
+| 09:25 | [1.1 LLM-Grundlagen und Agenten-Loop](../m01-ai-foundations/l01-llm-agent-loop.md) | Agenten-Loop |
+| 09:45 | [1.2 Entwicklung von Agentic Coding 2021–2026](../m01-ai-foundations/l02-evolution.md) | Zeitleiste |
+| 10:05 | [1.3 Werkzeuge und Bausteine im Überblick](../m01-ai-foundations/l03-ecosystem.md) | sechs Bausteine |
+| 10:45 | [1.4 Verantwortung, Sicherheit und Risiken](../m01-ai-foundations/l04-responsibility.md) | Top-3-Regeln |
+| | **Modul 2 · GitHub Copilot in VS Code** · [Cheatsheet](../m02-copilot-essentials/m02-cheatsheet.md) | |
+| 11:00 | [2.1 Kursprojekt FocusList: Aufbau und Setup](../m02-copilot-essentials/l01-project-setup.md) | App läuft |
+| 11:20 | [2.2 Harnesses: Copilot, Local, Claude, Codex](../m02-copilot-essentials/l02-harnesses.md) | eigener Standard |
+| 11:40 | [2.3 Inline-Vorschläge und Next Edit Suggestions](../m02-copilot-essentials/l03-inline-suggestions.md) | Tab, Esc |
+| 11:50 | [2.4 Chat-Modi: Ask, Plan und Agent](../m02-copilot-essentials/l04-chat-modes.md) | Ask vs. Plan |
+| 13:15 | [2.5 Agent-Kontrolle: Freigaben, Diffs, Checkpoints](../m02-copilot-essentials/l05-agent-control.md) | Fußzeile, Rest per Undo/Checkpoint zurück |
+| | **Modul 3 · Vibecoding vs. Agentic Coding** · [Cheatsheet](../m03-coding-approaches/m03-cheatsheet.md) | |
+| 13:35 | [3.1 Vibecoding und Agentic Coding im Vergleich](../m03-coding-approaches/l01-comparison.md) | Entscheidungshilfe |
+| 13:55 | [3.2 Prototyp per One-Shot-Prompt](../m03-coding-approaches/l02-one-shot-prototype.md) | v0 |
+| 14:20 | [3.3 Code-Bewertung des Prototyps](../m03-coding-approaches/l03-code-assessment.md) | Status-quo-Liste |
 | | **Modul 4 · Instructions** · [Cheatsheet](../m04-instructions/m04-cheatsheet.md) | |
 | 15:00 | [4.1 Projektregeln für den Agenten](../m04-instructions/l01-project-instructions.md) | `AGENTS.md` |
 | 15:35 | [4.2 Regeln für bestimmte Dateien](../m04-instructions/l02-scoped-instructions.md) | `*.instructions.md` |

@@ -1,4 +1,4 @@
-# Lab 1.2: Wie Agentic Coding entstand
+# Lab 1.2: Entwicklung von Agentic Coding 2021–2026
 
 **Leitfragen:**
 

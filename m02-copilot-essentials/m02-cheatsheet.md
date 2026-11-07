@@ -1,4 +1,4 @@
-# Cheatsheet Modul 2: Copilot heute
+# Cheatsheet Modul 2: GitHub Copilot in VS Code
 
 Stand: 11/2026, VS-Code-Standardbelegung. Quellen: [Agent harnesses](https://code.visualstudio.com/docs/agents/run/agent-harnesses), [Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet), [Migrate customizations](https://code.visualstudio.com/docs/agent-customization/migrate-customizations), [Prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files). Abweichende Tastenbelegungen zeigt die Befehlspalette unter „Preferences: Open Keyboard Shortcuts“.
 

@@ -1,4 +1,4 @@
-# Cheatsheet Modul 3: Vibecoding oder Agentic Coding
+# Cheatsheet Modul 3: Vibecoding vs. Agentic Coding
 
 ## Zwei Wege (Lab 3.1)
 
@@ -91,4 +91,4 @@ Beispiel-Prompt: `project/focuslist/vibecoding-prompt.md` · Beispielergebnis: `
 | Baustein | Instructions … Spec |
 | Modul | m04 … m08 |
 
-Ablage: `~/kurs/notizen/status-quo.md` · 5–8 Zeilen
+Gemeinsame Liste · 5–8 Zeilen

@@ -1,4 +1,4 @@
-# Lab 2.1: FocusList kennenlernen
+# Lab 2.1: Kursprojekt FocusList: Aufbau und Setup
 
 **Leitfragen:**
 
@@ -112,7 +112,7 @@ Kern ist `createApp()` in [`src/app.js`](../project/focuslist/node/start/src/app
 
 | Symptom | Ursache | Lösung |
 | --- | --- | --- |
-| `No module named flask` oder `flask: command not found` | `venv` nicht aktiviert oder Pakete nicht installiert | `source .venv/bin/activate` (Windows: `.venv\Scripts\activate`), dann `pip install -r requirements.txt` |
+| `No module named flask` oder `flask: command not found` | `venv` nicht aktiviert oder Pakete nicht installiert | `source .venv/bin/activate` (Windows: `.venv\Scripts\Activate.ps1`), dann `pip install -r requirements.txt` |
 | Seite erscheint als unformatierter Text | `static/app.css` fehlt | `npm install`, dann `npm run build:css` |
 | `tailwindcss: command not found` | `npm install` fehlt | im Projektordner `npm install` ausführen |
 | `Address already in use` / Port belegt | anderer Prozess nutzt 5000 bzw. 3000 (macOS: AirPlay-Empfänger nutzt oft 5000) | Python: `flask --app focuslist run --debug --port 5001`; Node.js: `PORT=3001 npm run dev` (PowerShell: `$env:PORT=3001; npm run dev`) |
@@ -149,7 +149,7 @@ Erwarteter Stand nach der Übung, aufgenommen mit dem Python-Stack; bei Node.js 
 <details>
 <summary>Lösungsweg</summary>
 
-**Python** (macOS/Linux; Windows: `.venv\Scripts\activate`):
+**Python** (macOS/Linux; Windows: `.venv\Scripts\Activate.ps1`):
 
 ```bash
 python -m venv .venv

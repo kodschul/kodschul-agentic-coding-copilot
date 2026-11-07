@@ -189,7 +189,7 @@ Ansicht 2025: Die Liste „Used … references“ unter der Antwort zeigt, welch
 
 Weicht der eigene v0 stark von der Referenz ab (andere Dateien, App startet nicht), mit dem Referenzstand weiterarbeiten.
 
-1. Öffne den Projektordner (nicht `~/kurs`) in VS Code. Markiere in der Status-quo-Liste `~/kurs/notizen/status-quo.md` alle Zeilen mit dem Baustein „Instructions“.
+1. Öffne den Projektordner (nicht `~/kurs`) in VS Code. Markiere in der Status-quo-Liste aus Lab 3.3 alle Zeilen mit dem Baustein „Instructions“.
 2. Erstelle `AGENTS.md` in der Projektwurzel mit den Abschnitten Stack, Ordner, Befehle, Konventionen, Verbote. Formuliere aus jeder markierten Zeile eine prüfbare Regel und ergänze Start-, Test- und CSS-Befehl.
 3. Kürze auf höchstens 40 Zeilen. Prüfe jede Regel mit der Frage: Lässt sich an den Änderungen des Agenten mit Ja oder Nein entscheiden, ob sie eingehalten wurde?
 4. Öffne eine neue Chat-Sitzung, wähle **Ask** und frage: „Welche Projektregeln gelten in diesem Projekt? Nenne die Datei, aus der sie stammen, und drei Verbote.“ Prüfe die Referenzen der Antwort.

@@ -1,4 +1,4 @@
-# Lab 3.1: Zwei Wege: Vibecoding oder Agentic Coding
+# Lab 3.1: Vibecoding und Agentic Coding im Vergleich
 
 **Leitfragen:**
 

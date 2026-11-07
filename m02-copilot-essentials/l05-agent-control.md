@@ -1,4 +1,4 @@
-# Lab 2.5: Den Agenten steuern
+# Lab 2.5: Agent-Kontrolle: Freigaben, Diffs, Checkpoints
 
 **Leitfragen:**
 
