@@ -43,9 +43,6 @@ Wenn sich an den Änderungen nicht mit Ja oder Nein entscheiden lässt, ob sie e
 
 Der Agent lernt aus dem, was er sieht: Prompt, geöffnete und gelesene Dateien. Alles andere rät er, wie der Status quo aus Lab 3.3 zeigt.
 
-![Zwei Personen vor einem Laptop mit Code im Editor; eine erklärt, die andere schaut zu](../assets/images/m04/onboarding-colleague.jpg)
-_Quelle: Wikimedia Commons, „Wocintech (microsoft) - 61“ (https://commons.wikimedia.org/wiki/File:Wocintech_(microsoft)_-_61_(25926639341).jpg), WOCinTech Chat, CC BY 2.0, abgerufen am 07.11.2026._
-
 Wie bei einer neuen Kollegin am ersten Tag: Was niemand erklärt, muss sie aus dem vorhandenen Code erraten.
 
 | Wissen | Beispiel FocusList | Was der Agent ohne Regel tut |

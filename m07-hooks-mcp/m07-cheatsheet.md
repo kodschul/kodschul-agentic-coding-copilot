@@ -10,6 +10,18 @@ Stand: 11/2026, Hooks sind Preview. Quellen: [Hooks (VS Code)](https://code.visu
 | Hook | Was muss immer passieren oder darf nie passieren? | Skript außerhalb des Modells („geht nicht“) | `.github/hooks/*.json` |
 | MCP | Welche Werkzeuge fehlen? | zusätzlicher Server mit Tools | `.mcp.json` |
 
+## Aktivieren und prüfen
+
+| | Copilot-Harness (Kurs) | Local-Harness |
+| --- | --- | --- |
+| Aktivieren | keine Einstellung: `.github/hooks/*.json` in der Projektwurzel, Session-Ziel „Copilot“, **neue** Sitzung | `chat.useHooks` (Standard an), vertrauenswürdiger Workspace |
+| Geladen? | „Open Customizations“ → „Hooks“ oder `/hooks` | ebenso |
+| Läufe | „…“ → „Show Agent Debug Logs“, vorher `chat.agentHost.agentDebugLog.enabled` einschalten | „Show Agent Debug Logs“ |
+| Erstellen | Reiter „Hooks“ → „New Hook“ → Event → „Create new hook config file...“ | ebenso, dazu `/create-hook` |
+| Event-Namen | camelCase (`preToolUse`) | PascalCase (`PreToolUse`) |
+
+Preview; die Organisation kann Hooks einschränken.
+
 ## Hook-Datei
 
 | Feld | Wert |
@@ -54,10 +66,11 @@ Stand: 11/2026, Hooks sind Preview. Quellen: [Hooks (VS Code)](https://code.visu
 | fertig | `{}` |
 | Schleifenschutz | bei `stop_hook_active: true` nicht blocken; nach 8 Blockaden endet die Runde |
 
-## FocusList-Hooks (v4)
+## Hooks im Kurs
 
 | Datei | Event | Python | Node.js |
 | --- | --- | --- | --- |
+| `audit.json` (Beispiel, `m07-hooks-mcp/samples/audit/`) | `preToolUse` | `log-tool-use.cjs` (Node.js, beide Stacks): schreibt `toolName` in `.github/hooks/tool-use.log`, antwortet `{}` | gleich |
 | `guard.json` | `preToolUse` | `guard.py`: `.env*` (außer `.env.example`), `rm -rf`, `Remove-Item -Recurse` | `guard.mjs`: `.env*` (außer `.env.example`), `rm -rf` |
 | `checks.json` | `agentStop` | `checks.py`: `pytest`, dazu `npm run build:css` falls `node_modules/` | `checks.mjs`: `node --test` |
 
@@ -65,16 +78,11 @@ Stand: 11/2026, Hooks sind Preview. Quellen: [Hooks (VS Code)](https://code.visu
 
 | Stack | Befehl |
 | --- | --- |
+| Audit | `echo '{"toolName":"view"}' \| node .github/hooks/log-tool-use.cjs` → `{}`, Zeile `"view"` in `tool-use.log` |
 | Python | `echo '{"toolName":"view","toolArgs":{"path":".env"}}' \| python .github/hooks/guard.py` |
 | Node.js | `echo '{"toolName":"view","toolArgs":{"path":".env"}}' \| node .github/hooks/guard.mjs` |
 | Checks | `echo '{}' \| python .github/hooks/checks.py` bzw. `… \| node .github/hooks/checks.mjs` |
 
-## Hooks: Copilot vs. Local
-
-| | Copilot-Harness | Local-Harness |
-| --- | --- | --- |
-| Event-Namen | camelCase (`preToolUse`) | PascalCase (`PreToolUse`) |
-| Einschalten | Dateien in `.github/hooks/` | Einstellung `chat.useHooks` |
 
 ## MCP-Konfiguration
 

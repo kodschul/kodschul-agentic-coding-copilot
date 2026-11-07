@@ -119,9 +119,6 @@ flowchart LR
 | Prüfungen | Was muss immer passieren oder darf nie passieren? | Hooks |
 | Werkzeuge und Auftrag | Welche Werkzeuge braucht er, was genau soll gebaut werden? | MCP, Spec |
 
-![Zwei Entwickler an einem Monitor; einer zeigt auf eine Stelle im Code, der andere bedient Tastatur und Maus](../assets/images/m03/pair-programming.jpg)
-_Quelle: Wikimedia Commons, „Pair Programming.jpg“ (https://commons.wikimedia.org/wiki/File:Pair_Programming.jpg), Calqui, CC BY-SA 3.0, abgerufen am 07.11.2026._
-
 Vergleich aus dem Teamalltag: Pair Programming. Eine Person tippt, die andere kennt die Regeln, schaut mit und greift ein. Beim agentischen Weg tippt der Agent; der Mensch steuert und nimmt ab.
 
 ## Vergleich

@@ -62,7 +62,7 @@ Stand: 11/2026, Quelle: [Hooks (VS Code)](https://code.visualstudio.com/docs/age
 
 ## Die Hook-Datei
 
-`.github/hooks/checks.json` (Python; Node.js identisch mit `"command": "node .github/hooks/checks.mjs"`):
+Aktivieren und prüfen wie in [Lab 7.1, „Wo Hooks aktiviert werden“](l01-guard-hook.md#wo-hooks-aktiviert-werden). `.github/hooks/checks.json` (Python; Node.js identisch mit `"command": "node .github/hooks/checks.mjs"`):
 
 ```json
 {
@@ -154,7 +154,7 @@ Echte Ausgabe bei einem absichtlich gebrochenen Test (Übung, Schritt 3): Auftra
 1. Kopiere `checks.json` und `checks.py` bzw. `checks.mjs` aus der Referenz nach `.github/hooks/`.
 2. Teste das Skript im Terminal: `echo '{}' | python .github/hooks/checks.py` bzw. `echo '{}' | node .github/hooks/checks.mjs`. Bei grünen Tests ist die Ausgabe `{}`.
 3. Brich einen Test absichtlich: Ändere im Beispieltest (`tests/test_index.py` bzw. `test/index.test.js`) den erwarteten Titel „Kursunterlagen lesen“ in „Kursunterlagen gelesen“. Wiederhole Schritt 2.
-4. Starte eine neue Chat-Sitzung (Agent) und sende: „Ändere die Überschrift der Startseite in ‚Meine Aufgaben heute‘.“ Beobachte, was nach der ersten Antwort passiert, und lies die Änderungen im Chat.
+4. Starte eine neue Copilot-Sitzung (Agent), damit `checks.json` geladen wird, und sende: „Ändere die Überschrift der Startseite in ‚Meine Aufgaben heute‘.“ Beobachte, was nach der ersten Antwort passiert, und lies die Änderungen im Chat.
 5. Setze den Test von Hand auf „Kursunterlagen lesen“ zurück und wiederhole Schritt 2.
 
 **Checkpoint:** Schritt 3 liefert `{"decision": "block", …}` mit der Testausgabe; im Chat folgt auf die erste Antwort eine weitere Runde, in der der Agent den roten Test untersucht; nach Schritt 5 gibt das Skript wieder `{}` aus.

@@ -30,10 +30,6 @@ Indem er die Werkzeuge dafür gar nicht hat: `tools: ['read', 'search']`. Ohne `
 | Schwere | hoch / mittel / niedrig; bestimmt, was vor dem Merge behoben sein muss |
 | Review-Fazit | Ergebnis des Reviews: freigeben, nach Korrektur freigeben, nicht freigeben |
 
-![Schiedsrichter zeigt beim Fußballspiel auf eine Stelle am Boden, Spieler beider Mannschaften hören zu](../assets/images/m06/referee.jpg)
-
-_Quelle: Wikimedia Commons, Referee - Lausanne vs Sion 02 may 2012 (https://commons.wikimedia.org/wiki/File:Referee_-_Lausanne_vs_Sion_02_may_2012.jpg), Ludovic Péron, CC BY-SA 3.0, abgerufen am 07.11.2026._
-
 Analogie: Der Schiedsrichter bewertet und zeigt auf die Stelle, spielt aber nicht selbst mit. Genauso benennt der Reviewer Befunde und ändert keinen Code.
 
 ## Die echte Datei: Python

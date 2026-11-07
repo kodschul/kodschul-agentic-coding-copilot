@@ -42,9 +42,6 @@ An der `description` im Frontmatter: Diese sagt, was der Skill tut und wann er e
 
 Instructions (Lab 4.1) sind die Hausordnung der Küche: hängt immer an der Wand, gilt für alles. Ein Skill ist eine Rezeptkarte im Kasten: Auf dem Kartenrücken steht nur der Titel und wofür das Rezept gut ist. Erst wenn jemand „Kuchen backen“ will, wird genau diese Karte gezogen und Schritt für Schritt befolgt.
 
-![Handschriftliche Rezeptkarte „Pound Cake“: oben Titel und Zutaten, darunter die Arbeitsschritte](../assets/images/m05/recipe-card.jpg)
-_Quelle: Wikimedia Commons, „Pound cake recipe card - Handwritten“ (https://commons.wikimedia.org/wiki/File:Pound_cake_recipe_card_-_Handwritten_2024-05-21_103943_page_1.jpg), SJGW, CC BY-SA 4.0, abgerufen am 07.11.2026._
-
 | | Instructions (`AGENTS.md`, `*.instructions.md`) | Skill (`.github/skills/<name>/`) |
 | --- | --- | --- |
 | Inhalt | Regeln: Stack, Struktur, Konventionen, Verbote | Ablauf: Schritte, Vorlage, Abnahmekriterium |

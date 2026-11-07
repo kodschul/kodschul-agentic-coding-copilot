@@ -37,7 +37,7 @@
 | 11:00 | [6.2 Agent `reviewer`](../m06-custom-agents/l02-reviewer.md) | Review-Bericht |
 | 11:30 | [6.3 Agenten-Team](../m06-custom-agents/l03-agent-team.md) | v3 |
 | | **Modul 7 · Hooks und MCP** · [Cheatsheet](../m07-hooks-mcp/m07-cheatsheet.md) | |
-| 13:15 | [7.1 Hook als Leitplanke](../m07-hooks-mcp/l01-guard-hook.md) | Guard blockiert |
+| 13:15 | [7.1 Hook als Leitplanke](../m07-hooks-mcp/l01-guard-hook.md) | Audit protokolliert, Guard blockiert |
 | 13:40 | [7.2 Hook als Prüfschritt](../m07-hooks-mcp/l02-check-hook.md) | Tests nach jeder Runde |
 | 14:00 | [7.3 Was ist MCP](../m07-hooks-mcp/l03-mcp-basics.md) | Werkzeug-Auswahl |
 | 14:10 | [7.4 Agent mit Browser](../m07-hooks-mcp/l04-playwright-mcp.md) | v4 |

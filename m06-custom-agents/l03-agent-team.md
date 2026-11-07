@@ -39,9 +39,6 @@ Bei kleinen, risikoarmen Änderungen: Tippfehler, eine Tailwind-Klasse, ein Text
 
 ## Ablauf im Team
 
-![Code-Review-Treffen: mehrere Entwickler mit Laptops verfolgen konzentriert eine Besprechung](../assets/images/m06/code-review-meeting.jpg)
-_Quelle: Wikimedia Commons, Code Review photo-1 (https://commons.wikimedia.org/wiki/File:Code_Review_photo-1.jpg), Matthew (WMF), CC BY-SA 3.0, abgerufen am 07.11.2026._
-
 Vorbild ist ein echtes Team: Eine Person baut, andere prüfen, bevor der Code übernommen wird.
 
 ```mermaid

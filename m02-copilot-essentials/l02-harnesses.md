@@ -44,13 +44,7 @@ Lange Aufgaben, die kein Eingreifen brauchen, etwa ein Feature mit Tests. Der Co
 
 **Alltagsbild:** Das Modell ist der Motor, der Harness ist das Fahrzeug. Derselbe Motor fährt sich im Kleinwagen anders als im Transporter: Lenkung, Bremsen, Laderaum und Navi gehören zum Fahrzeug, nicht zum Motor.
 
-![Einzelner Vierzylinder-Automotor auf einem Messestand, ohne Karosserie](../assets/images/m02/engine.jpg)
-_Quelle: Wikimedia Commons, „Audi EA888 engine.jpg“ (https://commons.wikimedia.org/wiki/File:Audi_EA888_engine.jpg), TTTNIS, Public Domain, abgerufen am 07.11.2026._
-
-![Komplettes Auto (VW Golf) in Dreiviertelansicht von vorn](../assets/images/m02/car.jpg)
-_Quelle: Wikimedia Commons, „2020 Volkswagen Golf Style 1.5 Front.jpg“ (https://commons.wikimedia.org/wiki/File:2020_Volkswagen_Golf_Style_1.5_Front.jpg), Vauxford, CC BY-SA 4.0, abgerufen am 07.11.2026._
-
-Oben der Motor (Modell), unten das Fahrzeug (Harness): Erst das Fahrzeug um den Motor macht ihn nutzbar.
+Der Motor ist das Modell, das Fahrzeug der Harness: Erst das Fahrzeug um den Motor macht ihn nutzbar.
 
 | Der Harness bestimmt | Beispiel |
 | --- | --- |

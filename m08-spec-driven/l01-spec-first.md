@@ -47,10 +47,6 @@ Mit Akzeptanzkriterien: konkrete Situationen mit erwartetem Ergebnis, z. B. „W
 
 Jede offene Zeile ist eine Stelle, an der das Ergebnis vom Gewollten abweichen kann. Die Spec beantwortet sie vorher, schriftlich und prüfbar.
 
-![Blaupause der Vorderansicht eines Hauses von 1912 mit Maßangaben am Rand](../assets/images/m08/blueprint.jpg)
-
-_Quelle: Wikimedia Commons, Charles E. Keene House, front elevation (blueprint) (https://commons.wikimedia.org/wiki/File:Charles_E._Keene_House,_London,_Ontario,_front_elevation_(blueprint),_signed_Moore_and_Munro,_1912-1913.jpg), Moore and Munro, Public Domain, abgerufen am 07.11.2026._
-
 Analogie: Ein Bauplan legt fest, was gebaut wird, bevor jemand mauert. Eine Spec tut dasselbe für ein Feature.
 
 ## Spec, Instructions, Skill

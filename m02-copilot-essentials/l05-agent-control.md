@@ -104,10 +104,7 @@ _Quelle: VS Code Docs, „Review and revert agent changes“ (https://code.visua
 
 Autopilot lohnt sich erst, wenn Projektregeln, Tests und Hooks den Agenten absichern. Bis dahin bleibt er aus.
 
-![Cockpit eines Airbus A320 ohne Personen: Bildschirme, Schalter und Bedienfeld des Autopiloten](../assets/images/m02/cockpit-autopilot.jpg)
-_Quelle: Wikimedia Commons, „Airbus A320-214 Vueling EC-HHA cockpit (5508849819).jpg“ (https://commons.wikimedia.org/wiki/File:Airbus_A320-214_Vueling_EC-HHA_cockpit_(5508849819).jpg), Curimedia, CC BY 2.0, abgerufen am 07.11.2026._
-
-Bild aus der Luftfahrt: Auch dort fliegt der Autopilot nur, während Instrumente und Crew ihn überwachen.
+Vergleich aus der Luftfahrt: Auch dort fliegt der Autopilot nur, während Instrumente und Crew ihn überwachen.
 
 ## Übung
 

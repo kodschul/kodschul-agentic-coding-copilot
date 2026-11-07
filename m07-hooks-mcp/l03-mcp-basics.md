@@ -36,10 +36,6 @@ Nur jemandem, den man kennt und dem man vertraut, mit so wenig Rechten wie nöti
 
 Vor MCP brauchte jedes Werkzeug für jeden Dienst eine eigene Integration. MCP legt einen gemeinsamen Stecker fest: Ein Server für „Browser“ funktioniert in Copilot, Claude Code, Codex und anderen Clients.
 
-![USB-C-Stecker vor der passenden Buchse eines Tablets](../assets/images/m07/usb-c.webp)
-
-_Quelle: Wikimedia Commons, USB-C connector and receptacle (https://commons.wikimedia.org/wiki/File:USB-C_connector_and_receptacle.webp), Wikideas1, CC0, abgerufen am 07.11.2026._
-
 Analogie: Ein Stecker-Standard passt an viele Geräte. MCP ist der gemeinsame Anschluss zwischen Agent und Werkzeugen.
 
 ```mermaid
