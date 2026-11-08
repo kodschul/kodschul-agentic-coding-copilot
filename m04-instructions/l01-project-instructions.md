@@ -81,10 +81,10 @@ Stand: 11/2026. Quellen: [Custom instructions](https://code.visualstudio.com/doc
 | `.github/copilot-instructions.md` | Ordner `.github/` | Copilot | nein | Team nutzt nur Copilot oder hat die Datei schon |
 | `CLAUDE.md` | Projektwurzel | Claude Code, Claude-Harness | nein | Team arbeitet mit Claude Code |
 
-![VS Code Explorer: Ordner .github mit der Datei copilot-instructions.md, daneben die geöffnete, noch leere Datei](../assets/images/m04/copilot-instructions-file.jpg)
+![VS Code Explorer: Ordner .github mit der Datei copilot-instructions.md, daneben die geöffnete, noch leere Datei](https://code.visualstudio.com/assets/blogs/2025/03/26/dot-github.jpg)
 _Quelle: VS Code Blog, Beitrag vom 26.03.2025 zu Custom Instructions (https://code.visualstudio.com/blogs/2025/03/26/custom-instructions), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
-![AGENTS.md-Projektseite mit den Logos der Agenten, die die Datei lesen](../assets/images/m04/agents-md-og.png)
+![AGENTS.md-Projektseite mit den Logos der Agenten, die die Datei lesen](https://agents.md/og.png)
 _Quelle: agents.md (https://agents.md/), Logos der jeweiligen Hersteller, extern eingebunden, abgerufen am 07.11.2026._
 
 Empfehlung: eine Datei pflegen, nicht zwei mit doppeltem Inhalt. Wer zusätzlich Claude Code nutzt, kann in `CLAUDE.md` mit der Zeile `@AGENTS.md` auf dieselben Regeln verweisen.
@@ -165,7 +165,7 @@ Stand: 11/2026; Bezeichnungen in der Chat-Ansicht können sich mit VS-Code-Versi
 | Nachfragen (Ask) | „Welche Projektregeln gelten hier? Nenne die Datei und drei Verbote.“ | mittel: Der Agent kann die Datei auch erst auf die Frage hin lesen |
 | Verhaltenstest (Plan) | Auftrag, der gegen eine Regel verstößt, z. B. „Plane, wie wir Express für das Routing einführen.“ | am besten: Der Plan sollte auf das Verbot hinweisen |
 
-![Copilot-Chat: unter dem Prompt die angehängte Datei org.instructions.md, darunter in der Antwort der aufklappbare Eintrag „Used 2 references“](../assets/images/m04/instructions-references.png)
+![Copilot-Chat: unter dem Prompt die angehängte Datei org.instructions.md, darunter in der Antwort der aufklappbare Eintrag „Used 2 references“](https://code.visualstudio.com/assets/updates/1_100/github-repo-tool-example.png)
 _Quelle: VS Code Release Notes 1.100 (https://code.visualstudio.com/updates/v1_100), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht 2025: Die Liste „Used … references“ unter der Antwort zeigt, welche Dateien mitgeschickt wurden.

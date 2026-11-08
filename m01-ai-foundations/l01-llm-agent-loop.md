@@ -32,7 +32,7 @@ Beim Vorschlag entscheidet und handelt der Mensch. Beim Erledigen plant der Agen
 
 **Problem:** Entwickler:innen verbringen viel Zeit mit Routine: Code lesen, Boilerplate schreiben, Tests ergänzen, Fehlermeldungen nachgehen. Klassische Autovervollständigung hilft nur Zeile für Zeile.
 
-![Klassische Code-Vervollständigung ohne KI in Visual Studio 2022: Nach dem Tippen von „ret“ zeigt eine Liste passende Schlüsselwörter und Namen wie return, co_return und reinterpret_cast](../assets/images/m01/intellisense-vs2022.png)
+![Klassische Code-Vervollständigung ohne KI in Visual Studio 2022: Nach dem Tippen von „ret“ zeigt eine Liste passende Schlüsselwörter und Namen wie return, co_return und reinterpret_cast](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/VS2022_Intellisense_code_completion.png/500px-VS2022_Intellisense_code_completion.png)
 _Quelle: Wikimedia Commons, „VS2022 Intellisense code completion.png“ (https://commons.wikimedia.org/wiki/File:VS2022_Intellisense_code_completion.png), Hwi.padam, Public Domain, abgerufen am 07.11.2026._
 
 Autovervollständigung vor der KI: Sie ergänzt bekannte Schlüsselwörter und Namen, schreibt aber keinen neuen Code.
@@ -82,7 +82,7 @@ Das Modell bekommt den bisherigen Text und berechnet für jedes mögliche nächs
 
 Ein Token wird gewählt, angehängt, und der Vorgang beginnt von vorn. So entsteht Token für Token eine ganze Funktion.
 
-![Ablaufdiagramm „Stage 1: Pretraining“: Aus großen Textsammlungen (Web, Bücher, Code, Dokumentation) lernt das Modell, das nächste Token vorherzusagen (next-token prediction); Ergebnis ist ein Basismodell, das Text und Code vervollständigt](../assets/images/m01/llm-training-next-token.svg)
+![Ablaufdiagramm „Stage 1: Pretraining“: Aus großen Textsammlungen (Web, Bücher, Code, Dokumentation) lernt das Modell, das nächste Token vorherzusagen (next-token prediction); Ergebnis ist ein Basismodell, das Text und Code vervollständigt](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Three-stage_large_language_model_training_workflow.svg/1280px-Three-stage_large_language_model_training_workflow.svg.png)
 _Quelle: Wikimedia Commons, „Three-stage large language model training workflow.svg“ (https://commons.wikimedia.org/wiki/File:Three-stage_large_language_model_training_workflow.svg), Kjerish, CC0, abgerufen am 07.11.2026._
 
 Woher die Wahrscheinlichkeiten stammen: Im ersten Trainingsschritt übt das Modell an Web-Texten, Büchern und öffentlichem Code genau diese Vorhersage des nächsten Tokens; spätere Schritte machen daraus einen Assistenten, der Anweisungen folgt.
@@ -103,7 +103,7 @@ Woher die Wahrscheinlichkeiten stammen: Im ersten Trainingsschritt übt das Mode
 | plausibel ≠ richtig | Code sieht gut aus, hat aber Logikfehler | Grenzfälle testen, Code lesen |
 | Rechnen | Zahlen werden geraten statt berechnet | Agent rechnen lassen per Skript |
 
-![Kontextfenster als Stapel: System-Anweisungen, projektspezifische Regeln, bisheriger Gesprächsverlauf, impliziter Kontext (offene Datei, Markierung, Fehler, Git-Stand), ausdrückliche Verweise und Werkzeug-Ausgaben gehen gemeinsam als Prompt an das Sprachmodell](../assets/images/m01/context-window-layers.png)
+![Kontextfenster als Stapel: System-Anweisungen, projektspezifische Regeln, bisheriger Gesprächsverlauf, impliziter Kontext (offene Datei, Markierung, Fehler, Git-Stand), ausdrückliche Verweise und Werkzeug-Ausgaben gehen gemeinsam als Prompt an das Sprachmodell](https://code.visualstudio.com/assets/docs/agents/concepts/context-assembly.png)
 _Quelle: VS Code Docs, „Understand context in AI agents“ (https://code.visualstudio.com/docs/agents/concepts/context), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Alles, was das Modell über das Projekt weiß, muss in diesem Stapel stehen; was nicht hineinpasst oder nicht mitgegeben wird, existiert für das Modell nicht.
@@ -121,7 +121,7 @@ flowchart LR
     C -- "fertig" --> A["Mensch: Ergebnis abnehmen"]
 ```
 
-![Agenten-Loop in der VS-Code-Dokumentation: Prompt, dann Understand (Dateien, Codebasis, Web), Act (Code ändern, Befehle) und Validate (Tests, Fehler prüfen) in einer Schleife mit Werkzeugen, am Ende das Ergebnis; der Mensch kann jederzeit korrigieren](../assets/images/m02/agent-loop.png)
+![Agenten-Loop in der VS-Code-Dokumentation: Prompt, dann Understand (Dateien, Codebasis, Web), Act (Code ändern, Befehle) und Validate (Tests, Fehler prüfen) in einer Schleife mit Werkzeugen, am Ende das Ergebnis; der Mensch kann jederzeit korrigieren](https://code.visualstudio.com/assets/docs/agents/concepts/agent-loop.png)
 _Quelle: VS Code Docs, „Understand AI agents“ (https://code.visualstudio.com/docs/agents/concepts/agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Derselbe Loop in der VS-Code-Dokumentation: Verstehen, Handeln, Prüfen, wiederholen, bis das Ergebnis steht.

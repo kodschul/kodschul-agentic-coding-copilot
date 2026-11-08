@@ -50,7 +50,7 @@ Sechs Fragen, jede mit einer einfachen Prüfung. Kein vollständiges Code-Review
 
 Was der Agent geändert hat, zeigt die Chat-Sitzung aus Lab 3.2: Die Antwort nennt die geänderten Dateien, die Ansicht „Changes“ zeigt jede Änderung als Diff.
 
-![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)
+![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](https://code.visualstudio.com/assets/docs/agents/agents-quickstart/review-changes-panel.png)
 _Quelle: VS Code Docs, „Agents quickstart“ (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ohne die Sitzung: Startgerüst per `node project/focuslist/catch-up.mjs <python|node> m03 $HOME/kurs/focuslist-m03` holen und eine Datei mit ihrem Gegenstück vergleichen. Im Explorer: Rechtsklick auf die Datei im Startgerüst → **Select for Compare**, dann Rechtsklick auf dieselbe Datei im eigenen Projekt → **Compare with Selected**.

@@ -41,7 +41,7 @@ Jede Korrektur soll bewusst entschieden, einzeln geprüft und mit einem Test abg
 | Body-Limit | maximale Größe einer Anfrage; größere Anfragen werden mit 413 abgelehnt |
 | CSRF | fremde Seite schickt Formulare im Namen eingeloggter Nutzer ab |
 
-![Stored XSS in vier Schritten: (1) Angreifer speichert einen Kommentar mit script-Tag auf der Website, (2) Opfer ruft die Seite auf, (3) Server liefert den Kommentar samt Skript aus, (4) das Skript schickt das Cookie des Opfers an den Server des Angreifers](../assets/images/m05/xss-stored.png)
+![Stored XSS in vier Schritten: (1) Angreifer speichert einen Kommentar mit script-Tag auf der Website, (2) Opfer ruft die Seite auf, (3) Server liefert den Kommentar samt Skript aus, (4) das Skript schickt das Cookie des Opfers an den Server des Angreifers](https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cross-Site_Scripting_%28XSS%29.png/500px-Cross-Site_Scripting_%28XSS%29.png)
 _Quelle: Wikimedia Commons, „Cross-Site Scripting (XSS).png“ (https://commons.wikimedia.org/wiki/File:Cross-Site_Scripting_(XSS).png), Batka savemazaalai, CC BY-SA 4.0, abgerufen am 07.11.2026._
 
 Stored XSS: Das Skript liegt in den gespeicherten Daten und läuft bei jedem, der die Seite öffnet. In FocusList entspricht der Kommentar einem Aufgabentitel in `data/tasks.json`.
@@ -61,7 +61,7 @@ Stored XSS: Das Skript liegt in den gespeicherten Daten und läuft bei jedem, de
 
 Nummern nach OWASP Top 10:2025. Ältere Quellen nutzen die Ausgabe 2021 mit anderer Nummerierung:
 
-![Zuordnung der OWASP-Top-10-Kategorien von 2021 zu 2025: Injection wandert von A03 auf A05, neu sind Software Supply Chain Failures (A03) und Mishandling of Exceptional Conditions (A10)](../assets/images/m05/owasp-top10-2025-mapping.png)
+![Zuordnung der OWASP-Top-10-Kategorien von 2021 zu 2025: Injection wandert von A03 auf A05, neu sind Software Supply Chain Failures (A03) und Mishandling of Exceptional Conditions (A10)](https://top10.owasp.org/2025/assets/2025-mappings.png)
 _Quelle: OWASP Top 10:2025, Introduction (https://top10.owasp.org/2025/0x00_2025-Introduction/), OWASP Top 10 Team, CC BY 3.0, abgerufen am 07.11.2026._
 
 ## Die echte Datei: Python
@@ -109,7 +109,7 @@ Findet Sicherheitsprobleme und berichtet sie. **Ändert keine Datei.**
 | Reparaturen | `flash()`, `FOCUSLIST_SECRET`, `run.py` entfernt, `validate()` | `escapeHtml()`, `safePath()`, `validateTask()`, `readBody()` mit 10 KB |
 | Tests | `tests/test_security.py` | `test/security.test.js` |
 
-![Path Traversal als Ordnerbaum: Vom Web-Ordner www_root führen Pfeile über ../ schrittweise nach oben bis zur Wurzel / und von dort nach /etc zu den Dateien shadow und passwd](../assets/images/m05/path-traversal.png)
+![Path Traversal als Ordnerbaum: Vom Web-Ordner www_root führen Pfeile über ../ schrittweise nach oben bis zur Wurzel / und von dort nach /etc zu den Dateien shadow und passwd](https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Directory_traversal.png/1920px-Directory_traversal.png)
 _Quelle: Wikimedia Commons, „Directory traversal.png“ (https://commons.wikimedia.org/wiki/File:Directory_traversal.png), hacktips.it, CC BY-SA 4.0, abgerufen am 07.11.2026._
 
 Path Traversal (Beschriftung italienisch: „Eingabe der Zeichen ../ im Pfad, um den Wurzelordner zu erreichen“). In FocusList (Node.js) ist `static/` der erlaubte Ordner, das Ziel etwa `data/tasks.json`.

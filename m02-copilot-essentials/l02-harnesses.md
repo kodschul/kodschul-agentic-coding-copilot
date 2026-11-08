@@ -51,7 +51,7 @@ Lange Aufgaben, die kein Eingreifen brauchen, etwa ein Feature mit Tests. Der Co
 | Befehle im Chat | `/explain` nur im Local-Harness |
 | Ort und Lebensdauer | an das Fenster gebunden, im Agent Host oder auf GitHub |
 
-![Diagramm „What an agent harness coordinates“: Der Agent Harness in der Mitte bereitet Kontext vor, wendet Berechtigungen an, koordiniert Werkzeuge und hält den Zustand; er verbindet Benutzeroberfläche, Sprachmodell, Werkzeuge sowie Gesprächsverlauf und Zustand](../assets/images/m02/harness-coordinates.svg)
+![Diagramm „What an agent harness coordinates“: Der Agent Harness in der Mitte bereitet Kontext vor, wendet Berechtigungen an, koordiniert Werkzeuge und hält den Zustand; er verbindet Benutzeroberfläche, Sprachmodell, Werkzeuge sowie Gesprächsverlauf und Zustand](https://code.visualstudio.com/assets/docs/agents/concepts/agent-harness-relationships.svg)
 _Quelle: VS Code Docs, „Understand agent harnesses“ (https://code.visualstudio.com/docs/agents/concepts/agent-harnesses), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Das Modell schlägt Aktionen vor, der Harness führt sie aus und entscheidet, was erlaubt ist.
@@ -70,7 +70,7 @@ Stand: 11/2026. Quelle: [Agent harnesses](https://code.visualstudio.com/docs/age
 
 Der Copilot-Harness ist seit VS Code 1.142 (Okt 2026) Standard für neue Sitzungen. Claude und Codex sind bei verwalteten Unternehmenseinstellungen gesperrt; Firmen können per Richtlinie Local als Standard halten.
 
-![Harness-Auswahl im Chat-Eingabefeld von VS Code mit den Einträgen Local, Copilot, Cloud, Claude und Codex; zweimal geöffnet, einmal mit Erklärung zu Local (eingebauter Harness im Extension Host), einmal zu Copilot (Copilot SDK im Agent Host, Sitzungen laufen im Hintergrund weiter)](../assets/images/m02/harness-hover.webp)
+![Harness-Auswahl im Chat-Eingabefeld von VS Code mit den Einträgen Local, Copilot, Cloud, Claude und Codex; zweimal geöffnet, einmal mit Erklärung zu Local (eingebauter Harness im Extension Host), einmal zu Copilot (Copilot SDK im Agent Host, Sitzungen laufen im Hintergrund weiter)](https://code.visualstudio.com/assets/updates/1_142/harness-hover.webp)
 _Quelle: VS Code Release Notes 1.142 (https://code.visualstudio.com/updates/v1_142), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Beim Überfahren eines Eintrags erklärt VS Code, wo der Harness läuft (Stand: VS Code 1.142, Okt 2026).

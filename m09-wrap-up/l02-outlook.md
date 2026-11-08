@@ -47,19 +47,19 @@ flowchart LR
     C --> PR["Pull Request<br/>Code Review"]
 ```
 
-![GitHub-Dialog „Assign Copilot to issue“ mit optionalem Prompt, Auswahl von Repository, Branch und Custom Agent sowie Button Assign](../assets/images/m09/copilot-assign-dialog.png)
+![GitHub-Dialog „Assign Copilot to issue“ mit optionalem Prompt, Auswahl von Repository, Branch und Custom Agent sowie Button Assign](https://docs.github.com/assets/cb-103529/images/help/copilot/cloud-agent/assign-to-copilot-dialog.png)
 
 _Quelle: GitHub Docs, Using Copilot cloud agent on GitHub (https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github), GitHub, CC BY 4.0, abgerufen am 07.11.2026._
 
 Cloud Agent: Beim Zuweisen eines Issues lassen sich ein Zusatz-Prompt und ein Custom Agent wählen; Copilot öffnet danach einen Pull Request.
 
-![Pull Request auf GitHub: Review-Kommentar „Let's make testID mandatory …“, darunter der Eintrag „Copilot started work on behalf of octocat“](../assets/images/m09/copilot-pr-comment.png)
+![Pull Request auf GitHub: Review-Kommentar „Let's make testID mandatory …“, darunter der Eintrag „Copilot started work on behalf of octocat“](https://docs.github.com/assets/cb-82999/images/help/copilot/cloud-agent/comment-to-agent-on-pr.png)
 
 _Quelle: GitHub Docs, Using Copilot cloud agent on GitHub (https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github), GitHub, CC BY 4.0, abgerufen am 07.11.2026._
 
 Im Pull Request reagiert der Cloud Agent auf Review-Kommentare und arbeitet weiter.
 
-![Copilot CLI im Terminal: Begrüßung mit Hinweisen zu /model und /delegate, darunter die Abfrage „Confirm folder trust“](../assets/images/m09/copilot-cli.png)
+![Copilot CLI im Terminal: Begrüßung mit Hinweisen zu /model und /delegate, darunter die Abfrage „Confirm folder trust“](https://docs.github.com/assets/cb-213582/images/help/copilot/copilot-cli-welcome.png)
 
 _Quelle: GitHub Docs, About GitHub Copilot CLI (https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-cli), GitHub, CC BY 4.0, abgerufen am 07.11.2026._
 

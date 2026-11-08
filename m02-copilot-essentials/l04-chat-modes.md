@@ -37,7 +37,7 @@ Bei FocusList: die Routen (`focuslist/__init__.py` bzw. `src/app.js`), das Templ
 | Kontext | alles, was mit der Anfrage ans Modell geht: Prompt, angehängte Dateien, Verlauf, Projektregeln |
 | Modellwahl | Auswahl des Sprachmodells für die Sitzung |
 
-![Chat-Ansicht in VS Code: links die Antwort des Agenten mit Liste der geänderten Dateien und den Schaltflächen „Keep“ und „Undo“, darunter das Eingabefeld mit „Add Context…“; rechts die Liste aller Sitzungen mit Status](../assets/images/m02/chat-view.png)
+![Chat-Ansicht in VS Code: links die Antwort des Agenten mit Liste der geänderten Dateien und den Schaltflächen „Keep“ und „Undo“, darunter das Eingabefeld mit „Add Context…“; rechts die Liste aller Sitzungen mit Status](https://code.visualstudio.com/assets/docs/agents/agents-overview/chat-view-expanded.png)
 _Quelle: VS Code Docs, „Use the Chat view“ (https://code.visualstudio.com/docs/agents/run/chat-view), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Die drei eingebauten Agents
@@ -57,14 +57,14 @@ flowchart LR
     G --> R["Mensch<br/>Diff prüfen (Lab 2.5)"]
 ```
 
-![Ergebnis des Plan-Agents im Chat: Titel „Plan: Remove Events Page“, nummerierte Schritte mit betroffenen Dateien, Abschnitt „Open Questions“ und die Schaltflächen „Start Implementation“ und „Open in Editor“](../assets/images/m02/plan-agent-result.png)
+![Ergebnis des Plan-Agents im Chat: Titel „Plan: Remove Events Page“, nummerierte Schritte mit betroffenen Dateien, Abschnitt „Open Questions“ und die Schaltflächen „Start Implementation“ und „Open in Editor“](https://code.visualstudio.com/assets/updates/1_105/plan-agent-sample.png)
 _Quelle: VS Code Release Notes, „September 2025 (version 1.105)“ (https://code.visualstudio.com/updates/v1_105), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht 2025: Plan liefert Schritte und offene Fragen, ändert aber nichts; erst „Start Implementation“ übergibt an den Agent.
 
 Der Agent wird in der Chat-Ansicht über die Agent-Auswahl im Eingabefeld gewechselt. Chat-Ansicht öffnen: Ctrl+Alt+I (Windows/Linux), Ctrl+Cmd+I (macOS), Stand: 11/2026.
 
-![Eingabefeld der Chat-Ansicht mit markierten Auswahlfeldern: Agent, Modell „Auto“, Harness „Copilot“ und Freigabe-Stufe „Manual permissions“](../assets/images/m02/chat-input-harness-permissions.png)
+![Eingabefeld der Chat-Ansicht mit markierten Auswahlfeldern: Agent, Modell „Auto“, Harness „Copilot“ und Freigabe-Stufe „Manual permissions“](https://code.visualstudio.com/assets/docs/agents/agents-quickstart/agent-session-editor-select-harness-role-2.png)
 _Quelle: VS Code Docs, „Quickstart: Complete your first task with an agent“ (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Kontext anhängen
@@ -89,7 +89,7 @@ _Quelle: VS Code Docs, „Quickstart: Complete your first task with an agent“ 
 
 Welche Modelle verfügbar sind, ändert sich laufend; die Liste in der eigenen Installation ist maßgeblich.
 
-![Geöffnete Modellauswahl im Chat-Eingabefeld: oben „Copilot Fusion“, darunter mehrere Modelle verschiedener Anbieter, beim gewählten Modell stehen Effort-Stufe und Kontextgröße (1M)](../assets/images/m02/model-picker.png)
+![Geöffnete Modellauswahl im Chat-Eingabefeld: oben „Copilot Fusion“, darunter mehrere Modelle verschiedener Anbieter, beim gewählten Modell stehen Effort-Stufe und Kontextgröße (1M)](https://code.visualstudio.com/assets/docs/agent-customization/language-models/model-dropdown-change-model.png)
 _Quelle: VS Code Docs, „AI language models in VS Code“ (https://code.visualstudio.com/docs/agent-customization/language-models), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Beispielansicht 11/2026; Namen und Anzahl der Modelle weichen in der eigenen Installation ab.

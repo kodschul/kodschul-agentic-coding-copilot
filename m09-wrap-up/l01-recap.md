@@ -64,7 +64,7 @@ Endstand des Kursprojekts: FocusList v5.
 
 Reihenfolge im Zweifel: von oben nach unten. Instructions kosten am wenigsten und wirken überall; Hooks, MCP und Specs lohnen sich, wenn ein konkretes Problem auftritt.
 
-![VS-Code-Agents-Fenster: neue Session mit Copilot CLI, links unter „Customizations“ die Einträge Agents, Skills, Instructions, Hooks, MCP Servers und Plugins](../assets/images/m09/agents-window-customizations.png)
+![VS-Code-Agents-Fenster: neue Session mit Copilot CLI, links unter „Customizations“ die Einträge Agents, Skills, Instructions, Hooks, MCP Servers und Plugins](https://code.visualstudio.com/assets/blogs/2026/10/15/vscode-agents-window.png)
 
 _Quelle: VS Code Blog, Modern UI (https://code.visualstudio.com/blogs/2026/10/15/modern-ui), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

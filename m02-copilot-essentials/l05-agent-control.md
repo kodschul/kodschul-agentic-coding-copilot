@@ -67,7 +67,7 @@ Stand: 11/2026; Bezeichnungen der Schaltflächen können sich mit VS-Code-Versio
 
 Typische Freigabe-Stufen: einmalig, für die Sitzung, für den Workspace, immer. Im Kurs: einmalig oder für die Sitzung, nie „immer“ für Befehle, die löschen, installieren oder pushen.
 
-![Freigabe-Anfrage im Chat: „Install Extension rust-analyzer?“ mit den Schaltflächen „Allow“ und „Skip“; das geöffnete Menü an „Allow“ bietet „Allow in this Session“, „Allow in this Workspace“ und „Always Allow“](../assets/images/m02/tool-approval.png)
+![Freigabe-Anfrage im Chat: „Install Extension rust-analyzer?“ mit den Schaltflächen „Allow“ und „Skip“; das geöffnete Menü an „Allow“ bietet „Allow in this Session“, „Allow in this Workspace“ und „Always Allow“](https://code.visualstudio.com/assets/docs/agents/approvals/chat-approve-tool.png)
 _Quelle: VS Code Docs, „Manage approvals and permissions“ (https://code.visualstudio.com/docs/agents/run/approvals), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Diff prüfen: behalten oder verwerfen
@@ -80,7 +80,7 @@ _Quelle: VS Code Docs, „Manage approvals and permissions“ (https://code.visu
 
 Prüffragen vor Keep: Nur geänderte Dateien, die zum Auftrag gehören? Neue Abhängigkeiten? Tests noch grün?
 
-![VS Code mit Agent-Änderungen: Im Editor ist ein neuer Testabschnitt grün hinterlegt, mit „Keep“ und „Undo“ direkt am Abschnitt; im Chat rechts die Liste „2 files changed“ mit Keep/Undo für alle Dateien und eine Freigabe-Anfrage für „npm test“](../assets/images/m02/agent-mode-keep-undo-2025.webp)
+![VS Code mit Agent-Änderungen: Im Editor ist ein neuer Testabschnitt grün hinterlegt, mit „Keep“ und „Undo“ direkt am Abschnitt; im Chat rechts die Liste „2 files changed“ mit Keep/Undo für alle Dateien und eine Freigabe-Anfrage für „npm test“](https://code.visualstudio.com/assets/blogs/2025/02/24/agent-mode.webp)
 _Quelle: VS Code Blog, „Introducing GitHub Copilot agent mode (preview)“ (https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht 2025: Keep/Undo auf allen drei Ebenen; Anordnung und Beschriftung sind heute leicht anders.
@@ -91,7 +91,7 @@ Ansicht 2025: Keep/Undo auf allen drei Ebenen; Anordnung und Beschriftung sind h
 - „Restore Checkpoint“ setzt alle Dateien auf den Stand vor dieser Anfrage zurück, auch über mehrere Dateien.
 - Checkpoints gelten nur für Änderungen aus dem Chat; Terminal-Befehle (z. B. gelöschte Dateien) macht ein Checkpoint nicht zwingend rückgängig. Deshalb Freigaben für löschende Befehle ablehnen.
 
-![Chat-Verlauf in VS Code: Über einer früheren Anfrage erscheint beim Überfahren die Schaltfläche „Restore Checkpoint“ mit dem Hinweis „Restores workspace and chat to this point“; unten die Liste der geänderten Dateien](../assets/images/m02/restore-checkpoint.png)
+![Chat-Verlauf in VS Code: Über einer früheren Anfrage erscheint beim Überfahren die Schaltfläche „Restore Checkpoint“ mit dem Hinweis „Restores workspace and chat to this point“; unten die Liste der geänderten Dateien](https://code.visualstudio.com/assets/docs/agents/chat-checkpoints/chat-restore-checkpoint.png)
 _Quelle: VS Code Docs, „Review and revert agent changes“ (https://code.visualstudio.com/docs/agents/run/review-code-edits), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Autopilot: im Kurs aus

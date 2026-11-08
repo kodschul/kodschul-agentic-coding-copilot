@@ -24,7 +24,7 @@ Details: [Lab 1.2](../m01-ai-foundations/l02-evolution.md)
 - Loop: **planen → Werkzeug nutzen → prüfen → wiederholen**
 - Mensch: Ziel vorgeben, Grenzen setzen, Ergebnis abnehmen
 
-<img src="../assets/images/m02/agent-loop.png" alt="Agent-Loop: Prompt → Understand → Act → Validate → Result, mit Rücksprung „iterate“ und Werkzeugen zum Lesen, Ändern und Ausführen" width="600">
+<img src="https://code.visualstudio.com/assets/docs/agents/concepts/agent-loop.png" alt="Agent-Loop: Prompt → Understand → Act → Validate → Result, mit Rücksprung „iterate“ und Werkzeugen zum Lesen, Ändern und Ausführen" width="600">
 
 _Quelle: VS Code Docs, Agents (https://code.visualstudio.com/docs/agents/concepts/agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
@@ -62,7 +62,7 @@ Details: [Lab 3.1](../m03-coding-approaches/l01-comparison.md)
 | MCP | Welche Werkzeuge außerhalb des Editors? | 7 |
 | Spec | Was genau soll gebaut werden? | 8 |
 
-<img src="../assets/images/m09/agents-window-customizations.png" alt="VS-Code-Agents-Fenster: links unter „Customizations“ die Einträge Agents, Skills, Instructions, Hooks und MCP Servers" width="600">
+<img src="https://code.visualstudio.com/assets/blogs/2026/10/15/vscode-agents-window.png" alt="VS-Code-Agents-Fenster: links unter „Customizations“ die Einträge Agents, Skills, Instructions, Hooks und MCP Servers" width="600">
 
 _Quelle: VS Code Blog, Modern UI (https://code.visualstudio.com/blogs/2026/10/15/modern-ui), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

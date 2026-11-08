@@ -55,19 +55,19 @@ flowchart LR
 
 **Stufe 1, Vorschlag (2021):**
 
-![Ankündigungsbild „Your AI pair programmer“ der GitHub-Copilot-Technical-Preview: Editor mit der JavaScript-Funktion fetchNASAPictureOfTheDay, deren Rumpf Copilot ergänzt hat](../assets/images/m01/copilot-preview-2021.png)
+![Ankündigungsbild „Your AI pair programmer“ der GitHub-Copilot-Technical-Preview: Editor mit der JavaScript-Funktion fetchNASAPictureOfTheDay, deren Rumpf Copilot ergänzt hat](https://github.blog/wp-content/uploads/2021/06/GitHub-Copilot_blog-header.png?resize=1600%2C850)
 _Quelle: GitHub Blog, „Introducing GitHub Copilot: your AI pair programmer“ (https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/), © GitHub, Pressebild (extern verlinkt), abgerufen am 07.11.2026._
 
 **Stufe 2, Chat (ab Nov 2022):**
 
-![ChatGPT-Startseite im Browser: Eingabefeld „Message ChatGPT“, Beispielaufgaben und Modellauswahl „ChatGPT 3.5“](../assets/images/m01/chatgpt-ui-2024.png)
+![ChatGPT-Startseite im Browser: Eingabefeld „Message ChatGPT“, Beispielaufgaben und Modellauswahl „ChatGPT 3.5“](https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Chatgpt-screenshot.png/1280px-Chatgpt-screenshot.png)
 _Quelle: Wikimedia Commons, „Chatgpt-screenshot.png“ (https://commons.wikimedia.org/wiki/File:Chatgpt-screenshot.png), Public Domain, abgerufen am 07.11.2026._
 
 Ansicht 2024: Programmieren per Gespräch im Browser, der Code wird von Hand in das Projekt kopiert.
 
 **Stufe 3, Agent (ab Feb 2025):**
 
-![Chat-Eingabe von Copilot in VS Code mit geöffneter Modus-Auswahl Ask, Edit und Agent](../assets/images/m01/chat-modes-2025.png)
+![Chat-Eingabe von Copilot in VS Code mit geöffneter Modus-Auswahl Ask, Edit und Agent](https://code.visualstudio.com/assets/updates/1_99/chat-modes.png)
 _Quelle: VS Code Release Notes 1.99 (https://code.visualstudio.com/updates/v1_99), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht März 2025: Der Chat bekommt den Modus „Agent“, der selbst Dateien ändert und Befehle ausführt. Die heutige Oberfläche sieht anders aus (Lab 2.4).

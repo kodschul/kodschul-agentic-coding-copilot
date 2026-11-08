@@ -46,7 +46,7 @@ Stand: 11/2026, Quellen: [Hooks (VS Code)](https://code.visualstudio.com/docs/ag
 - Hooks sind Preview; die Organisation kann einschränken, welche Hooks laufen dürfen.
 - Eine eigene Chat-Meldung pro Hook-Lauf gibt es im Copilot-Harness nicht. Ein blockierter Aufruf zeigt sich daran, dass der Agent die Begründung der Ablehnung meldet.
 
-![VS Code, Agent Debug Panel, Ansicht Logs: Zeilen Load Instructions, Load Skills, Load Agents, „Load Hooks – Resolved 0 hooks“, danach User message, Modellaufrufe und Werkzeuge wie read_file, apply_patch, run_in_terminal](../assets/images/m07/agent-debug-logs.png)
+![VS Code, Agent Debug Panel, Ansicht Logs: Zeilen Load Instructions, Load Skills, Load Agents, „Load Hooks – Resolved 0 hooks“, danach User message, Modellaufrufe und Werkzeuge wie read_file, apply_patch, run_in_terminal](https://code.visualstudio.com/assets/docs/agents/chat-debug-view/agent-logs.png)
 
 _Quelle: VS Code Docs, Agent Debug Logs (https://code.visualstudio.com/docs/agents/agent-troubleshooting/chat-debug-view), Microsoft, CC BY 3.0 US, abgerufen am 08.11.2026._
 
@@ -109,7 +109,7 @@ Das Schild bittet um Vorsicht (Instruction), die Leitplanke hält auch dann, wen
 | `agentStop` | Agent will die Runde beenden | Tests erzwingen (Lab 7.2) |
 | weitere | `sessionStart`, `userPromptSubmitted`, `subagentStart`, `preCompact` u. a. | siehe Cheatsheet Modul 7 |
 
-![VS Code, Auswahl „Hooks“: Lifecycle-Events Session Start, User Prompt Submit, Pre-Tool Use, Post-Tool Use, Pre-Compact, Subagent Start, Subagent Stop und Stop mit Kurzbeschreibung](../assets/images/m07/hooks-events.png)
+![VS Code, Auswahl „Hooks“: Lifecycle-Events Session Start, User Prompt Submit, Pre-Tool Use, Post-Tool Use, Pre-Compact, Subagent Start, Subagent Stop und Stop mit Kurzbeschreibung](https://code.visualstudio.com/assets/updates/1_109/hooks-configuration.png)
 
 _Quelle: VS Code Release Notes v1.109 (https://code.visualstudio.com/updates/v1_109), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

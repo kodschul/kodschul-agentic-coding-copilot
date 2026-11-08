@@ -51,24 +51,24 @@ Zum Beispiel Secrets wie `.env` lesen, `rm -rf` ausführen, ungeprüft pushen. S
 
 **IDE, Beispiel Cursor:**
 
-![Cursor-Agentenfenster: links Liste der Agent-Sitzungen, in der Mitte Auftrag und Zusammenfassung des Agenten, rechts der Diff der geänderten Dateien mit Schaltflächen zum Weitergeben der Änderungen, z. B. „Create PR“](../assets/images/m01/cursor-agent-window.png)
+![Cursor-Agentenfenster: links Liste der Agent-Sitzungen, in der Mitte Auftrag und Zusammenfassung des Agenten, rechts der Diff der geänderten Dateien mit Schaltflächen zum Weitergeben der Änderungen, z. B. „Create PR“](https://cursor.com/docs-static/images/agent/homepage-hero.png)
 _Quelle: Cursor Docs (https://cursor.com/docs), © Anysphere (Cursor), Hersteller-Screenshot (extern verlinkt), abgerufen am 07.11.2026._
 
 **Terminal, Beispiel OpenAI Codex CLI:**
 
-![OpenAI Codex CLI im Terminal: Auf die Bitte „Explain this code base to me“ erstellt der Agent einen Plan als Checkliste und beginnt, das Projekt zu erkunden](../assets/images/m01/codex-cli.png)
+![OpenAI Codex CLI im Terminal: Auf die Bitte „Explain this code base to me“ erstellt der Agent einen Plan als Checkliste und beginnt, das Projekt zu erkunden](https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-splash.png)
 _Quelle: GitHub, openai/codex (https://github.com/openai/codex), OpenAI, Apache-2.0, abgerufen am 07.11.2026._
 
 **Claude Code bei der Arbeit:**
 
-![Claude Code: Auf „can you add tests for this file?“ liest der Agent localizationUtils.ts (256 Zeilen) und schreibt eine neue Testdatei, die neuen Zeilen sind grün markiert](../assets/images/m01/claude-code-tests.webp)
+![Claude Code: Auf „can you add tests for this file?“ liest der Agent localizationUtils.ts (256 Zeilen) und schreibt eine neue Testdatei, die neuen Zeilen sind grün markiert](https://assets.claude.com/454390de9d9ccefb6082b7c2440c7547c1ec3964.webp)
 _Quelle: Anthropic, Claude Code (https://claude.com/product/claude-code), © Anthropic, Hersteller-Screenshot (extern verlinkt), abgerufen am 07.11.2026._
 
 Der Ablauf ist bei allen Werkzeugen gleich: Datei lesen, ändern, Ergebnis zur Prüfung zeigen.
 
 Die Grenzen verschwimmen: VS Code kann seit 2026 auch Claude und Codex als Harness ausführen (Lab 2.2).
 
-![VS Code mit Liste „Agent Sessions“: Sitzungen des lokalen Chat-Agenten, des GitHub Copilot Cloud Agent, des Copilot CLI Agent und von OpenAI Codex nebeneinander, rechts eine laufende Codex-Sitzung](../assets/images/m01/agent-sessions-2025.webp)
+![VS Code mit Liste „Agent Sessions“: Sitzungen des lokalen Chat-Agenten, des GitHub Copilot Cloud Agent, des Copilot CLI Agent und von OpenAI Codex nebeneinander, rechts eine laufende Codex-Sitzung](https://code.visualstudio.com/assets/blogs/2025/11/03/agent-sessions.webp)
 _Quelle: VS Code Blog, „A Unified Experience for all Coding Agents“ (https://code.visualstudio.com/blogs/2025/11/03/unified-agent-experience), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht Nov. 2025: Agenten aus IDE, Terminal und Cloud erscheinen bereits in einer gemeinsamen Liste in VS Code.

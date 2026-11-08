@@ -54,7 +54,7 @@ flowchart TD
     U --> H["Mensch: Diff, Browser, Keep"]
 ```
 
-![Sequenzdiagramm: User beauftragt einen Conductor-Agenten; dieser holt Planning, Implement und Review nacheinander dazu, mit Schleife je Phase und Freigabe durch den User](../assets/images/m06/agent-orchestration.png)
+![Sequenzdiagramm: User beauftragt einen Conductor-Agenten; dieser holt Planning, Implement und Review nacheinander dazu, mit Schleife je Phase und Freigabe durch den User](https://code.visualstudio.com/assets/updates/1_109/agent-orchestration-diagram.png)
 _Quelle: VS Code Release Notes v1.109 (https://code.visualstudio.com/updates/v1_109), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Dasselbe Muster als Beispiel in den VS-Code-Release-Notes: Ein leitender Agent („Conductor“) verteilt Planen, Umsetzen und Prüfen auf Subagents; der Mensch gibt Plan und Ergebnis frei.

@@ -32,7 +32,7 @@ Lange bevor es KI-Vorschläge gab, hat VS Code Schreibarbeit mit festen Textbaus
 | Snippet | fester Textbaustein mit Platzhaltern; Tab springt zum nächsten Platzhalter | `for` in JavaScript → komplette `for`-Schleife |
 | Emmet | Abkürzungen für HTML und CSS, die zu ganzen Strukturen werden; in VS Code eingebaut | `!` → HTML-Grundgerüst, `ul>li*3` → Liste mit drei Einträgen |
 
-![IntelliSense-Liste in VS Code nach Eingabe von „fo“: Einträge for, foreach, forin, forof und function mit Snippet-Symbol, rechts die Vorschau der for-Schleife](../assets/images/m02/vscode-builtin-snippets.png)
+![IntelliSense-Liste in VS Code nach Eingabe von „fo“: Einträge for, foreach, forin, forof und function mit Snippet-Symbol, rechts die Vorschau der for-Schleife](https://code.visualstudio.com/assets/docs/editing/userdefinedsnippets/builtin-javascript-snippets.png)
 _Quelle: VS Code Docs, „Snippets in Visual Studio Code“ (https://code.visualstudio.com/docs/editing/userdefinedsnippets), Microsoft, CC BY 3.0 US, abgerufen am 08.11.2026._
 
 Snippets sind vorhersehbar: Derselbe Kürzel liefert immer denselben Text. Für JavaScript und HTML bringt VS Code Snippets mit, für Python kommen sie über Erweiterungen. Ghost Text dagegen wird für jede Stelle neu erzeugt und passt sich dem Code drumherum an.
@@ -46,7 +46,7 @@ Snippets sind vorhersehbar: Derselbe Kürzel liefert immer denselben Text. Für 
 | Inline-Vorschlag (Ghost Text) | grauer Text an der Cursor-Position, den Copilot während des Tippens anbietet |
 | Next Edit Suggestion (NES) | Vorschlag für die nächste Änderung, auch an einer anderen Stelle der Datei, z. B. nach einer Umbenennung |
 
-![Next Edit Suggestion in VS Code: Nach dem Umbenennen der Klasse in Point3D markiert ein Pfeil am Rand die Konstruktorzeile, daneben schlägt Copilot den zusätzlichen Parameter „private readonly z: number“ vor](../assets/images/m02/nes-point3d.png)
+![Next Edit Suggestion in VS Code: Nach dem Umbenennen der Klasse in Point3D markiert ein Pfeil am Rand die Konstruktorzeile, daneben schlägt Copilot den zusätzlichen Parameter „private readonly z: number“ vor](https://code.visualstudio.com/assets/docs/editing/inline-suggestions/point3d.png)
 _Quelle: VS Code Docs, „Inline suggestions from GitHub Copilot in VS Code“ (https://code.visualstudio.com/docs/editing/ai-powered-suggestions), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Vorschläge annehmen und ablehnen
@@ -62,7 +62,7 @@ Stand: 11/2026, VS-Code-Standardbelegung. Abweichende Belegungen zeigt die Befeh
 | vorherige Alternative anzeigen | Alt+[ | Option+[ |
 | Next Edit Suggestion anspringen und annehmen | Tab | Tab |
 
-![Ghost Text in VS Code: grauer, kursiver Funktionsrumpf unter dem Funktionskopf, darüber eine Leiste mit „1/3“ und Pfeilen für Alternativen sowie „Accept (Tab)“ und „Accept Word (Ctrl+RightArrow)“](../assets/images/m02/ghost-text-toolbar.png)
+![Ghost Text in VS Code: grauer, kursiver Funktionsrumpf unter dem Funktionskopf, darüber eine Leiste mit „1/3“ und Pfeilen für Alternativen sowie „Accept (Tab)“ und „Accept Word (Ctrl+RightArrow)“](https://code.visualstudio.com/assets/docs/editing/inline-suggestions/copilot-hover-highlight.png)
 _Quelle: VS Code Docs, „Inline suggestions from GitHub Copilot in VS Code“ (https://code.visualstudio.com/docs/editing/ai-powered-suggestions), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Beim Überfahren des Ghost Texts erscheint eine Leiste mit denselben Aktionen wie in der Tabelle.
@@ -85,7 +85,7 @@ flowchart LR
 | Muster vorgeben | erste Zeile einer Liste schreiben, Copilot ergänzt die übrigen |
 | passende Datei offen | Copilot nutzt offene Dateien als Kontext, z. B. `data/tasks.json` |
 
-![Zwei Kommentarzeilen beschreiben eine TypeScript-Klasse für Studierende mit Name, ID und Kursliste; darunter schlägt Copilot als Ghost Text die komplette Klasse Student mit Konstruktor sowie addCourse und removeCourse vor](../assets/images/m02/ghost-text-from-comment.png)
+![Zwei Kommentarzeilen beschreiben eine TypeScript-Klasse für Studierende mit Name, ID und Kursliste; darunter schlägt Copilot als Ghost Text die komplette Klasse Student mit Konstruktor sowie addCourse und removeCourse vor](https://code.visualstudio.com/assets/docs/editing/inline-suggestions/ts-suggest-code-comment.png)
 _Quelle: VS Code Docs, „Inline suggestions from GitHub Copilot in VS Code“ (https://code.visualstudio.com/docs/editing/ai-powered-suggestions), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 ## Wann Vorschläge stören
@@ -97,7 +97,7 @@ _Quelle: VS Code Docs, „Inline suggestions from GitHub Copilot in VS Code“ (
 | sicherheitskritischer Code | jeden Vorschlag Zeile für Zeile lesen, im Zweifel ablehnen |
 | Vorschlag länger als gewünscht | wortweise annehmen statt Tab |
 
-![Copilot-Menü aus der Statusleiste von VS Code: Bereich „Inline Suggestions“ mit Häkchen für Ghost-Text- und Next-Edit-Vorschläge, Auswahl „Eagerness“ (Auto, Low, Medium, High) und Schaltfläche „Snooze“ zum Ausblenden für 5 Minuten](../assets/images/m02/nes-eagerness-menu.png)
+![Copilot-Menü aus der Statusleiste von VS Code: Bereich „Inline Suggestions“ mit Häkchen für Ghost-Text- und Next-Edit-Vorschläge, Auswahl „Eagerness“ (Auto, Low, Medium, High) und Schaltfläche „Snooze“ zum Ausblenden für 5 Minuten](https://code.visualstudio.com/assets/blogs/2026/10/27/eagerness-settings-menu.png)
 _Quelle: VS Code Blog, „Tune GitHub Copilot Inline Suggestions with Configurable Eagerness“ (https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Stand: 10/2026. „Snooze“ pausiert Vorschläge kurz; die Häkchen schalten Ghost Text und Next Edit Suggestions getrennt ab.

@@ -45,7 +45,7 @@ flowchart TD
     R --> A
 ```
 
-![Agent-Loop: Prompt → Understand → Act → Validate → Result, mit Rücksprung „iterate“ von Validate zu Understand](../assets/images/m02/agent-loop.png)
+![Agent-Loop: Prompt → Understand → Act → Validate → Result, mit Rücksprung „iterate“ von Validate zu Understand](https://code.visualstudio.com/assets/docs/agents/concepts/agent-loop.png)
 
 _Quelle: VS Code Docs, Agents (https://code.visualstudio.com/docs/agents/concepts/agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

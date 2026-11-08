@@ -57,7 +57,7 @@ Analogie: Ein Bauplan legt fest, was gebaut wird, bevor jemand mauert. Eine Spec
 | Lebensdauer | dauerhaft | dauerhaft | Change bis zur Umsetzung, danach als gültige Spec im Projekt |
 | Wer schreibt | Team | Team | Agent schlägt vor, Mensch prüft und gibt frei |
 
-![Flussdiagramm: Projektbeschreibung, Architektur und Weiteres → Projektkontext kuratieren; zusammen mit dem Aufgabenkontext → Plan erzeugen; mit Plan-Vorlage → <feature>-plan.md → Code erzeugen; mit Coding-Richtlinien → Code](../assets/images/m08/context-engineering-flow.png)
+![Flussdiagramm: Projektbeschreibung, Architektur und Weiteres → Projektkontext kuratieren; zusammen mit dem Aufgabenkontext → Plan erzeugen; mit Plan-Vorlage → <feature>-plan.md → Code erzeugen; mit Coding-Richtlinien → Code](https://code.visualstudio.com/assets/docs/agents/context-engineering-guide/context-engineering-workflow.png)
 
 _Quelle: VS Code Docs, Context engineering guide (https://code.visualstudio.com/docs/agents/guides/context-engineering-guide), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
@@ -93,7 +93,7 @@ Nach dem Archivieren beschreibt `openspec/specs/` das aktuelle Verhalten der App
 | Grenzfall benannt | „überfällige Aufgaben markieren“ | „heute fällig = nicht überfällig“ |
 | prüfbar ohne Code-Kenntnis | „`is_overdue()` liefert True“ | „Badge ‚überfällig‘ erscheint“ |
 
-![V-Modell: links absteigend Systemanforderungsanalyse bis Software-Entwurf, rechts aufsteigend Unit-Tests, Integrations-Tests, System-Integration bis Abnahme und Nutzung](../assets/images/m08/v-modell.svg)
+![V-Modell: links absteigend Systemanforderungsanalyse bis Software-Entwurf, rechts aufsteigend Unit-Tests, Integrations-Tests, System-Integration bis Abnahme und Nutzung](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/V-Modell.svg/1280px-V-Modell.svg.png)
 
 _Quelle: Wikimedia Commons, V-Modell (https://commons.wikimedia.org/wiki/File:V-Modell.svg), Michael Pätzold, S. Seyfert, CC BY-SA 3.0, abgerufen am 07.11.2026._
 

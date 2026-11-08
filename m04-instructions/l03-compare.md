@@ -134,7 +134,7 @@ In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis
 
 Python: Für die Tests reicht die `venv` aus dem Arbeitsordner, kein neues `pip install`. Im Terminal des jeweiligen Fensters aktivieren: `source $HOME/kurs/focuslist/.venv/bin/activate` (Windows: `& "$HOME/kurs/focuslist/.venv/Scripts/Activate.ps1"`), dann `pytest`. Node.js: `npm test` läuft ohne `npm install`.
 
-![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)
+![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](https://code.visualstudio.com/assets/docs/agents/agents-quickstart/review-changes-panel.png)
 _Quelle: VS Code Docs, Agents Quickstart (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Der Reiter „Changes“ der Agent-Sitzung zeigt in jedem Fenster, welche Dateien der Agent geändert hat; diese Dateien gehören in den Vergleich.

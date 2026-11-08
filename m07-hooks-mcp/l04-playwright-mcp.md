@@ -56,7 +56,7 @@ Stand: 11/2026, Quelle: [Playwright MCP (GitHub)](https://github.com/microsoft/p
 
 Beispiel: `"args": ["@playwright/mcp@latest", "--isolated"]`. Voraussetzung: Node 18+, beim ersten Start lädt Playwright ggf. einen Browser herunter.
 
-![Customizations-Editor, Bereich MCP Servers: Workspace-Server „everything“ aus .mcp.json und Built-in-Server github-mcp-server, je mit Start-Button, Schalter und Menü (Start Server, Disable, Server Options, Show Output)](../assets/images/m07/mcp-servers-list.png)
+![Customizations-Editor, Bereich MCP Servers: Workspace-Server „everything“ aus .mcp.json und Built-in-Server github-mcp-server, je mit Start-Button, Schalter und Menü (Start Server, Disable, Server Options, Show Output)](https://code.visualstudio.com/assets/docs/agent-customization/mcp-servers/mcp-servers-section.png)
 
 _Quelle: VS Code Docs, Manage MCP servers (https://code.visualstudio.com/docs/agents/run/manage-mcp-servers), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
@@ -86,7 +86,7 @@ flowchart LR
     F -- "ja" --> H["agentStop-Hook:<br/>Tests (Lab 7.2)"]
 ```
 
-![Diagramm Browser-Feedback-Loop: 1. Code ändern, 2. im Browser bedienen, 3. Ergebnis prüfen (Seite, Konsole, Screenshots), 4. diagnostizieren und beheben; daneben der Validierungskontext aus Prompt, Akzeptanzkriterien und Browser-Sitzung](../assets/images/m07/browser-feedback-loop.png)
+![Diagramm Browser-Feedback-Loop: 1. Code ändern, 2. im Browser bedienen, 3. Ergebnis prüfen (Seite, Konsole, Screenshots), 4. diagnostizieren und beheben; daneben der Validierungskontext aus Prompt, Akzeptanzkriterien und Browser-Sitzung](https://code.visualstudio.com/assets/docs/agents/browser-tools/browser-feedback-loop.png)
 
 _Quelle: VS Code Docs, Browser tools (https://code.visualstudio.com/docs/agents/run/browser-tools), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

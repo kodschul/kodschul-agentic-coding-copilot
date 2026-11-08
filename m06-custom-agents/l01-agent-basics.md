@@ -64,7 +64,7 @@ tools: ['read', 'search']
 Auftrag, Ablauf, Grenzen und Ausgabeformat in Markdown ...
 ```
 
-![Customizations-Editor in VS Code, Bereich Agents: Agent „Ask“ (ask.agent.md) unter User und „Code Reviewer Agent“ (.github/agents/code-reviewer.agent.md) unter Workspace](../assets/images/m06/custom-agents-editor.png)
+![Customizations-Editor in VS Code, Bereich Agents: Agent „Ask“ (ask.agent.md) unter User und „Code Reviewer Agent“ (.github/agents/code-reviewer.agent.md) unter Workspace](https://code.visualstudio.com/assets/docs/agent-customization/customization/create-custom-agent-2.png)
 
 _Quelle: VS Code Docs, Custom agents (https://code.visualstudio.com/docs/agent-customization/custom-agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
@@ -97,7 +97,7 @@ Stand: 11/2026. Quelle: [Custom agents](https://code.visualstudio.com/docs/agent
 | `*` | alle Werkzeuge | nur für Vollzugriff-Rollen |
 | `<server>/*` | alle Werkzeuge eines MCP-Servers | ab m07, z. B. `playwright/*` |
 
-![Dialog „Configure Tools“ im Chat: Built-in-Werkzeuge agent, browser, edit, execute, read, search, todo, vscode und web mit Checkboxen](../assets/images/m07/configure-tools.png)
+![Dialog „Configure Tools“ im Chat: Built-in-Werkzeuge agent, browser, edit, execute, read, search, todo, vscode und web mit Checkboxen](https://code.visualstudio.com/assets/docs/agents/chat-tools/agent-mode-select-tools.png)
 
 _Quelle: VS Code Docs, Tools (https://code.visualstudio.com/docs/agents/run/tools), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
@@ -109,7 +109,7 @@ Dieselben Namen zeigt der Chat unter „Configure Tools“. Dort gilt die Auswah
 
 Ein Agent mit dem Werkzeug `agent` kann andere Agents als Subagent starten. Im Copilot-Harness heißt das interne Werkzeug dafür `task` (im Local-Harness `runSubagent`). Der Subagent bekommt nur den Auftrag, den der Aufrufer formuliert, nicht den ganzen Chat-Verlauf.
 
-![Chat in VS Code: Subagent „Analyze app structure for auth“ liest nacheinander layout.tsx, page.tsx und globals.css](../assets/images/m06/subagent-running.webp)
+![Chat in VS Code: Subagent „Analyze app structure for auth“ liest nacheinander layout.tsx, page.tsx und globals.css](https://code.visualstudio.com/assets/blogs/2025/11/03/subagent-in-progress.webp)
 
 _Quelle: VS Code Blog, A unified agent experience (https://code.visualstudio.com/blogs/2025/11/03/unified-agent-experience), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

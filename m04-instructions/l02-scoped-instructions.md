@@ -69,7 +69,7 @@ flowchart LR
 | Agent schreibt einen neuen Test | `AGENTS.md` + `tests.instructions.md` |
 | Agent ändert Route, Template und Test | `AGENTS.md` + beide Dateien |
 
-![Copilot-Chat: Auf den Auftrag „create a CLI application for a chess game in TypeScript“ liest der Agent zuerst typescript.instructions.md, danach package.json, tsconfig.json und README.md](../assets/images/m04/instructions-loaded.png)
+![Copilot-Chat: Auf den Auftrag „create a CLI application for a chess game in TypeScript“ liest der Agent zuerst typescript.instructions.md, danach package.json, tsconfig.json und README.md](https://code.visualstudio.com/assets/updates/1_102/instructions-loading-on-demand.png)
 _Quelle: VS Code Release Notes 1.102 (https://code.visualstudio.com/updates/v1_102), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Im Chat-Verlauf ist sichtbar, wann eine Instructions-Datei für passende Dateien gelesen wird (hier eine Datei für TypeScript).
@@ -149,7 +149,7 @@ Gleicher Aufbau, Dateien: [`tests.instructions.md`](../project/focuslist/node/st
 | Agent kennt die Testregeln bei einer allgemeinen Frage nicht | keine passende Datei betroffen, Regeln gehen nicht mit | Testdatei als Kontext anhängen oder Auftrag stellen, der Tests ändert |
 | Agent folgt zwei widersprüchlichen Regeln abwechselnd | gleiche Regel in `AGENTS.md` und Scoped-Datei verschieden | Regel nur an einer Stelle |
 
-![VS Code, Diagnoseansicht „Chat Customization Diagnostics“: Liste der geladenen Custom Agents, Instructions (copilot-instructions.md) und Prompt Files mit Pfaden](../assets/images/m04/customization-diagnostics.png)
+![VS Code, Diagnoseansicht „Chat Customization Diagnostics“: Liste der geladenen Custom Agents, Instructions (copilot-instructions.md) und Prompt Files mit Pfaden](https://code.visualstudio.com/assets/updates/1_109/chat-customization-diagnostics.png)
 _Quelle: VS Code Release Notes 1.109 (https://code.visualstudio.com/updates/v1_109), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Bei „Regeln greifen nie“ hilft die Diagnoseansicht von VS Code. Die Ansicht listet, welche Instructions-Dateien erkannt wurden.

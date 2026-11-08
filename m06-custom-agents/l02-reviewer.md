@@ -97,7 +97,7 @@ Schwere: **hoch** = Fehler oder Sicherheitslücke, muss vor dem Merge behoben we
 | Reihenfolge der Prüfung | Korrektheit vor Stil |
 | festes Format | Berichte sind vergleichbar und lassen sich abarbeiten |
 
-![Copilot-Code-Review-Kommentar in einem GitHub-Pull-Request: Befund zu den Zeilen 141–142 mit Schwere „High“ und vorgeschlagener Änderung](../assets/images/m06/copilot-review-comment.png)
+![Copilot-Code-Review-Kommentar in einem GitHub-Pull-Request: Befund zu den Zeilen 141–142 mit Schwere „High“ und vorgeschlagener Änderung](https://docs.github.com/assets/cb-418307/images/help/copilot/code-review/review-comment@2x.png)
 
 _Quelle: GitHub Docs, Using GitHub Copilot code review (https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review), GitHub, CC BY 4.0, abgerufen am 07.11.2026._
 
@@ -111,7 +111,7 @@ Stand: 11/2026; Bezeichnungen und Ort der Auswahl können sich mit VS-Code-Versi
 - Für eine neue Datei eine neue Chat-Sitzung starten, damit die Auswahl neu eingelesen wird.
 - Mit `user-invocable: false` stünde der Agent nicht in der Auswahl und liefe nur als Subagent (Lab 6.3).
 
-![Agent-Auswahl im Chat-Eingabefeld: unter „Agent“ steht der Custom Agent „Planner“](../assets/images/m06/custom-agent-in-picker.png)
+![Agent-Auswahl im Chat-Eingabefeld: unter „Agent“ steht der Custom Agent „Planner“](https://code.visualstudio.com/assets/updates/1_107/background_agents.png)
 
 _Quelle: VS Code Release Notes v1.107 (https://code.visualstudio.com/updates/v1_107), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

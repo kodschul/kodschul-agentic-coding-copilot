@@ -104,7 +104,7 @@ flowchart TD
 | `/test-writer GET /api/tasks` | Skill soll sicher laufen, Argument direkt mitgeben |
 | „Schreib Tests für das Löschen“ | Alltag: Agent erkennt über die `description`, dass `test-writer` passt |
 
-![Chat in VS Code: Auf die Frage nach Playwright-Tests erkennt der Agent den passenden Skill „webapp-testing“ und liest dessen SKILL.md, bevor er antwortet](../assets/images/m05/skill-loaded.png)
+![Chat in VS Code: Auf die Frage nach Playwright-Tests erkennt der Agent den passenden Skill „webapp-testing“ und liest dessen SKILL.md, bevor er antwortet](https://code.visualstudio.com/assets/updates/1_107/use-claude-skills.png)
 _Quelle: VS Code Release Notes 1.107 (https://code.visualstudio.com/updates/v1_107), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Automatisches Laden im Chat-Verlauf: Der Agent begründet, warum der Skill passt, und liest erst dann `SKILL.md`.
@@ -121,7 +121,7 @@ Stand: 11/2026. Quellen: [Agent skills](https://code.visualstudio.com/docs/agent
 | Claude Code | `.claude/skills/<name>/SKILL.md` | – (im Kurs nicht behandelt) |
 | OpenAI Codex | `.agents/skills/<name>/SKILL.md` | – (im Kurs nicht behandelt) |
 
-![VS Code, Fenster „Customizations“, Bereich Skills: Gruppen User und Workspace mit Plus-Buttons, Workspace-Skills mit Pfaden wie .github/skills/security-review/SKILL.md](../assets/images/m05/skills-editor.png)
+![VS Code, Fenster „Customizations“, Bereich Skills: Gruppen User und Workspace mit Plus-Buttons, Workspace-Skills mit Pfaden wie .github/skills/security-review/SKILL.md](https://code.visualstudio.com/assets/docs/agent-customization/customization/create-skill.png)
 _Quelle: VS Code Docs, Agent skills (https://code.visualstudio.com/docs/agent-customization/agent-skills), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Projekt-Skills erscheinen in VS Code unter **Workspace**, persönliche unter **User**.

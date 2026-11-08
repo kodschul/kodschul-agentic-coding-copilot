@@ -50,7 +50,7 @@ flowchart LR
 
 Der Agent sieht nur Tool-Namen und Beschreibungen. Welche Tools er nutzt, entscheidet er im Loop wie bei Datei- und Terminal-Werkzeugen.
 
-![Diagramm: KI-Anwendungen (Chat-Oberflächen, IDEs, andere KI-Apps) links, MCP als standardisiertes Protokoll in der Mitte, Datenquellen und Werkzeuge (Datenbanken, Git, Slack) rechts, Datenfluss in beide Richtungen](../assets/images/m07/mcp-overview.png)
+![Diagramm: KI-Anwendungen (Chat-Oberflächen, IDEs, andere KI-Apps) links, MCP als standardisiertes Protokoll in der Mitte, Datenquellen und Werkzeuge (Datenbanken, Git, Slack) rechts, Datenfluss in beide Richtungen](https://mintcdn.com/mcp/bEUxYpZqie0DsluH/images/mcp-simple-diagram.png)
 
 _Quelle: Model Context Protocol Docs, Introduction (https://modelcontextprotocol.io/docs/getting-started/intro), Model Context Protocol, CC BY 4.0, abgerufen am 07.11.2026._
 
@@ -93,7 +93,7 @@ Aufbau eines lokalen Servers in `.mcp.json`:
 | `command` | Programm, das den Server startet (`npx` lädt das npm-Paket) |
 | `args` | Argumente, hier das Paket `@playwright/mcp` in der neuesten Version |
 
-![Customizations-Editor, MCP-Server „everything“ aus .mcp.json: Server Type stdio, Command npx, Arguments -y @modelcontextprotocol/server-everything, Umgebungsvariable LOG_LEVEL](../assets/images/m07/mcp-server-form.png)
+![Customizations-Editor, MCP-Server „everything“ aus .mcp.json: Server Type stdio, Command npx, Arguments -y @modelcontextprotocol/server-everything, Umgebungsvariable LOG_LEVEL](https://code.visualstudio.com/assets/docs/agent-customization/mcp-servers/mcp-server-configuration-form.png)
 
 _Quelle: VS Code Docs, Manage MCP servers (https://code.visualstudio.com/docs/agents/run/manage-mcp-servers), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 

@@ -36,7 +36,7 @@ Unklare Absicht, fremder Stil, fehlende Tests, unbekannte Abhängigkeiten, ungep
 | Erfundenes Paket | Paketname, den die KI halluziniert; Angreifer registrieren solche Namen mit Schadcode |
 | Freigabe | Bestätigung durch den Menschen, bevor der Agent ein Werkzeug oder einen Terminal-Befehl ausführt (Lab 2.5) |
 
-![ChatGPT soll einen Artikel der New York Times anhand seiner URL zusammenfassen und liefert eine flüssige, sachlich klingende Zusammenfassung, obwohl es den Artikel nicht gibt](../assets/images/m01/chatgpt-hallucination.png)
+![ChatGPT soll einen Artikel der New York Times anhand seiner URL zusammenfassen und liefert eine flüssige, sachlich klingende Zusammenfassung, obwohl es den Artikel nicht gibt](https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/ChatGPT_hallucination.png/500px-ChatGPT_hallucination.png)
 _Quelle: Wikimedia Commons, „ChatGPT hallucination.png“ (https://commons.wikimedia.org/wiki/File:ChatGPT_hallucination.png), Public Domain, abgerufen am 07.11.2026._
 
 Halluzination (2023): Die Antwort klingt sicher und ist trotzdem erfunden. Erfundene Paketnamen entstehen auf dieselbe Weise.
@@ -71,7 +71,7 @@ Rechtliche Details hängen von Vertrag, Land und Branche ab; dieses Handout erse
 | Unbekannte Abhängigkeit | Agent installiert ein Paket mit ähnlichem Namen wie ein bekanntes | Paket auf npm/PyPI prüfen: Herkunft, Downloads, Pflege; nur bewusst neue Abhängigkeiten |
 | Überflüssiger Code | Agent baut mehr als verlangt | Diff lesen, Unnötiges verwerfen |
 
-![Copilot-Agent in VS Code möchte im Terminal „npm run dev“ ausführen und wartet auf „Continue“ oder „Cancel“; darunter zwei geänderte Dateien mit „Keep“ und „Undo“](../assets/images/m02/terminal-approval-2025.webp)
+![Copilot-Agent in VS Code möchte im Terminal „npm run dev“ ausführen und wartet auf „Continue“ oder „Cancel“; darunter zwei geänderte Dateien mit „Keep“ und „Undo“](https://code.visualstudio.com/assets/blogs/2025/02/24/run-terminal-tool.webp)
 _Quelle: VS Code Blog, „Introducing GitHub Copilot agent mode (preview)“ (https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Ansicht 2025: Vor jedem Terminal-Befehl zeigt der Agent den Befehl und wartet auf die Freigabe. Genau hier fällt ein `rm -rf` oder ein falscher Paketname auf.

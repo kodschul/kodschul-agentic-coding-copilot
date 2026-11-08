@@ -57,7 +57,7 @@ Andrej Karpathy (Mitgründer von OpenAI) prägte den Begriff am 02.02.2025 auf X
 - Seit März 2025 führt Merriam-Webster den Begriff als „slang & trending“; Collins English Dictionary kürte „vibe coding“ zum Wort des Jahres 2025.
 - Quellen: [Karpathy auf X, 02.02.2025](https://x.com/karpathy/status/1886192184808149383), [Wikipedia: Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding), abgerufen am 07.11.2026.
 
-![ChatGPT-Antwort auf den Ein-Satz-Prompt „Write a Javascript function to shuffle a deck of cards“: fertiger Code mit Erklärung, ohne Bezug zu einem Projekt](../assets/images/m03/chatgpt-vibe-coding.png)
+![ChatGPT-Antwort auf den Ein-Satz-Prompt „Write a Javascript function to shuffle a deck of cards“: fertiger Code mit Erklärung, ohne Bezug zu einem Projekt](https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/ChatGPT_vibe_coding.png/500px-ChatGPT_vibe_coding.png)
 _Quelle: Wikimedia Commons, „ChatGPT vibe coding.png“ (https://commons.wikimedia.org/wiki/File:ChatGPT_vibe_coding.png), Public Domain, abgerufen am 07.11.2026._
 
 Code auf Zuruf: Ein Satz genügt für lauffähigen Code; ob er zum eigenen Projekt passt, prüft dabei niemand.
@@ -96,7 +96,7 @@ Faustregel: Je länger Code lebt und je mehr Menschen ihn nutzen, desto teurer w
 
 Agentic Coding nutzt den Agenten-Loop aus Lab 1.1: planen, Werkzeug nutzen, Ergebnis prüfen, wiederholen. Neu ist, dass der Agent nicht nur den Prompt bekommt, sondern das Wissen des Projekts aus Dateien im Repo.
 
-![Agenten-Loop in der VS-Code-Dokumentation: Prompt, dann Understand (Dateien, Codebasis, Web), Act (Code ändern, Befehle) und Validate (Tests, Fehler prüfen) in einer Schleife mit Werkzeugen, am Ende das Ergebnis; der Mensch kann jederzeit korrigieren](../assets/images/m02/agent-loop.png)
+![Agenten-Loop in der VS-Code-Dokumentation: Prompt, dann Understand (Dateien, Codebasis, Web), Act (Code ändern, Befehle) und Validate (Tests, Fehler prüfen) in einer Schleife mit Werkzeugen, am Ende das Ergebnis; der Mensch kann jederzeit korrigieren](https://code.visualstudio.com/assets/docs/agents/concepts/agent-loop.png)
 _Quelle: VS Code Docs, „Understand AI agents“ (https://code.visualstudio.com/docs/agents/concepts/agents), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Der Loop aus Lab 1.1: Beim agentischen Weg füttern Dateien aus dem Repo das „Understand“, und Prüfungen sichern das „Validate“.

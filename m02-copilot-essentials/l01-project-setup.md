@@ -40,7 +40,7 @@ An beobachtbaren Ergebnissen: Die App startet ohne Fehler, die Seite zeigt Daten
 
 ## Aufbau des Startgerüsts
 
-![Client-Server-Modell: Der Client schickt eine Anfrage (request) an den Server, der Server schickt eine Antwort (response) zurück](../assets/images/m02/client-server.svg)
+![Client-Server-Modell: Der Client schickt eine Anfrage (request) an den Server, der Server schickt eine Antwort (response) zurück](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Client-server_model.svg/1280px-Client-server_model.svg.png)
 _Quelle: Wikimedia Commons, „Client-server model.svg“ (https://commons.wikimedia.org/wiki/File:Client-server_model.svg), Lubaochuan, CC BY-SA 4.0, abgerufen am 07.11.2026._
 
 Grundprinzip jeder Web-App: Der Browser (Client) fragt, der Server antwortet. Bei FocusList laufen beide auf demselben Rechner.
