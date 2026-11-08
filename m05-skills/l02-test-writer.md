@@ -109,7 +109,7 @@ def test_unbekannte_id_liefert_404(client):
 
 ## Übung
 
-**Dauer:** ca. 30 Minuten · **Start:** eigener Stand nach Lab 4.3 oder v1 mit `node project/focuslist/catch-up.mjs <python|node> m05 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/test-writer/`
+**Dauer:** ca. 35 Minuten · **Start:** eigener Stand nach Lab 4.3 oder v1 mit `node project/focuslist/catch-up.mjs <python|node> m05 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/test-writer/`
 
 1. Lege `.github/skills/test-writer/SKILL.md` an: Frontmatter (`name`, `description` mit „was“ und „wann“, `argument-hint`) und die Abschnitte „Wann einsetzen“, „Schritte“, „Abnahmekriterium“, „Bericht“.
 2. Schreibe daneben die Vorlage `test-template.py` bzw. `test-template.js` mit je einem Beispiel für Normal-, Grenz- und Fehlerfall und verlinke sie relativ in Schritt 3 der Anleitung.

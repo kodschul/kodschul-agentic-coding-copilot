@@ -133,24 +133,9 @@ Gleiche Idee, andere Ordner, wie in der Landkarte aus Lab 1.3. Projekt-Skills ge
 - Anthropic führte Agent Skills im Okt 2025 ein; seit Dez 2025 ist das Format ein offener Standard ([agentskills.io](https://agentskills.io)). Andere Werkzeuge haben es übernommen, deshalb unterscheiden sich vor allem die Ordner.
 - Prompt-Dateien (`.github/prompts/*.prompt.md`) laden nur im Local-Harness (Lab 2.2). Im Copilot-Harness übernimmt ein Skill ihre Rolle; zur Migration bietet VS Code „Convert Prompt to Skills“ ([Migrate customizations](https://code.visualstudio.com/docs/agent-customization/migrate-customizations), Stand: 11/2026).
 
-## Selbst ausprobieren
+## Regel oder Ablauf? Die Status-quo-Liste sortiert
 
-**Dauer:** ca. 10 Minuten · **Start:** Status-quo-Liste aus Lab 3.3 oder die Python-Funde im Lösungsweg von Lab 3.3 · **Referenz:** Lösungsweg unten
-
-1. Gehe die Status-quo-Liste Zeile für Zeile durch.
-2. Markiere jede Zeile: **Regel** (der Agent muss es immer wissen), **Ablauf** (wiederkehrende Aufgabe mit mehreren Schritten) oder **anderes** (Rolle, Erzwingen, Werkzeug).
-3. Streiche die Regel-Zeilen, die schon in `AGENTS.md` oder `*.instructions.md` aus Lab 4.1/4.2 stehen.
-4. Fasse die Ablauf-Zeilen zu höchstens drei Skill-Kandidaten zusammen und gib jedem einen Namen im Format `a-z0-9-`.
-5. Formuliere für jeden Kandidaten eine `description` mit „was“ und „wann“ (ein bis zwei Sätze).
-
-Variante im Plenum: Kandidaten sammeln, doppelte zusammenlegen, die zwei wichtigsten auswählen.
-
-**Checkpoint:** Eine Kandidatenliste mit Name und `description` liegt vor; jede Ablauf-Zeile der Status-quo-Liste ist einem Kandidaten zugeordnet.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Zuordnung für die Python-Funde aus Lab 3.3:
+Die Status-quo-Liste aus Lab 3.3 enthält Regeln, Abläufe und anderes. Zuordnung der Python-Funde aus Lab 3.3:
 
 | # | Eintrag (kurz) | Art | Wohin |
 | --- | --- | --- | --- |
@@ -167,7 +152,7 @@ Zuordnung für die Python-Funde aus Lab 3.3:
 | 11 | feste Breiten, nicht auf Handybreite | anderes | Browser-Prüfung (m07) |
 | 12 | keine neuen Tests | Ablauf | `test-writer` |
 
-Kandidaten:
+Daraus entstehen zwei Skill-Kandidaten:
 
 | Name | `description` |
 | --- | --- |
@@ -175,8 +160,6 @@ Kandidaten:
 | `security-checker` | Prüft die App anhand einer Checkliste auf XSS, fehlende Validierung, Secrets im Code, Debug-Modus und Pfade aus Nutzereingaben und liefert einen Bericht. Ändert keinen Code. Verwenden vor einem Merge oder bei Fragen zur Sicherheit. |
 
 Beide Skills entstehen in Lab 5.2 und 5.3. Zeilen wie „Tests laufen lassen“ sind Regeln oder später Hooks, keine Skills: Es gibt dort keinen mehrstufigen Ablauf.
-
-</details>
 
 ## Fazit
 

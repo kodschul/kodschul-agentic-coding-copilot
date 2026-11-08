@@ -81,7 +81,7 @@ Beispiel-Prompt: `project/focuslist/vibecoding-prompt.md` · Beispielergebnis: `
 | Explorer: **Select for Compare**, dann **Compare with Selected** | zwei Dateien (z. B. Startgerüst und v0) vergleichen |
 | `node project/focuslist/catch-up.mjs <python\|node> m04 <ordner>` | Referenzstand v0 herstellen |
 
-## Status-quo-Liste (Ergebnis Lab 3.3)
+## Status-quo-Liste (Lab 3.3)
 
 | Spalte | Inhalt |
 | --- | --- |
@@ -91,4 +91,4 @@ Beispiel-Prompt: `project/focuslist/vibecoding-prompt.md` · Beispielergebnis: `
 | Baustein | Instructions … Spec |
 | Modul | m04 … m08 |
 
-Gemeinsame Liste · 5–8 Zeilen
+Vollständige Liste mit 8 Zeilen in Lab 3.3, sortiert nach Kosten in Produktion

@@ -29,6 +29,7 @@ Stand: 11/2026, VS-Code-Standardbelegung. Quellen: [Agent harnesses](https://cod
 
 | Aktion | Windows / Linux | macOS | Harness |
 | --- | --- | --- | --- |
+| Snippet / Emmet einsetzen (`!`, `ul>li*3`) | Tab | Tab | ohne KI |
 | Vorschlag annehmen | Tab | Tab | alle |
 | nächstes Wort annehmen | Ctrl+→ | Cmd+→ | alle |
 | Vorschlag ablehnen | Esc | Esc | alle |

@@ -107,26 +107,9 @@ Format in OpenSpec:
 - **THEN** zeigt die Liste kein Badge „überfällig“
 ```
 
-## Selbst ausprobieren
+## Akzeptanzkriterien für das Fälligkeitsdatum
 
-**Dauer:** ca. 10 Minuten · **Start:** kein Code nötig · **Referenz:** Lösungsweg unten
-
-Feature: „Fälligkeitsdatum mit Überfällig-Markierung“ für FocusList.
-
-1. Schreibe drei Akzeptanzkriterien im Format WHEN → THEN, ohne Code und ohne Funktionsnamen.
-2. Sorge dafür, dass mindestens ein Kriterium einen Grenzfall abdeckt und mindestens eines einen Fehlerfall.
-3. Prüfe jedes Kriterium: Ließe sich daraus direkt ein Test schreiben? Stehen Beispielwerte drin?
-4. Notiere zwei Dinge, die ausdrücklich **nicht** zum Feature gehören.
-5. Hebe die Liste für Lab 8.2 auf.
-
-Variante zu zweit: Kriterien getrennt schreiben, dann vergleichen. Jeder Unterschied ist eine Stelle, an der ein Agent geraten hätte.
-
-**Checkpoint:** Drei WHEN-THEN-Kriterien mit Beispielwerten, darunter ein Grenzfall und ein Fehlerfall; zwei Punkte „nicht im Umfang“.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Mögliche Kriterien (so stehen sie sinngemäß in der Referenz-Spec):
+Feature: „Fälligkeitsdatum mit Überfällig-Markierung“ für FocusList. Diese Kriterien gehen in Lab 8.2 in den OpenSpec-Change ein (so stehen sie sinngemäß in der Referenz-Spec):
 
 | # | WHEN | THEN |
 | --- | --- | --- |
@@ -138,9 +121,7 @@ Mögliche Kriterien (so stehen sie sinngemäß in der Referenz-Spec):
 
 Nicht im Umfang: Uhrzeiten, Erinnerungen, wiederkehrende Aufgaben, Filter „nur überfällige“.
 
-Häufige Lücken: Grenzfall „heute“ fehlt; unklar, ob erledigte Aufgaben markiert werden; keine Aussage zu Aufgaben ohne Datum.
-
-</details>
+Typische Lücken, wenn Kriterien fehlen: Grenzfall „heute“ fehlt; unklar, ob erledigte Aufgaben markiert werden; keine Aussage zu Aufgaben ohne Datum.
 
 ## Fazit
 

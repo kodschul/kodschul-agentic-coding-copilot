@@ -122,44 +122,21 @@ Hooks, MCP und Specs gibt es in den anderen Werkzeugen ebenfalls, mit eigener Ko
 | m07 | Guard- und Check-Hook, Browser per Playwright | Hooks, MCP |
 | m08 | Fälligkeitsdatum per OpenSpec | Spec |
 
-## Selbst ausprobieren
+## Landkarte: vom Alltagsproblem zum Baustein
 
-**Dauer:** ca. 15 Minuten · **Start:** kein Projekt nötig · **Referenz:** Lösungsweg unten
+Diese Landkarte taucht ab Modul 4 immer wieder auf: Jedes Problem hat einen Baustein, der es löst.
 
-1. Ordne jedes der sieben Alltagsprobleme genau einem Baustein zu. Details der Bausteine sind nicht nötig; die Frage in der Tabelle oben reicht.
-2. Begründe jede Zuordnung in einem Satz.
-3. Trage die Probleme in die Bausteine-Tabelle ein (eigene Spalte „Unser Problem“). Diese Landkarte kommt ab m04 wieder.
+| # | Problem | Baustein | Warum |
+| --- | --- | --- | --- |
+| 1 | „Der Agent vergisst immer, die Tests laufen zu lassen.“ | Hook | „Tests laufen lassen“ muss immer passieren; ein Hook startet sie automatisch, wenn der Agent fertig ist. Eine Instruction würde nur darum bitten |
+| 2 | „Der Agent soll nie die Datei `.env` lesen.“ | Hook | „Nie“ heißt erzwingen: ein Hook blockiert den Zugriff, bevor das Werkzeug läuft |
+| 3 | „Der Agent nutzt `unittest`, obwohl das Team `pytest` verwendet.“ | Instructions | Testframework ist Wissen, das der Agent immer braucht |
+| 4 | „Jede Sicherheitsprüfung läuft anders ab, mal mit, mal ohne XSS-Check.“ | Skill | wiederkehrender Ablauf mit fester Checkliste, nur bei Bedarf geladen |
+| 5 | „Der Agent prüft seinen eigenen Code und findet nie etwas.“ | Custom Agent | eigene Rolle „Reviewer“ mit frischem Kontext und nur Leserechten |
+| 6 | „Der Agent sieht nicht, wie die Seite im Browser aussieht.“ | MCP | Browser ist ein Werkzeug außerhalb des Editors (Playwright-MCP) |
+| 7 | „Beim Feature ‚Fälligkeitsdatum‘ versteht jede Person etwas anderes.“ | Spec | gemeinsame Beschreibung mit Akzeptanzkriterien vor dem Code |
 
-| # | Problem |
-| --- | --- |
-| 1 | „Der Agent vergisst immer, die Tests laufen zu lassen.“ |
-| 2 | „Der Agent soll nie die Datei `.env` lesen.“ |
-| 3 | „Der Agent nutzt `unittest`, obwohl das Team `pytest` verwendet.“ |
-| 4 | „Jede Sicherheitsprüfung läuft anders ab, mal mit, mal ohne XSS-Check.“ |
-| 5 | „Der Agent prüft seinen eigenen Code und findet nie etwas.“ |
-| 6 | „Der Agent sieht nicht, wie die Seite im Browser aussieht.“ |
-| 7 | „Beim Feature ‚Fälligkeitsdatum‘ versteht jede Person etwas anderes.“ |
-
-Variante im Paar oder Plenum: getrennt zuordnen, dann vergleichen und Abweichungen diskutieren.
-
-**Checkpoint:** Sieben Probleme sind je einem Baustein zugeordnet und begründet.
-
-<details>
-<summary>Lösungsweg</summary>
-
-| # | Baustein | Begründung |
-| --- | --- | --- |
-| 1 | Hook | „Tests laufen lassen“ muss immer passieren; ein Hook startet sie automatisch, wenn der Agent fertig ist. Eine Instruction würde nur darum bitten |
-| 2 | Hook | „Nie“ heißt erzwingen: ein Hook blockiert den Zugriff, bevor das Werkzeug läuft |
-| 3 | Instructions | Testframework ist Wissen, das der Agent immer braucht |
-| 4 | Skill | wiederkehrender Ablauf mit fester Checkliste, nur bei Bedarf geladen |
-| 5 | Custom Agent | eigene Rolle „Reviewer“ mit frischem Kontext und nur Leserechten |
-| 6 | MCP | Browser ist ein Werkzeug außerhalb des Editors (Playwright-MCP) |
-| 7 | Spec | gemeinsame Beschreibung mit Akzeptanzkriterien vor dem Code |
-
-Zulässige Alternative zu 1: Instructions („Führe nach jeder Änderung `pytest` aus“) als erster Schritt; verlässlich wird es erst mit einem Hook.
-
-</details>
+Bei Problem 1 sind Instructions („Führe nach jeder Änderung `pytest` aus“) ein erster Schritt; verlässlich wird es erst mit einem Hook.
 
 ## Fazit
 

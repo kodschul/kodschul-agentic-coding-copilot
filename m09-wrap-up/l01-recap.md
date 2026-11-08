@@ -91,22 +91,9 @@ flowchart LR
 | messen | gleiche Aufgabe vorher / nachher (Lab 4.3) | weniger Korrekturen im Diff |
 | Team | Dateien ins gemeinsame Projekt legen, im Review mitlesen | alle nutzen denselben Stand |
 
-## Selbst ausprobieren
+## Einstieg im eigenen Projekt
 
-**Dauer:** ca. 15 Minuten · **Start:** ein eigenes Projekt (Arbeit oder privat) · **Referenz:** Vorlage unten
-
-1. Notiere drei Probleme, die im eigenen Projekt mit einem KI-Agenten schon aufgetreten sind oder zu erwarten sind.
-2. Ordne jedem Problem mit der Entscheidungshilfe einen Baustein zu.
-3. Wähle drei Artefakte, die nächste Woche entstehen sollen. Das erste ist `AGENTS.md` (oder die Datei, die das Team schon nutzt).
-4. Schreibe für jedes Artefakt ein Prüfkriterium: Woran ist erkennbar, dass es wirkt?
-5. Trage einen Termin ein, an dem der Plan überprüft wird.
-
-**Checkpoint:** Ein ausgefüllter Transfer-Plan mit drei Artefakten, je einem Prüfkriterium und einem Termin.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Vorlage zum Kopieren:
+Für den Einstieg im eigenen Projekt reichen drei Artefakte, in dieser Reihenfolge: zuerst `AGENTS.md` (oder die Datei, die das Team schon nutzt), dann ein Skill für einen wiederkehrenden Ablauf, dann ein Hook für eine harte Grenze. Jedes Artefakt bekommt ein Prüfkriterium. Vorlage zum Kopieren:
 
 ```markdown
 # Transfer-Plan: <Projekt>
@@ -125,8 +112,6 @@ Hinweise:
 - Klein anfangen: lieber eine gute `AGENTS.md` mit 20 Zeilen als fünf halbfertige Dateien.
 - Im Team erst klären, ob Hooks (Preview) und MCP erlaubt sind.
 - Gleiche Dateien funktionieren in anderen Werkzeugen ähnlich: `AGENTS.md` bei Codex, `CLAUDE.md` und `.claude/skills` bei Claude Code (Lab 1.3).
-
-</details>
 
 ## Fazit
 

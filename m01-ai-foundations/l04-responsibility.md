@@ -88,46 +88,23 @@ flowchart LR
     T -- "ja" --> U["übernehmen<br/>(Keep)"]
 ```
 
-## Selbst ausprobieren
-
-**Dauer:** ca. 10 Minuten · **Start:** kein Projekt nötig · **Referenz:** Lösungsweg unten
-
-1. Sortiere die fünf Situationen nach Risiko: 1 = höchstes Risiko.
-2. Notiere zu jeder Situation eine Sofortmaßnahme.
-3. Formuliere daraus drei persönliche Regeln für die Arbeit mit Agenten.
-
-| Situation |
-| --- |
-| A: Ein API-Schlüssel der Produktionsumgebung wurde in den Chat kopiert, um einen Fehler zu zeigen. |
-| B: Der Agent schlägt vor, das Paket `reqeusts` zu installieren. |
-| C: Der Agent will im Terminal `rm -rf build/ data/` ausführen, um „aufzuräumen“. |
-| D: Ein übernommener Vorschlag nutzt eine API, die seit zwei Versionen als veraltet markiert ist. |
-| E: Zum Debuggen wurde ein Export mit echten Kundendaten als Kontext angehängt. |
-
-Variante im Plenum: Karten sortieren, Rangfolge begründen, Top-3-Regeln sammeln.
-
-**Checkpoint:** Fünf Situationen sind sortiert und mit Sofortmaßnahme versehen, drei Regeln sind notiert.
-
-<details>
-<summary>Lösungsweg</summary>
+## Fünf Situationen nach Risiko
 
 Eine begründete Rangfolge (andere sind vertretbar, wenn die Begründung trägt):
 
 | Rang | Situation | Warum | Sofortmaßnahme |
 | --- | --- | --- | --- |
-| 1 | A Secret im Chat | Schlüssel hat das Firmennetz verlassen, Missbrauch möglich | Schlüssel sofort widerrufen und neu erzeugen, Vorfall melden |
-| 2 | E Kundendaten | möglicher Datenschutzverstoß, meldepflichtig je nach Lage | Datenschutzverantwortliche informieren, künftig nur anonymisierte Daten |
-| 3 | C `rm -rf` | Datenverlust, falls `data/` nirgends gesichert ist | Freigabe ablehnen, Befehl prüfen, nur gezielt löschen |
-| 4 | B `reqeusts` | Tippfehler-Paket kann Schadcode enthalten | ablehnen; richtig ist `requests`, Paketnamen immer prüfen |
-| 5 | D veraltete API | funktioniert meist noch, bricht später | ersetzen und einen Test ergänzen |
+| 1 | Ein API-Schlüssel der Produktionsumgebung wurde in den Chat kopiert, um einen Fehler zu zeigen | Schlüssel hat das Firmennetz verlassen, Missbrauch möglich | Schlüssel sofort widerrufen und neu erzeugen, Vorfall melden |
+| 2 | Zum Debuggen wurde ein Export mit echten Kundendaten als Kontext angehängt | möglicher Datenschutzverstoß, meldepflichtig je nach Lage | Datenschutzverantwortliche informieren, künftig nur anonymisierte Daten |
+| 3 | Der Agent will im Terminal `rm -rf build/ data/` ausführen, um „aufzuräumen“ | Datenverlust, falls `data/` nirgends gesichert ist | Freigabe ablehnen, Befehl prüfen, nur gezielt löschen |
+| 4 | Der Agent schlägt vor, das Paket `reqeusts` zu installieren | Tippfehler-Paket kann Schadcode enthalten | ablehnen; richtig ist `requests`, Paketnamen immer prüfen |
+| 5 | Ein übernommener Vorschlag nutzt eine API, die seit zwei Versionen als veraltet markiert ist | funktioniert meist noch, bricht später | ersetzen und einen Test ergänzen |
 
-Beispiel für Top-3-Regeln:
+Drei Regeln für die Arbeit mit Agenten:
 
 1. Keine Secrets und keine echten Personendaten in Prompts oder angehängten Dateien.
 2. Terminal-Befehle, die löschen, installieren oder pushen, nur nach eigener Prüfung freigeben.
 3. Nichts übernehmen (Keep), was nicht verstanden und getestet ist.
-
-</details>
 
 ## Fazit
 

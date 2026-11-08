@@ -74,34 +74,6 @@ Weiterlernen:
 | [Hooks (VS Code)](https://code.visualstudio.com/docs/agent-customization/hooks) | Events und Ausgabeformate |
 | [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec) | neue Versionen, Workflows |
 
-## Selbst ausprobieren
-
-**Dauer:** ca. 10 Minuten · **Start:** Transfer-Plan aus Lab 9.1 · **Referenz:** keine; persönliche Reflexion
-
-1. Beantworte schriftlich: Was war der wichtigste Moment der zwei Tage, und warum?
-2. Notiere einen Baustein, der klar geworden ist, und einen, der noch unklar ist.
-3. Wähle eine Aufgabe aus dem eigenen Alltag, die probeweise ganz an einen Agenten geht (Cloud Agent, CLI oder Editor). Notiere, woran das Ergebnis geprüft wird.
-4. Notiere eine Frage, die nach dem Kurs offen ist, und wo die Antwort zu suchen ist (Doku, Team, Kurs-Handout).
-5. Ergänze den Transfer-Plan um Schritt 3.
-
-Variante im Plenum: Feedbackrunde mit denselben Fragen, jede Person ein bis zwei Sätze.
-
-**Checkpoint:** Vier kurze Notizen (wichtigster Moment, klar/unklar, Aufgabe für den Agenten mit Prüfung, offene Frage); der Transfer-Plan hat einen zusätzlichen Eintrag.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Beispiel-Notizen:
-
-| Frage | Beispielantwort |
-| --- | --- |
-| wichtigster Moment | Guard-Hook lehnt `.env` ab, obwohl der Prompt es verlangt: Unterschied „bitte nicht“ und „geht nicht“ |
-| klar / unklar | klar: Skills; unklar: wann sich ein ganzes Agenten-Team lohnt |
-| Aufgabe für den Agenten | „Tests für das Modul `billing` ergänzen“ als Issue an den Cloud Agent; Prüfung: Pull Request lesen, Tests lokal ausführen, Coverage vergleichen |
-| offene Frage | Darf die Firma MCP-Server nutzen? → IT-Sicherheit fragen |
-
-</details>
-
 ## Fazit
 
 - Die Bausteine aus dem Repo wirken im Editor, im Terminal und in der Cloud.

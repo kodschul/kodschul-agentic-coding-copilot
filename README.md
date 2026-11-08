@@ -6,19 +6,28 @@
 
 2-Tage-Workshop · Python oder Node.js · Deutsch
 
-**Vom ersten Prompt zum gesteuerten Coding-Agent**
+**Coding-Agents steuern, prüfen und absichern – mit GitHub Copilot**
 
 </div>
 
 ---
 
-Im Workshop entsteht FocusList, eine kleine Aufgaben-Web-App. Ein einzelner Prompt liefert eine erste Version. Danach wird die App mit Projektregeln, Skills, eigenen Agents, Hooks, MCP und einer Spec schrittweise ausgebaut, und mit jedem Schritt arbeitet der Agent kontrollierter.
+[Worum es geht](#worum-es-geht) · [Start](#start) · [Tag 1](#tag-1) · [Tag 2](#tag-2) · [Hilfe](#hilfe)
 
-**Für:** Entwickler:innen mit Python- oder JavaScript-Erfahrung
-**Vorkenntnisse:** Programmieren, HTML-Grundlagen; Copilot höchstens als Autocomplete oder Chat
-**Werkzeuge:** VS Code mit GitHub Copilot, Node.js, für Python zusätzlich Python 3.12+
+## Worum es geht
 
-[Start](#start) · [Tag 1](#tag-1) · [Tag 2](#tag-2) · [Hilfe](#hilfe) · [Kursüberblick](m00-overview/overview.md)
+- Coding-Agents schreiben in Minuten Code, für den früher Stunden nötig waren.
+- Ob dieser Code in ein Team-Projekt passt, entscheidet das Repository: Regeln, Skills, Rollen, automatische Prüfungen, eine klare Spec.
+- Der Workshop baut genau diese Bausteine Schritt für Schritt auf, an einem durchgehenden Projekt: der Web-App FocusList.
+- Ergebnis: ein Projekt, in dem der Agent nach festen Regeln arbeitet, und ein Fahrplan für das eigene Team.
+
+| | |
+| --- | --- |
+| **Für** | Entwickler:innen mit Python- oder JavaScript-Erfahrung |
+| **Vorkenntnisse** | Programmieren, HTML-Grundlagen; Copilot höchstens als Autocomplete oder Chat |
+| **Werkzeuge** | VS Code mit GitHub Copilot, Node.js, für Python zusätzlich Python 3.12+ |
+| **Projekt** | FocusList, Web-App mit Tailwind CSS, in Python (Flask) oder Node.js |
+| **Material** | Handout pro Lab, Spickzettel pro Modul, Projekt mit Referenzstand für jedes Modul |
 
 ## Start
 
@@ -32,115 +41,37 @@ node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Node.js: …
 
 ## Tag 1
 
-### Modul 1 · KI-Grundlagen für die Softwareentwicklung
-
-Wie LLMs Code erzeugen, wie Agentic Coding entstanden ist und wer für das Ergebnis verantwortlich ist.
-
-- [1.1 LLM-Grundlagen und Agenten-Loop](m01-ai-foundations/l01-llm-agent-loop.md)
-- [1.2 Entwicklung von Agentic Coding](m01-ai-foundations/l02-evolution.md)
-- [1.3 Werkzeuge und Bausteine](m01-ai-foundations/l03-ecosystem.md)
-- [1.4 Verantwortung und Risiken](m01-ai-foundations/l04-responsibility.md)
-
-<sub>Spickzettel: [Modul 1](m01-ai-foundations/m01-cheatsheet.md)</sub>
-
-### Modul 2 · GitHub Copilot in VS Code
-
-Kursprojekt, Harnesses, Vorschläge im Editor und die Kontrolle über den Agenten.
-
-- [2.1 Kursprojekt FocusList](m02-copilot-essentials/l01-project-setup.md)
-- [2.2 Harnesses](m02-copilot-essentials/l02-harnesses.md)
-- [2.3 Inline-Vorschläge](m02-copilot-essentials/l03-inline-suggestions.md)
-- [2.4 Ask, Plan und Agent](m02-copilot-essentials/l04-chat-modes.md)
-- [2.5 Agent-Kontrolle](m02-copilot-essentials/l05-agent-control.md)
-
-<sub>Spickzettel: [Modul 2](m02-copilot-essentials/m02-cheatsheet.md)</sub>
-
-### Modul 3 · Vibecoding vs. Agentic Coding
-
-Zwei Arten, mit KI zu bauen; ein Prototyp per Prompt und seine Bewertung.
-
-- [3.1 Die zwei Wege im Vergleich](m03-coding-approaches/l01-comparison.md)
-- [3.2 Prototyp per One-Shot-Prompt](m03-coding-approaches/l02-one-shot-prototype.md)
-- [3.3 Code-Bewertung des Prototyps](m03-coding-approaches/l03-code-assessment.md)
-
-<sub>Spickzettel: [Modul 3](m03-coding-approaches/m03-cheatsheet.md)</sub>
-
-### Modul 4 · Instructions
-
-Projektregeln, die der Agent bei jeder Anfrage kennt.
-
-- [4.1 Projektregeln für den Agenten](m04-instructions/l01-project-instructions.md)
-- [4.2 Regeln für bestimmte Dateien](m04-instructions/l02-scoped-instructions.md)
-- [4.3 Vorher und nachher](m04-instructions/l03-compare.md)
-
-<sub>Spickzettel: [Modul 4](m04-instructions/m04-cheatsheet.md)</sub>
+| Modul | Kernthemen | Ergebnis |
+| --- | --- | --- |
+| 1 [KI-Grundlagen für die Softwareentwicklung](m01-ai-foundations/l01-llm-agent-loop.md) | LLM und Agenten-Loop, Entwicklung 2021–2026, Werkzeuge und Bausteine, Verantwortung | Überblick über das Feld |
+| 2 [GitHub Copilot in VS Code](m02-copilot-essentials/l01-project-setup.md) | Kursprojekt, Harnesses, Snippets und Ghost Text, Ask/Plan/Agent, Agent-Kontrolle | Copilot-Grundlagen |
+| 3 [Vibecoding vs. Agentic Coding](m03-coding-approaches/l01-comparison.md) | zwei Wege im Vergleich, Prototyp per One-Shot-Prompt, Code-Bewertung | Prototyp v0, Status quo |
+| 4 [Instructions](m04-instructions/l01-project-instructions.md) | `AGENTS.md`, Regeln für bestimmte Dateien, Vorher-Nachher | v1 mit Projektregeln |
 
 ## Tag 2
 
-### Modul 5 · Skills
+| Modul | Kernthemen | Ergebnis |
+| --- | --- | --- |
+| 5 [Skills](m05-skills/l01-skill-basics.md) | Skill-Aufbau, `test-writer`, `security-checker` | v2: getestet, Lücken geschlossen |
+| 6 [Custom Agents](m06-custom-agents/l01-agent-basics.md) | Rollen und Rechte, `reviewer`, Agenten-Team mit Subagents | v3: Feature im Team gebaut |
+| 7 [Hooks und MCP](m07-hooks-mcp/l01-guard-hook.md) | Guard- und Check-Hook, Model Context Protocol, Playwright im Browser | v4: Regeln erzwungen, UI geprüft |
+| 8 [Spec-Driven Development](m08-spec-driven/l01-spec-first.md) | Spec vor Code, OpenSpec mit dem Agenten-Team | v5: Feature aus einer Spec |
+| 9 [Abschluss](m09-wrap-up/l01-recap.md) | Rückblick, Transfer ins eigene Projekt, Ausblick | eigener Fahrplan |
 
-Wiederkehrende Aufgaben als Anleitung, die der Agent bei Bedarf lädt.
-
-- [5.1 Was ist ein Skill](m05-skills/l01-skill-basics.md)
-- [5.2 Skill `test-writer`](m05-skills/l02-test-writer.md)
-- [5.3 Skill `security-checker`](m05-skills/l03-security-checker.md)
-
-<sub>Spickzettel: [Modul 5](m05-skills/m05-cheatsheet.md)</sub>
-
-### Modul 6 · Custom Agents
-
-Eigene Rollen mit festen Rechten, die zusammenarbeiten.
-
-- [6.1 Agents und Subagents](m06-custom-agents/l01-agent-basics.md)
-- [6.2 Agent `reviewer`](m06-custom-agents/l02-reviewer.md)
-- [6.3 Agenten-Team](m06-custom-agents/l03-agent-team.md)
-
-<sub>Spickzettel: [Modul 6](m06-custom-agents/m06-cheatsheet.md)</sub>
-
-### Modul 7 · Hooks und MCP
-
-Regeln erzwingen, Prüfungen automatisieren und dem Agenten einen Browser geben.
-
-- [7.1 Hook als Leitplanke](m07-hooks-mcp/l01-guard-hook.md)
-- [7.2 Hook als Prüfschritt](m07-hooks-mcp/l02-check-hook.md)
-- [7.3 Was ist MCP](m07-hooks-mcp/l03-mcp-basics.md)
-- [7.4 Agent mit Browser](m07-hooks-mcp/l04-playwright-mcp.md)
-
-<sub>Spickzettel: [Modul 7](m07-hooks-mcp/m07-cheatsheet.md)</sub>
-
-### Modul 8 · Spec-Driven Development
-
-Erst festlegen, was gebaut wird, dann bauen lassen.
-
-- [8.1 Erst Spec, dann Code](m08-spec-driven/l01-spec-first.md)
-- [8.2 OpenSpec mit dem Agenten-Team](m08-spec-driven/l02-openspec.md)
-
-<sub>Spickzettel: [Modul 8](m08-spec-driven/m08-cheatsheet.md)</sub>
-
-### Modul 9 · Abschluss
-
-Was sich verändert hat und wie es im eigenen Projekt weitergeht.
-
-- [9.1 Rückblick und Transfer](m09-wrap-up/l01-recap.md)
-- [9.2 Ausblick](m09-wrap-up/l02-outlook.md)
+- Jedes Lab ist eine Seite: Leitfragen, Kerninhalt, bei Labs zum Ausprobieren eine Übung mit Lösungsweg.
+- Spickzettel liegen im jeweiligen Modulordner.
+- Alle Labs mit Zeiten: [Module und Labs](m00-overview/topics.md).
 
 ## Hilfe
 
-### Projektstand wiederherstellen
+- **Projektstand wiederherstellen:** jeden Stand für den Start eines Moduls neu erzeugen, z. B. Modul 5:
 
-Ein fehlender oder kaputter Stand lässt sich für jedes Modul neu erzeugen, hier für den Start von Modul 5:
+  ```bash
+  node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist-m05
+  ```
 
-```bash
-node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist-m05
-```
-
-### Lösungen vergleichen
-
-Jede Übung nennt ihre Referenz. Die fertigen Dateien je Modul liegen im [Projektordner](project/README.md).
-
-### Nachschlagen
-
-[Glossar](m00-overview/glossary.md) · [FAQ](m00-overview/faq.md) · [Best Practices](m00-overview/best-practices.md) · [Module und Labs mit Zeiten](m00-overview/topics.md)
+- **Lösungen vergleichen:** jede Übung nennt ihre Referenz; die fertigen Dateien je Modul liegen im [Projektordner](project/README.md).
+- **Nachschlagen:** [Glossar](m00-overview/glossary.md) · [FAQ](m00-overview/faq.md) · [Best Practices](m00-overview/best-practices.md)
 
 ---
 

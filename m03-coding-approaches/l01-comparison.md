@@ -147,43 +147,22 @@ Vier Fragen; sobald eine mit Ja beantwortet ist, gilt der agentische Weg:
 
 Auch ein Prototyp darf vibecodet sein. Wird aus ihm ein echtes Produkt, beginnt der agentische Weg: erst Regeln, dann weiterbauen.
 
-## Übung
+## Sechs Situationen, zwei Wege
 
-**Dauer:** ca. 10 Minuten · **Start:** Entscheidungshilfe oben · **Referenz:** Lösungsweg unten
-
-1. Ordne jede der sechs Situationen einem Weg zu: **Vibecoding** oder **agentisch**.
-
-   | # | Situation |
-   | --- | --- |
-   | 1 | Wochenend-Prototyp: eine Idee für eine Spiele-App ausprobieren |
-   | 2 | Team-Feature: Login-Seite für die Firmen-App, die drei Teams pflegen |
-   | 3 | Bugfix in Produktion: Rechnungen werden doppelt verschickt |
-   | 4 | Kundendemo: Klickdummy für ein Gespräch morgen früh |
-   | 5 | Lernprojekt: ausprobieren, wie eine neue Bibliothek funktioniert |
-   | 6 | Sicherheitskritischer Code: Passwort-Reset per E-Mail |
-
-2. Notiere zu jeder Zuordnung die Frage aus der Entscheidungshilfe, die den Ausschlag gibt.
-3. Markiere die Situation, bei der die Zuordnung am wenigsten eindeutig ist, und notiere, was sie kippen lässt.
-
-**Checkpoint:** Eine Tabelle mit sechs Zeilen liegt vor, jede mit Weg und ausschlaggebender Frage; eine Zeile ist als „kippt, wenn …“ markiert.
-
-<details>
-<summary>Lösungsweg</summary>
+Die Entscheidungshilfe angewendet auf typische Alltagssituationen:
 
 | # | Situation | Weg | Ausschlaggebend |
 | --- | --- | --- | --- |
-| 1 | Wochenend-Prototyp | Vibecoding | alle vier Fragen Nein; Code wird weggeworfen |
-| 2 | Team-Feature Login | agentisch | andere arbeiten mit; Nutzerdaten |
-| 3 | Bugfix in Produktion | agentisch | Fehler kostet Geld und Vertrauen; Code lebt weiter |
-| 4 | Kundendemo | Vibecoding | Klickdummy ohne echte Daten, danach weg |
-| 5 | Lernprojekt | Vibecoding, mit Lesen | kein Risiko; wer lernen will, liest den Code trotzdem |
-| 6 | Passwort-Reset | agentisch | Sicherheit, Nutzerdaten, Internet |
+| 1 | Wochenend-Prototyp: eine Idee für eine Spiele-App ausprobieren | Vibecoding | alle vier Fragen Nein; Code wird weggeworfen |
+| 2 | Team-Feature: Login-Seite für die Firmen-App, die drei Teams pflegen | agentisch | andere arbeiten mit; Nutzerdaten |
+| 3 | Bugfix in Produktion: Rechnungen werden doppelt verschickt | agentisch | Fehler kostet Geld und Vertrauen; Code lebt weiter |
+| 4 | Kundendemo: Klickdummy für ein Gespräch morgen früh | Vibecoding | Klickdummy ohne echte Daten, danach weg |
+| 5 | Lernprojekt: ausprobieren, wie eine neue Bibliothek funktioniert | Vibecoding, mit Lesen | kein Risiko; wer lernen will, liest den Code trotzdem |
+| 6 | Sicherheitskritischer Code: Passwort-Reset per E-Mail | agentisch | Sicherheit, Nutzerdaten, Internet |
 
-Am wenigsten eindeutig: Nr. 4 und Nr. 1. Beide kippen, sobald aus dem Prototyp oder der Demo ein Produkt werden soll („Der Kunde will genau das, bis nächsten Monat live“). Dann beginnt der agentische Weg mit Regeln, Tests und Review, statt auf dem ungeprüften Code weiterzubauen.
+Nr. 1 und Nr. 4 kippen, sobald aus dem Prototyp oder der Demo ein Produkt werden soll („Der Kunde will genau das, bis nächsten Monat live“). Dann beginnt der agentische Weg mit Regeln, Tests und Review, statt auf dem ungeprüften Code weiterzubauen.
 
-Nr. 5: Für das Lernziel ist Vibecoding der falsche Weg, auch wenn das Risiko gering ist. Wer eine Bibliothek verstehen will, muss den erzeugten Code lesen.
-
-</details>
+Nr. 5: Für das Lernziel reicht reines Vibecoding nicht, auch wenn das Risiko gering ist. Wer eine Bibliothek verstehen will, muss den erzeugten Code lesen.
 
 ## Fazit
 
@@ -191,4 +170,4 @@ Nr. 5: Für das Lernziel ist Vibecoding der falsche Weg, auch wenn das Risiko ge
 - Vibecoding ist schnell und für Prototypen legitim, aber ungeprüfte Entscheidungen landen im Code.
 - Sobald Code bleibt, andere ihn pflegen oder Nutzerdaten verarbeitet werden, gilt der agentische Weg.
 
-Die Übung ordnet sechs Alltagssituationen einem der beiden Wege zu.
+Die Tabelle „Sechs Situationen, zwei Wege“ zeigt die Entscheidungshilfe an Alltagsbeispielen.

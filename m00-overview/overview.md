@@ -75,7 +75,7 @@ Gleiche Idee bei Claude Code und Codex, andere Ordner: [Lab 1.3](../m01-ai-found
 - Harness wählen, Agent sicher steuern
 - Vibecoding und agentischen Weg unterscheiden, Code-Bewertung des Prototyps
 - Jeden Baustein selbst schreiben und einsetzen
-- Transfer-Plan für das eigene Projekt
+- Einstieg im eigenen Projekt planen
 
 ## Projekt FocusList
 
@@ -94,9 +94,9 @@ Details: [project/README.md](../project/README.md)
 | 09:00 | Auftakt |
 | 09:25 | **Modul 1** KI-Grundlagen für die Softwareentwicklung |
 | 10:30 | *Pause* |
-| 10:45 | Modul 1: Verantwortung · **Modul 2** GitHub Copilot in VS Code |
+| 10:45 | **Modul 2** GitHub Copilot in VS Code |
 | 12:15 | *Mittag* |
-| 13:15 | Modul 2: Agent steuern · **Modul 3** Vibecoding vs. Agentic Coding → v0 |
+| 13:15 | **Modul 3** Vibecoding vs. Agentic Coding → v0 |
 | 14:45 | *Pause* |
 | 15:00 | **Modul 4** Instructions → v1 |
 | 16:15 | Tagesabschluss |

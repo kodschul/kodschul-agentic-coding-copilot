@@ -134,13 +134,9 @@ Derselbe Loop in der VS-Code-Dokumentation: Verstehen, Handeln, Prüfen, wiederh
 
 Dieses Bild taucht im ganzen Kurs wieder auf: Jede spätere Copilot-Fähigkeit greift an einer Stelle dieses Loops ein.
 
-## Selbst ausprobieren
+## Beispiele: woran KI-Code scheitert
 
-**Dauer:** ca. 15 Minuten · **Start:** kein Projekt nötig · **Referenz:** Lösungsweg unten
-
-1. Ordne jedes der drei Snippets ein (jedes stammt angeblich von einer KI): korrekt, plausibel falsch oder veraltet. Notiere, woran der Fehler erkennbar ist.
-2. Zerlege die Aufgabe „Bug im Login beheben: Nutzer mit Großbuchstaben in der E-Mail-Adresse können sich nicht anmelden“ in die Schritte des Agenten-Loops: Welches Werkzeug braucht der Agent pro Schritt, wo greift der Mensch ein?
-3. Sammle daraus mindestens fünf Punkte „Woran KI-Code scheitert“.
+Drei kurze Snippets, wie sie ein Assistent liefern könnte: eines korrekt, eines plausibel falsch, eines veraltet.
 
 ```python
 # Snippet 1 (Python)
@@ -168,22 +164,17 @@ def created_at() -> str:
     return datetime.utcnow().isoformat()
 ```
 
-Variante im Plenum: Snippets gemeinsam bewerten, Loop am Flipchart skizzieren.
-
-**Checkpoint:** Drei Snippets sind eingeordnet und begründet, eine Loop-Skizze mit mindestens vier Schritten liegt vor, die Liste hat fünf Punkte.
-
-<details>
-<summary>Lösungsweg</summary>
-
-**Zu 1**
-
 | Snippet | Einordnung | Woran erkennbar |
 | --- | --- | --- |
 | 1 `average` | korrekt | leere Liste abgefangen, Typen stimmen; mit `average([])` und `average([2, 4])` schnell prüfbar |
 | 2 `isWeekend` | plausibel falsch | `getDay()` liefert 0 (Sonntag) bis 6 (Samstag); `7` kommt nie vor, Sonntag wird nicht erkannt. Richtig: `day === 0 \|\| day === 6`. Fällt nur mit einem Test für einen Sonntag auf |
 | 3 `created_at` | veraltet | `datetime.utcnow()` ist seit Python 3.12 als veraltet markiert (DeprecationWarning) und liefert ein Datum ohne Zeitzone. Aktuell: `datetime.now(timezone.utc)` mit `from datetime import datetime, timezone` |
 
-**Zu 2 (eine mögliche Loop-Skizze)**
+Typische Fehlerquellen von KI-Code: erfundene Funktionen, Parameter oder Pakete; veraltete APIs und Versionen; Logikfehler in Grenzfällen (leere Liste, 0, Sonntag, Mitternacht); fehlende Fehlerbehandlung und Validierung; Sicherheitslücken (ungeprüfte Eingaben, Secrets im Code); Code, der nicht zum Projekt passt (anderer Stil, andere Struktur, unbekannte Konventionen).
+
+## Beispiel: der Agenten-Loop bei einem Bugfix
+
+Aufgabe: „Bug im Login beheben: Nutzer mit Großbuchstaben in der E-Mail-Adresse können sich nicht anmelden.“
 
 1. Mensch: Ziel „Login mit Großbuchstaben funktioniert“, Grenze „nur Login-Modul ändern, Tests müssen grün sein“.
 2. Planen: Login-Code und Nutzersuche finden.
@@ -192,10 +183,6 @@ Variante im Plenum: Snippets gemeinsam bewerten, Loop am Flipchart skizzieren.
 5. Werkzeug: Vergleich auf Kleinschreibung umstellen; Tests ausführen → grün.
 6. Prüfen: alle Tests grün, keine weiteren Dateien geändert → fertig.
 7. Mensch: Diff lesen, Randfälle bedenken (bestehende Konten mit Großbuchstaben?), übernehmen.
-
-**Zu 3 (Beispiel):** erfundene Funktionen, Parameter oder Pakete; veraltete APIs und Versionen; Logikfehler in Grenzfällen (leere Liste, 0, Sonntag, Mitternacht); fehlende Fehlerbehandlung und Validierung; Sicherheitslücken (ungeprüfte Eingaben, Secrets im Code); passt nicht zum Projekt (anderer Stil, andere Struktur, unbekannte Konventionen).
-
-</details>
 
 ## Fazit
 

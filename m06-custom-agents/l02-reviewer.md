@@ -129,7 +129,7 @@ Ein Custom Agent erscheint mit seinem `name` in der Agent-Auswahl, hier „Plann
 
 ## Übung
 
-**Dauer:** ca. 25 Minuten · **Start:** eigener Stand nach Lab 5.3 oder v2 mit `node project/focuslist/catch-up.mjs <python|node> m06 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m06/.github/agents/reviewer.agent.md`
+**Dauer:** ca. 30 Minuten · **Start:** eigener Stand nach Lab 5.3 oder v2 mit `node project/focuslist/catch-up.mjs <python|node> m06 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m06/.github/agents/reviewer.agent.md`
 
 1. Lege `.github/agents/reviewer.agent.md` an: Frontmatter mit `name`, `description` (was, wann, „ändert keine Dateien“), `tools: ['read', 'search']`; darunter Rolle, Grundlage, Ablauf, Ausgabeformat.
 2. Starte eine neue Chat-Sitzung, wähle `reviewer` in der Agent-Auswahl und beauftrage ihn mit den Dateien, die in Lab 5.3 geändert wurden (Prompt im Lösungsweg).

@@ -143,19 +143,9 @@ Ergänzt die Landkarte aus Lab 1.3:
 | Claude Code | `.claude/agents/` |
 | OpenAI Codex | eigene Konfiguration (im Kurs nicht behandelt) |
 
-## Selbst ausprobieren
+## Rechte-Matrix für FocusList
 
-**Dauer:** ca. 10 Minuten · **Form:** einzeln oder im Plenum · **Start:** kein Projekt nötig · **Referenz:** Lösungsweg unten
-
-1. Lege eine Tabelle an: Zeilen = Rollen **Feature-Lead** (baut), **Tester**, **Reviewer**; Spalten = Dateien lesen, suchen, Produktcode ändern, Tests ändern, Terminal, andere Rollen beauftragen, Todo-Liste, Pakete installieren.
-2. Trage für jede Zelle ein: ja, nein oder „ja, nur …“.
-3. Übersetze jede Zeile in eine `tools`-Liste aus den Aliasen oben.
-4. Markiere alle Zellen, die sich **nicht** über `tools` ausdrücken lassen und deshalb als Regel in den Auftrag müssen.
-
-**Checkpoint:** Eine Rechte-Matrix mit drei Rollen liegt vor, jede Rolle hat eine `tools`-Liste, und mindestens zwei Regeln sind als „nur im Auftrag“ markiert.
-
-<details>
-<summary>Lösungsweg</summary>
+Drei Rollen aus einem echten Team, übertragen auf FocusList:
 
 | Recht | Feature-Lead | Tester | Reviewer |
 | --- | --- | --- | --- |
@@ -172,8 +162,6 @@ Ergänzt die Landkarte aus Lab 1.3:
 \* lässt sich nicht über `tools` ausdrücken (Pfad, Befehl oder Name des Subagents) und steht deshalb als Regel im Auftrag. Genau so sind die echten Dateien in `project/focuslist/<stack>/steps/m06/.github/agents/` gebaut (Lab 6.2 und 6.3).
 
 Der Reviewer ist die einzige Rolle, deren Grenze vollständig über `tools` gilt: ohne `edit` und `execute` kann er nichts ändern.
-
-</details>
 
 ## Fazit
 

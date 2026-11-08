@@ -119,35 +119,18 @@ Kern ist `createApp()` in [`src/app.js`](../project/focuslist/node/start/src/app
 | neue Tailwind-Klasse wirkt nicht | CSS nicht neu gebaut | `npm run css` in einem zweiten Terminal laufen lassen |
 | `pytest` findet keine Tests | Befehl nicht im Projektordner gestartet | in den Ordner mit `pyproject.toml` wechseln |
 
-## Übung
+## App starten und Tests ausführen
 
-**Dauer:** ca. 15 Minuten · **Start:** `project/focuslist/<stack>/start/` · **Referenz:** `project/focuslist/<stack>/start/README.md`
+Diese Befehle werden ab Lab 3.2 gebraucht.
 
-1. Erstelle einen Arbeitsordner mit dem Startgerüst (im Ordner der Kursunterlagen ausführen):
+**Arbeitsordner anlegen** (im Ordner der Kursunterlagen ausführen):
 
-   ```bash
-   node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Python
-   node project/focuslist/catch-up.mjs node m03 ~/kurs/focuslist     # Node.js
-   ```
+```bash
+node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Python
+node project/focuslist/catch-up.mjs node m03 ~/kurs/focuslist     # Node.js
+```
 
-   Alternativ den Ordner `project/focuslist/<stack>/start/` an einen eigenen Ort kopieren.
-2. Öffne den Ordner `focuslist` in VS Code und lies `README.md`.
-3. Installiere die Abhängigkeiten, baue das CSS und starte die App (Befehle im Lösungsweg je Stack).
-4. Öffne die App im Browser.
-5. Führe den Beispieltest in einem zweiten Terminal aus.
-
-**Checkpoint:** `127.0.0.1:5000` (Python) bzw. `localhost:3000` (Node.js) zeigt drei Aufgaben mit Tailwind-Styling (blau-violette Kopfzeile, weiße Karten); der Test läuft grün.
-
-![FocusList im Browser: blau-violette Kopfzeile „FocusList“, Überschrift „Meine Aufgaben“ und drei weiße Karten „Kursunterlagen lesen · Priorität: hoch“, „Tailwind ausprobieren · Priorität: mittel“, „Agent-Modus testen · Priorität: niedrig“](../assets/images/m02/start-browser.png)
-_Quelle: eigener Screenshot, FocusList start, 07.11.2026._
-
-![Terminal: pytest sammelt einen Test aus tests/test_index.py, Ergebnis „1 passed“ in Grün](../assets/images/m02/start-test-green.png)
-_Quelle: eigener Screenshot, FocusList start, 07.11.2026._
-
-Erwarteter Stand nach der Übung, aufgenommen mit dem Python-Stack; bei Node.js meldet der Test `pass 1`.
-
-<details>
-<summary>Lösungsweg</summary>
+Alternativ den Ordner `project/focuslist/<stack>/start/` an einen eigenen Ort kopieren. Danach den Ordner `focuslist` in VS Code öffnen; `README.md` beschreibt das Projekt.
 
 **Python** (macOS/Linux; Windows: `.venv\Scripts\Activate.ps1`):
 
@@ -172,7 +155,15 @@ npm run dev
 
 Konsole: `FocusList läuft auf http://localhost:3000`. Test im zweiten Terminal: `npm test` → erwartete Ausgabe `✔ GET / zeigt die Aufgabenliste`, Zusammenfassung `pass 1`, `fail 0`.
 
-</details>
+**Erwarteter Stand:** `127.0.0.1:5000` (Python) bzw. `localhost:3000` (Node.js) zeigt drei Aufgaben mit Tailwind-Styling (blau-violette Kopfzeile, weiße Karten); der Test läuft grün.
+
+![FocusList im Browser: blau-violette Kopfzeile „FocusList“, Überschrift „Meine Aufgaben“ und drei weiße Karten „Kursunterlagen lesen · Priorität: hoch“, „Tailwind ausprobieren · Priorität: mittel“, „Agent-Modus testen · Priorität: niedrig“](../assets/images/m02/start-browser.png)
+_Quelle: eigener Screenshot, FocusList start, 07.11.2026._
+
+![Terminal: pytest sammelt einen Test aus tests/test_index.py, Ergebnis „1 passed“ in Grün](../assets/images/m02/start-test-green.png)
+_Quelle: eigener Screenshot, FocusList start, 07.11.2026._
+
+Aufgenommen mit dem Python-Stack; bei Node.js meldet der Test `pass 1`.
 
 ## Fazit
 

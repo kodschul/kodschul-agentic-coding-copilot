@@ -74,7 +74,7 @@ Alles, was der Prompt offenlässt, entscheidet der Agent still. Was er im Beispi
 | Tests? | nichts | keine neuen |
 | Neue Pakete? | nichts | keine im Beispiel; in anderen Läufen schlägt der Agent z. B. Express vor |
 
-Dasselbe Modell entscheidet bei jedem Lauf etwas anders (Lab 1.1). Das eigene Ergebnis weicht deshalb von der Tabelle ab; bewertet wird es in Lab 3.3.
+Dasselbe Modell entscheidet bei jedem Lauf etwas anders (Lab 1.1). Ein eigenes Ergebnis weicht deshalb von der Tabelle ab; Lab 3.3 bewertet den Referenzstand v0.
 
 ## Beispielergebnis: FocusList v0
 
@@ -113,23 +113,23 @@ Neue Tests: in beiden Stacks keine.
 | Agent will ein Paket installieren | eigene Annahme über den Stack | Freigabe ablehnen; der Wunsch ist ein Befund für Lab 3.3 |
 | Seite zeigt nach dem Prompt einen Fehler | Agent hat etwas Unvollständiges gebaut | nicht reparieren; Fehler ist Teil des Status quo, für Modul 4 den Referenzstand nutzen |
 
-## Übung
+## Übung (optional)
 
-**Dauer:** ca. 15 Minuten · **Start:** eigene FocusList in `~/kurs/focuslist`, Stand nach Lab 2.5 · **Referenz:** `project/focuslist/<stack>/steps/m03/`
+**Dauer:** ca. 25 Minuten · **Start:** Startgerüst `start/` · **Referenz:** `project/focuslist/<stack>/steps/m03/`
 
-Ohne eigenen Stand (Lab 2.1 verpasst oder kaputt): Startgerüst holen und wie in Lab 2.1 einrichten (Abhängigkeiten, `npm run build:css`):
+Ohne Übung: Den Referenzstand v0 holen und für Modul 4 verwenden (im Ordner der Kursunterlagen):
 
 ```bash
-node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist-m03   # bzw. node … node m03 …
+node project/focuslist/catch-up.mjs python m04 ~/kurs/focuslist   # bzw. node … node m04 …
 ```
 
-1. Starte die App und `npm run css` in je einem eigenen Terminal und öffne die Seite im Browser.
-2. Öffne eine neue Chat-Sitzung im Copilot-Harness, wähle **Agent** (Autopilot aus, kein Kontext) und sende den Prompt aus `project/focuslist/vibecoding-prompt.md` unverändert.
-3. Lies jede Freigabe für Terminal-Befehle (Lab 2.5): Tests und Startbefehle erlauben, Paketinstallationen ablehnen.
-4. Nimm alle Änderungen mit Keep an, ohne den Code zu lesen.
+1. Lege den Arbeitsordner mit dem Startgerüst an und richte ihn ein, wie in Lab 2.1 unter „App starten und Tests ausführen“ beschrieben.
+2. Starte die App und `npm run css` in je einem eigenen Terminal und öffne die Seite im Browser.
+3. Öffne eine neue Chat-Sitzung im Copilot-Harness, wähle **Agent** (Autopilot aus, kein Kontext) und sende den Prompt aus `project/focuslist/vibecoding-prompt.md` unverändert.
+4. Lies jede Freigabe für Terminal-Befehle (Lab 2.5): Tests und Startbefehle erlauben, Paketinstallationen ablehnen. Nimm alle Änderungen mit Keep an, ohne den Code zu lesen.
 5. Lade die Seite neu: Lege eine Aufgabe an, markiere sie als erledigt, probiere die Filter und rufe `/api/tasks` auf. Bessere nichts nach.
 
-**Checkpoint:** Die Seite zeigt Formular, farbige Badges, Button „Erledigt“ und drei Filter-Links (oder einen Fehler, der so bleibt); `/api/tasks` liefert JSON; die Chat-Sitzung bleibt offen für Lab 3.3.
+**Checkpoint:** Die Seite zeigt Formular, farbige Badges, Button „Erledigt“ und drei Filter-Links (oder einen Fehler, der so bleibt); `/api/tasks` liefert JSON.
 
 <details>
 <summary>Lösungsweg</summary>
@@ -143,12 +143,6 @@ Typischer Verlauf im Chat (Beispiellauf, Python):
 | Prüfen | startet die App im Terminal, liest die Ausgabe; öffnet die Seite nicht im Browser |
 | Abschluss | „Fertig“ mit Startanleitung und neuer Datei `run.py` |
 
-Referenzstand v0 ansehen bzw. herstellen (im Ordner der Kursunterlagen):
-
-```bash
-node project/focuslist/catch-up.mjs python m04 ~/kurs/referenz-v0   # bzw. node … node m04 …
-```
-
 Erwartung im Browser: wie im Screenshot oben. `/api/tasks` liefert die drei Beispielaufgaben plus jede neu angelegte.
 
 Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan nennt meist Tests und offene Fragen zur Validierung, der One-Shot-Prompt nicht. Bewertet wird das in Lab 3.3.
@@ -161,4 +155,4 @@ Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan nennt meist T
 - Alles, was der Prompt offenlässt, hat der Agent still entschieden.
 - „Fertig“ heißt beim Vibecoding nur: Im Browser sieht es richtig aus.
 
-Die Übung erzeugt die eigene FocusList v0 mit dem Beispiel-Prompt.
+Die optionale Übung erzeugt eine eigene FocusList v0 mit dem Beispiel-Prompt; ohne Übung geht es mit dem Referenzstand v0 weiter.

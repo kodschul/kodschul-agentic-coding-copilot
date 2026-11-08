@@ -39,7 +39,7 @@ flowchart LR
     M --> PM["gleicher Prompt"]
     PO --> D["Dateivergleich, Tests"]
     PM --> D
-    D --> C["Checkliste,<br/>Status-quo-Liste abhaken"]
+    D --> C["Checkliste<br/>vergleichen"]
 ```
 
 | Regel für einen fairen Vergleich | Warum |
@@ -129,16 +129,15 @@ In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis
    ```
 
 2. Öffne `ohne/` und `mit/` in je einem eigenen VS-Code-Fenster, wähle in beiden **Agent** und dasselbe Modell. Sende in beiden wörtlich: „Füge einen Button "Löschen" hinzu, der eine Aufgabe entfernt.“ Übernimm das Ergebnis mit **Keep**, bessere nichts von Hand nach, führe die Tests aus.
-3. Öffne `~/kurs/vergleich` in einem dritten Fenster. Vergleiche die geänderten Dateien: Rechtsklick auf die Datei in `ohne/` → „Select for Compare“, dann auf dieselbe Datei in `mit/` → „Compare with Selected“. Trage das Ergebnis je Kriterium der Checkliste in eine Tabelle ein (Kriterium | ohne | mit).
-4. Hake in der Status-quo-Liste aus Lab 3.3 jede Zeile ab, die mit Regeln behoben ist; markiere offene Zeilen mit dem Baustein, der sie lösen soll.
-5. Sende im Fenster von `mit/` einen zweiten Prompt: „Bringe den bestehenden Code in Einklang mit AGENTS.md, ohne das Verhalten zu ändern. Führe danach die Tests aus.“ Prüfe die Änderungen und übernimm sie mit **Keep**. Der Ordner `mit/` ist jetzt FocusList v1.
+3. Öffne `~/kurs/vergleich` in einem dritten Fenster. Vergleiche die geänderten Dateien: Rechtsklick auf die Datei in `ohne/` → „Select for Compare“, dann auf dieselbe Datei in `mit/` → „Compare with Selected“. Prüfe je Kriterium der Checkliste, ob `ohne/` und `mit/` es erfüllen.
+4. Sende im Fenster von `mit/` einen zweiten Prompt: „Bringe den bestehenden Code in Einklang mit AGENTS.md, ohne das Verhalten zu ändern. Führe danach die Tests aus.“ Prüfe die Änderungen und übernimm sie mit **Keep**. Der Ordner `mit/` ist jetzt FocusList v1.
 
 ![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)
 _Quelle: VS Code Docs, Agents Quickstart (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
 Der Reiter „Changes“ der Agent-Sitzung zeigt in jedem Fenster, welche Dateien der Agent geändert hat; diese Dateien gehören in den Vergleich.
 
-**Checkpoint:** Die Vergleichstabelle zeigt für `mit/` mehr erfüllte Kriterien; in `mit/` laufen die Tests grün, darunter mindestens ein neuer Test fürs Löschen; die Status-quo-Liste hat abgehakte und offene Zeilen.
+**Checkpoint:** `mit/` erfüllt mehr Kriterien der Checkliste als `ohne/`; in `mit/` laufen die Tests grün, darunter mindestens ein neuer Test fürs Löschen.
 
 <details>
 <summary>Lösungsweg</summary>
@@ -154,7 +153,7 @@ Typisches Ergebnis (Python; Node.js sinngemäß):
 | Tests fürs Löschen | keine | Normalfall, Fehlerfall, neue ID nach dem Löschen |
 | neue Abhängigkeiten | keine (oder Vorschlag) | keine |
 
-Abgehakt nach v1 (Funde aus dem Lösungsweg von Lab 3.3): ID-Kollision, Logik verstreut, Filter doppelt (damit auch `/api/tasks?status=all` in Python), unbekannte ID (Python), Callbacks gemischt (Node.js), fehlende Tests für neue Routen, zweiter Startweg nur als Regel (die Datei `run.py` liegt in der Referenz weiterhin im Projekt).
+Behoben in v1 (Funde aus Lab 3.3, Abschnitt „Mängel im Referenzstand v0“): ID-Kollision, Logik verstreut, Filter doppelt (damit auch `/api/tasks?status=all` in Python), unbekannte ID (Python), Callbacks gemischt (Node.js), fehlende Tests für neue Routen, zweiter Startweg nur als Regel (die Datei `run.py` liegt in der Referenz weiterhin im Projekt).
 
 Offen: XSS, Secret im Code, `debug=True`, Validierung, Path Traversal, Body-Limit (Skill, m05); unabhängige Prüfung (Custom Agent, m06); Tests werden nur erbeten, nicht erzwungen, und der Agent sieht die App nicht (Hook und MCP, m07); Fußzeile zählt nur gefilterte Aufgaben (Python), fachlich ungeklärt (Spec, m08); feste Formularbreiten (MCP, m07).
 

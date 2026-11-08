@@ -16,7 +16,7 @@ Meist eine Sicherheitslücke: Ein präparierter Link oder eine Eingabe kann frem
 
 </details>
 
-- Bewertet wird das eigene v0 aus Lab 3.2 mit einem Raster aus sechs Fragen.
+- Bewertet wird der Referenzstand v0 (oder ein eigenes v0 aus Lab 3.2) mit einem Raster aus sechs Fragen.
 - Jeder Mangel gehört zu einer von fünf Fehlerklassen.
 - Ergebnis ist die Status-quo-Liste: die wichtigsten Mängel, jeder mit dem Baustein aus Lab 1.3, der ihn behebt.
 - Ab hier arbeitet der Kurs agentisch: Modul 4 bis 8 arbeiten die Status-quo-Liste ab.
@@ -26,7 +26,7 @@ Meist eine Sicherheitslücke: Ein präparierter Link oder eine Eingabe kann frem
 | Begriff | Bedeutung |
 | --- | --- |
 | Status quo | der aktuelle Zustand, ehrlich beschrieben; Ausgangspunkt für jede Verbesserung |
-| Status-quo-Liste | Liste der wichtigsten Mängel von v0, jeder mit Fehlerklasse und Baustein; entsteht gemeinsam und begleitet die Module 4–9 |
+| Status-quo-Liste | Liste der wichtigsten Mängel von v0, jeder mit Fehlerklasse und Baustein; steht am Ende dieses Labs und begleitet die Module 4–9 |
 | Fehlerklasse | Gruppe ähnlicher Fehler mit gemeinsamer Ursache |
 | Inkonsistenz | dasselbe Problem an zwei Stellen unterschiedlich gelöst |
 | Falsche Annahme | der Agent rät etwas über das Projekt, das niemand gesagt hat |
@@ -92,25 +92,11 @@ Faustregel: Was mit einem Satz erklärbar ist → Instructions. Was eine Checkli
 | --- | --- | --- |
 | Chat-Sitzung aus Lab 3.2 ist geschlossen | neue Sitzung geöffnet | Startgerüst in einen zweiten Ordner holen und Dateien per „Compare with Selected“ vergleichen |
 | Bewertung bleibt bei „sieht gut aus“ | nur im Browser geprüft | jede Rasterfrage mit ihrer Prüfung beantworten, auch Tests und Diff |
-| Liste mit 20 Zeilen | jeder Einzelbefund als eigene Zeile | ähnliche Befunde zu einer Zeile zusammenfassen, nach Kosten kürzen |
 | Eigenes v0 startet nicht | One-Shot-Ergebnis unvollständig | „läuft nicht“ ist der erste Befund; restliche Fragen am Referenzstand v0 beantworten |
 
-## Übung
+## Mängel im Referenzstand v0
 
-**Dauer:** ca. 25 Minuten (10 Minuten einzeln, 15 Minuten gemeinsam) · **Start:** eigene FocusList v0 aus Lab 3.2 · **Referenz:** `project/focuslist/<stack>/steps/m03/`
-
-1. Öffne die Änderungen des Agenten in der Chat-Sitzung aus Lab 3.2 und beantworte die sechs Fragen des Bewertungsrasters. Notiere je Frage den wichtigsten Befund und seine Fehlerklasse.
-2. Führe die Tests aus und lege im Browser eine Aufgabe mit dem Titel `<b>fett</b>` an. Notiere, was passiert.
-3. Sammle gemeinsam die Befunde aller Teilnehmenden und fasse doppelte zusammen.
-4. Wähle die Top 5–8 Mängel, sortiert nach „teuer in Produktion“, und ordne jeder Zeile einen Baustein aus der Tabelle „Vom Mangel zum Baustein“ zu.
-5. Halte die gemeinsame Liste mit den Spalten `# | Mangel | Fehlerklasse | Baustein | Modul` fest (z. B. am Whiteboard).
-
-**Checkpoint:** Die Status-quo-Liste enthält 5–8 Zeilen, jede mit Fehlerklasse, Baustein und Modul; mindestens eine Zeile ist eine Sicherheitslücke; mindestens eine Zeile trägt den Baustein „Instructions“.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Mängel im Referenzstand v0 (`steps/m03/`), mit Fehlerklasse und Baustein:
+Das Raster angewendet auf den Referenzstand v0 (`steps/m03/`), mit Fehlerklasse und Baustein:
 
 **Python**
 
@@ -152,7 +138,9 @@ Der erste Fund aus der Tabelle im Browser: Das Skript aus dem URL-Parameter `?cr
 
 Überflüssige Abhängigkeit: Im Referenzlauf kam kein Paket dazu (`package.json` und `requirements.txt` unverändert). In anderen Läufen schlägt der Agent im Node.js-Stack vor, Express zu installieren, „damit das Routing einfacher wird“; das Projekt kommt bewusst ohne Laufzeit-Pakete aus. Baustein: Instructions mit Verbot (m04), Guard-Hook (m07).
 
-Beispiel einer gemeinsamen Status-quo-Liste, sortiert nach Kosten in Produktion:
+## Status-quo-Liste
+
+Die Befunde beider Stacks, zusammengefasst und nach Kosten in Produktion sortiert. Diese Liste arbeiten die Module 4 bis 8 ab:
 
 | # | Mangel | Fehlerklasse | Baustein | Modul |
 | --- | --- | --- | --- | --- |
@@ -165,13 +153,11 @@ Beispiel einer gemeinsamen Status-quo-Liste, sortiert nach Kosten in Produktion:
 | 7 | feste Breiten, Formular bricht auf Handybreite; Agent hat die Seite nie gesehen | Falsche Annahme | MCP (Playwright) | m07 |
 | 8 | fachlich ungeklärt: Was zählt die Fußzeile, was liefert `?status=all`? | Falsche Annahme | Spec | m08 |
 
-</details>
-
 ## Ab jetzt agentisch
 
 Die Status-quo-Liste ist der Fahrplan für den Rest des Kurses. Jedes Modul fügt einen Baustein ins Repo ein und hakt Zeilen ab:
 
-| Modul | Baustein im Repo | Behebt (Beispiel-Liste) | Stand |
+| Modul | Baustein im Repo | Behebt (Status-quo-Liste) | Stand |
 | --- | --- | --- | --- |
 | m04 | Instructions: `AGENTS.md`, `*.instructions.md` | Zeilen 4, 5, Teil von 1 | v1 |
 | m05 | Skills `test-writer`, `security-checker` | Zeilen 1, 2, 3, Teil von 6 | v2 |
@@ -187,4 +173,4 @@ Ab Modul 4 wird der Diff gelesen, Tests laufen, und der Mensch nimmt ab: der age
 - Fünf Fehlerklassen ordnen jeden Befund; jede hat einen passenden Baustein.
 - Die Status-quo-Liste ist der Ausgangspunkt des agentischen Wegs.
 
-Die Übung bewertet das eigene v0 mit dem Raster und erstellt die gemeinsame Status-quo-Liste; Modul 4 beginnt mit dem ersten Baustein, den Projektregeln.
+Die Status-quo-Liste oben ist der Maßstab für jede weitere Verbesserung von FocusList.

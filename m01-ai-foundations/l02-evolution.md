@@ -74,10 +74,7 @@ Ansicht März 2025: Der Chat bekommt den Modus „Agent“, der selbst Dateien �
 
 ## Zeitleiste 2021–2026
 
-Die Tabelle ist eingeklappt, damit die Übung ohne Vorlage gelingt. Nach der Übung aufklappen und vergleichen.
-
-<details>
-<summary>Zeitleiste aufklappen (Stand: 11/2026)</summary>
+Stand: 11/2026.
 
 | Zeit | Ereignis | Bedeutung |
 | --- | --- | --- |
@@ -94,7 +91,8 @@ Die Tabelle ist eingeklappt, damit die Übung ohne Vorlage gelingt. Nach der Üb
 | Jul 2026 | VS Code 1.129: Agent Host für Copilot, Claude und Codex ([Help Net Security, 16.07.2026](https://www.helpnetsecurity.com/2026/07/16/vs-visual-studio-code-agent-host/)) | mehrere Harnesses in einem Editor |
 | Okt 2026 | Copilot-Harness wird Standard für neue Sitzungen (ab VS Code 1.142) ([GitHub Changelog, 28.10.2026](https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/)) | heutiger Arbeitsstand dieses Kurses |
 
-</details>
+
+Auffällig: MCP ist älter als der Agent-Modus, und zwischen erstem Agenten (Feb 2025) und gemeinsamen Standards (Dez 2025) liegen weniger als zwölf Monate.
 
 ## Das Muster: Hersteller-Format → übernommen → Standard
 
@@ -113,56 +111,6 @@ flowchart LR
 **Folge für die Praxis:** Was im Kurs für Copilot gebaut wird, ist zum großen Teil auch in anderen Werkzeugen nutzbar (Lab 1.3).
 
 **Folge für die Recherche:** Anleitungen aus 2023 oder Anfang 2025 beschreiben oft Funktionen einer früheren Stufe oder eines anderen Harness. Datum einer Quelle immer prüfen.
-
-## Selbst ausprobieren
-
-**Dauer:** ca. 15 Minuten · **Start:** kein Projekt nötig · **Referenz:** eingeklappte Zeitleiste oben
-
-1. Lege die zwölf Ereignisse unten (als Karten ohne Datum) in die zeitliche Reihenfolge, ohne die Zeitleiste aufzuklappen.
-2. Ordne jeder Karte eine der drei Stufen zu (Vorschlag, Chat, Agent) oder markiere sie als „Standard/Format“.
-3. Markiere jede Karte, deren Werkzeug oder Format bereits selbst genutzt wurde.
-4. Klappe die Zeitleiste auf und vergleiche: Welche Reihenfolge überrascht?
-
-Ereignisse (gemischt):
-
-- `AGENTS.md` erscheint
-- Copilot CLI erscheint als Preview
-- ChatGPT erscheint
-- MCP erscheint
-- Agent Skills (`SKILL.md`) erscheinen
-- Copilot Technical Preview
-- Copilot-Harness wird Standard in VS Code
-- Copilot Agent Mode und Claude Code erscheinen
-- Agent Host in VS Code für mehrere Harnesses
-- Linux Foundation übernimmt MCP und `AGENTS.md`
-- Copilot Chat wird allgemein verfügbar
-- Codex CLI und Codex Cloud erscheinen
-
-Variante im Plenum: Karten gemeinsam an einer Wand sortieren und eigene Nutzung mit Punkten markieren.
-
-**Checkpoint:** Zwölf Karten liegen in einer Reihenfolge, jede hat eine Stufe, die eigenen Werkzeuge sind markiert („unser Stand“).
-
-<details>
-<summary>Lösungsweg</summary>
-
-Richtige Reihenfolge mit Stufe:
-
-1. Copilot Technical Preview (Jun 2021) · Vorschlag
-2. ChatGPT (Nov 2022) · Chat
-3. Copilot Chat allgemein verfügbar (Dez 2023) · Chat
-4. MCP (Nov 2024) · Standard/Format
-5. Copilot Agent Mode und Claude Code (Feb 2025) · Agent
-6. Codex CLI und Codex Cloud (Apr–Mai 2025) · Agent
-7. `AGENTS.md` (Aug 2025) · Standard/Format
-8. Copilot CLI Preview (Sep 2025) · Agent
-9. Agent Skills (Okt 2025) · Standard/Format
-10. Linux Foundation übernimmt MCP und `AGENTS.md` (Dez 2025) · Standard/Format
-11. Agent Host in VS Code (Jul 2026) · Agent
-12. Copilot-Harness als Standard (Okt 2026) · Agent
-
-Häufige Überraschung: MCP ist älter als der Agent-Modus, und zwischen erstem Agenten (Feb 2025) und gemeinsamen Standards (Dez 2025) liegen weniger als zwölf Monate.
-
-</details>
 
 ## Fazit
 

@@ -123,28 +123,19 @@ Diese Funktionen stehen in vielen Anleitungen, laden aber im Copilot-Harness nic
 
 Vor dem Nachbauen prüfen: Datum der Quelle, Werkzeug, Harness.
 
-## Übung
+## Beispiel: dieselbe Frage in zwei Harnesses
 
-**Dauer:** ca. 15 Minuten · **Start:** FocusList `start/` aus Lab 2.1 · **Referenz:** Tabelle „Nur im Local-Harness“
+Datei: `focuslist/store.py` bzw. `src/store.js`.
 
-1. Prüfe in der Chat-Ansicht, welches Session-Ziel aktiv ist, und wechsle für eine neue Sitzung auf den Local-Harness.
-2. Öffne `focuslist/store.py` bzw. `src/store.js` und führe `/explain` aus.
-3. Wechsle für eine neue Sitzung auf den Copilot-Harness, wähle **Ask**, hänge dieselbe Datei als Kontext an und frage ohne Slash-Befehl: „Erkläre, was diese Datei macht und wann sie aufgerufen wird.“
-4. Tippe im Copilot-Harness `/explain` und beobachte, was passiert.
-5. Vergleiche beide Antworten nach Länge, Inhalt und Bezug zum Projekt und lege fest: „Mein Standard-Harness ist … Ich wechsle, wenn …“.
+| | Local-Harness mit `/explain` | Copilot-Harness, Ask, Datei als Kontext |
+| --- | --- | --- |
+| Eingabe | `/explain` | „Erkläre, was diese Datei macht und wann sie aufgerufen wird.“ |
+| Antwort | erklärt `load_tasks()`/`save_tasks()` bzw. `loadTasks()`/`saveTasks()`: JSON lesen, fehlende Datei (Python) → leere Liste, Schreiben mit Einrückung | vergleichbare Erklärung, nennt oft zusätzlich die Aufrufer (`create_app()` bzw. `createApp()`), weil der Agent selbst im Projekt sucht |
+| `/explain` | eingebauter Befehl | erscheint nicht in der Befehlsliste; `/` ruft hier eigene Skills auf (m05) |
 
-**Checkpoint:** Zwei Antworten zur selben Datei liegen vor (Local mit `/explain`, Copilot ohne); ein Standard-Harness und mindestens ein Grund zum Wechseln sind festgelegt.
+Das Session-Ziel wird in der Chat-Ansicht gewählt, typischerweise beim Start einer neuen Sitzung. Bezeichnung und Ort der Auswahl können sich mit VS-Code-Versionen ändern (Stand: 11/2026).
 
-<details>
-<summary>Lösungsweg</summary>
-
-- Zu 1 und 3: Das Session-Ziel wird in der Chat-Ansicht gewählt, typischerweise beim Start einer neuen Sitzung. Bezeichnung und Ort der Auswahl können sich mit VS-Code-Versionen ändern (Stand: 11/2026).
-- Zu 2: Local erklärt `load_tasks()`/`save_tasks()` bzw. `loadTasks()`/`saveTasks()`: JSON lesen, fehlende Datei (Python) → leere Liste, Schreiben mit Einrückung.
-- Zu 3: Copilot liefert eine vergleichbare Erklärung und nennt oft zusätzlich die Aufrufer (`create_app()` bzw. `createApp()`), weil der Agent selbst im Projekt sucht.
-- Zu 4: `/explain` erscheint im Copilot-Harness nicht in der Befehlsliste und wird nicht als eingebauter Befehl ausgeführt. Im Copilot-Harness ruft `/` eigene Skills auf (m05).
-- Zu 5, Beispiel: „Mein Standard-Harness ist Copilot. Ich wechsle zu Local, wenn eine Anleitung eine Prompt-Datei voraussetzt, und zu Cloud, wenn eine lange Aufgabe ohne meinen Rechner laufen soll.“
-
-</details>
+Eine typische Festlegung: Standard ist der Copilot-Harness; Wechsel zu Local, wenn eine Anleitung eine Prompt-Datei voraussetzt, und zu Cloud, wenn eine lange Aufgabe ohne den eigenen Rechner laufen soll.
 
 ## Fazit
 

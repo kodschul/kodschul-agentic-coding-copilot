@@ -106,20 +106,16 @@ Autopilot lohnt sich erst, wenn Projektregeln, Tests und Hooks den Agenten absic
 
 Vergleich aus der Luftfahrt: Auch dort fliegt der Autopilot nur, während Instrumente und Crew ihn überwachen.
 
-## Übung
+## Beispiel: eine Agent-Runde kontrollieren
 
-**Dauer:** ca. 15 Minuten · **Start:** FocusList `start/` aus Lab 2.1 (unveränderter Stand) · **Referenz:** Lösungsweg unten
+Auftrag an den Agenten: „Füge unter der Aufgabenliste eine Fußzeile hinzu, die anzeigt, wie viele Aufgaben es gibt und wie viele davon offen sind.“
 
-1. Wähle im Copilot-Harness den Agent **Agent** und sende: „Füge unter der Aufgabenliste eine Fußzeile hinzu, die anzeigt, wie viele Aufgaben es gibt und wie viele davon offen sind.“ Lies jede Freigabe-Anfrage, bevor sie bestätigt wird.
-2. Prüfe den Diff. Verwirf eine Änderung mit Undo (gehört nichts Fremdes dazu: verwirf die Styling-Klasse der Fußzeile) und behalte den Rest mit Keep.
-3. Sende eine zweite Anfrage: „Mach die Fußzeile rot, fett und doppelt so groß.“
-4. Setze per „Restore Checkpoint“ auf den Stand vor der zweiten Anfrage zurück.
-5. Führe die Tests aus und prüfe die Seite im Browser.
-
-**Checkpoint:** Die Seite zeigt unter der Liste „3 Aufgaben, davon 2 offen“ ohne rote Schrift; die Tests sind grün.
-
-<details>
-<summary>Lösungsweg</summary>
+| Kontrollstelle | Was passiert | Entscheidung |
+| --- | --- | --- |
+| Freigabe | Agent will `pytest` bzw. `npm test` ausführen | erlauben (harmlos, liest nur) |
+| Freigabe | Agent will ein Paket installieren | ablehnen, eine Fußzeile braucht keins |
+| Diff | geänderte Dateien: nur `index.html` bzw. `src/views/index.js` | Keep; jede weitere Datei gehört nicht zum Auftrag → Undo |
+| Checkpoint | zweite Anfrage „Mach die Fußzeile rot, fett und doppelt so groß.“ gefällt nicht | „Restore Checkpoint“ vor dieser Anfrage stellt den vorherigen Stand her |
 
 Mögliches Ergebnis Python (`focuslist/templates/index.html`, nach `</ul>`):
 
@@ -137,19 +133,7 @@ const open = tasks.filter((task) => !task.done).length;
 //   <footer class="mt-6 text-sm text-slate-500">${tasks.length} Aufgaben, davon ${open} offen</footer>
 ```
 
-Typische Freigaben: Agent will `pytest` bzw. `npm test` ausführen → erlauben (harmlos, liest nur). Agent will ein Paket installieren → ablehnen, Fußzeile braucht keins.
-
-Zu 2: In der Liste der geänderten Dateien steht nur `index.html` bzw. `src/views/index.js`. Steht dort mehr, gehört es nicht zum Auftrag → Undo.
-
-Zu 4: Der Checkpoint vor der zweiten Anfrage stellt die Fußzeile ohne rote, fette Schrift wieder her.
-
-Zu 5:
-
-```bash
-pytest                      # bzw. npm test
-```
-
-</details>
+Danach zeigt die Seite unter der Liste „3 Aufgaben, davon 2 offen“; die Tests (`pytest` bzw. `npm test`) bleiben grün.
 
 ## Fazit
 

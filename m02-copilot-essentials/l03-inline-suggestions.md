@@ -1,4 +1,4 @@
-# Lab 2.3: Inline-Vorschläge und Next Edit Suggestions
+# Lab 2.3: Snippets, Ghost Text und Next Edit Suggestions
 
 **Leitfragen:**
 
@@ -16,15 +16,33 @@ Er passt formal, nutzt aber falsche Namen, ignoriert Grenzfälle (leere Liste, `
 
 </details>
 
-- Inline-Vorschläge erscheinen als grauer Text (Ghost Text) und werden mit Tab angenommen.
+- Ohne KI: Snippets und Emmet setzen feste Textbausteine per Kürzel ein.
+- Mit KI: Inline-Vorschläge erscheinen als grauer Text (Ghost Text) und werden mit Tab angenommen.
 - Wortweise Annehmen übernimmt nur den passenden Teil eines Vorschlags.
 - Next Edit Suggestions schlagen die nächste sinnvolle Änderung an einer anderen Stelle vor.
 - Vorschläge funktionieren unabhängig vom gewählten Harness.
+
+## Ohne KI: Snippets und Emmet
+
+Lange bevor es KI-Vorschläge gab, hat VS Code Schreibarbeit mit festen Textbausteinen abgenommen:
+
+| Werkzeug | Was es tut | Beispiel |
+| --- | --- | --- |
+| IntelliSense | Liste mit Namen, die an der Cursor-Position passen (Variablen, Funktionen, Schlüsselwörter) | `for` tippen → Liste mit passenden Einträgen |
+| Snippet | fester Textbaustein mit Platzhaltern; Tab springt zum nächsten Platzhalter | `for` in JavaScript → komplette `for`-Schleife |
+| Emmet | Abkürzungen für HTML und CSS, die zu ganzen Strukturen werden; in VS Code eingebaut | `!` → HTML-Grundgerüst, `ul>li*3` → Liste mit drei Einträgen |
+
+![IntelliSense-Liste in VS Code nach Eingabe von „fo“: Einträge for, foreach, forin, forof und function mit Snippet-Symbol, rechts die Vorschau der for-Schleife](../assets/images/m02/vscode-builtin-snippets.png)
+_Quelle: VS Code Docs, „Snippets in Visual Studio Code“ (https://code.visualstudio.com/docs/editing/userdefinedsnippets), Microsoft, CC BY 3.0 US, abgerufen am 08.11.2026._
+
+Snippets sind vorhersehbar: Derselbe Kürzel liefert immer denselben Text. Für JavaScript und HTML bringt VS Code Snippets mit, für Python kommen sie über Erweiterungen. Ghost Text dagegen wird für jede Stelle neu erzeugt und passt sich dem Code drumherum an.
 
 ## Begriffe
 
 | Begriff | Bedeutung |
 | --- | --- |
+| Snippet | fester Textbaustein mit Platzhaltern, per Kürzel aus der IntelliSense-Liste eingefügt |
+| Emmet | in VS Code eingebaute Abkürzungssprache für HTML und CSS |
 | Inline-Vorschlag (Ghost Text) | grauer Text an der Cursor-Position, den Copilot während des Tippens anbietet |
 | Next Edit Suggestion (NES) | Vorschlag für die nächste Änderung, auch an einer anderen Stelle der Datei, z. B. nach einer Umbenennung |
 
@@ -84,28 +102,47 @@ _Quelle: VS Code Blog, „Tune GitHub Copilot Inline Suggestions with Configurab
 
 Stand: 10/2026. „Snooze“ pausiert Vorschläge kurz; die Häkchen schalten Ghost Text und Next Edit Suggestions getrennt ab.
 
-## Übung
+## Übung (optional)
 
-**Dauer:** ca. 10 Minuten · **Start:** FocusList `start/` aus Lab 2.1 · **Referenz:** Lösungsweg unten
+**Dauer:** ca. 10 Minuten · **Start:** neue Spieldateien außerhalb des Projektordners; FocusList bleibt unverändert · **Referenz:** Lösungsweg unten
 
-1. Starte `npm run css` in einem eigenen Terminal. Öffne `focuslist/templates/index.html` bzw. `src/views/index.js`, tippe im `class`-Attribut des Listeneintrags `hover:` und nimm einen passenden Vorschlag an.
-2. Schreibe in `focuslist/store.py` bzw. `src/store.js` einen Kommentar „Zählt offene Aufgaben“ plus den Funktionskopf `count_open(tasks)` bzw. `countOpen(tasks)`. Nimm den Vorschlag an, wenn er korrekt ist.
-3. Erzeuge einen weiteren Vorschlag (z. B. eine zweite Funktion `count_done`) und lehne ihn bewusst mit Esc ab.
-4. Prüfe im Browser die Hover-Farbe und lies die angenommene Funktion Zeile für Zeile.
-5. Nimm beide Änderungen im Editor mit Strg+Z (macOS: Cmd+Z) zurück und speichere, damit Lab 2.5 vom unveränderten Stand startet.
+1. Lege außerhalb des Ordners `focuslist` eine Datei `spielwiese.html` an, tippe `!` und wähle in der Vorschlagsliste den Emmet-Eintrag.
+2. Tippe im `<body>` die Abkürzung `ul>li*3` und erweitere sie mit Tab.
+3. Lege `spielwiese.py` bzw. `spielwiese.js` an, schreibe den Kommentar „Zählt offene Aufgaben“ und darunter den Funktionskopf `def count_open(tasks):` bzw. `function countOpen(tasks) {`. Nimm den Ghost Text mit Tab an, wenn er passt.
+4. Schreibe darunter `def count_done(tasks):` bzw. `function countDone(tasks) {` und nimm den Vorschlag nur wortweise an (Ctrl+→, macOS: Cmd+→).
+5. Erzeuge einen weiteren Vorschlag, z. B. mit einer neuen Kommentarzeile, und lehne ihn mit Esc ab.
 
-**Checkpoint:** Eine Listenzeile ändert beim Überfahren mit der Maus die Farbe; die Funktion zählt Aufgaben mit `done` gleich falsch; ein Vorschlag wurde abgelehnt; danach sind beide Dateien wieder im Ausgangszustand.
+**Checkpoint:** `spielwiese.html` enthält ein HTML-Grundgerüst mit einer Liste aus drei `<li>`; in der Code-Datei stehen zwei Funktionen, eine davon wortweise übernommen; ein Vorschlag wurde abgelehnt.
+
+| Symptom | Ursache | Lösung |
+| --- | --- | --- |
+| kein Ghost Text | Copilot nicht angemeldet oder Vorschläge pausiert | Copilot-Symbol in der Statusleiste prüfen, anmelden bzw. „Snooze“ aufheben |
+| `!` oder `ul>li*3` wird nicht erweitert | Sprachmodus der Datei ist nicht HTML (z. B. Datei noch nicht gespeichert) | Datei als `.html` speichern oder unten rechts den Sprachmodus „HTML“ wählen |
 
 <details>
 <summary>Lösungsweg</summary>
 
-**Tailwind-Klasse**, z. B. im Python-Template:
+**Emmet** (`!`, dann `ul>li*3` im `<body>`):
 
 ```html
-<li class="rounded-lg border border-slate-200 bg-white px-4 py-3 hover:bg-slate-100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
 ```
 
-**Hilfsfunktion** (typischer korrekter Vorschlag):
+**Ghost Text** (typischer korrekter Vorschlag):
 
 ```python
 # Zählt offene Aufgaben
@@ -115,17 +152,20 @@ def count_open(tasks):
 
 ```javascript
 // Zählt offene Aufgaben
-export function countOpen(tasks) {
+function countOpen(tasks) {
   return tasks.filter((task) => !task.done).length;
 }
 ```
 
-Prüfpunkte: Feld heißt `done` (nicht `completed` oder `status`), Ergebnis für die Beispieldaten ist 2. Ein Vorschlag mit `task["status"] == "open"` sieht gut aus, passt aber nicht zu `data/tasks.json`: ablehnen.
+Der Snippet liefert immer denselben Text; der Ghost Text hängt vom Kontext ab und kann bei jedem Versuch anders aussehen. Prüfpunkt beim Ghost Text: Ohne Projektkontext rät Copilot den Feldnamen (`done`, `completed`, `status`); in FocusList heißt das Feld `done`.
 
 </details>
 
 ## Fazit
 
+- Snippets und Emmet liefern feste Bausteine, Ghost Text passt sich dem Kontext an.
 - Tab für ganze Vorschläge, wortweise für Teile, Esc zum Ablehnen.
 - Kommentare und sprechende Namen steuern Vorschläge besser als Warten.
 - Jeder angenommene Vorschlag ist eigener Code: Namen, Felder und Grenzfälle prüfen.
+
+Die optionale Übung probiert erst Snippets und Emmet, dann Ghost Text in einer Spieldatei aus.

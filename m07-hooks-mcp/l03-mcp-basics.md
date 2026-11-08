@@ -121,21 +121,9 @@ In Custom Agents (Lab 6.1) lassen sich MCP-Tools über das Feld `tools` freigebe
 
 VS Code fragt beim ersten Start eines Servers aus dem Workspace nach, ob dem Server vertraut wird (Stand: 11/2026).
 
-## Selbst ausprobieren
+## Welches Werkzeug fehlt FocusList?
 
-**Dauer:** ca. 10 Minuten · **Start:** eigener Stand nach Lab 7.2 · **Referenz:** Lösungsweg unten
-
-1. Sieh die Status-quo-Liste aus Lab 3.3 durch. Markiere jede Zeile, bei der der Agent etwas hätte sehen oder tun müssen, das außerhalb von Code und Terminal liegt.
-2. Notiere für FocusList drei Werkzeuge, die dem Agenten fehlen, und je eine Aufgabe, die damit möglich würde.
-3. Bewerte jedes Werkzeug: Welche Rechte bräuchte der Server? Was könnte schiefgehen?
-4. Wähle eines aus, das in Lab 7.4 eingebunden wird.
-
-Variante im Plenum: Liste gemeinsam am Whiteboard sammeln und abstimmen.
-
-**Checkpoint:** Eine Liste mit drei Werkzeugen, je einer Aufgabe und einer Risiko-Notiz; ein ausgewähltes Werkzeug.
-
-<details>
-<summary>Lösungsweg</summary>
+Aus der Status-quo-Liste aus Lab 3.3 bleiben Zeilen offen, für die der Agent etwas außerhalb von Code und Terminal sehen oder tun müsste:
 
 | Fehlendes Werkzeug | Aufgabe | Rechte / Risiko |
 | --- | --- | --- |
@@ -144,8 +132,6 @@ Variante im Plenum: Liste gemeinsam am Whiteboard sammeln und abstimmen.
 | Datenbank | – (FocusList nutzt eine JSON-Datei) | entfällt |
 
 Auswahl für Lab 7.4: Browser über Playwright. Grund: sichtbarer Mehrwert bei einer Web-App, keine Zugangsdaten nötig.
-
-</details>
 
 ## Fazit
 

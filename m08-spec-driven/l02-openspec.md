@@ -159,10 +159,10 @@ _Quelle: eigener Screenshot, FocusList v5, 07.11.2026._
 
 ## Übung
 
-**Dauer:** ca. 40 Minuten · **Start:** eigener Stand nach Lab 7.4 oder v4: `node project/focuslist/catch-up.mjs <python|node> m08 ~/kurs/focuslist` · **Referenz:** `project/focuslist/<stack>/steps/m08/openspec/` sowie `tests/test_due.py` bzw. `test/due.test.js`
+**Dauer:** ca. 45 Minuten · **Start:** eigener Stand nach Lab 7.4 oder v4: `node project/focuslist/catch-up.mjs <python|node> m08 ~/kurs/focuslist` · **Referenz:** `project/focuslist/<stack>/steps/m08/openspec/` sowie `tests/test_due.py` bzw. `test/due.test.js`
 
 1. Installiere OpenSpec und führe `openspec init --tools github-copilot` aus (siehe „Einrichten“). Übernimm `openspec/config.yaml` aus der Referenz.
-2. Lass im Agent-Chat einen Change `add-due-date` vorschlagen und gib die Kriterien aus Lab 8.1 mit (Prompt im Lösungsweg).
+2. Lass im Agent-Chat einen Change `add-due-date` vorschlagen und gib die Akzeptanzkriterien aus Lab 8.1 mit (Tabelle „Akzeptanzkriterien für das Fälligkeitsdatum“, Prompt im Lösungsweg).
 3. Lies `proposal.md`, `design.md`, `tasks.md` und das Delta, ergänze fehlende Kriterien und führe `openspec validate add-due-date --strict` aus, bis keine Fehler mehr kommen.
 4. Wähle den Agent `feature-lead` und lass den Change umsetzen (Prompt im Lösungsweg). Beobachte die Subagents `tester` und `reviewer` und den Check-Hook nach der Runde.
 5. Lass das Ergebnis per Playwright-MCP prüfen (Prompt im Lösungsweg), archiviere mit `openspec archive add-due-date -y` und lösche die Testaufgaben in der App.

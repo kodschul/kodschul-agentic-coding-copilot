@@ -107,22 +107,9 @@ Beispielansicht 11/2026; Namen und Anzahl der Modelle weichen in der eigenen Ins
 >
 > Im Copilot-Harness stattdessen: Auftrag in Worten, Kontext über „Add Context“.
 
-## Übung
+## Ask und Plan im Vergleich
 
-**Dauer:** ca. 20 Minuten · **Start:** FocusList `start/` aus Lab 2.1, Copilot-Harness · **Referenz:** Lösungsweg unten
-
-1. Öffne eine neue Chat-Sitzung im Copilot-Harness, wähle **Ask** und hänge die Routen-Datei, das Template und `data/tasks.json` als Kontext an.
-2. Stelle die Frage: „Wie würde man ein Formular für neue Aufgaben ergänzen?“
-3. Wechsle auf **Plan** und stelle dieselbe Frage mit demselben Kontext.
-4. Vergleiche beide Antworten: genannte Dateien, Reihenfolge, offene Fragen, Umfang.
-5. Ergänze den Plan im Chat um eine eigene Grenze (z. B. „keine neuen Abhängigkeiten“). Setze noch nichts um.
-
-**Checkpoint:** Der Unterschied zwischen Ask und Plan ist sichtbar; der Plan im Chat nennt Dateien, Schritte und mindestens eine Grenze; der Chat zeigt keine geänderten Dateien.
-
-<details>
-<summary>Lösungsweg</summary>
-
-Typischer Unterschied:
+Dieselbe Frage („Wie würde man ein Formular für neue Aufgaben ergänzen?“) mit demselben Kontext (Routen-Datei, Template, `data/tasks.json`):
 
 | Kriterium | Ask | Plan |
 | --- | --- | --- |
@@ -140,9 +127,7 @@ Beispielplan (Python; Node.js analog mit `src/app.js`, `src/views/index.js`, `te
 5. Offene Fragen: Validierung leerer Titel, erlaubte Prioritäten, Vergabe der `id`.
 6. Grenze: keine neuen Abhängigkeiten, bestehende Struktur beibehalten.
 
-In Lab 3.2 und 3.3 lohnt der Rückblick: Was davon fehlt, wenn der Agent nur einen One-Shot-Prompt bekommt?
-
-</details>
+Ein Plan lässt sich im Chat ergänzen (z. B. um eine eigene Grenze), bevor der Agent etwas umsetzt.
 
 ## Fazit
 
