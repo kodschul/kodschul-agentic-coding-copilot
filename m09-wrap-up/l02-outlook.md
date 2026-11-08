@@ -34,8 +34,8 @@ Stand: 11/2026, vor dem Einsatz prüfen. Quellen: [GitHub Changelog Universe 202
 
 | Thema | In einem Satz | Anknüpfung im Kurs |
 | --- | --- | --- |
-| Copilot Cloud Agent | Issue zuweisen, der Agent arbeitet auf GitHub und öffnet einen Pull Request (seit Mai 2025 als Coding Agent) | Cloud als Ausführungsziel (Lab 2.2); nutzt die Instructions aus dem Repo |
-| Copilot CLI | Copilot im Terminal, allgemein verfügbar seit Feb 2026 | Landkarte (Lab 1.3), gleiche Bausteine im Projektordner |
+| Copilot Cloud Agent | Issue zuweisen, der Agent arbeitet auf GitHub und öffnet einen Pull Request (seit 19.05.2025 als Coding Agent, [Changelog](https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/)) | Cloud als Ausführungsziel (Lab 2.2); nutzt die Instructions aus dem Repo |
+| Copilot CLI | Copilot im Terminal, allgemein verfügbar seit Feb 2026 ([Changelog 02/2026](https://github.blog/changelog/month/02-2026/)) | Landkarte (Lab 1.3), gleiche Bausteine im Projektordner |
 | Copilot Code Review | Copilot als Reviewer im Pull Request | Agent `reviewer` (Lab 6.2) als lokale Vorstufe |
 | Claude- und Codex-Harness in VS Code | dieselbe Oberfläche, anderer Agent; liest `CLAUDE.md`, `.claude/skills` bzw. `AGENTS.md`, `.agents/skills` | Lab 2.2 |
 

@@ -40,13 +40,13 @@ node project/focuslist/catch-up.mjs <python|node> <modul> <zielordner> [--force]
 
 | Aufruf | Ergebnis |
 | --- | --- |
-| `… python m03 ~/kurs/focuslist` | Startgerüst (für Modul 2 und 3) |
-| `… python m04 ~/kurs/focuslist-v0` | v0, Start für Modul 4 |
-| `… node m05 ~/kurs/focuslist` | v1, Start für Modul 5 |
-| `… node m07 ~/kurs/focuslist` | v3, Start für Modul 7 |
-| `… python final ~/kurs/focuslist-v5` | Endstand v5 |
+| `… python m03 $HOME/kurs/focuslist` | Startgerüst, eigener Arbeitsordner (Setup, Modul 2 und 3) |
+| `… python m04 $HOME/kurs/focuslist-m04` | v0, Start für Modul 4 |
+| `… node m05 $HOME/kurs/focuslist-m05` | v1, Start für Modul 5 |
+| `… node m07 $HOME/kurs/focuslist-m07` | v3, Start für Modul 7 |
+| `… python final $HOME/kurs/focuslist-final` | Endstand v5 |
 
-- Der Zielordner muss leer sein; `--force` kopiert in einen bestehenden Ordner.
+- Der Zielordner muss leer sein; deshalb kommt jeder Stand in einen neuen Ordner `$HOME/kurs/focuslist-mNN`. Danach in diesem Ordner weiterarbeiten. `--force` kopiert in einen bestehenden Ordner.
 - Nach dem Herstellen: Abhängigkeiten installieren und CSS bauen wie in `README.md` des Stands beschrieben.
 - Wer in einer Übung hängen bleibt oder ein Modul verpasst hat, holt sich den Stand für das nächste Modul und macht dort weiter.
 

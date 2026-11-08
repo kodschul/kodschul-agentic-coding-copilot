@@ -39,7 +39,7 @@ Analogie: Der Schiedsrichter bewertet und zeigt auf die Stelle, spielt aber nich
 ````markdown
 ---
 name: reviewer
-description: Prüft Änderungen an FocusList (… oder genannte Dateien) auf Fehler, Verstöße gegen AGENTS.md und die Instructions sowie Sicherheitslücken und liefert einen Review-Bericht als Tabelle. Ändert keine Dateien.
+description: Prüft Änderungen an FocusList (zuletzt geänderte oder im Auftrag genannte Dateien) auf Fehler, Verstöße gegen AGENTS.md und die Instructions sowie Sicherheitslücken und liefert einen Review-Bericht als Tabelle. Ändert keine Dateien.
 tools: ['read', 'search']
 ---
 
@@ -81,10 +81,10 @@ Schwere: **hoch** = Fehler oder Sicherheitslücke, muss vor dem Merge behoben we
 
 | Stelle | Python | Node.js |
 | --- | --- | --- |
-| Umfang ohne Angabe | nachfragen | zuletzt geänderte Dateien bzw. im Auftrag genannte |
+| Umfang ohne Angabe | zuletzt geänderte Dateien | nachfragen |
 | Regeln laden | im Abschnitt „Grundlage“ | eigener Schritt „Regeln laden“: jede Regel ist ein Prüfpunkt |
 | Schwere hoch | Fehler oder Sicherheitslücke | zusätzlich: fehlende Tests für neue Routen |
-| Fazit | freigeben / nach Korrektur / nicht | freigegeben / mit Anmerkungen / nicht freigegeben; „nicht“, sobald ein Befund hoch offen ist |
+| Fazit | freigeben / nach Korrektur freigeben / nicht freigeben | gleich; „nicht freigeben“, sobald ein Befund hoch offen ist |
 
 ## Warum genau diese Bausteine
 
@@ -129,11 +129,11 @@ Ein Custom Agent erscheint mit seinem `name` in der Agent-Auswahl, hier „Plann
 
 ## Übung
 
-**Dauer:** ca. 30 Minuten · **Start:** eigener Stand nach Lab 5.3 oder v2 mit `node project/focuslist/catch-up.mjs <python|node> m06 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m06/.github/agents/reviewer.agent.md`
+**Dauer:** ca. 30 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 5.3; Neueinstieg mit v2: `node project/focuslist/catch-up.mjs <python|node> m06 $HOME/kurs/focuslist-m06`, danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und dort weiterarbeiten · **Referenz:** `project/focuslist/<stack>/steps/m06/.github/agents/reviewer.agent.md`
 
 1. Lege `.github/agents/reviewer.agent.md` an: Frontmatter mit `name`, `description` (was, wann, „ändert keine Dateien“), `tools: ['read', 'search']`; darunter Rolle, Grundlage, Ablauf, Ausgabeformat.
 2. Starte eine neue Chat-Sitzung, wähle `reviewer` in der Agent-Auswahl und beauftrage ihn mit den Dateien, die in Lab 5.3 geändert wurden (Prompt im Lösungsweg).
-3. Prüfe den Bericht: Tabelle im festen Format, jeder Befund mit Datei und Zeile, Review-Fazit. Speichere ihn als `docs/review-security.md` (Ausgabe kopieren).
+3. Prüfe den Bericht: Tabelle im festen Format, jeder Befund mit Datei und Zeile, Review-Fazit.
 4. Bitte den Reviewer im selben Chat, den ersten Befund direkt zu beheben.
 5. Prüfe, dass keine Datei geändert wurde: Unter der Antwort erscheint keine Liste geänderter Dateien mit Keep/Undo.
 
@@ -150,7 +150,7 @@ Geänderte Dateien: focuslist/__init__.py, focuslist/routes.py, focuslist/tasks.
 focuslist/templates/index.html, tests/test_security.py, requirements.txt, .env.example
 ```
 
-Die Liste entspricht der Referenz `steps/m05` (alle Fixes). Wer in Lab 5.3 nur einen Fund behoben hat, nennt die Dateien aus der Liste der geänderten Dateien im damaligen Chat. Node.js analog mit `src/views/escape.js`, `src/views/index.js`, `src/static.js`, `src/http.js`, `src/tasks.js`, `src/app.js`, `test/security.test.js`.
+Die Liste entspricht der Referenz `steps/m05` (alle Fixes). Wer in Lab 5.3 nur einen Fund behoben hat, nennt die Dateien aus der Liste der geänderten Dateien im damaligen Chat. Node.js analog mit `src/views/escape.js`, `src/views/index.js`, `src/views/layout.js`, `src/static.js`, `src/http.js`, `src/tasks.js`, `src/app.js`, `test/security.test.js`.
 
 **Zu 3, möglicher Bericht (Python, auf v2):**
 

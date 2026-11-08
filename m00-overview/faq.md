@@ -80,8 +80,10 @@
 **Übung verpasst – wie weiter?**
 
 ```bash
-node project/focuslist/catch-up.mjs <python|node> <modul> <zielordner>
+node project/focuslist/catch-up.mjs python mNN $HOME/kurs/focuslist-mNN   # bzw. node; mNN = Modul, z. B. m05
 ```
+
+Danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und im neuen Ordner weiterarbeiten. Tag 2 startet für alle mit dem Stand `m05`.
 
 **Python oder Node.js?**
 
@@ -90,4 +92,4 @@ node project/focuslist/catch-up.mjs <python|node> <modul> <zielordner>
 
 **Port 5000 belegt (macOS)?**
 
-- `flask --app focuslist run --port 5001`
+- `flask --app focuslist run --debug --port 5001`

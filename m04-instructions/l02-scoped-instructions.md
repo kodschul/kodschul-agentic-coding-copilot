@@ -135,9 +135,9 @@ applyTo: "focuslist/templates/**"
 Gleicher Aufbau, Dateien: [`tests.instructions.md`](../project/focuslist/node/steps/m04/.github/instructions/tests.instructions.md) mit `applyTo: "test/**"` und [`templates.instructions.md`](../project/focuslist/node/steps/m04/.github/instructions/templates.instructions.md) mit `applyTo: "src/views/**"`.
 
 - Tests: `node:test` mit `node:assert/strict`, Server über `startTestServer()` aus `test/helpers.js` (freier Port, Kopie von `data/tasks.json`), Formulare mit `app.postForm()`, Zustand mit `app.readTasks()` prüfen.
-- Views: Funktionen, die HTML zurückgeben, mit `layout({ title, body })`; keine Dateizugriffe; Tailwind-Klassen immer vollständig ausschreiben (`bg-${farbe}-100` findet Tailwind nicht).
+- Views: Funktionen, die HTML zurückgeben, mit `layout({ title, body })`; keine Dateizugriffe; jeder dynamische Wert über `escapeHtml()` aus `src/views/escape.js` (wird angelegt, falls sie fehlt), nie rohes `${task.title}`; Tailwind-Klassen immer vollständig ausschreiben (`bg-${farbe}-100` findet Tailwind nicht).
 
-`test/helpers.js` entsteht erst in v1 (Lab 4.3); im eigenen v0 das vorhandene Muster aus `test/index.test.js` beschreiben. Eine Escaping-Regel enthält die Node.js-Datei noch nicht; das Thema kommt in m05.
+`test/helpers.js` entsteht erst in v1 (Lab 4.3); im eigenen v0 das vorhandene Muster aus `test/index.test.js` beschreiben.
 
 ## Typische Fehler
 

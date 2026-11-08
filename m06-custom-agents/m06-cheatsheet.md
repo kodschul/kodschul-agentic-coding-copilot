@@ -104,6 +104,7 @@ Nur Local-Harness, im Kurs nicht verwenden: `agents:` (erlaubte Subagents), `han
 
 | Zweck | Python | Node.js |
 | --- | --- | --- |
-| Stand v2 holen | `node project/focuslist/catch-up.mjs python m06 <zielordner>` | `node project/focuslist/catch-up.mjs node m06 <zielordner>` |
-| Stand v3 holen | `node project/focuslist/catch-up.mjs python m07 <zielordner>` | `node project/focuslist/catch-up.mjs node m07 <zielordner>` |
+| Stand v2 holen | `node project/focuslist/catch-up.mjs python m06 $HOME/kurs/focuslist-m06` | `node project/focuslist/catch-up.mjs node m06 $HOME/kurs/focuslist-m06` |
+| Stand v3 holen | `node project/focuslist/catch-up.mjs python m07 $HOME/kurs/focuslist-m07` | `node project/focuslist/catch-up.mjs node m07 $HOME/kurs/focuslist-m07` |
+| danach im neuen Ordner | venv, `pip install -r requirements.txt`, `npm install`, `npm run build:css` | `npm install`, `npm run build:css` |
 | Tests | `pytest -q` (v3: 43 passed) | `npm test` (v3: 32 Tests) |

@@ -90,7 +90,7 @@ flowchart LR
 
 ## Fünf Situationen nach Risiko
 
-Eine begründete Rangfolge (andere sind vertretbar, wenn die Begründung trägt):
+Fünf typische Situationen, nach Schaden sortiert:
 
 | Rang | Situation | Warum | Sofortmaßnahme |
 | --- | --- | --- | --- |

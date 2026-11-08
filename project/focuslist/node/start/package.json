@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "node --watch server.js",
     "start": "node server.js",
-    "test": "node --test",
+    "test": "node --test \"test/**/*.test.js\"",
     "css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --watch",
     "build:css": "tailwindcss -i ./static/src/input.css -o ./static/app.css --minify"
   },

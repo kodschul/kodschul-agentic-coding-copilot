@@ -34,11 +34,10 @@ Alle: `AGENTS.md` (Regeln), `test-writer` und `security-checker` (Abläufe), `fe
 
 ## Einrichten
 
-Stand: 11/2026 (OpenSpec CLI 1.3), Quelle: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [CLI](https://openspec.dev/docs/cli), [Supported tools](https://openspec.dev/docs/supported-tools)
+Stand: 11/2026 (OpenSpec CLI 1.3.1), Quelle: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [CLI](https://openspec.dev/docs/cli), [Supported tools](https://openspec.dev/docs/supported-tools)
 
 ```bash
-npm install -g @fission-ai/openspec@latest   # braucht Node.js 22.12 oder neuer
-openspec --version
+openspec --version                            # 1.3.1, installiert im Setup
 openspec init --tools github-copilot          # im Projektordner
 ls .github/skills                             # genaue Namen der OpenSpec-Skills ablesen
 ```
@@ -49,7 +48,7 @@ ls .github/skills                             # genaue Namen der OpenSpec-Skills
 | `.github/skills/openspec-*/SKILL.md` | Skills für den Ablauf, z. B. `/openspec-apply-change` | Copilot (Kursstandard) |
 | `.github/prompts/opsx-*.prompt.md` | Befehle wie `/opsx-propose` | nur Local (Prompt-Dateien, Lab 2.2) |
 
-Im Copilot-Harness laufen also die Skills. Wer nur Skills will: `openspec config set delivery skills` vor `openspec init` ausführen. Die Prompt-Dateien stören sonst nicht, sie laden im Copilot-Harness nur nicht.
+Im Copilot-Harness laufen also die Skills. Wer nur Skills will: `openspec config set delivery skills` vor `openspec init` ausführen (globale Einstellung für alle Projekte; Standard ist `both`, geprüft mit OpenSpec CLI 1.3.1 am 08.11.2026). Die Prompt-Dateien stören sonst nicht, sie laden im Copilot-Harness nur nicht.
 
 ## Projektkontext: `config.yaml`
 
@@ -144,30 +143,33 @@ Damit `tasks.md` abgehakt wird, ergänzt die Referenz in `AGENTS.md` die Zeile �
 
 _Quelle: eigener Screenshot, FocusList v5, 07.11.2026._
 
-`openspec view` in FocusList nach dem Archivieren: Die Spec `tasks` hat 3 Requirements. Archivierte Changes zählt das Dashboard nicht mit, daher „Completed Changes: 0“.
+`openspec view` in FocusList nach dem Archivieren (Python-Referenz): Die Spec `tasks` hat 3 Requirements, in der Node.js-Referenz 4. Die Zahl hängt davon ab, wie der Agent die Anforderungen schneidet. Archivierte Changes zählt das Dashboard nicht mit, daher „Completed Changes: 0“.
 
 ## Typische Fehler
 
 | Symptom | Ursache | Lösung |
 | --- | --- | --- |
-| `openspec: command not found` | globale Installation fehlt oder npm-Pfad nicht im PATH | `npm install -g @fission-ai/openspec@latest`, Terminal neu öffnen |
+| `openspec: command not found` | globale Installation fehlt oder npm-Pfad nicht im PATH | Setup Schritt 3a: `npm install -g @fission-ai/openspec@1.3.1`, Terminal neu öffnen; gesperrt: `npx -y @fission-ai/openspec@1.3.1` statt `openspec` |
 | Installation bricht ab | Node.js älter als 22.12 | `node --version` prüfen, Node.js aktualisieren |
 | `/opsx-propose` unbekannt | Prompt-Dateien laden nur im Local-Harness | OpenSpec-Skills aus `.github/skills/` nutzen |
 | `validate --strict` meldet fehlendes SHALL/MUST | Anforderung auf Deutsch mit „MUSS“ | „SHALL“ oder „MUST“ in den deutschen Satz schreiben |
 | Agent baut sofort, ohne Proposal | Prompt verlangt Umsetzung | erst nur „vorschlagen“, Change prüfen, dann `apply` |
 | `tasks.md` bleibt ohne Häkchen | Agent kennt die Regel nicht | Zeile in `AGENTS.md` bzw. `feature-lead` ergänzen (siehe oben) |
+| Agent darf `AGENTS.md` nicht ändern, Guard-Hook lehnt ab | `AGENTS.md` enthält die Zeichenfolge `.env`; der Guard aus Lab 7.1 blockiert jede Aktion damit | Zeile in `AGENTS.md` von Hand ergänzen (wie in Lab 7.1) |
 
 ## Übung
 
-**Dauer:** ca. 45 Minuten · **Start:** eigener Stand nach Lab 7.4 oder v4: `node project/focuslist/catch-up.mjs <python|node> m08 ~/kurs/focuslist` · **Referenz:** `project/focuslist/<stack>/steps/m08/openspec/` sowie `tests/test_due.py` bzw. `test/due.test.js`
+**Dauer:** ca. 45 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 7.4; Neueinstieg mit v4: `node project/focuslist/catch-up.mjs <python|node> m08 $HOME/kurs/focuslist-m08`, danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und dort weiterarbeiten · **Referenz:** `project/focuslist/<stack>/steps/m08/openspec/` sowie `tests/test_due.py` bzw. `test/due.test.js`
 
-1. Installiere OpenSpec und führe `openspec init --tools github-copilot` aus (siehe „Einrichten“). Übernimm `openspec/config.yaml` aus der Referenz.
+1. Prüfe `openspec --version` (1.3.1, aus dem Setup) und führe im Arbeitsordner `openspec init --tools github-copilot` aus. Übernimm `openspec/config.yaml` aus der Referenz.
 2. Lass im Agent-Chat einen Change `add-due-date` vorschlagen und gib die Akzeptanzkriterien aus Lab 8.1 mit (Tabelle „Akzeptanzkriterien für das Fälligkeitsdatum“, Prompt im Lösungsweg).
-3. Lies `proposal.md`, `design.md`, `tasks.md` und das Delta, ergänze fehlende Kriterien und führe `openspec validate add-due-date --strict` aus, bis keine Fehler mehr kommen.
+3. Lies `proposal.md`, `design.md`, `tasks.md` und das Delta. Prüfe, dass alle fünf Kriterien aus Lab 8.1 als Szenarien im Delta stehen, ergänze fehlende und führe `openspec validate add-due-date --strict` aus, bis keine Fehler mehr kommen.
 4. Wähle den Agent `feature-lead` und lass den Change umsetzen (Prompt im Lösungsweg). Beobachte die Subagents `tester` und `reviewer` und den Check-Hook nach der Runde.
 5. Lass das Ergebnis per Playwright-MCP prüfen (Prompt im Lösungsweg), archiviere mit `openspec archive add-due-date -y` und lösche die Testaufgaben in der App.
 
 **Checkpoint nach 15 Minuten:** `openspec list` zeigt `add-due-date`; die Validierung ist fehlerfrei; das Delta enthält das Szenario „heute fällig = nicht überfällig“.
+
+**Checkpoint nach 30 Minuten:** Ist `apply` noch nicht fertig, die Sitzung stoppen, den Endstand mit `node project/focuslist/catch-up.mjs <python|node> final $HOME/kurs/focuslist-final` holen, Setup laut `README.md` des Stands, und dort den archivierten Change und die App ansehen.
 
 **Checkpoint:** `openspec/changes/archive/<datum>-add-due-date/` existiert; `openspec/specs/tasks/spec.md` enthält die neuen Anforderungen; die Liste zeigt „fällig TT.MM.JJJJ“ und das rote Badge „überfällig“ nur für vergangene Daten offener Aufgaben; alle Tests sind grün. Das ist FocusList v5.
 
@@ -192,13 +194,13 @@ Zu 2, Prompt (Agent, Copilot-Harness; der Propose-Skill greift über seine `desc
 Schlage mit OpenSpec einen neuen Change "add-due-date" vor. Noch keinen Code ändern.
 Feature: optionales Fälligkeitsdatum für Aufgaben (JJJJ-MM-TT oder leer),
 im Formular "Neue Aufgabe" und auf der Seite "Aufgabe bearbeiten".
-Akzeptanzkriterien:
-- offene Aufgabe, gestern fällig → rotes Badge "überfällig"
-- offene Aufgabe, heute fällig → kein Badge
-- erledigte Aufgabe mit altem Datum → kein Badge
-- ungültiges Datum (2026-02-30) → Status 400, nichts gespeichert
-- offene Aufgaben nach Datum sortiert, ohne Datum zuletzt, erledigte am Ende
-Nicht im Umfang: Uhrzeiten, Erinnerungen, Filter "nur überfällige".
+Akzeptanzkriterien (WHEN → THEN):
+1. eine offene Aufgabe hat das Fälligkeitsdatum von gestern → die Liste zeigt ein rotes Badge "überfällig"
+2. eine offene Aufgabe ist heute fällig → die Liste zeigt kein Badge "überfällig"
+3. als Datum wird 2026-02-30 gesendet → Status 400 mit Meldung zum Fälligkeitsdatum, es wird nichts gespeichert
+4. eine erledigte Aufgabe hat ein altes Datum → kein Badge "überfällig"
+5. offene Aufgaben mit 2026-12-01, 2026-11-15 und ohne Datum sowie eine erledigte Aufgabe → Reihenfolge 2026-11-15, 2026-12-01, ohne Datum, erledigte Aufgaben am Ende
+Nicht im Umfang: Uhrzeiten, Erinnerungen, wiederkehrende Aufgaben, Filter "nur überfällige".
 Anforderungen auf Deutsch, aber mit dem Schlüsselwort SHALL.
 ```
 
@@ -224,7 +226,7 @@ das Badge "überfällig" zeigt, und prüfe die Darstellung bei 375 Pixel Breite.
 Ändere keinen Code.
 ```
 
-Danach `openspec archive add-due-date -y`; der Ordner erscheint unter `openspec/changes/archive/` mit dem Tag des Archivierens im Namen (Referenz: `2026-11-12-add-due-date`). Die Testaufgaben aus dem Browser-Prompt in der App löschen. `data/tasks.json` behält dabei das neue Feld `"due": null` der Beispieldaten, das der Change eingetragen hat (Task 2.4 bzw. 1.5).
+Danach `openspec archive add-due-date -y`; der Ordner erscheint unter `openspec/changes/archive/` mit dem Tag des Archivierens im Namen (Referenz: `2026-11-12-add-due-date`, ein Beispieldatum; im eigenen Lauf steht dort das Datum des Archivierens). Die Testaufgaben aus dem Browser-Prompt in der App löschen. `data/tasks.json` behält dabei das neue Feld `"due": null` der Beispieldaten, das der Change eingetragen hat (Task 2.4 bzw. 1.5).
 
 </details>
 

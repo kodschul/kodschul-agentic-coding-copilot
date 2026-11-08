@@ -1,13 +1,5 @@
 # Agentic Coding mit GitHub Copilot
 
-## Worum es geht
-
-- KI schreibt nicht mehr nur Vorschläge, sondern erledigt Aufgaben selbst
-- Gute Ergebnisse brauchen Leitplanken im Repo
-- Zwei Tage: vom ungeleiteten Agenten zum abgesicherten Agenten-Team
-
-> **Leitmotiv:** Der Agent ist so gut wie das, was im Repo steht.
-
 ## Die Entwicklung von Agentic Coding
 
 | Jahr | Stufe |
@@ -15,8 +7,14 @@
 | 2021 | **Vorschlag:** Copilot ergänzt Code im Editor |
 | 2023 | **Chat:** Fragen stellen, Code bekommen |
 | 2025 | **Agent:** liest, ändert, testet selbst (Copilot Agent Mode, Claude Code, Codex) |
-| 2024–2025 | **Standards:** MCP, `AGENTS.md`, Skills |
+| 2024–2025 | **Standards:** MCP (Nov 2024), `AGENTS.md`, Skills, gemeinsame Stiftung (Dez 2025) |
 | 2026 | **Harnesses:** Copilot, Claude, Codex in einem Editor |
+
+Stand: 11/2026; Daten und Quellen in Lab 1.2 (Zeitleiste).
+
+- KI schreibt nicht mehr nur Vorschläge, sondern erledigt Aufgaben selbst
+- Gute Ergebnisse brauchen Leitplanken im Repo: **Der Agent ist so gut wie das, was im Repo steht.**
+- Zwei Tage: vom ungeleiteten Agenten zum abgesicherten Agenten-Team
 
 Details: [Lab 1.2](../m01-ai-foundations/l02-evolution.md)
 
@@ -87,37 +85,21 @@ Gleiche Idee bei Claude Code und Codex, andere Ordner: [Lab 1.3](../m01-ai-found
 
 Details: [project/README.md](../project/README.md)
 
-## Tag 1 – Überblick, Copilot, erste Leitplanken
+## Tagesablauf
 
-| Zeit | Thema |
-| --- | --- |
-| 09:00 | Auftakt |
-| 09:25 | **Modul 1** KI-Grundlagen für die Softwareentwicklung |
-| 10:30 | *Pause* |
-| 10:45 | **Modul 2** GitHub Copilot in VS Code |
-| 12:15 | *Mittag* |
-| 13:15 | **Modul 3** Vibecoding vs. Agentic Coding → v0 |
-| 14:45 | *Pause* |
-| 15:00 | **Modul 4** Instructions → v1 |
-| 16:15 | Tagesabschluss |
+| Zeit | Tag 1 – Überblick, Copilot, erste Leitplanken | Tag 2 – Skills, Agents, Automatisierung, Spec |
+| --- | --- | --- |
+| 09:00 | Auftakt | Rückblick (ab 09:15 **Modul 5** Skills → v2) |
+| 09:25 | **Modul 1** KI-Grundlagen für die Softwareentwicklung | |
+| 10:45 | **Modul 2** GitHub Copilot in VS Code | **Modul 6** Custom Agents → v3 |
+| 13:15 | **Modul 3** Vibecoding vs. Agentic Coding → v0 | **Modul 7** Hooks und MCP → v4 |
+| 15:00 | **Modul 4** Instructions → v1 (ab 16:15 Tagesabschluss) | **Modul 8** Spec-Driven Development → v5 (ab 16:00 **Modul 9** Abschluss) |
 
-## Tag 2 – Skills, Agents, Automatisierung, Spec
-
-| Zeit | Thema |
-| --- | --- |
-| 09:00 | Rückblick |
-| 09:15 | **Modul 5** Skills → v2 |
-| 10:30 | *Pause* |
-| 10:45 | **Modul 6** Custom Agents → v3 |
-| 12:15 | *Mittag* |
-| 13:15 | **Modul 7** Hooks und MCP → v4 |
-| 14:45 | *Pause* |
-| 15:00 | **Modul 8** Spec-Driven Development → v5 |
-| 16:00 | **Modul 9** Rückblick, Transfer, Ausblick |
+Pausen: 10:30–10:45, Mittag 12:15–13:15, 14:45–15:00.
 
 Alle Labs mit Zeiten: [topics.md](topics.md)
 
-## So arbeiten wir
+## Arbeitsweise im Kurs
 
 - Eine Datei pro Lab, ein Cheatsheet pro Modul
 - Standard: **Copilot-Harness**, Autopilot aus
@@ -125,8 +107,10 @@ Alle Labs mit Zeiten: [topics.md](topics.md)
 - Rückstand? Stand per `catch-up.mjs` holen:
 
 ```bash
-node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist
+node project/focuslist/catch-up.mjs python m05 $HOME/kurs/focuslist-m05
 ```
+
+Danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und im neuen Ordner weiterarbeiten. Tag 2 startet für alle mit dem Stand `m05`.
 
 ## Voraussetzungen
 

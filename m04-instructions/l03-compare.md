@@ -102,7 +102,7 @@ Unterschied der Stacks: Die Python-Regeln verlangen `abort(404)` für unbekannte
 
 ## Was trotz Regeln bleibt
 
-In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis, `app.secret_key = "dev"`, `run.py` mit `debug=True`, keine Validierung; Node.js Ausgabe ohne Escaping, `join(staticDir, req.url.replace("/static/", ""))` in `src/static.js`, `readBody()` ohne Limit, keine Validierung. Die Python-Template-Regel verbietet `|safe`, trotzdem steht die alte Zeile noch da: Regeln lenken neuen Code, sie prüfen keinen bestehenden. Die gezielte Sicherheitsprüfung folgt in Modul 5.
+In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis, `app.secret_key = "dev"`, `run.py` mit fest verdrahtetem `debug=True`, keine Validierung; Node.js Ausgabe ohne Escaping, `join(staticDir, req.url.replace("/static/", ""))` in `src/static.js`, `readBody()` ohne Limit, keine Validierung. Die Template-Regeln verbieten ungeschützte Ausgabe (Python `|safe`, Node.js Werte ohne `escapeHtml()`), trotzdem stehen die alten Zeilen noch da: Regeln lenken neuen Code, sie prüfen keinen bestehenden. Die gezielte Sicherheitsprüfung folgt in Modul 5.
 
 ## Typische Fehler
 
@@ -111,26 +111,28 @@ In v1 stecken weiterhin die Sicherheitslücken aus v0: Python `|safe` im Hinweis
 | Ordner `ohne/` liefert trotzdem regelkonformen Code | beide Ordner im selben Fenster bzw. Workspace geöffnet | jeden Ordner in einem eigenen Fenster öffnen, neue Sitzung |
 | Ergebnisse nicht vergleichbar | unterschiedliche Prompts oder Modelle | Prompt kopieren, Modell in beiden Fenstern gleich wählen |
 | „Compare with Selected“ fehlt im Kontextmenü | vorher keine Datei mit „Select for Compare“ gewählt | erst die Datei aus `ohne/` wählen, dann die aus `mit/` |
-| `catch-up.mjs` bricht ab: Zielordner nicht leer | Ordner existiert schon | anderen Ordnernamen wählen oder `--force` anhängen |
-| `pytest` fehlt in einem Ordner | `venv` nur in einem Ordner angelegt | in jedem Ordner `venv` anlegen und `pip install -r requirements.txt` |
+| `catch-up.mjs` bricht ab: Zielordner nicht leer | Ordner existiert schon | neuen Ordnernamen wählen oder `--force` anhängen |
+| `pytest: command not found` in `ohne/` oder `mit/` | `venv` im Terminal dieses Fensters nicht aktiv | `venv` aus dem Arbeitsordner aktivieren (siehe Übung) |
 | beide Ergebnisse fast gleich | einzelner Lauf, Zufall des Modells | Vergleich wiederholen; mehrere Läufe zählen |
 
 ## Übung
 
-**Dauer:** ca. 20 Minuten · **Start:** Stand v0 per `node project/focuslist/catch-up.mjs <python|node> m04 <zielordner>` plus eigene Regeln aus Lab 4.1 und 4.2 · **Referenz:** `project/focuslist/<stack>/steps/m04/` (Löschen, Tests, aufgeräumte Struktur)
+**Dauer:** ca. 20 Minuten · **Start:** zweimal Stand v0 per `catch-up.mjs` plus eigene Regeln aus Lab 4.1 und 4.2 (eigener Arbeitsordner) · **Referenz:** `project/focuslist/<stack>/steps/m04/` (Löschen, Tests, aufgeräumte Struktur)
 
-1. Erstelle im Ordner der Kursunterlagen zwei Ordner mit demselben v0 und kopiere die eigenen Regeln nur nach `mit/` (Beispiel Python; dort zusätzlich in jedem Ordner `venv` anlegen und `pip install -r requirements.txt`):
+1. Erstelle die Vergleichsordner (im Ordner der Kursunterlagen ausführen) und kopiere `AGENTS.md` und `.github/` aus dem eigenen Arbeitsordner (Lab 4.1/4.2) nur nach `mit/`; Beispiel Python mit Arbeitsordner `$HOME/kurs/focuslist` (wer Lab 3.2 ausgelassen hat: `$HOME/kurs/focuslist-m04`):
 
    ```bash
-   node project/focuslist/catch-up.mjs python m04 ~/kurs/vergleich/ohne
-   node project/focuslist/catch-up.mjs python m04 ~/kurs/vergleich/mit
-   cp ~/kurs/focuslist/AGENTS.md ~/kurs/vergleich/mit/
-   cp -r ~/kurs/focuslist/.github ~/kurs/vergleich/mit/
+   node project/focuslist/catch-up.mjs python m04 $HOME/kurs/vergleich/ohne
+   node project/focuslist/catch-up.mjs python m04 $HOME/kurs/vergleich/mit
+   cp $HOME/kurs/focuslist/AGENTS.md $HOME/kurs/vergleich/mit/
+   cp -r $HOME/kurs/focuslist/.github $HOME/kurs/vergleich/mit/
    ```
 
-2. Öffne `ohne/` und `mit/` in je einem eigenen VS-Code-Fenster, wähle in beiden **Agent** und dasselbe Modell. Sende in beiden wörtlich: „Füge einen Button "Löschen" hinzu, der eine Aufgabe entfernt.“ Übernimm das Ergebnis mit **Keep**, bessere nichts von Hand nach, führe die Tests aus.
-3. Öffne `~/kurs/vergleich` in einem dritten Fenster. Vergleiche die geänderten Dateien: Rechtsklick auf die Datei in `ohne/` → „Select for Compare“, dann auf dieselbe Datei in `mit/` → „Compare with Selected“. Prüfe je Kriterium der Checkliste, ob `ohne/` und `mit/` es erfüllen.
-4. Sende im Fenster von `mit/` einen zweiten Prompt: „Bringe den bestehenden Code in Einklang mit AGENTS.md, ohne das Verhalten zu ändern. Führe danach die Tests aus.“ Prüfe die Änderungen und übernimm sie mit **Keep**. Der Ordner `mit/` ist jetzt FocusList v1.
+2. Öffne `ohne/` und `mit/` in je einem Fenster, wähle in beiden **Agent** und dasselbe Modell und sende wörtlich: „Füge einen Button "Löschen" hinzu, der eine Aufgabe entfernt.“ Übernimm das Ergebnis mit **Keep**, bessere nichts von Hand nach, führe die Tests aus.
+3. Öffne `$HOME/kurs/vergleich` in einem dritten Fenster und vergleiche die geänderten Dateien: Rechtsklick auf die Datei in `ohne/` → „Select for Compare“, dann auf dieselbe Datei in `mit/` → „Compare with Selected“. Prüfe je Kriterium der Checkliste: erfüllt `ohne/` oder `mit/` es?
+4. (optional) Sende im Fenster von `mit/`: „Bringe den bestehenden Code in Einklang mit AGENTS.md, ohne das Verhalten zu ändern. Führe danach die Tests aus.“ Prüfe die Änderungen und übernimm sie mit **Keep**. `mit/` ist jetzt FocusList v1. Tag 2 startet für alle mit `catch-up.mjs … m05` (= v1) im neuen Arbeitsordner `$HOME/kurs/focuslist-m05`.
+
+Python: Für die Tests reicht die `venv` aus dem Arbeitsordner, kein neues `pip install`. Im Terminal des jeweiligen Fensters aktivieren: `source $HOME/kurs/focuslist/.venv/bin/activate` (Windows: `& "$HOME/kurs/focuslist/.venv/Scripts/Activate.ps1"`), dann `pytest`. Node.js: `npm test` läuft ohne `npm install`.
 
 ![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)
 _Quelle: VS Code Docs, Agents Quickstart (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
@@ -155,9 +157,9 @@ Typisches Ergebnis (Python; Node.js sinngemäß):
 
 Behoben in v1 (Funde aus Lab 3.3, Abschnitt „Mängel im Referenzstand v0“): ID-Kollision, Logik verstreut, Filter doppelt (damit auch `/api/tasks?status=all` in Python), unbekannte ID (Python), Callbacks gemischt (Node.js), fehlende Tests für neue Routen, zweiter Startweg nur als Regel (die Datei `run.py` liegt in der Referenz weiterhin im Projekt).
 
-Offen: XSS, Secret im Code, `debug=True`, Validierung, Path Traversal, Body-Limit (Skill, m05); unabhängige Prüfung (Custom Agent, m06); Tests werden nur erbeten, nicht erzwungen, und der Agent sieht die App nicht (Hook und MCP, m07); Fußzeile zählt nur gefilterte Aufgaben (Python), fachlich ungeklärt (Spec, m08); feste Formularbreiten (MCP, m07).
+Offen: XSS, Secret im Code, fest verdrahteter Debug-Modus, Validierung, Path Traversal, Body-Limit (Skill, m05); unabhängige Prüfung (Custom Agent, m06); Tests werden nur erbeten, nicht erzwungen, und der Agent sieht die App nicht (Hook und MCP, m07); Fußzeile zählt nur gefilterte Aufgaben (Python), fachlich ungeklärt (Spec, m08); feste Formularbreiten (MCP, m07).
 
-Eigenes Ergebnis weicht ab oder Tests sind rot: mit dem Referenzstand weiterarbeiten, z. B. `node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist-v1`.
+Eigenes Ergebnis weicht ab oder Tests sind rot: kein Problem, Tag 2 startet ohnehin mit dem Referenzstand v1: `node project/focuslist/catch-up.mjs python m05 $HOME/kurs/focuslist-m05`, danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und dort weiterarbeiten.
 
 </details>
 

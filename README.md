@@ -36,7 +36,7 @@
 3. Startprojekt erzeugen, im Terminal von VS Code im Ordner dieser Unterlagen:
 
 ```bash
-node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Node.js: … node m03 …
+node project/focuslist/catch-up.mjs python m03 $HOME/kurs/focuslist   # Node.js: … node m03 …
 ```
 
 ## Tag 1
@@ -67,8 +67,10 @@ node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Node.js: …
 - **Projektstand wiederherstellen:** jeden Stand für den Start eines Moduls neu erzeugen, z. B. Modul 5:
 
   ```bash
-  node project/focuslist/catch-up.mjs python m05 ~/kurs/focuslist-m05
+  node project/focuslist/catch-up.mjs python m05 $HOME/kurs/focuslist-m05
   ```
+
+  Jeder Stand kommt in einen neuen Ordner `$HOME/kurs/focuslist-mNN`; danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`), dann in diesem Ordner weiterarbeiten. Tag 2 startet für alle mit `m05` in `$HOME/kurs/focuslist-m05`.
 
 - **Lösungen vergleichen:** jede Übung nennt ihre Referenz; die fertigen Dateien je Modul liegen im [Projektordner](project/README.md).
 - **Nachschlagen:** [Glossar](m00-overview/glossary.md) · [FAQ](m00-overview/faq.md) · [Best Practices](m00-overview/best-practices.md)

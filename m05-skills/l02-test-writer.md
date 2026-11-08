@@ -109,11 +109,11 @@ def test_unbekannte_id_liefert_404(client):
 
 ## Übung
 
-**Dauer:** ca. 35 Minuten · **Start:** eigener Stand nach Lab 4.3 oder v1 mit `node project/focuslist/catch-up.mjs <python|node> m05 <zielordner>` · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/test-writer/`
+**Dauer:** ca. 35 Minuten · **Start:** Arbeitsordner für Tag 2 anlegen: v1 mit `node project/focuslist/catch-up.mjs <python|node> m05 $HOME/kurs/focuslist-m05`, danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und dort weiterarbeiten · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/test-writer/`
 
 1. Lege `.github/skills/test-writer/SKILL.md` an: Frontmatter (`name`, `description` mit „was“ und „wann“, `argument-hint`) und die Abschnitte „Wann einsetzen“, „Schritte“, „Abnahmekriterium“, „Bericht“.
 2. Schreibe daneben die Vorlage `test-template.py` bzw. `test-template.js` mit je einem Beispiel für Normal-, Grenz- und Fehlerfall und verlinke sie relativ in Schritt 3 der Anleitung.
-3. Öffne eine neue Chat-Sitzung, wähle **Agent** und rufe `/test-writer GET /api/tasks und der Filter ?status= auf / und /api/tasks` auf. Lies die Fall-Liste, bevor Tests entstehen.
+3. Öffne eine neue Chat-Sitzung, wähle **Agent** und rufe `/test-writer GET /api/tasks und Filter ?status= für / und /api/tasks` auf. Lies die Fall-Liste, bevor Tests entstehen.
 4. Prüfe die geänderten Dateien (nur unter `tests/` bzw. `test/`) und nimm sie mit **Keep** an.
 5. Öffne eine weitere neue Sitzung und sende ohne `/`: „Schreib Tests für das Löschen von Aufgaben.“ Beobachte, ob der Skill automatisch greift.
 

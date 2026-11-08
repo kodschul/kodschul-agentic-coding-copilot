@@ -4,7 +4,8 @@
     "preToolUse": [
       {
         "type": "command",
-        "command": "python .github/hooks/guard.py",
+        "bash": "python3 .github/hooks/guard.py",
+        "powershell": "python .github/hooks/guard.py",
         "timeoutSec": 10
       }
     ]

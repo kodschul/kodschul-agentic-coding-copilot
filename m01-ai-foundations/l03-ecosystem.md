@@ -51,7 +51,7 @@ Zum Beispiel Secrets wie `.env` lesen, `rm -rf` ausführen, ungeprüft pushen. S
 
 **IDE, Beispiel Cursor:**
 
-![Cursor-Agentenfenster: links Liste der Agent-Sitzungen, in der Mitte Auftrag und Zusammenfassung des Agenten, rechts der Diff der geänderten Dateien mit Schaltflächen zum Weitergeben der Änderungen, z. B. „Create PR“](https://cursor.com/docs-static/_next/image?url=%2Fdocs-static%2Fimages%2Fagent%2Fhomepage-hero.png&w=1920&q=75&dpl=dpl_DeZNjkczLaQQvajNV4wdKkwbyxYV)
+![Cursor-Agentenfenster: links Liste der Agent-Sitzungen, in der Mitte Auftrag und Zusammenfassung des Agenten, rechts der Diff der geänderten Dateien mit Schaltflächen zum Weitergeben der Änderungen, z. B. „Create PR“](../assets/images/m01/cursor-agent-window.png)
 _Quelle: Cursor Docs (https://cursor.com/docs), © Anysphere (Cursor), Hersteller-Screenshot (extern verlinkt), abgerufen am 07.11.2026._
 
 **Terminal, Beispiel OpenAI Codex CLI:**
@@ -61,7 +61,7 @@ _Quelle: GitHub, openai/codex (https://github.com/openai/codex), OpenAI, Apache-
 
 **Claude Code bei der Arbeit:**
 
-![Claude Code: Auf „can you add tests for this file?“ liest der Agent localizationUtils.ts (256 Zeilen) und schreibt eine neue Testdatei, die neuen Zeilen sind grün markiert](https://assets.claude.com/454390de9d9ccefb6082b7c2440c7547c1ec3964.webp)
+![Claude Code: Auf „can you add tests for this file?“ liest der Agent localizationUtils.ts (256 Zeilen) und schreibt eine neue Testdatei, die neuen Zeilen sind grün markiert](../assets/images/m01/claude-code-tests.webp)
 _Quelle: Anthropic, Claude Code (https://claude.com/product/claude-code), © Anthropic, Hersteller-Screenshot (extern verlinkt), abgerufen am 07.11.2026._
 
 Der Ablauf ist bei allen Werkzeugen gleich: Datei lesen, ändern, Ergebnis zur Prüfung zeigen.

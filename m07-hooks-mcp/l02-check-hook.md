@@ -62,7 +62,7 @@ Stand: 11/2026, Quelle: [Hooks (VS Code)](https://code.visualstudio.com/docs/age
 
 ## Die Hook-Datei
 
-Aktivieren und prüfen wie in [Lab 7.1, „Wo Hooks aktiviert werden“](l01-guard-hook.md#wo-hooks-aktiviert-werden). `.github/hooks/checks.json` (Python; Node.js identisch mit `"command": "node .github/hooks/checks.mjs"`):
+Aktivieren und prüfen wie in [Lab 7.1, „Wo Hooks aktiviert werden“](l01-guard-hook.md#wo-hooks-aktiviert-werden). `.github/hooks/checks.json` (Python; Node.js identisch mit einem einzigen Feld `"command": "node .github/hooks/checks.mjs"`). Python braucht zwei Felder, weil der Befehl auf macOS/Linux meist `python3` und auf Windows `python` heißt: `bash` gilt für macOS/Linux, `powershell` für Windows.
 
 ```json
 {
@@ -71,7 +71,8 @@ Aktivieren und prüfen wie in [Lab 7.1, „Wo Hooks aktiviert werden“](l01-gua
     "agentStop": [
       {
         "type": "command",
-        "command": "python .github/hooks/checks.py",
+        "bash": "python3 .github/hooks/checks.py",
+        "powershell": "python .github/hooks/checks.py",
         "timeoutSec": 60
       }
     ]
@@ -149,10 +150,10 @@ Echte Ausgabe bei einem absichtlich gebrochenen Test (Übung, Schritt 3): Auftra
 
 ## Übung
 
-**Dauer:** ca. 15 Minuten · **Start:** eigener Stand nach Lab 7.1 · **Referenz:** `project/focuslist/<stack>/steps/m07/.github/hooks/checks.json`, `checks.py` bzw. `checks.mjs`
+**Dauer:** ca. 15 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 7.1 · **Referenz:** `project/focuslist/<stack>/steps/m07/.github/hooks/checks.json`, `checks.py` bzw. `checks.mjs`
 
 1. Kopiere `checks.json` und `checks.py` bzw. `checks.mjs` aus der Referenz nach `.github/hooks/`.
-2. Teste das Skript im Terminal: `echo '{}' | python .github/hooks/checks.py` bzw. `echo '{}' | node .github/hooks/checks.mjs`. Bei grünen Tests ist die Ausgabe `{}`.
+2. Teste das Skript im Terminal: `echo '{}' | python3 .github/hooks/checks.py` (Windows: `python`) bzw. `echo '{}' | node .github/hooks/checks.mjs`. Bei grünen Tests ist die Ausgabe `{}`.
 3. Brich einen Test absichtlich: Ändere im Beispieltest (`tests/test_index.py` bzw. `test/index.test.js`) den erwarteten Titel „Kursunterlagen lesen“ in „Kursunterlagen gelesen“. Wiederhole Schritt 2.
 4. Starte eine neue Copilot-Sitzung (Agent), damit `checks.json` geladen wird, und sende: „Ändere die Überschrift der Startseite in ‚Meine Aufgaben heute‘.“ Beobachte, was nach der ersten Antwort passiert, und lies die Änderungen im Chat.
 5. Setze den Test von Hand auf „Kursunterlagen lesen“ zurück und wiederhole Schritt 2.
@@ -170,9 +171,9 @@ Zu 3, Ausgabe (Node.js, gekürzt):
 
 Python liefert analog `"reason": "Die automatischen Prüfungen sind fehlgeschlagen. … pytest ist rot: …"`.
 
-Zu 4: Nach der Überschrift-Änderung meldet der Agent „fertig“, der Hook blockiert, der Agent startet eine weitere Runde mit der Testausgabe als Auftrag. Er findet heraus, dass der Test einen Titel erwartet, den es in `data/tasks.json` nicht gibt. Gute Reaktion: Er meldet den Widerspruch oder korrigiert den Test mit Begründung. Schlechte Reaktion: Er ändert die Beispieldaten, damit der Test passt; dann im Chat „Undo“ wählen. Am Ende der zweiten Runde enthält die Eingabe `stop_hook_active: true`; der Hook blockiert dann nicht erneut, auch wenn der Test noch rot ist.
+Zu 4: Nach der Überschrift-Änderung meldet der Agent „fertig“, der Hook blockiert, der Agent startet eine weitere Runde mit der Testausgabe als Auftrag. Er findet heraus, dass der Test einen Titel erwartet, den es in `data/tasks.json` nicht gibt. Gute Reaktion: Er meldet den Widerspruch und fragt nach, statt Test oder Daten anzupassen. Schlechte Reaktion: Er ändert die Beispieldaten, damit der Test passt; dann im Chat „Undo“ wählen. Am Ende der zweiten Runde enthält die Eingabe `stop_hook_active: true`; der Hook blockiert dann nicht erneut, auch wenn der Test noch rot ist.
 
-Zu 5: Hat der Agent den Test schon selbst korrigiert, ist nichts mehr zu tun. Danach laufen `pytest` bzw. `npm test` grün.
+Zu 5: Hat der Agent Test oder Beispieldaten trotzdem geändert, die Änderung im Chat mit „Undo“ verwerfen und dann den Test zurücksetzen. Danach laufen `pytest` bzw. `npm test` grün.
 
 </details>
 

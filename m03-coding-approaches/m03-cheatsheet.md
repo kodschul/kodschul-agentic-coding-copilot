@@ -76,19 +76,21 @@ Beispiel-Prompt: `project/focuslist/vibecoding-prompt.md` · Beispielergebnis: `
 
 | Befehl / Aktion | Wirkung |
 | --- | --- |
-| `node project/focuslist/catch-up.mjs <python\|node> m03 <ordner>` | Startgerüst für Lab 3.2 herstellen |
+| `node project/focuslist/catch-up.mjs <python\|node> m03 $HOME/kurs/focuslist` | Startgerüst für Lab 3.2 herstellen (Arbeitsordner, falls er fehlt) |
 | Chat-Sitzung → „Changes“ | alle Änderungen des Agenten als Diff |
 | Explorer: **Select for Compare**, dann **Compare with Selected** | zwei Dateien (z. B. Startgerüst und v0) vergleichen |
-| `node project/focuslist/catch-up.mjs <python\|node> m04 <ordner>` | Referenzstand v0 herstellen |
+| `node project/focuslist/catch-up.mjs <python\|node> m04 $HOME/kurs/focuslist-m04` | Referenzstand v0 herstellen, danach dort weiterarbeiten |
 
 ## Status-quo-Liste (Lab 3.3)
 
-| Spalte | Inhalt |
-| --- | --- |
-| # | Rang nach Kosten in Produktion |
-| Mangel | kurz, mit Datei |
-| Fehlerklasse | eine der fünf Klassen |
-| Baustein | Instructions … Spec |
-| Modul | m04 … m08 |
+| # | Mangel | Baustein | Modul |
+| --- | --- | --- | --- |
+| 1 | Titel ungeschützt im HTML (XSS) | Regel in Instructions für Templates, Fix per `security-checker` | m04 (Regel), m05 (Fix) |
+| 2 | Eingaben ungeprüft | `security-checker` | m05 |
+| 3 | Secret und Debug-Modus im Code (Python); Path Traversal, Body ohne Limit (Node.js) | `security-checker` | m05 |
+| 4 | neue ID = Anzahl + 1 | Instructions | m04 |
+| 5 | Logik verstreut, Filter doppelt (Python: `?status=all`), Stile gemischt, zweiter Startweg | Instructions | m04 |
+| 6 | keine neuen Tests, niemand prüft unabhängig | `test-writer`, Custom Agents, Check-Hook | m05–m07 |
+| 7 | feste Breiten, Agent sieht die Seite nicht | MCP (Playwright) | m07 |
+| 8 | Fußzeile zählt nur gefilterte Aufgaben (Python-Referenz) | Spec | m08 |
 
-Vollständige Liste mit 8 Zeilen in Lab 3.3, sortiert nach Kosten in Produktion

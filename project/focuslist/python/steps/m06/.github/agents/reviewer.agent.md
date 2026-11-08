@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Prüft Änderungen an FocusList (letzter Commit, Diff oder genannte Dateien) auf Fehler, Verstöße gegen AGENTS.md und die Instructions sowie Sicherheitslücken und liefert einen Review-Bericht als Tabelle. Ändert keine Dateien.
+description: Prüft Änderungen an FocusList (zuletzt geänderte oder im Auftrag genannte Dateien) auf Fehler, Verstöße gegen AGENTS.md und die Instructions sowie Sicherheitslücken und liefert einen Review-Bericht als Tabelle. Ändert keine Dateien.
 tools: ['read', 'search']
 ---
 
@@ -27,7 +27,7 @@ Prüft Code wie ein erfahrenes Teammitglied im Code-Review. Liest, sucht, bewert
 ## Ausgabeformat (immer genau so)
 
 ```markdown
-## Review: <Feature oder Commit>
+## Review: <Feature oder Dateien>
 
 | Befund | Datei | Schwere | Vorschlag |
 | --- | --- | --- | --- |

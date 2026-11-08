@@ -133,9 +133,9 @@ Gleiche Idee, andere Ordner, wie in der Landkarte aus Lab 1.3. Projekt-Skills ge
 - Anthropic führte Agent Skills im Okt 2025 ein; seit Dez 2025 ist das Format ein offener Standard ([agentskills.io](https://agentskills.io)). Andere Werkzeuge haben es übernommen, deshalb unterscheiden sich vor allem die Ordner.
 - Prompt-Dateien (`.github/prompts/*.prompt.md`) laden nur im Local-Harness (Lab 2.2). Im Copilot-Harness übernimmt ein Skill ihre Rolle; zur Migration bietet VS Code „Convert Prompt to Skills“ ([Migrate customizations](https://code.visualstudio.com/docs/agent-customization/migrate-customizations), Stand: 11/2026).
 
-## Regel oder Ablauf? Die Status-quo-Liste sortiert
+## Regel oder Ablauf? Die Python-Funde aus Lab 3.3 sortiert
 
-Die Status-quo-Liste aus Lab 3.3 enthält Regeln, Abläufe und anderes. Zuordnung der Python-Funde aus Lab 3.3:
+Hinter den Zeilen der Status-quo-Liste stehen Einzelfunde (Lab 3.3, „Mängel im Referenzstand v0“). Sie sind Regeln, Abläufe oder etwas anderes. Zuordnung der Python-Funde:
 
 | # | Eintrag (kurz) | Art | Wohin |
 | --- | --- | --- | --- |
@@ -144,13 +144,14 @@ Die Status-quo-Liste aus Lab 3.3 enthält Regeln, Abläufe und anderes. Zuordnun
 | 3 | `?created=` mit `\|safe` | Ablauf (Prüfung) | `security-checker` |
 | 4 | Logik mal in Route, mal im Store | Regel | `AGENTS.md` (erledigt in m04) |
 | 5 | `secret_key = "dev"` | Ablauf (Prüfung) | `security-checker` |
-| 6 | unbekannte ID → stiller Redirect | Ablauf (Fehlerfall testen) | `test-writer` |
+| 6 | unbekannte ID → stiller Redirect statt 404 | Regel | `AGENTS.md` (erledigt in m04) |
 | 7 | Filter doppelt und unterschiedlich | Regel | `AGENTS.md` (erledigt in m04) |
-| 8 | `?status=all` liefert in der API nur offene | Ablauf (Grenzfall testen) | `test-writer` |
+| 8 | `?status=all` liefert in der API nur offene | Regel (eine Filterfunktion) | `AGENTS.md` (erledigt in m04) |
 | 9 | `app.run(debug=True)` | Ablauf (Prüfung) | `security-checker` |
 | 10 | Farben und Namen getrennt | Regel | `templates.instructions.md` |
 | 11 | feste Breiten, nicht auf Handybreite | anderes | Browser-Prüfung (m07) |
-| 12 | keine neuen Tests | Ablauf | `test-writer` |
+| 12 | Fußzeile zählt nur gefilterte Aufgaben | anderes (fachlich offen) | Spec (m08) |
+| 13 | keine neuen Tests | Ablauf | `test-writer` |
 
 Daraus entstehen zwei Skill-Kandidaten:
 

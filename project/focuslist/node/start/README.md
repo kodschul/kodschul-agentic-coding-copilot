@@ -14,7 +14,7 @@ npm run dev          # http://localhost:3000, startet bei Änderungen neu
 ## Tests
 
 ```bash
-npm test             # node --test, findet alle Dateien test/*.test.js
+npm test             # node --test "test/**/*.test.js"
 ```
 
 ## CSS

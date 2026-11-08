@@ -6,6 +6,7 @@ applyTo: "src/views/**"
 
 - Eine View ist eine Funktion, die einen HTML-String zurückgibt; Seiten nutzen `layout({ title, body })` aus `layout.js`.
 - Views lesen keine Dateien und rufen keinen Store auf; alle Daten kommen als Parameter.
+- Jeder dynamische Wert aus Nutzereingaben oder Daten (Titel, Query-Parameter, Fehlermeldungen) wird vor der Ausgabe escaped, auch in Attributen wie `value="…"`: über eine Funktion `escapeHtml()` in `src/views/escape.js` (ersetzt `&`, `<`, `>`, `"`, `'`); fehlt sie, wird sie angelegt. Nie rohes `${task.title}`.
 - Wiederkehrende Teile (Badge, Listeneintrag, Filter-Link) als kleine Funktion in derselben Datei.
 - Styling nur mit Tailwind-Utility-Klassen, kein eigenes CSS, keine `style`-Attribute.
 - Farben: Priorität hoch = rot, mittel = gelb, niedrig = grau; Hauptaktion = `indigo-600`.

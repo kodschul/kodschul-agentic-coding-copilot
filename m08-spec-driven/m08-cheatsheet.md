@@ -1,6 +1,6 @@
 # Cheatsheet Modul 8: Spec-Driven Development
 
-Stand: 11/2026 (OpenSpec CLI 1.3). Quellen: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [CLI](https://openspec.dev/docs/cli), [Supported tools](https://openspec.dev/docs/supported-tools), [FAQ](https://openspec.dev/docs/faq)
+Stand: 11/2026 (OpenSpec CLI 1.3.1). Quellen: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [CLI](https://openspec.dev/docs/cli), [Supported tools](https://openspec.dev/docs/supported-tools), [FAQ](https://github.com/Fission-AI/OpenSpec/blob/main/docs/faq.md)
 
 ## Wann eine Spec
 
@@ -26,7 +26,7 @@ Stand: 11/2026 (OpenSpec CLI 1.3). Quellen: [OpenSpec (GitHub)](https://github.c
 
 | Befehl | Wirkung |
 | --- | --- |
-| `npm install -g @fission-ai/openspec@latest` | installieren (Node.js ≥ 22.12) |
+| `npm install -g @fission-ai/openspec@1.3.1` | installieren (Setup, Node.js ≥ 22.12); gesperrt: `npx -y @fission-ai/openspec@1.3.1 …` |
 | `openspec init --tools github-copilot` | `openspec/`, Skills, Prompt-Dateien anlegen |
 | `openspec config set delivery skills` | nur Skills ausliefern (vor `init`) |
 | `ls .github/skills` | Namen der OpenSpec-Skills ablesen |
@@ -87,4 +87,4 @@ Stand: 11/2026 (OpenSpec CLI 1.3). Quellen: [OpenSpec (GitHub)](https://github.c
 | Logik | `validate_due`, `is_overdue`, `sort_tasks` in `focuslist/tasks.py` | `isValidDate`, `isOverdue`, `sortTasks` in `src/tasks.js` |
 | Tests | `tests/test_due.py` | `test/due.test.js` |
 | Spec | `openspec/specs/tasks/spec.md` | `openspec/specs/tasks/spec.md` |
-| Archiv (Referenz) | `openspec/changes/archive/2026-11-12-add-due-date/` | dito |
+| Archiv (Referenz, Datum = Tag des Archivierens) | `openspec/changes/archive/2026-11-12-add-due-date/` | dito |

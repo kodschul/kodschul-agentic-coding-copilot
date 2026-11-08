@@ -53,7 +53,7 @@ Was der Agent geändert hat, zeigt die Chat-Sitzung aus Lab 3.2: Die Antwort nen
 ![VS Code, Agent-Sitzung: links die Antwort des Agenten, in der Mitte „Session Changes“ mit dem Diff von index.html (neue Zeilen grün), rechts der Reiter „Changes“ mit der Liste der geänderten Dateien](../assets/images/m03/changes-panel.png)
 _Quelle: VS Code Docs, „Agents quickstart“ (https://code.visualstudio.com/docs/agents/quickstart), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
-Ohne die Sitzung: Startgerüst per `catch-up.mjs … m03` in einen zweiten Ordner holen und eine Datei mit ihrem Gegenstück vergleichen. Im Explorer: Rechtsklick auf die Datei im Startgerüst → **Select for Compare**, dann Rechtsklick auf dieselbe Datei im eigenen Projekt → **Compare with Selected**.
+Ohne die Sitzung: Startgerüst per `node project/focuslist/catch-up.mjs <python|node> m03 $HOME/kurs/focuslist-m03` holen und eine Datei mit ihrem Gegenstück vergleichen. Im Explorer: Rechtsklick auf die Datei im Startgerüst → **Select for Compare**, dann Rechtsklick auf dieselbe Datei im eigenen Projekt → **Compare with Selected**.
 
 ## Fünf Fehlerklassen
 
@@ -63,7 +63,7 @@ Ohne die Sitzung: Startgerüst per `catch-up.mjs … m03` in einen zweiten Ordne
 | Falsche Annahme | Verhalten, das niemand bestellt hat; Grenzfälle falsch | „Wer hat das so festgelegt?“ |
 | Fehlende Tests | neue Routen ohne Test; nur der alte Beispieltest läuft | „Welcher Test schlägt fehl, wenn das kaputtgeht?“ |
 | Sicherheitslücke | ungeprüfte Eingaben, ungeschützte Ausgabe, Secrets im Code, Pfade aus der URL | „Was passiert mit böswilliger Eingabe?“ |
-| Überflüssige Abhängigkeit | neues Paket für etwas, das die Plattform schon kann | „Brauchen wir das wirklich?“ |
+| Überflüssige Abhängigkeit | neues Paket für etwas, das die Plattform schon kann | „Kann die Plattform das schon?“ |
 
 Ein Beispiel aus dem Referenzstand v0 (Python, `focuslist/store.py`), Klasse „Falsche Annahme“: Die neue ID zählt die Liste. Sobald eine Aufgabe gelöscht wird, entstehen doppelte IDs.
 
@@ -90,7 +90,7 @@ Faustregel: Was mit einem Satz erklärbar ist → Instructions. Was eine Checkli
 
 | Symptom | Ursache | Lösung |
 | --- | --- | --- |
-| Chat-Sitzung aus Lab 3.2 ist geschlossen | neue Sitzung geöffnet | Startgerüst in einen zweiten Ordner holen und Dateien per „Compare with Selected“ vergleichen |
+| Chat-Sitzung aus Lab 3.2 ist geschlossen | neue Sitzung geöffnet | Startgerüst nach `$HOME/kurs/focuslist-m03` holen (`catch-up.mjs … m03`) und Dateien per „Compare with Selected“ vergleichen |
 | Bewertung bleibt bei „sieht gut aus“ | nur im Browser geprüft | jede Rasterfrage mit ihrer Prüfung beantworten, auch Tests und Diff |
 | Eigenes v0 startet nicht | One-Shot-Ergebnis unvollständig | „läuft nicht“ ist der erste Befund; restliche Fragen am Referenzstand v0 beantworten |
 
@@ -102,15 +102,15 @@ Das Raster angewendet auf den Referenzstand v0 (`steps/m03/`), mit Fehlerklasse 
 
 | Fund | Stelle | Fehlerklasse | Baustein (Modul) |
 | --- | --- | --- | --- |
-| `\|safe` im Hinweis: `Aufgabe „{{ request.args.get('created')\|safe }}“ angelegt.` – ein Link mit `?created=<script>…` führt Code aus | `templates/index.html` | Sicherheitslücke (ungeschützte Ausgabe) | Instructions für Templates (m04), Skill `security-checker` (m05) |
+| `\|safe` im Hinweis: `Aufgabe „{{ request.args.get('created')\|safe }}“ angelegt.` – ein Link mit `?created=<script>…` führt Code aus | `templates/index.html` | Sicherheitslücke (ungeschützte Ausgabe) | Regel in Instructions für Templates (m04), Fix per Skill `security-checker` (m05) |
 | `app.secret_key = "dev"` fest im Code | `__init__.py` | Sicherheitslücke (Secret im Code) | Skill `security-checker` (m05) |
-| `app.run(debug=True)` in neuer Datei `run.py`, obwohl `flask --app focuslist run` existiert | `run.py` | Sicherheitslücke, Inkonsistenz | Instructions: ein Startbefehl (m04); `security-checker` (m05) |
+| `app.run(debug=True)` in neuer Datei `run.py`, obwohl `flask --app focuslist run --debug` existiert: zweiter, fest verdrahteter Startweg mit Debug-Modus, der auch in Produktion an wäre (Debug nie in Produktion) | `run.py` | Sicherheitslücke, Inkonsistenz | Instructions: ein Startbefehl (m04); `security-checker` (m05) |
 | leerer Titel, beliebige Priorität werden gespeichert | `__init__.py` | Sicherheitslücke (ungeprüfte Eingabe) | `security-checker` (m05) |
 | `len(tasks) + 1` als ID | `store.py` | Falsche Annahme | Instructions (m04) |
 | Anlegen im Store, Erledigen direkt in der Route | `__init__.py`, `store.py` | Inkonsistenz | Instructions: eine Schicht (m04) |
 | Filter zweimal, unterschiedlich | `__init__.py` | Inkonsistenz | Instructions (m04) |
 | Farben als Dictionary in Python, deutsche Namen im Template | `__init__.py`, `templates/index.html` | Inkonsistenz | Instructions für Templates (m04) |
-| `/api/tasks?status=all` liefert nur offene Aufgaben | `__init__.py` | Falsche Annahme | Tests per Skill `test-writer` (m05), Spec (m08) |
+| `/api/tasks?status=all` liefert nur offene Aufgaben (Folge des doppelten Filters) | `__init__.py` | Falsche Annahme | Instructions: eine Filterfunktion (m04) |
 | unbekannte ID beim Erledigen: still Redirect statt 404 | `__init__.py` | Falsche Annahme | Instructions (m04) |
 | Fußzeile zählt nur gefilterte Aufgaben | `templates/index.html` | Falsche Annahme | Spec (m08) |
 | feste Breiten `w-96`, `w-40`, auf Handybreite zu breit | `templates/index.html` | Falsche Annahme | MCP Playwright (m07) |
@@ -125,7 +125,7 @@ Der erste Fund aus der Tabelle im Browser: Das Skript aus dem URL-Parameter `?cr
 
 | Fund | Stelle | Fehlerklasse | Baustein (Modul) |
 | --- | --- | --- | --- |
-| Titel ohne Escaping im HTML: `<span …>${task.title}</span>` und `Aufgabe „${created}“ angelegt.` | `src/views/index.js` | Sicherheitslücke (ungeschützte Ausgabe, XSS) | `security-checker` (m05) |
+| Titel ohne Escaping im HTML: `<span …>${task.title}</span>` und `Aufgabe „${created}“ angelegt.` | `src/views/index.js` | Sicherheitslücke (ungeschützte Ausgabe, XSS) | Regel in Instructions für Templates (m04, Lab 4.2), Fix per Skill `security-checker` (m05) |
 | `path.join(ROOT, "static", req.url.replace("/static/", ""))` ohne Prüfung: `../` verlässt `static/` | `src/app.js` | Sicherheitslücke (Path Traversal) | `security-checker` (m05) |
 | `req.on("data", (chunk) => { body += chunk; })` ohne Größenlimit | `src/app.js` | Sicherheitslücke (Speicher volllaufen lassen) | `security-checker` (m05) |
 | leerer Titel, beliebige Priorität werden gespeichert | `src/app.js` | Sicherheitslücke (ungeprüfte Eingabe) | `security-checker` (m05) |
@@ -144,14 +144,14 @@ Die Befunde beider Stacks, zusammengefasst und nach Kosten in Produktion sortier
 
 | # | Mangel | Fehlerklasse | Baustein | Modul |
 | --- | --- | --- | --- | --- |
-| 1 | Titel ungeschützt im HTML (XSS) | Sicherheitslücke | Instructions für Templates, Skill `security-checker` | m04, m05 |
+| 1 | Titel ungeschützt im HTML (XSS) | Sicherheitslücke | Regel in Instructions für Templates, Fix per Skill `security-checker` | m04 (Regel, Lab 4.2), m05 (Fix) |
 | 2 | Eingaben ungeprüft: leerer Titel, beliebige Priorität | Sicherheitslücke | Skill `security-checker` | m05 |
-| 3 | Secret und `debug=True` im Code (Python); Path Traversal, Body ohne Limit (Node.js) | Sicherheitslücke | Skill `security-checker` | m05 |
+| 3 | Secret und fest verdrahteter Debug-Modus im Code (Python); Path Traversal, Body ohne Limit (Node.js) | Sicherheitslücke | Skill `security-checker` | m05 |
 | 4 | neue ID = Anzahl + 1, doppelte IDs nach dem Löschen | Falsche Annahme | Instructions | m04 |
-| 5 | Logik verstreut, Filter doppelt, Stile gemischt, zweiter Startweg | Inkonsistenz | Instructions | m04 |
+| 5 | Logik verstreut, Filter doppelt (Python: `?status=all` liefert nur offene), Stile gemischt, zweiter Startweg | Inkonsistenz | Instructions | m04 |
 | 6 | keine neuen Tests, niemand prüft unabhängig | Fehlende Tests | Skill `test-writer`, Custom Agents, Check-Hook | m05, m06, m07 |
 | 7 | feste Breiten, Formular bricht auf Handybreite; Agent hat die Seite nie gesehen | Falsche Annahme | MCP (Playwright) | m07 |
-| 8 | fachlich ungeklärt: Was zählt die Fußzeile, was liefert `?status=all`? | Falsche Annahme | Spec | m08 |
+| 8 | Fußzeile zählt nur gefilterte Aufgaben (Python-Referenz): fachlich ungeklärt, was sie zählen soll | Falsche Annahme | Spec | m08 |
 
 ## Ab jetzt agentisch
 
@@ -159,11 +159,11 @@ Die Status-quo-Liste ist der Fahrplan für den Rest des Kurses. Jedes Modul füg
 
 | Modul | Baustein im Repo | Behebt (Status-quo-Liste) | Stand |
 | --- | --- | --- | --- |
-| m04 | Instructions: `AGENTS.md`, `*.instructions.md` | Zeilen 4, 5, Teil von 1 | v1 |
+| m04 | Instructions: `AGENTS.md`, `*.instructions.md` | Zeilen 4, 5; Regel für Zeile 1 | v1 |
 | m05 | Skills `test-writer`, `security-checker` | Zeilen 1, 2, 3, Teil von 6 | v2 |
 | m06 | Custom Agents `reviewer`, `tester`, `feature-lead` | Teil von 6 | v3 |
 | m07 | Hooks und Playwright-MCP | Teil von 6, Zeile 7 | v4 |
-| m08 | Spec mit OpenSpec | Zeile 8 | v5 |
+| m08 | Spec mit OpenSpec | Weg für Zeile 8 (am Beispiel Fälligkeitsdatum; die Fußzeile ist der nächste Change) | v5 |
 
 Ab Modul 4 wird der Diff gelesen, Tests laufen, und der Mensch nimmt ab: der agentische Weg aus Lab 3.1.
 
@@ -172,5 +172,3 @@ Ab Modul 4 wird der Diff gelesen, Tests laufen, und der Mensch nimmt ab: der age
 - Im Browser lief v0, die Mängel stecken in Struktur, Annahmen, Tests und Sicherheit.
 - Fünf Fehlerklassen ordnen jeden Befund; jede hat einen passenden Baustein.
 - Die Status-quo-Liste ist der Ausgangspunkt des agentischen Wegs.
-
-Die Status-quo-Liste oben ist der Maßstab für jede weitere Verbesserung von FocusList.

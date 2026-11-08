@@ -51,7 +51,7 @@ Agent:       Mensch nennt Ziel und Grenzen  →  KI liest, ändert, testet selbs
 
 **Geschichte in einem Satz:** Seit 2021 Vorschläge im Editor, seit 2023 Chat, seit Februar 2025 Agenten, die Dateien ändern und Befehle ausführen (Details und Quellen: Lab 1.2).
 
-**Verbreitung:** Laut Stack Overflow Developer Survey 2025 (veröffentlicht Juli 2025) nutzen 84 % der Befragten KI-Werkzeuge in der Entwicklung oder planen es; gut die Hälfte der Berufsentwickler:innen nutzt sie täglich.
+**Verbreitung:** Laut Stack Overflow Developer Survey 2025 (veröffentlicht Juli 2025) nutzen 84 % der Befragten KI-Werkzeuge in der Entwicklung oder planen es; gut die Hälfte der Berufsentwickler:innen nutzt sie täglich (Quelle: https://survey.stackoverflow.co/2025/ai, abgerufen am 08.11.2026).
 
 **Bekannte Beispiele (Stand: 11/2026):** GitHub Copilot (Agent-Modus in VS Code, Copilot CLI, Cloud Agent), Claude Code (Anthropic), OpenAI Codex, Cursor. Überblick: Lab 1.3.
 

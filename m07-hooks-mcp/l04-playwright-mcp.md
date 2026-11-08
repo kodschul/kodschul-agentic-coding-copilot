@@ -94,7 +94,7 @@ Dieselbe Schleife in der VS-Code-Doku: ändern, im Browser bedienen, Ergebnis pr
 
 ## Der Fehler in FocusList v3
 
-Die Status-quo-Liste aus Lab 3.3 hat ihn schon notiert (Beispiel-Liste, Zeile 7): Das Formular nutzt feste Breiten in einer Zeile. Auf 375 Pixel läuft es über den Rand.
+Die Status-quo-Liste aus Lab 3.3 hat ihn schon notiert (Zeile 7): Das Formular nutzt feste Breiten in einer Zeile. Auf 375 Pixel läuft es über den Rand.
 
 | Stelle | v3 (fest) | v4 (responsiv) |
 | --- | --- | --- |
@@ -129,11 +129,11 @@ _Quelle: eigener Screenshot, FocusList v3 und v4, Handybreite, 07.11.2026._
 
 ## Übung
 
-**Dauer:** ca. 30 Minuten · **Start:** eigener Stand nach Lab 7.2 · **Referenz:** `project/focuslist/<stack>/steps/m07/.mcp.json` und der responsive Fix in `steps/m07/focuslist/templates/index.html`, `edit.html` (Python) bzw. `steps/m07/src/views/index.js` (Node.js)
+**Dauer:** ca. 30 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 7.2 · **Referenz:** `project/focuslist/<stack>/steps/m07/.mcp.json` und der responsive Fix in `steps/m07/focuslist/templates/index.html`, `edit.html` (Python) bzw. `steps/m07/src/views/index.js` (Node.js)
 
 1. Lege `.mcp.json` im Projektordner an (Inhalt siehe oben) und starte den Server: Befehlspalette → „MCP: List Servers“ → `playwright` → Start. Bestätige die Vertrauensabfrage (Stand: 11/2026).
-2. Baue das CSS und starte die App in einem eigenen Terminal (Python `flask --app focuslist run --debug`, Node.js `npm run dev`).
-3. Sende im Agent-Chat Prompt Teil 1 aus dem Lösungsweg. Lies jede Freigabe-Anfrage für Browser-Tools, bevor sie bestätigt wird, und notiere die gemeldeten Darstellungsfehler.
+2. Baue das CSS (`npm run build:css`) und starte die App in einem eigenen Terminal (Python `flask --app focuslist run --debug`, Node.js `npm run dev`).
+3. Sende im Agent-Chat Prompt Teil 1 aus dem Lösungsweg. Lies jede Freigabe-Anfrage für Browser-Tools, bevor sie bestätigt wird. Der Agent meldet die Darstellungsfehler im Chat.
 4. Sende Prompt Teil 2: Der Agent behebt die Fehler und prüft erneut im Browser.
 5. Prüfe selbst im Browser mit den Entwicklertools auf 375 Pixel Breite und lösche danach die Testaufgabe in der App.
 

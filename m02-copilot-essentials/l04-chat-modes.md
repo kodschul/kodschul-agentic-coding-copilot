@@ -114,8 +114,8 @@ Dieselbe Frage („Wie würde man ein Formular für neue Aufgaben ergänzen?“)
 | Kriterium | Ask | Plan |
 | --- | --- | --- |
 | Form | Erklärung mit Codebeispiel | nummerierte Schritte |
-| Dateien | oft nur Template und Route | Route, Template, Store, Tests |
-| offene Fragen | selten | z. B. „Validierung des Titels? Redirect nach dem Speichern?“ |
+| Dateien | kann sich auf Template und Route beschränken | Route, Template, Store, Tests |
+| offene Fragen | nicht vorgesehen | z. B. „Validierung des Titels? Redirect nach dem Speichern?“ |
 | Umsetzung | Code zum Kopieren | nichts geändert, Plan zum Freigeben |
 
 Beispielplan (Python; Node.js analog mit `src/app.js`, `src/views/index.js`, `test/`):

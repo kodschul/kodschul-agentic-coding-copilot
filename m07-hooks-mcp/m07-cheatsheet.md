@@ -30,7 +30,8 @@ Preview; die Organisation kann Hooks einschränken.
 | `version` | `1` |
 | `hooks` | `{ "<event>": [ { … } ] }` |
 | `type` | `"command"` |
-| `command` | z. B. `python .github/hooks/guard.py`, `node .github/hooks/guard.mjs` |
+| `command` | ein Befehl für alle Systeme, z. B. `node .github/hooks/guard.mjs` |
+| `bash` / `powershell` | Befehl nur für macOS/Linux bzw. Windows, Vorrang vor `command`; Python: `python3 .github/hooks/guard.py` / `python .github/hooks/guard.py` |
 | `timeoutSec` | Standard 30; Guard 10, Checks 60 |
 
 ## Events
@@ -79,9 +80,9 @@ Preview; die Organisation kann Hooks einschränken.
 | Stack | Befehl |
 | --- | --- |
 | Audit | `echo '{"toolName":"view"}' \| node .github/hooks/log-tool-use.cjs` → `{}`, Zeile `"view"` in `tool-use.log` |
-| Python | `echo '{"toolName":"view","toolArgs":{"path":".env"}}' \| python .github/hooks/guard.py` |
+| Python | `echo '{"toolName":"view","toolArgs":{"path":".env"}}' \| python3 .github/hooks/guard.py` (Windows: `python`) |
 | Node.js | `echo '{"toolName":"view","toolArgs":{"path":".env"}}' \| node .github/hooks/guard.mjs` |
-| Checks | `echo '{}' \| python .github/hooks/checks.py` bzw. `… \| node .github/hooks/checks.mjs` |
+| Checks | `echo '{}' \| python3 .github/hooks/checks.py` bzw. `… \| node .github/hooks/checks.mjs` |
 
 
 ## MCP-Konfiguration

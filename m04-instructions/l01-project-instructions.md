@@ -84,7 +84,7 @@ Stand: 11/2026. Quellen: [Custom instructions](https://code.visualstudio.com/doc
 ![VS Code Explorer: Ordner .github mit der Datei copilot-instructions.md, daneben die geöffnete, noch leere Datei](../assets/images/m04/copilot-instructions-file.jpg)
 _Quelle: VS Code Blog, Beitrag vom 26.03.2025 zu Custom Instructions (https://code.visualstudio.com/blogs/2025/03/26/custom-instructions), Microsoft, CC BY 3.0 US, abgerufen am 07.11.2026._
 
-![AGENTS.md-Projektseite mit den Logos der Agenten, die die Datei lesen](https://agents.md/og.png)
+![AGENTS.md-Projektseite mit den Logos der Agenten, die die Datei lesen](../assets/images/m04/agents-md-og.png)
 _Quelle: agents.md (https://agents.md/), Logos der jeweiligen Hersteller, extern eingebunden, abgerufen am 07.11.2026._
 
 Empfehlung: eine Datei pflegen, nicht zwei mit doppeltem Inhalt. Wer zusätzlich Claude Code nutzt, kann in `CLAUDE.md` mit der Zeile `@AGENTS.md` auf dieselben Regeln verweisen.
@@ -151,7 +151,7 @@ Kleine Aufgabenliste (Web-App). Kursprojekt, Code soll für Einsteiger lesbar bl
 - Keine Befehle ausführen, die Dateien außerhalb des Projekts ändern
 ```
 
-Python ([`project/focuslist/python/steps/m04/AGENTS.md`](../project/focuslist/python/steps/m04/AGENTS.md)): gleicher Aufbau mit Flask 3 + Jinja2, Ordnern `routes.py` → `tasks.py` → `store.py` und Befehlen `flask --app focuslist run --debug` bzw. `pytest`. Zusätzlich: Hinweise per `flash()`, unbekannte ID → `abort(404)`, `.env` und Secrets tabu.
+Python ([`project/focuslist/python/steps/m04/AGENTS.md`](../project/focuslist/python/steps/m04/AGENTS.md)): gleicher Aufbau mit Flask 3 + Jinja2, Ordnern `routes.py` → `tasks.py` → `store.py` und Befehlen `flask --app focuslist run --debug` bzw. `pytest`. Zusätzlich: Hinweise per `flash()` (Flask merkt sich eine Meldung für die nächste Seite, z. B. „Aufgabe angelegt“), unbekannte ID → `abort(404)`, `.env` und Secrets tabu. Die Routen liegen in einem Blueprint (`bp`): einer Gruppe von Routen, die `create_app()` registriert.
 
 Die Node.js-Datei nennt Datenmodell und erlaubte Module ausdrücklich, weil ohne Framework mehr Freiheit besteht. Regeln für bestimmte Dateien (Templates, Tests) fehlen bewusst; sie folgen in Lab 4.2.
 
@@ -174,7 +174,7 @@ Ansicht 2025: Die Liste „Used … references“ unter der Antwort zeigt, welch
 
 | Symptom | Ursache | Lösung |
 | --- | --- | --- |
-| `AGENTS.md` taucht nie in den Referenzen auf | Datei liegt nicht in der Projektwurzel, z. B. weil der übergeordnete Ordner `~/kurs` geöffnet ist | Ordner `focuslist` selbst öffnen, Datei in dessen Wurzel legen |
+| `AGENTS.md` taucht nie in den Referenzen auf | Datei liegt nicht in der Projektwurzel, z. B. weil der übergeordnete Ordner `$HOME/kurs` geöffnet ist | Ordner `focuslist` selbst öffnen, Datei in dessen Wurzel legen |
 | Agent ignoriert eine neue Regel | alte Chat-Sitzung mit früherem Kontext | neue Chat-Sitzung öffnen |
 | Agent hält sich nur teilweise daran | Regel zu vage oder Widerspruch zum vorhandenen Code | Regel prüfbar formulieren, Zielzustand ausdrücklich nennen |
 | Regeln widersprechen sich | `AGENTS.md` und `.github/copilot-instructions.md` parallel gepflegt | eine Datei behalten |
@@ -182,12 +182,12 @@ Ansicht 2025: Die Liste „Used … references“ unter der Antwort zeigt, welch
 
 ## Übung
 
-**Dauer:** ca. 25 Minuten · **Start:** Stand v0: eigene FocusList aus m03 oder Referenz per `node project/focuslist/catch-up.mjs <python|node> m04 ~/kurs/focuslist-v0` · **Referenz:** `project/focuslist/<stack>/steps/m04/AGENTS.md`
+**Dauer:** ca. 20 Minuten · **Start:** Stand v0: eigene FocusList aus m03 (`$HOME/kurs/focuslist`) oder Referenz per `node project/focuslist/catch-up.mjs <python|node> m04 $HOME/kurs/focuslist-m04`, danach in diesem Ordner weiterarbeiten · **Referenz:** `project/focuslist/<stack>/steps/m04/AGENTS.md`
 
 Weicht der eigene v0 stark von der Referenz ab (andere Dateien, App startet nicht), mit dem Referenzstand weiterarbeiten.
 
-1. Öffne den Projektordner (nicht `~/kurs`) in VS Code. Markiere in der Status-quo-Liste aus Lab 3.3 alle Zeilen mit dem Baustein „Instructions“.
-2. Erstelle `AGENTS.md` in der Projektwurzel mit den Abschnitten Stack, Ordner, Befehle, Konventionen, Verbote. Formuliere aus jeder markierten Zeile eine prüfbare Regel und ergänze Start-, Test- und CSS-Befehl.
+1. Öffne den Projektordner (nicht `$HOME/kurs`) in VS Code. Nimm die Zeilen mit Baustein „Instructions“ aus der Status-quo-Liste (Lab 3.3: Nr. 4 und 5) als Grundlage.
+2. Erstelle `AGENTS.md` in der Projektwurzel mit den Abschnitten Stack, Ordner, Befehle, Konventionen, Verbote. Formuliere aus jeder dieser Zeilen eine prüfbare Regel und ergänze Start-, Test- und CSS-Befehl.
 3. Kürze auf höchstens 40 Zeilen. Prüfe jede Regel mit der Frage: Lässt sich an den Änderungen des Agenten mit Ja oder Nein entscheiden, ob sie eingehalten wurde?
 4. Öffne eine neue Chat-Sitzung, wähle **Ask** und frage: „Welche Projektregeln gelten in diesem Projekt? Nenne die Datei, aus der sie stammen, und drei Verbote.“ Prüfe die Referenzen der Antwort.
 5. Wechsle auf **Plan** und stelle einen Auftrag, der gegen ein Verbot verstößt (Node.js: Express einführen; Python: ein neues Paket für Formulare einführen).

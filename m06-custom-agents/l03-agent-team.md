@@ -12,7 +12,7 @@ Verstehen und planen → bauen → testen → reviewen → Befunde abarbeiten �
 <details>
 <summary>Woran erkennt man, dass ein Feature „fertig“ ist?</summary>
 
-Am beobachtbaren Ergebnis, nicht am Gefühl: Akzeptanzkriterien erfüllt, Tests mit Normal-, Grenz- und Fehlerfall grün, Review ohne offenen Befund mit Schwere hoch, Diff gelesen, im Browser geprüft. Erst dann übernimmt ein Mensch die Änderungen mit Keep.
+Am beobachtbaren Ergebnis, nicht am Gefühl: die vorher festgelegten Bedingungen für „fertig“ (Akzeptanzkriterien) erfüllt, Tests mit Normal-, Grenz- und Fehlerfall grün, Review ohne offenen Befund mit Schwere hoch, Diff gelesen, im Browser geprüft. Erst dann übernimmt ein Mensch die Änderungen mit Keep.
 
 </details>
 
@@ -113,7 +113,7 @@ Auszug aus `project/focuslist/python/steps/m06/docs/review-edit-task.md` (zweite
 | Erste Runde: POST auf eine unbekannte ID lieferte 400 statt 404. | `focuslist/routes.py:39` | mittel | Behoben: Aufgabe zuerst laden, sonst `abort(404)`. |
 | Eingabefeld mit fester Breite `w-96` ist auf Handybreite breiter als der Bildschirm. | `focuslist/templates/edit.html:21` | mittel | `w-full sm:w-96` verwenden. |
 
-**Fazit:** freigeben. Die offenen Punkte sind Darstellung und Stil und können in einem eigenen Schritt folgen.
+**Fazit:** nach Korrektur freigeben. Der offene Befund (mittel) betrifft die Darstellung auf Handybreite; ihn behebt Lab 7.4.
 
 ## Kosten und Grenzen
 
@@ -134,7 +134,7 @@ Auszug aus `project/focuslist/python/steps/m06/docs/review-edit-task.md` (zweite
 
 ## Übung
 
-**Dauer:** ca. 40 Minuten · **Start:** Stand nach Lab 6.2 · **Referenz:** `project/focuslist/<stack>/steps/m06/` (Agents, `tests/test_edit.py` bzw. `test/edit.test.js`, `docs/review-edit-task.md`)
+**Dauer:** ca. 40 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 6.2 · **Referenz:** `project/focuslist/<stack>/steps/m06/` (Agents, `tests/test_edit.py` bzw. `test/edit.test.js`, `docs/review-edit-task.md`)
 
 1. Lege `.github/agents/tester.agent.md` an: `tools: ['read', 'search', 'edit', 'execute']`, Regel „nur unter `tests/` bzw. `test/`“, Skill `test-writer`, Berichtsformat.
 2. Lege `.github/agents/feature-lead.agent.md` an: `tools: ['read', 'search', 'edit', 'execute', 'agent', 'todo']`, Ablauf mit `tester` und `reviewer` namentlich als Subagents, höchstens zwei Review-Runden, Übergabe.

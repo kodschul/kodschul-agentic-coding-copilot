@@ -120,7 +120,7 @@ Auszug aus `project/focuslist/python/steps/m05/docs/security-report.md`, erstell
 
 | Befund | Datei | Schwere | Status |
 | --- | --- | --- | --- |
-| Reflected XSS: `?created=` aus der URL wird mit `\|safe` ins HTML geschrieben. | `focuslist/templates/index.html:14` | hoch | behoben: Hinweis per `flash()` (`test_titel_wird_escaped`) |
+| Reflected XSS: `?created=` aus der URL wird mit `\|safe` ins HTML geschrieben. | `focuslist/templates/index.html:14` | hoch | behoben: Hinweis per `flash()` (`test_titel_wird_escaped`, absichtlich schwach: prüft nur `GET /`; das findet der Reviewer in Lab 6.2) |
 | Secret im Code: `app.secret_key = "dev"`. | `focuslist/__init__.py:13` | hoch | behoben: `FOCUSLIST_SECRET` aus der Umgebung (`test_secret_kommt_aus_umgebung`) |
 | Debug-Modus im Code: `app.run(debug=True)`. | `run.py:6` | hoch | behoben: `run.py` entfernt (`test_debug_ist_standardmaessig_aus`) |
 | Keine Validierung des Titels: leere und beliebig lange Titel werden gespeichert. | `focuslist/routes.py:22` | mittel | behoben: `tasks.validate()`, 1–100 Zeichen, 400 (`test_ungueltiger_titel_liefert_400`) |
@@ -150,13 +150,13 @@ Nach der Reparatur: Ein Titel nur aus Leerzeichen kommt am HTML-Attribut `requir
 
 ## Übung
 
-**Dauer:** ca. 25 Minuten · **Form:** im Paar (eine Person schreibt `SKILL.md`, die andere `checklist.md`) · **Start:** Stand nach Lab 5.2 · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/security-checker/`, `docs/security-report.md`
+**Dauer:** ca. 20 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 5.2 · **Variante zu zweit:** eine Person schreibt `SKILL.md`, die andere `checklist.md` · **Referenz:** `project/focuslist/<stack>/steps/m05/.github/skills/security-checker/`, `docs/security-report.md`
 
 1. Lege `.github/skills/security-checker/SKILL.md` nach dem Muster aus Lab 5.2 an: `description` mit „was“, „wann“ und „ändert keinen Code“, Schritte, Schwere-Stufen, festes Berichtsformat.
 2. Schreibe daneben `checklist.md` mit mindestens fünf Punkten aus der Tabelle „Die Checkliste“, je mit einer Probe-Eingabe, und verlinke sie relativ aus `SKILL.md`.
 3. Rufe in einer neuen Sitzung (**Agent**) `/security-checker` ohne Argument auf. Prüfe: keine geänderte Datei, jeder Befund mit Datei und Zeile.
 4. Speichere den Bericht als `docs/security-report.md`.
-5. Lass den höchsten Fund in einer eigenen Anfrage beheben und mit `/test-writer` absichern. Führe die Tests aus, nimm die Änderungen mit **Keep** an und setze im Bericht den Status auf `behoben (<Testname>)`.
+5. Lass einen Fund (z. B. „Keine Validierung des Titels“) in einer eigenen Anfrage beheben und mit `/test-writer` absichern. Führe die Tests aus, nimm die Änderungen mit **Keep** an und setze im Bericht den Status auf `behoben (<Testname>)`.
 
 **Checkpoint:** `/security-checker` liefert einen Bericht ohne Dateiänderung; `docs/security-report.md` existiert; mindestens ein Fund steht auf `behoben` mit Testname; die Tests sind grün.
 

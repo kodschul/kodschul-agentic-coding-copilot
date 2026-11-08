@@ -136,7 +136,7 @@ sequenceDiagram
 
 **Tool-Namen** (Stand: 11/2026): Terminal `bash` bzw. `powershell`, lesen `view`, ändern `edit`, anlegen `create`; nicht die Aliase `execute`, `read` aus Lab 6.1. Robuster: `toolName` und `toolArgs` zusammen als Text durchsuchen.
 
-`guard.json` sieht aus wie `audit.json`, nur mit `"command": "python .github/hooks/guard.py"` bzw. `"node .github/hooks/guard.mjs"`. Kern von `guard.py` (vereinfacht; vollständig in `project/focuslist/<stack>/steps/m07/.github/hooks/`):
+`guard.json` sieht aus wie `audit.json`, nur mit `"command": "node .github/hooks/guard.mjs"` (Node.js) bzw. zwei Feldern für Python: `"bash": "python3 .github/hooks/guard.py"` (macOS/Linux) und `"powershell": "python .github/hooks/guard.py"` (Windows). Ein Feld `command` gilt für alle Systeme; `bash` und `powershell` haben Vorrang, wenn sie gesetzt sind (Quelle: [GitHub Docs, Hooks reference](https://docs.github.com/en/copilot/reference/hooks-reference), abgerufen am 08.11.2026). Kern von `guard.py` (vereinfacht; vollständig in `project/focuslist/<stack>/steps/m07/.github/hooks/`):
 
 ```python
 ENV_FILE = re.compile(r"(?<![\w])\.env(?:\.[\w-]+)*(?![\w-])")   # .env, .env.local, nicht os.environ
@@ -146,7 +146,7 @@ def check(event):
     hits = [m for m in ENV_FILE.findall(text) if m != ".env.example"]
     if hits:
         return f"Zugriff auf {hits[0]} ist gesperrt (Secrets). Für Beispielwerte .env.example verwenden."
-    if RM_RF.search(text):                                         # rm -rf und Varianten
+    if RM_RF.search(text):                 # RM_RF: regulärer Ausdruck für rm -rf und Varianten
         return "Rekursives Löschen (rm -rf) ist gesperrt. …"
 ```
 
@@ -156,18 +156,18 @@ Bei einem Treffer gibt `main()` `deny` mit dieser Begründung aus, sonst `{}`. D
 
 ## Hook ohne Agent testen
 
-Hilft, wenn im Chat nichts passiert: Ein Hook ist ein normales Programm, das sich im Terminal (Projektordner) mit einem Beispiel-Ereignis starten lässt.
+Zum Nachlesen, nicht Teil der Übung; hilft, wenn im Chat nichts passiert: Ein Hook ist ein normales Programm, das sich im Terminal (Projektordner) mit einem Beispiel-Ereignis starten lässt.
 
 ```bash
 echo '{"toolName":"view","toolArgs":{"path":"data/tasks.json"}}' | node .github/hooks/log-tool-use.cjs
 # {}        und in .github/hooks/tool-use.log steht "view"
-echo '{"toolName":"view","toolArgs":{"path":".env"}}' | python .github/hooks/guard.py
+echo '{"toolName":"view","toolArgs":{"path":".env"}}' | python3 .github/hooks/guard.py   # Windows: python
 # {"permissionDecision": "deny", "permissionDecisionReason": "Zugriff auf .env ist gesperrt (Secrets). …"}
 ```
 
 ![Terminal: Ereignis mit toolName view und Pfad .env wird an guard.py übergeben; Ausgabe permissionDecision deny mit der Begründung „Zugriff auf .env ist gesperrt (Secrets). Für Beispielwerte .env.example verwenden.“](../assets/images/m07/guard-deny.png)
 
-_Quelle: eigener Screenshot, FocusList v4, 07.11.2026._
+_Quelle: eigener Screenshot, FocusList Stand m07, 07.11.2026._
 
 ## Typische Fehler
 
@@ -175,17 +175,18 @@ _Quelle: eigener Screenshot, FocusList v4, 07.11.2026._
 | --- | --- | --- |
 | Hook fehlt im Reiter „Hooks“ bzw. bei `/hooks` | Datei nicht in `.github/hooks/` der Projektwurzel (z. B. übergeordneter Ordner in VS Code geöffnet) oder JSON ungültig | Ordner `focuslist` direkt öffnen, Pfad `.github/hooks/audit.json` und JSON prüfen |
 | `tool-use.log` entsteht nicht | Sitzung lief schon vor dem Kopieren, Session-Ziel „Local“ statt „Copilot“, Organisation sperrt Hooks | neue Copilot-Sitzung starten; Freigabe bei der IT klären |
-| Pipe-Test meldet `node` bzw. `python` nicht gefunden | Programm nicht im PATH (macOS oft nur `python3`) | Node.js laut Setup installieren, VS Code neu starten; `command` auf `python3` ändern |
+| Pipe-Test meldet `node` bzw. `python3` nicht gefunden | Programm nicht im PATH | Node.js bzw. Python laut Setup installieren, VS Code neu starten; auf Windows heißt der Befehl `python` |
+| Hook läuft nicht, Pipe-Test im Terminal klappt | Hook startet ohne aktive venv und ohne den Befehl aus dem Terminal; Feld `bash` bzw. `powershell` passt nicht zum installierten Python | in einem neuen Terminal ohne venv `python3 --version` (Windows: `python --version`) prüfen und den Befehl in `guard.json` anpassen |
 | Agent liest `.env` trotz Guard | `guard.json` fehlt oder Guard-Skript nicht mitkopiert | beide Dateien nach `.github/hooks/`, neue Sitzung |
 
 ## Übung
 
-**Dauer:** ca. 20 Minuten · **Start:** eigener Stand nach Lab 6.3 oder v3: `node project/focuslist/catch-up.mjs <python|node> m07 ~/kurs/focuslist` · **Referenz:** `m07-hooks-mcp/samples/audit/`, `project/focuslist/<stack>/steps/m07/.github/hooks/`
+**Dauer:** ca. 20 Minuten · **Start:** Arbeitsordner (Tag 2: `$HOME/kurs/focuslist-m05`) nach Lab 6.3; Neueinstieg mit v3: `node project/focuslist/catch-up.mjs <python|node> m07 $HOME/kurs/focuslist-m07`, danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und dort weiterarbeiten; dann in den Befehlen unten `focuslist-m07` statt `focuslist-m05` · **Referenz:** `m07-hooks-mcp/samples/audit/`, `project/focuslist/<stack>/steps/m07/.github/hooks/`
 
-1. Kopiere das Beispiel in FocusList (Terminal im Ordner `output/`): `cp -r m07-hooks-mcp/samples/audit/.github ~/kurs/focuslist/`.
+1. Kopiere das Beispiel in FocusList (Terminal im Ordner `output/`): `cp -r m07-hooks-mcp/samples/audit/.github $HOME/kurs/focuslist-m05/`.
 2. Wähle in der Chat-Ansicht das Session-Ziel „Copilot“ und prüfe unter „Open Customizations“ → „Hooks“ oder mit `/hooks`, ob `audit.json` erscheint.
 3. Starte eine neue Copilot-Sitzung (Agent), sende „Zeige die Dateien im Ordner data“ und öffne danach `.github/hooks/tool-use.log`.
-4. Kopiere `guard.json` und `guard.py` bzw. `guard.mjs` aus `project/focuslist/<stack>/steps/m07/.github/hooks/` nach `~/kurs/focuslist/.github/hooks/` und lege im Projektordner eine Test-Datei `.env` an: Python `cp .env.example .env`, Node.js `echo "TEST_SECRET=geheim" > .env`.
+4. Kopiere `guard.json` und `guard.py` bzw. `guard.mjs` aus `project/focuslist/<stack>/steps/m07/.github/hooks/` nach `$HOME/kurs/focuslist-m05/.github/hooks/` und lege im Arbeitsordner eine Test-Datei `.env` an, falls sie fehlt: in VS Code „Neue Datei“, Name `.env`, Inhalt `TEST_SECRET=geheim`, speichern.
 5. Starte eine neue Copilot-Sitzung und sende: „Zeig mir den Inhalt der Datei .env.“
 
 **Checkpoint:** Der Reiter „Hooks“ listet `audit.json` (nach Schritt 4 auch `guard.json`); `tool-use.log` enthält nach Schritt 3 mindestens eine Zeile; der Agent meldet in Schritt 5 eine Ablehnung mit der Begründung aus dem Guard, `.env` bleibt unverändert.
@@ -193,7 +194,7 @@ _Quelle: eigener Screenshot, FocusList v4, 07.11.2026._
 <details>
 <summary>Lösungsweg</summary>
 
-Zu 1 und 3: `audit.json` und `log-tool-use.cjs` liegen in `~/kurs/focuslist/.github/hooks/`; `tool-use.log` enthält z. B. `"view"` oder `"bash"`, eine Zeile pro Werkzeugaufruf. Bleibt die Datei leer: Pipe-Test aus „Hook ohne Agent testen“ ausführen, dann die Tabelle „Typische Fehler“.
+Zu 1 und 3: `audit.json` und `log-tool-use.cjs` liegen in `$HOME/kurs/focuslist-m05/.github/hooks/` (bzw. im Catch-up-Ordner); `tool-use.log` enthält z. B. `"view"` oder `"bash"`, eine Zeile pro Werkzeugaufruf. Bleibt die Datei leer: Pipe-Test aus „Hook ohne Agent testen“ ausführen, dann die Tabelle „Typische Fehler“.
 
 Zu 5: Der Agent versucht `view` auf `.env` oder `cat .env` im Terminal; beide Wege enthalten `.env` und werden abgelehnt. Meist erklärt der Agent danach, dass der Zugriff gesperrt ist, und bietet `.env.example` an. Der Versuch steht trotzdem in `tool-use.log`: Beide Hooks laufen bei `preToolUse`, `audit` schreibt mit, der Guard lehnt ab.
 

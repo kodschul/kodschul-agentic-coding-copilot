@@ -13,12 +13,12 @@ Bericht des Agents `reviewer`, gestartet als Subagent von `feature-lead` nach de
 | `priorityOptions()` und `errorList()` sind aus `index.js` nach `edit.js` kopiert | `src/views/edit.js:5-20` | mittel | Gemeinsame Bausteine nach `src/views/parts.js` verschieben und in beiden Views importieren |
 | Eingabefelder ohne Beschriftung, nur Platzhalter | `src/views/edit.js:13` | niedrig | `<label>` mit sichtbarem Text „Titel“ bzw. „Priorität“ |
 
-**Ergebnis:** nicht freigegeben
+**Fazit:** nicht freigeben
 
 ## Zweite Runde nach Abarbeitung durch `feature-lead`
 
 Keine Befunde.
 
-**Ergebnis:** freigegeben
+**Fazit:** freigeben
 
 `npm test`: 32 Tests, alle grün (neu: `test/edit.test.js` mit 9 Tests).

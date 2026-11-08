@@ -11,13 +11,13 @@ Voraussetzung: Node.js (in beiden Stacks installiert).
 
 ## Kopieren
 
-Kopiere den Ordner `.github` dieses Beispiels in die Projektwurzel von FocusList (Terminal im Ordner `output/`):
+Kopiere den Ordner `.github` dieses Beispiels in die Wurzel des Arbeitsordners (Tag 2: `$HOME/kurs/focuslist-m05`; Terminal im Ordner `output/`):
 
 ```bash
-cp -r m07-hooks-mcp/samples/audit/.github ~/kurs/focuslist/
+cp -r m07-hooks-mcp/samples/audit/.github $HOME/kurs/focuslist-m05/
 ```
 
-Danach liegen beide Dateien in `~/kurs/focuslist/.github/hooks/`. Eine Einstellung ist im Copilot-Harness nicht nötig.
+Danach liegen beide Dateien in `$HOME/kurs/focuslist-m05/.github/hooks/` (nach einem Catch-up, z. B. `$HOME/kurs/focuslist-m07`, entsprechend dort). Eine Einstellung ist im Copilot-Harness nicht nötig.
 
 ## Prüfen, ob es funktioniert
 

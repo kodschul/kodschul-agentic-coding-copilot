@@ -157,17 +157,13 @@ Die Entscheidungshilfe angewendet auf typische Alltagssituationen:
 | 2 | Team-Feature: Login-Seite für die Firmen-App, die drei Teams pflegen | agentisch | andere arbeiten mit; Nutzerdaten |
 | 3 | Bugfix in Produktion: Rechnungen werden doppelt verschickt | agentisch | Fehler kostet Geld und Vertrauen; Code lebt weiter |
 | 4 | Kundendemo: Klickdummy für ein Gespräch morgen früh | Vibecoding | Klickdummy ohne echte Daten, danach weg |
-| 5 | Lernprojekt: ausprobieren, wie eine neue Bibliothek funktioniert | Vibecoding, mit Lesen | kein Risiko; wer lernen will, liest den Code trotzdem |
+| 5 | Lernprojekt: ausprobieren, wie eine neue Bibliothek funktioniert | Code lesen statt vibecoden | kein Risiko, aber das Lernziel verlangt, den erzeugten Code zu verstehen |
 | 6 | Sicherheitskritischer Code: Passwort-Reset per E-Mail | agentisch | Sicherheit, Nutzerdaten, Internet |
 
 Nr. 1 und Nr. 4 kippen, sobald aus dem Prototyp oder der Demo ein Produkt werden soll („Der Kunde will genau das, bis nächsten Monat live“). Dann beginnt der agentische Weg mit Regeln, Tests und Review, statt auf dem ungeprüften Code weiterzubauen.
-
-Nr. 5: Für das Lernziel reicht reines Vibecoding nicht, auch wenn das Risiko gering ist. Wer eine Bibliothek verstehen will, muss den erzeugten Code lesen.
 
 ## Fazit
 
 - Vibecoding und Agentic Coding nutzen denselben Agenten; der Unterschied ist, was er aus dem Repo bekommt und wer das Ergebnis prüft.
 - Vibecoding ist schnell und für Prototypen legitim, aber ungeprüfte Entscheidungen landen im Code.
 - Sobald Code bleibt, andere ihn pflegen oder Nutzerdaten verarbeitet werden, gilt der agentische Weg.
-
-Die Tabelle „Sechs Situationen, zwei Wege“ zeigt die Entscheidungshilfe an Alltagsbeispielen.

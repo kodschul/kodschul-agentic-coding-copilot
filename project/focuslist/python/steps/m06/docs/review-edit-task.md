@@ -13,4 +13,4 @@ Erstellt vom Agenten `reviewer` als Subagent von `feature-lead`, zweite Review-R
 
 **Ohne Befund geprüft:** Schichten (Route → `tasks.py` → `store.py`), Validierung über `tasks.validate()` mit Status 400, Escaping (kein `|safe`, Probe mit `<b>` im Titel), Redirect nach POST mit `flash()`, deutsche UI-Texte, `<label>` für jedes Feld, Tests mit Normal-, Grenz- und Fehlerfall (`tests/test_edit.py`, 11 Tests grün).
 
-**Fazit:** freigeben. Die beiden Befunde aus Runde 1 sind behoben; die offenen Punkte sind Darstellung und Stil und können in einem eigenen Schritt folgen.
+**Fazit:** nach Korrektur freigeben. Die beiden Befunde aus Runde 1 sind behoben; offen ist ein Befund (mittel) zur Darstellung auf Handybreite, der in einem eigenen Schritt folgt.

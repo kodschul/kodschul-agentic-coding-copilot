@@ -6,14 +6,14 @@ Stand: 11/2026, VS-Code-Standardbelegung. Quellen: [Agent harnesses](https://cod
 
 | Schritt | Python | Node.js |
 | --- | --- | --- |
-| Umgebung | `python -m venv .venv`, `source .venv/bin/activate` (Windows: `.venv\Scripts\activate`) | – |
+| Umgebung | `python3 -m venv .venv` (Windows: `python -m venv .venv`), `source .venv/bin/activate` (Windows: `.venv\Scripts\Activate.ps1`) | – |
 | Abhängigkeiten | `pip install -r requirements.txt`, `npm install` | `npm install` |
 | CSS einmal bauen | `npm run build:css` | `npm run build:css` |
 | CSS beobachten | `npm run css` | `npm run css` |
 | App starten | `flask --app focuslist run --debug` | `npm run dev` |
 | URL | `http://127.0.0.1:5000` | `http://localhost:3000` |
 | Tests | `pytest` | `npm test` |
-| anderer Port | `--port 5001` | `PORT=3001 npm run dev` |
+| anderer Port | `--port 5001` | `PORT=3001 npm run dev` (PowerShell: `$env:PORT=3001; npm run dev`) |
 
 ## Harnesses
 
@@ -95,5 +95,5 @@ Stand: 11/2026, VS-Code-Standardbelegung. Quellen: [Agent harnesses](https://cod
 | --- | --- |
 | eine Agent-Änderung verwerfen | Undo am Abschnitt, an der Datei oder für die ganze Runde |
 | eine ganze Anfrage zurücknehmen | „Restore Checkpoint“ über der Anfrage im Chat |
-| eigene Tippänderung zurücknehmen | Strg+Z (macOS: Cmd+Z) im Editor |
+| eigene Tippänderung zurücknehmen | Ctrl+Z (macOS: Cmd+Z) im Editor |
 | zwei Stände vergleichen | Explorer: Datei → „Select for Compare“, zweite Datei → „Compare with Selected“ |

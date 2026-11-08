@@ -43,7 +43,7 @@ Teams nutzen mehrere Werkzeuge parallel. Ein gemeinsames Format (z. B. `AGENTS.m
 
 ```mermaid
 flowchart LR
-    S1["Stufe 1: Vorschlag<br/>ab 2021<br/>Ghost Text im Editor"] --> S2["Stufe 2: Chat<br/>ab 2023<br/>Fragen und Code im Editor"]
+    S1["Stufe 1: Vorschlag<br/>ab 2021<br/>grauer Vorschlag im Editor"] --> S2["Stufe 2: Chat<br/>ab 2023<br/>Fragen und Code im Editor"]
     S2 --> S3["Stufe 3: Agent<br/>ab 2025<br/>liest, ändert, führt aus, prüft"]
 ```
 
@@ -55,7 +55,7 @@ flowchart LR
 
 **Stufe 1, Vorschlag (2021):**
 
-![Ankündigungsbild „Your AI pair programmer“ der GitHub-Copilot-Technical-Preview: Editor mit der JavaScript-Funktion fetchNASAPictureOfTheDay, deren Rumpf Copilot ergänzt hat](https://github.blog/wp-content/uploads/2021/06/GitHub-Copilot_blog-header.png?resize=1600%2C850)
+![Ankündigungsbild „Your AI pair programmer“ der GitHub-Copilot-Technical-Preview: Editor mit der JavaScript-Funktion fetchNASAPictureOfTheDay, deren Rumpf Copilot ergänzt hat](../assets/images/m01/copilot-preview-2021.png)
 _Quelle: GitHub Blog, „Introducing GitHub Copilot: your AI pair programmer“ (https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/), © GitHub, Pressebild (extern verlinkt), abgerufen am 07.11.2026._
 
 **Stufe 2, Chat (ab Nov 2022):**
@@ -74,23 +74,22 @@ Ansicht März 2025: Der Chat bekommt den Modus „Agent“, der selbst Dateien �
 
 ## Zeitleiste 2021–2026
 
-Stand: 11/2026.
+Stand: 11/2026, Quellen je Zeile (abgerufen am 08.11.2026).
 
 | Zeit | Ereignis | Bedeutung |
 | --- | --- | --- |
-| Jun 2021 | GitHub Copilot als Technical Preview (allgemein verfügbar Jun 2022) | Stufe 1: Vorschläge im Editor |
-| Nov 2022 | ChatGPT | Programmieren per Gespräch wird Alltag |
-| 2023 | Copilot Chat (angekündigt März, allgemein verfügbar Dez 2023) | Stufe 2: Chat im Editor |
-| Nov 2024 | Anthropic veröffentlicht MCP | offener Standard, um Agenten Werkzeuge zu geben |
-| Feb 2025 | Copilot Agent Mode (Preview) in VS Code ([VS Code Blog, 24.02.2025](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)); Claude Code (Research Preview); Begriff „Vibecoding“ (A. Karpathy) | Stufe 3: Agent ändert Dateien und führt Befehle aus |
-| Apr–Mai 2025 | OpenAI Codex CLI (Apr) und Codex Cloud (Mai) ([Wikipedia: Codex](https://en.wikipedia.org/wiki/Codex_(AI_agent))); Copilot Coding Agent auf GitHub (Mai) | Agenten im Terminal und in der Cloud |
-| Aug 2025 | OpenAI veröffentlicht `AGENTS.md` | gemeinsame Instructions-Datei für alle Agenten |
-| Sep 2025 | Copilot CLI (Public Preview; allgemein verfügbar Feb 2026) | Copilot im Terminal |
+| Jun 2021 | GitHub Copilot als Technical Preview ([GitHub Blog, 29.06.2021](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/)); allgemein verfügbar Jun 2022 ([GitHub Blog, 21.06.2022](https://github.blog/news-insights/product-news/github-copilot-is-generally-available-to-all-developers/)) | Stufe 1: Vorschläge im Editor |
+| Nov 2022 | ChatGPT, veröffentlicht am 30.11.2022 ([Wikipedia: ChatGPT](https://en.wikipedia.org/wiki/ChatGPT)) | Programmieren per Gespräch wird Alltag |
+| 2023 | Copilot Chat (angekündigt März, allgemein verfügbar Dez 2023, [GitHub Changelog, 29.12.2023](https://github.blog/changelog/2023-12-29-github-copilot-chat-now-generally-available-for-organizations-and-individuals/)) | Stufe 2: Chat im Editor |
+| Nov 2024 | Anthropic veröffentlicht MCP ([Anthropic, 25.11.2024](https://www.anthropic.com/news/model-context-protocol)) | offener Standard, um Agenten Werkzeuge zu geben |
+| Feb 2025 | Copilot Agent Mode (Preview) in VS Code ([VS Code Blog, 24.02.2025](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)); Claude Code (Research Preview, [Anthropic, 24.02.2025](https://www.anthropic.com/news/claude-3-7-sonnet)); Begriff „Vibecoding“ (A. Karpathy, [Wikipedia: Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding)) | Stufe 3: Agent ändert Dateien und führt Befehle aus |
+| Apr–Mai 2025 | OpenAI Codex CLI (Apr, [GitHub: openai/codex](https://github.com/openai/codex)) und Codex Cloud (Mai) ([Wikipedia: Codex](https://en.wikipedia.org/wiki/Codex_(AI_agent))); Copilot Coding Agent auf GitHub (Mai, [GitHub Changelog, 19.05.2025](https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/)) | Agenten im Terminal und in der Cloud |
+| Aug 2025 | OpenAI veröffentlicht `AGENTS.md` ([agents.md](https://agents.md/), Repository seit 19.08.2025: [GitHub: agentsmd/agents.md](https://github.com/agentsmd/agents.md)) | gemeinsame Instructions-Datei für alle Agenten |
+| Sep 2025 | Copilot CLI (Public Preview, [GitHub Changelog, 25.09.2025](https://github.blog/changelog/2025-09-25-github-copilot-cli-is-now-in-public-preview/); allgemein verfügbar Feb 2026, [GitHub Changelog 02/2026](https://github.blog/changelog/month/02-2026/)) | Copilot im Terminal |
 | Okt 2025 | Anthropic führt Agent Skills (`SKILL.md`) ein ([Agent Skills in VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills)) | Wissen und Abläufe nur bei Bedarf laden |
 | Dez 2025 | Agentic AI Foundation (Linux Foundation) übernimmt MCP und `AGENTS.md`; Agent Skills als offener Standard (agentskills.io) ([Linux Foundation, 09.12.2025](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)) | aus Hersteller-Formaten werden Standards |
 | Jul 2026 | VS Code 1.129: Agent Host für Copilot, Claude und Codex ([Help Net Security, 16.07.2026](https://www.helpnetsecurity.com/2026/07/16/vs-visual-studio-code-agent-host/)) | mehrere Harnesses in einem Editor |
 | Okt 2026 | Copilot-Harness wird Standard für neue Sitzungen (ab VS Code 1.142) ([GitHub Changelog, 28.10.2026](https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/)) | heutiger Arbeitsstand dieses Kurses |
-
 
 Auffällig: MCP ist älter als der Agent-Modus, und zwischen erstem Agenten (Feb 2025) und gemeinsamen Standards (Dez 2025) liegen weniger als zwölf Monate.
 

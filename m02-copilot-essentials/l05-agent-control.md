@@ -88,7 +88,7 @@ Ansicht 2025: Keep/Undo auf allen drei Ebenen; Anordnung und Beschriftung sind h
 ## Checkpoints
 
 - Vor jeder Anfrage im Chat merkt sich VS Code den Stand der Dateien.
-- „Checkpoint wiederherstellen“ setzt alle Dateien auf den Stand vor dieser Anfrage zurück, auch über mehrere Dateien.
+- „Restore Checkpoint“ setzt alle Dateien auf den Stand vor dieser Anfrage zurück, auch über mehrere Dateien.
 - Checkpoints gelten nur für Änderungen aus dem Chat; Terminal-Befehle (z. B. gelöschte Dateien) macht ein Checkpoint nicht zwingend rückgängig. Deshalb Freigaben für löschende Befehle ablehnen.
 
 ![Chat-Verlauf in VS Code: Über einer früheren Anfrage erscheint beim Überfahren die Schaltfläche „Restore Checkpoint“ mit dem Hinweis „Restores workspace and chat to this point“; unten die Liste der geänderten Dateien](../assets/images/m02/restore-checkpoint.png)

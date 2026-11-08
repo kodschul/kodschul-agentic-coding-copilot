@@ -102,6 +102,13 @@ _Quelle: VS Code Blog, „Tune GitHub Copilot Inline Suggestions with Configurab
 
 Stand: 10/2026. „Snooze“ pausiert Vorschläge kurz; die Häkchen schalten Ghost Text und Next Edit Suggestions getrennt ab.
 
+## Typische Fehler
+
+| Symptom | Ursache | Lösung |
+| --- | --- | --- |
+| kein Ghost Text | Copilot nicht angemeldet oder Vorschläge pausiert | Copilot-Symbol in der Statusleiste prüfen, anmelden bzw. „Snooze“ aufheben |
+| `!` oder `ul>li*3` wird nicht erweitert | Sprachmodus der Datei ist nicht HTML (z. B. Datei noch nicht gespeichert) | Datei als `.html` speichern oder unten rechts den Sprachmodus „HTML“ wählen |
+
 ## Übung (optional)
 
 **Dauer:** ca. 10 Minuten · **Start:** neue Spieldateien außerhalb des Projektordners; FocusList bleibt unverändert · **Referenz:** Lösungsweg unten
@@ -113,11 +120,6 @@ Stand: 10/2026. „Snooze“ pausiert Vorschläge kurz; die Häkchen schalten Gh
 5. Erzeuge einen weiteren Vorschlag, z. B. mit einer neuen Kommentarzeile, und lehne ihn mit Esc ab.
 
 **Checkpoint:** `spielwiese.html` enthält ein HTML-Grundgerüst mit einer Liste aus drei `<li>`; in der Code-Datei stehen zwei Funktionen, eine davon wortweise übernommen; ein Vorschlag wurde abgelehnt.
-
-| Symptom | Ursache | Lösung |
-| --- | --- | --- |
-| kein Ghost Text | Copilot nicht angemeldet oder Vorschläge pausiert | Copilot-Symbol in der Statusleiste prüfen, anmelden bzw. „Snooze“ aufheben |
-| `!` oder `ul>li*3` wird nicht erweitert | Sprachmodus der Datei ist nicht HTML (z. B. Datei noch nicht gespeichert) | Datei als `.html` speichern oder unten rechts den Sprachmodus „HTML“ wählen |
 
 <details>
 <summary>Lösungsweg</summary>
@@ -167,5 +169,3 @@ Der Snippet liefert immer denselben Text; der Ghost Text hängt vom Kontext ab u
 - Tab für ganze Vorschläge, wortweise für Teile, Esc zum Ablehnen.
 - Kommentare und sprechende Namen steuern Vorschläge besser als Warten.
 - Jeder angenommene Vorschlag ist eigener Code: Namen, Felder und Grenzfälle prüfen.
-
-Die optionale Übung probiert erst Snippets und Emmet, dann Ghost Text in einer Spieldatei aus.

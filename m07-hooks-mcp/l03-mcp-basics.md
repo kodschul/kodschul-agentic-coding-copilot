@@ -127,7 +127,7 @@ Aus der Status-quo-Liste aus Lab 3.3 bleiben Zeilen offen, für die der Agent et
 
 | Fehlendes Werkzeug | Aufgabe | Rechte / Risiko |
 | --- | --- | --- |
-| Browser (Playwright) | Formular ausfüllen, Darstellung auf Handybreite prüfen (Status-quo-Liste, Beispiel Zeile 7: feste Breiten `w-96`) | nur lokaler Browser, keine Konten; niedriges Risiko |
+| Browser (Playwright) | Formular ausfüllen, Darstellung auf Handybreite prüfen (Status-quo-Liste, Zeile 7: feste Breiten `w-96`) | nur lokaler Browser, keine Konten; niedriges Risiko |
 | GitHub | Issue „Fälligkeitsdatum“ lesen, Pull Request vorbereiten | Token mit Repo-Rechten; Risiko: falsches Repo, ungewollter PR |
 | Datenbank | – (FocusList nutzt eine JSON-Datei) | entfällt |
 

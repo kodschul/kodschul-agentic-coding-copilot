@@ -4,7 +4,8 @@
     "agentStop": [
       {
         "type": "command",
-        "command": "python .github/hooks/checks.py",
+        "bash": "python3 .github/hooks/checks.py",
+        "powershell": "python .github/hooks/checks.py",
         "timeoutSec": 60
       }
     ]

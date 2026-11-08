@@ -83,13 +83,13 @@ applyTo: "tests/**"
 
 | Schritt | Befehl / Handlung |
 | --- | --- |
-| zwei gleiche Stände | `node project/focuslist/catch-up.mjs <python\|node> m04 ~/kurs/vergleich/ohne` und `…/mit` |
-| Regeln nur in `mit/` | `cp ~/kurs/focuslist/AGENTS.md ~/kurs/vergleich/mit/`, `cp -r ~/kurs/focuslist/.github ~/kurs/vergleich/mit/` |
-| getrennte Fenster | je Ordner ein VS-Code-Fenster, neue Sitzung, gleiches Modell |
+| zwei gleiche Stände | `node project/focuslist/catch-up.mjs <python\|node> m04 $HOME/kurs/vergleich/ohne` und `…/mit` |
+| Regeln nur in `mit/` (aus dem eigenen Arbeitsordner) | `cp $HOME/kurs/focuslist/AGENTS.md $HOME/kurs/vergleich/mit/`, `cp -r $HOME/kurs/focuslist/.github $HOME/kurs/vergleich/mit/` |
+| getrennte Fenster | je Ordner ein VS-Code-Fenster, neue Sitzung, gleiches Modell; Python: `venv` aus dem Arbeitsordner aktivieren |
 | gleicher Prompt | „Füge einen Button "Löschen" hinzu, der eine Aufgabe entfernt.“ |
-| vergleichen | Ordner `~/kurs/vergleich` öffnen, Datei in `ohne/` → „Select for Compare“, gleiche Datei in `mit/` → „Compare with Selected“ |
+| vergleichen | Ordner `$HOME/kurs/vergleich` öffnen, Datei in `ohne/` → „Select for Compare“, gleiche Datei in `mit/` → „Compare with Selected“ |
 | messen | Checkliste: Service-Schicht, `max(id) + 1`, unbekannte ID, Tests, keine Pakete, Stil |
-| nächster Stand | `node project/focuslist/catch-up.mjs <python\|node> m05 <ordner>` = v1 |
+| nächster Stand | `node project/focuslist/catch-up.mjs <python\|node> m05 $HOME/kurs/focuslist-m05` = v1 (Start Tag 2), danach Setup laut `README.md` und dort weiterarbeiten |
 
 ## Typische Fehler
 

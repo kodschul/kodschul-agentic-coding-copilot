@@ -102,8 +102,8 @@ Regel: Skill berichtet, ändert nichts. Ein Fund pro Anfrage beheben, Test schre
 
 | Skill | Zweck in einer Zeile |
 | --- | --- |
-| `commit-message` | liest `git diff --staged` und schlägt eine Commit-Nachricht im Team-Format vor (Typ, Kurzzeile, Begründung) |
-| `pr-description` | fasst die Commits eines Branches als PR-Beschreibung zusammen: Was, Warum, wie getestet, offene Punkte |
+| `changelog-entry` | fasst die geänderten Dateien einer Agent-Runde als Eintrag für `CHANGELOG.md` zusammen: Was, Warum, wie getestet |
+| `api-doc` | beschreibt jede Route (Methode, Pfad, Parameter, Antworten, Fehlercodes) nach fester Vorlage in `docs/api.md` |
 | `tailwind-component` | baut ein UI-Element (Button, Badge, Formularzeile) nur mit Tailwind-Klassen nach den Farbregeln des Projekts |
 | `dependency-check` | prüft eine neue Abhängigkeit vor der Aufnahme: Zweck, Pflege, Lizenz, bekannte Lücken (`npm audit`, `pip-audit`) |
 
@@ -111,7 +111,8 @@ Regel: Skill berichtet, ändert nichts. Ein Fund pro Anfrage beheben, Test schre
 
 | Zweck | Python | Node.js |
 | --- | --- | --- |
-| Stand v1 holen | `node project/focuslist/catch-up.mjs python m05 <zielordner>` | `node project/focuslist/catch-up.mjs node m05 <zielordner>` |
-| Stand v2 holen | `node project/focuslist/catch-up.mjs python m06 <zielordner>` | `node project/focuslist/catch-up.mjs node m06 <zielordner>` |
+| Stand v1 holen | `node project/focuslist/catch-up.mjs python m05 $HOME/kurs/focuslist-m05` | `node project/focuslist/catch-up.mjs node m05 $HOME/kurs/focuslist-m05` |
+| Stand v2 holen | `node project/focuslist/catch-up.mjs python m06 $HOME/kurs/focuslist-m06` | `node project/focuslist/catch-up.mjs node m06 $HOME/kurs/focuslist-m06` |
+| danach im neuen Ordner | venv, `pip install -r requirements.txt`, `npm install`, `npm run build:css` | `npm install`, `npm run build:css` |
 | Tests | `pytest -q` | `npm test` |
 | Abhängigkeiten prüfen | `pip-audit` (falls installiert) | `npm audit` |

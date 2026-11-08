@@ -108,34 +108,23 @@ Kern ist `createApp()` in [`src/app.js`](../project/focuslist/node/start/src/app
 
 `static/app.css` ist ein Build-Ergebnis. Ohne `npm run build:css` lädt die Seite ohne Styling.
 
-## Typische Fehler
-
-| Symptom | Ursache | Lösung |
-| --- | --- | --- |
-| `No module named flask` oder `flask: command not found` | `venv` nicht aktiviert oder Pakete nicht installiert | `source .venv/bin/activate` (Windows: `.venv\Scripts\Activate.ps1`), dann `pip install -r requirements.txt` |
-| Seite erscheint als unformatierter Text | `static/app.css` fehlt | `npm install`, dann `npm run build:css` |
-| `tailwindcss: command not found` | `npm install` fehlt | im Projektordner `npm install` ausführen |
-| `Address already in use` / Port belegt | anderer Prozess nutzt 5000 bzw. 3000 (macOS: AirPlay-Empfänger nutzt oft 5000) | Python: `flask --app focuslist run --debug --port 5001`; Node.js: `PORT=3001 npm run dev` (PowerShell: `$env:PORT=3001; npm run dev`) |
-| neue Tailwind-Klasse wirkt nicht | CSS nicht neu gebaut | `npm run css` in einem zweiten Terminal laufen lassen |
-| `pytest` findet keine Tests | Befehl nicht im Projektordner gestartet | in den Ordner mit `pyproject.toml` wechseln |
-
 ## App starten und Tests ausführen
 
 Diese Befehle werden ab Lab 3.2 gebraucht.
 
-**Arbeitsordner anlegen** (im Ordner der Kursunterlagen ausführen):
+**Arbeitsordner** `$HOME/kurs/focuslist` (im Setup angelegt; falls er fehlt, im Ordner der Kursunterlagen ausführen):
 
 ```bash
-node project/focuslist/catch-up.mjs python m03 ~/kurs/focuslist   # Python
-node project/focuslist/catch-up.mjs node m03 ~/kurs/focuslist     # Node.js
+node project/focuslist/catch-up.mjs python m03 $HOME/kurs/focuslist   # Python
+node project/focuslist/catch-up.mjs node m03 $HOME/kurs/focuslist     # Node.js
 ```
 
-Alternativ den Ordner `project/focuslist/<stack>/start/` an einen eigenen Ort kopieren. Danach den Ordner `focuslist` in VS Code öffnen; `README.md` beschreibt das Projekt.
+Danach `$HOME/kurs/focuslist` in VS Code öffnen; `README.md` beschreibt das Projekt.
 
 **Python** (macOS/Linux; Windows: `.venv\Scripts\Activate.ps1`):
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv          # Windows: python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 npm install
@@ -164,6 +153,17 @@ _Quelle: eigener Screenshot, FocusList start, 07.11.2026._
 _Quelle: eigener Screenshot, FocusList start, 07.11.2026._
 
 Aufgenommen mit dem Python-Stack; bei Node.js meldet der Test `pass 1`.
+
+## Typische Fehler
+
+| Symptom | Ursache | Lösung |
+| --- | --- | --- |
+| `No module named flask` oder `flask: command not found` | `venv` nicht aktiviert oder Pakete nicht installiert (`python` nicht gefunden: macOS/Linux `python3`) | `source .venv/bin/activate` (Windows: `.venv\Scripts\Activate.ps1`), dann `pip install -r requirements.txt` |
+| Seite erscheint als unformatierter Text | `static/app.css` fehlt | `npm install`, dann `npm run build:css` |
+| `tailwindcss: command not found` | `npm install` fehlt | im Projektordner `npm install` ausführen |
+| `Address already in use` / Port belegt | anderer Prozess nutzt 5000 bzw. 3000 (macOS: AirPlay-Empfänger nutzt oft 5000) | Python: `flask --app focuslist run --debug --port 5001`; Node.js: `PORT=3001 npm run dev` (PowerShell: `$env:PORT=3001; npm run dev`) |
+| neue Tailwind-Klasse wirkt nicht | CSS nicht neu gebaut | `npm run css` in einem zweiten Terminal laufen lassen |
+| `pytest` findet keine Tests | Befehl nicht im Projektordner gestartet | in den Ordner mit `pyproject.toml` wechseln |
 
 ## Fazit
 

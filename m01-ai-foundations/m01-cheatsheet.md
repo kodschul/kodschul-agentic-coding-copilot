@@ -44,6 +44,8 @@ Stand: 11/2026
 
 ## Wichtige Daten
 
+Stand: 11/2026; Quelle je Zeile in Lab 1.2, Abschnitt „Zeitleiste 2021–2026“.
+
 | Zeit | Ereignis |
 | --- | --- |
 | Jun 2021 | GitHub Copilot Technical Preview |

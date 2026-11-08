@@ -5,7 +5,7 @@
 <details>
 <summary>Welche Zeile der Status-quo-Liste ist noch offen?</summary>
 
-Meist Zeilen, die keine Datei lösen kann: „Agent nimmt etwas Falsches an, das nirgends steht“ oder „niemand liest den Diff“. Dafür bleibt der Mensch zuständig: Ziel vorgeben, Grenzen setzen, Ergebnis abnehmen (Lab 1.1).
+Zeile 8: Was die Fußzeile zählen soll, ist weiter offen. m08 hat den Weg gezeigt (Spec am Beispiel Fälligkeitsdatum); der nächste Change per Spec klärt die Fußzeile. Offen bleibt außerdem, was keine Datei lösen kann: Ziel vorgeben, Grenzen setzen, Ergebnis abnehmen (Lab 1.1).
 
 </details>
 
@@ -24,26 +24,24 @@ Für die meisten Teams eine kurze `AGENTS.md` mit Befehlen und Verboten, weil si
 
 | Begriff | Bedeutung |
 | --- | --- |
-| Transfer-Plan | persönliche Liste der Artefakte, die im eigenen Projekt als Nächstes entstehen |
 | Fehlerklasse | Art eines Problems im KI-Code (Lab 3.3): Inkonsistenz, falsche Annahme, fehlende Tests, Sicherheitslücke, überflüssige Abhängigkeit |
 
 ## Die Status-quo-Liste gegen v5
 
-Typische Zeilen der Status-quo-Liste (Lab 3.3) und wo sie in FocusList v5 gelöst sind:
+Die acht Zeilen der Status-quo-Liste aus Lab 3.3 und wo sie in FocusList v5 gelöst sind:
 
-| Zeile der Status-quo-Liste | Fehlerklasse | Baustein | Gelöst in v5 durch |
+| # | Mangel | Baustein | Gelöst in v5 durch |
 | --- | --- | --- | --- |
-| Logik teils in Routen, teils im Store | Inkonsistenz | Instructions (m04) | `AGENTS.md`: „Route → Service → Store“ |
-| IDs per `len(tasks) + 1` | falsche Annahme | Instructions (m04) | Konvention „`max(id) + 1`“ |
-| Filter in Seite und API verschieden | Inkonsistenz | Instructions (m04) | eine Filterfunktion für beide |
-| leerer Titel, beliebige Priorität möglich | Sicherheitslücke | Skill `security-checker` (m05) | Validierung, Fehler mit Status 400 |
-| Titel ungeschützt im HTML (XSS) | Sicherheitslücke | Skill `security-checker` (m05) | `\|safe` entfernt bzw. `escapeHtml()` |
-| Secret oder `debug=True` im Code; Path Traversal, kein Body-Limit (Node.js) | Sicherheitslücke | Skill `security-checker` (m05) | `FOCUSLIST_SECRET` aus der Umgebung; Pfadprüfung, 413 bei zu großem Body |
-| kein einziger neuer Test | fehlende Tests | Skill `test-writer` (m05), Check-Hook (m07) | Tests je Route; `agentStop` führt sie nach jeder Runde aus |
-| niemand prüft das Feature unabhängig | fehlende Tests | Custom Agents (m06) | `reviewer` (nur lesen), `tester` (nur Tests), `feature-lead` |
-| Agent liest `.env`, löscht Ordner | Sicherheitslücke | Guard-Hook (m07) | `preToolUse` lehnt ab |
-| feste Breiten, Formular bricht auf dem Handy | falsche Annahme | Playwright-MCP (m07) | responsives Layout, im Browser geprüft |
-| „Fälligkeitsdatum“: jeder versteht etwas anderes | falsche Annahme | Spec (m08) | `openspec/specs/tasks/spec.md` mit Szenarien |
+| 1 | Titel ungeschützt im HTML (XSS) | Regel in Instructions für Templates (m04), Fix per Skill `security-checker` (m05) | Escaping-Regel in `templates.instructions.md`; `\|safe` entfernt bzw. `escapeHtml()` |
+| 2 | Eingaben ungeprüft: leerer Titel, beliebige Priorität | Skill `security-checker` (m05) | Validierung, Fehler mit Status 400 |
+| 3 | Secret und fest verdrahteter Debug-Modus im Code (Python); Path Traversal, Body ohne Limit (Node.js) | Skill `security-checker` (m05) | `FOCUSLIST_SECRET` aus der Umgebung, ein Startbefehl; Pfadprüfung, 413 bei zu großem Body |
+| 4 | neue ID = Anzahl + 1, doppelte IDs nach dem Löschen | Instructions (m04) | Konvention „`max(id) + 1`“ in `AGENTS.md` |
+| 5 | Logik verstreut, Filter doppelt (Python: `?status=all`), Stile gemischt, zweiter Startweg | Instructions (m04) | `AGENTS.md`: „Route → Service → Store“, eine Filterfunktion (`?status=all` liefert alle), ein Startbefehl |
+| 6 | keine neuen Tests, niemand prüft unabhängig | Skill `test-writer` (m05), Custom Agents (m06), Check-Hook (m07) | Tests je Route; `reviewer`, `tester`, `feature-lead`; `agentStop` führt die Tests nach jeder Runde aus |
+| 7 | feste Breiten, Formular bricht auf Handybreite; Agent hat die Seite nie gesehen | MCP Playwright (m07) | responsives Layout, vom Agenten im Browser geprüft |
+| 8 | Fußzeile zählt nur gefilterte Aufgaben (Python-Referenz) | Spec (m08) | offen: nächster Change per Spec (der Weg ist mit dem Fälligkeitsdatum in `openspec/specs/tasks/spec.md` gezeigt) |
+
+Dazu kam in m07 eine Grenze, die keine Zeile der Liste war, aber jeder Agent braucht: Der Guard-Hook lehnt das Lesen von `.env` ab.
 
 Was offen bleibt: Annahmen, die nirgends stehen, und die Abnahme. Kein Baustein ersetzt das Lesen des Diffs.
 
@@ -91,21 +89,7 @@ flowchart LR
 | messen | gleiche Aufgabe vorher / nachher (Lab 4.3) | weniger Korrekturen im Diff |
 | Team | Dateien ins gemeinsame Projekt legen, im Review mitlesen | alle nutzen denselben Stand |
 
-## Einstieg im eigenen Projekt
-
-Für den Einstieg im eigenen Projekt reichen drei Artefakte, in dieser Reihenfolge: zuerst `AGENTS.md` (oder die Datei, die das Team schon nutzt), dann ein Skill für einen wiederkehrenden Ablauf, dann ein Hook für eine harte Grenze. Jedes Artefakt bekommt ein Prüfkriterium. Vorlage zum Kopieren:
-
-```markdown
-# Transfer-Plan: <Projekt>
-
-| # | Problem | Baustein | Artefakt | Prüfkriterium | bis |
-| --- | --- | --- | --- | --- | --- |
-| 1 | Agent nutzt falschen Testbefehl | Instruction | `AGENTS.md` (Befehle, Verbote) | neuer Chat nennt `npm run test:unit` | Mo |
-| 2 | Tests fehlen Grenzfälle | Skill | `.github/skills/test-writer/SKILL.md` + Vorlage | jeder neue Test hat Normal-, Grenz-, Fehlerfall | Mi |
-| 3 | Agent hat Secrets gelesen | Hook | `.github/hooks/guard.json` + Skript | `echo '…' \| …` liefert `deny` | Fr |
-
-Überprüfung am: <Datum> · Ergebnis: <was hat gewirkt, was nicht>
-```
+Reihenfolge: zuerst `AGENTS.md` (oder die Datei, die das Team schon nutzt), dann ein Skill für einen wiederkehrenden Ablauf, dann ein Hook für eine harte Grenze. Jedes Artefakt bekommt ein Prüfkriterium wie in der Tabelle oben.
 
 Hinweise:
 

@@ -1,6 +1,11 @@
 # FocusList – Regeln für Agenten
 
-Kleine Aufgaben-App: Flask 3 + Jinja2, Tailwind CSS v4, Daten in `data/tasks.json`, Tests mit pytest.
+Kleine Aufgaben-App für Aufgaben mit Priorität.
+
+## Stack
+
+- Flask 3 + Jinja2, Tailwind CSS v4, Daten in `data/tasks.json`, Tests mit pytest
+- Routen liegen in einem Blueprint (`bp` in `routes.py`): eine Gruppe von Routen, die `create_app()` registriert
 
 ## Ordner
 
@@ -22,7 +27,7 @@ Kleine Aufgaben-App: Flask 3 + Jinja2, Tailwind CSS v4, Daten in `data/tasks.jso
 - Eine Schicht pro Aufgabe: Route → `tasks.py` → `store.py`. Keine Dateizugriffe in Routen.
 - Neue ID immer `max(id) + 1` über `tasks.next_id()`, nie `len(tasks) + 1`.
 - Jede neue oder geänderte Route bekommt Tests (Normalfall und Fehlerfall).
-- Formulare: nach POST immer Redirect (`url_for`), Hinweise per `flash()`.
+- Formulare: nach POST immer Redirect (`url_for`), Hinweise per `flash()` (Meldung für die nächste Seite).
 - Unbekannte ID → `abort(404)`.
 - UI-Texte Deutsch, Code und Bezeichner Englisch, Kommentare kurz und Deutsch.
 - Styling nur mit Tailwind-Klassen im Template, kein eigenes CSS, keine Inline-Styles.

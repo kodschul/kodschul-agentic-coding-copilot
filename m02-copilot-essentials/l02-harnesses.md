@@ -44,8 +44,6 @@ Lange Aufgaben, die kein Eingreifen brauchen, etwa ein Feature mit Tests. Der Co
 
 **Alltagsbild:** Das Modell ist der Motor, der Harness ist das Fahrzeug. Derselbe Motor fährt sich im Kleinwagen anders als im Transporter: Lenkung, Bremsen, Laderaum und Navi gehören zum Fahrzeug, nicht zum Motor.
 
-Der Motor ist das Modell, das Fahrzeug der Harness: Erst das Fahrzeug um den Motor macht ihn nutzbar.
-
 | Der Harness bestimmt | Beispiel |
 | --- | --- |
 | Werkzeuge | Datei lesen, ändern, Terminal, Suche, MCP-Server |
@@ -130,12 +128,12 @@ Datei: `focuslist/store.py` bzw. `src/store.js`.
 | | Local-Harness mit `/explain` | Copilot-Harness, Ask, Datei als Kontext |
 | --- | --- | --- |
 | Eingabe | `/explain` | „Erkläre, was diese Datei macht und wann sie aufgerufen wird.“ |
-| Antwort | erklärt `load_tasks()`/`save_tasks()` bzw. `loadTasks()`/`saveTasks()`: JSON lesen, fehlende Datei (Python) → leere Liste, Schreiben mit Einrückung | vergleichbare Erklärung, nennt oft zusätzlich die Aufrufer (`create_app()` bzw. `createApp()`), weil der Agent selbst im Projekt sucht |
+| Antwort | erklärt `load_tasks()`/`save_tasks()` bzw. `loadTasks()`/`saveTasks()`: JSON lesen, fehlende Datei (Python) → leere Liste, Schreiben mit Einrückung | vergleichbare Erklärung, kann zusätzlich die Aufrufer nennen (`create_app()` bzw. `createApp()`), weil der Agent selbst im Projekt sucht |
 | `/explain` | eingebauter Befehl | erscheint nicht in der Befehlsliste; `/` ruft hier eigene Skills auf (m05) |
 
-Das Session-Ziel wird in der Chat-Ansicht gewählt, typischerweise beim Start einer neuen Sitzung. Bezeichnung und Ort der Auswahl können sich mit VS-Code-Versionen ändern (Stand: 11/2026).
+Das Session-Ziel wird in der Chat-Ansicht gewählt, beim Start einer neuen Sitzung. Bezeichnung und Ort der Auswahl können sich mit VS-Code-Versionen ändern (Stand: 11/2026).
 
-Eine typische Festlegung: Standard ist der Copilot-Harness; Wechsel zu Local, wenn eine Anleitung eine Prompt-Datei voraussetzt, und zu Cloud, wenn eine lange Aufgabe ohne den eigenen Rechner laufen soll.
+Eine mögliche Festlegung: Standard ist der Copilot-Harness; Wechsel zu Local, wenn eine Anleitung eine Prompt-Datei voraussetzt, und zu Cloud, wenn eine lange Aufgabe ohne den eigenen Rechner laufen soll.
 
 ## Fazit
 

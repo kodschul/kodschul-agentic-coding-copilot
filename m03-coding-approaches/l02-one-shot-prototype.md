@@ -111,23 +111,26 @@ Neue Tests: in beiden Stacks keine.
 | Badges ohne Farbe | `npm run css` läuft nicht, neue Tailwind-Klassen fehlen in `static/app.css` | `npm run css` in einem zweiten Terminal starten, Seite neu laden |
 | Agent fragt nach, statt zu bauen | Prompt mit eigenen Ergänzungen oder Kontext gesendet | Prompt unverändert senden; Rückfragen mit „Entscheide selbst“ beantworten |
 | Agent will ein Paket installieren | eigene Annahme über den Stack | Freigabe ablehnen; der Wunsch ist ein Befund für Lab 3.3 |
+| Agent meldet `pytest` nicht gefunden (Python) | im Agent-Terminal ist die venv nicht aktiv | ignorieren und weiterlaufen lassen; Tests danach im eigenen Terminal mit aktiver venv ausführen |
 | Seite zeigt nach dem Prompt einen Fehler | Agent hat etwas Unvollständiges gebaut | nicht reparieren; Fehler ist Teil des Status quo, für Modul 4 den Referenzstand nutzen |
 
 ## Übung (optional)
 
-**Dauer:** ca. 25 Minuten · **Start:** Startgerüst `start/` · **Referenz:** `project/focuslist/<stack>/steps/m03/`
+**Dauer:** ca. 25 Minuten · **Start:** Startgerüst im Arbeitsordner `$HOME/kurs/focuslist` (Setup) · **Referenz:** `project/focuslist/<stack>/steps/m03/`
 
-Ohne Übung: Den Referenzstand v0 holen und für Modul 4 verwenden (im Ordner der Kursunterlagen):
+Ohne Übung: den Referenzstand v0 in einen neuen Ordner holen (im Ordner der Kursunterlagen), danach Setup laut `README.md` des Stands (venv und `pip install -r requirements.txt` bei Python, `npm install`, `npm run build:css`) und für Modul 4 dort weiterarbeiten:
 
 ```bash
-node project/focuslist/catch-up.mjs python m04 ~/kurs/focuslist   # bzw. node … node m04 …
+node project/focuslist/catch-up.mjs python m04 $HOME/kurs/focuslist-m04   # bzw. node … node m04 …
 ```
 
-1. Lege den Arbeitsordner mit dem Startgerüst an und richte ihn ein, wie in Lab 2.1 unter „App starten und Tests ausführen“ beschrieben.
-2. Starte die App und `npm run css` in je einem eigenen Terminal und öffne die Seite im Browser.
-3. Öffne eine neue Chat-Sitzung im Copilot-Harness, wähle **Agent** (Autopilot aus, kein Kontext) und sende den Prompt aus `project/focuslist/vibecoding-prompt.md` unverändert.
-4. Lies jede Freigabe für Terminal-Befehle (Lab 2.5): Tests und Startbefehle erlauben, Paketinstallationen ablehnen. Nimm alle Änderungen mit Keep an, ohne den Code zu lesen.
-5. Lade die Seite neu: Lege eine Aufgabe an, markiere sie als erledigt, probiere die Filter und rufe `/api/tasks` auf. Bessere nichts nach.
+1. Öffne `$HOME/kurs/focuslist` in VS Code und starte App und CSS-Build in je einem eigenen Terminal (Befehle in Lab 2.1, Abschnitt „App starten und Tests ausführen“).
+2. Öffne den Chat, wähle Session-Ziel Copilot und **Agent** (Autopilot aus, kein Kontext), füge den Prompt aus `project/focuslist/vibecoding-prompt.md` unverändert ein und sende ihn.
+3. Lies jede Freigabe: Tests erlauben, Startbefehle und Paketinstallationen ablehnen (die App läuft schon).
+4. Nimm alle Änderungen mit **Keep** an, ohne den Code zu lesen.
+5. Lade die App im Browser neu und probiere jede Funktion aus dem Prompt aus: Aufgabe anlegen, als erledigt markieren, Filter, `/api/tasks`. Bessere nichts nach.
+
+**Zwischenstand nach ca. 20 Minuten:** Der Agent ist fertig oder fast fertig; sonst die Sitzung stoppen und mit dem Referenzstand v0 weiterarbeiten (Befehl oben).
 
 **Checkpoint:** Die Seite zeigt Formular, farbige Badges, Button „Erledigt“ und drei Filter-Links (oder einen Fehler, der so bleibt); `/api/tasks` liefert JSON.
 
@@ -140,12 +143,12 @@ Typischer Verlauf im Chat (Beispiellauf, Python):
 | --- | --- |
 | Verstehen | liest die vorhandenen Dateien: App, Store, Templates, Beispieldaten |
 | Ändern | Formular und Hinweis im Template, Routen `POST /tasks`, `POST /tasks/<id>/complete`, `GET /api/tasks`, Filter in der Route |
-| Prüfen | startet die App im Terminal, liest die Ausgabe; öffnet die Seite nicht im Browser |
+| Prüfen | will Tests ausführen und die App im Terminal starten; der Start wird abgelehnt, weil sie schon läuft; öffnet die Seite nicht im Browser |
 | Abschluss | „Fertig“ mit Startanleitung und neuer Datei `run.py` |
 
 Erwartung im Browser: wie im Screenshot oben. `/api/tasks` liefert die drei Beispielaufgaben plus jede neu angelegte.
 
-Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan nennt meist Tests und offene Fragen zur Validierung, der One-Shot-Prompt nicht. Bewertet wird das in Lab 3.3.
+Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan kann Tests und offene Fragen zur Validierung nennen, der One-Shot-Prompt enthält beides nicht. Bewertet wird das in Lab 3.3.
 
 </details>
 
@@ -154,5 +157,3 @@ Im Vergleich zum Plan aus Lab 2.4 fällt schon jetzt auf: Ein Plan nennt meist T
 - Ein One-Shot-Prompt liefert in Minuten ein sichtbares Ergebnis: FocusList v0.
 - Alles, was der Prompt offenlässt, hat der Agent still entschieden.
 - „Fertig“ heißt beim Vibecoding nur: Im Browser sieht es richtig aus.
-
-Die optionale Übung erzeugt eine eigene FocusList v0 mit dem Beispiel-Prompt; ohne Übung geht es mit dem Referenzstand v0 weiter.

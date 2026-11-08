@@ -65,7 +65,7 @@ Gleiche Idee in der VS-Code-Doku: Erst entsteht ein Plan als Datei im Repo, dann
 
 ## Der OpenSpec-Ablauf
 
-Stand: 11/2026 (OpenSpec 1.x), Quelle: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [OpenSpec FAQ](https://openspec.dev/docs/faq)
+Stand: 11/2026 (OpenSpec 1.x), Quelle: [OpenSpec (GitHub)](https://github.com/Fission-AI/OpenSpec), [OpenSpec FAQ](https://github.com/Fission-AI/OpenSpec/blob/main/docs/faq.md)
 
 ```mermaid
 flowchart LR
@@ -117,7 +117,7 @@ Feature: „Fälligkeitsdatum mit Überfällig-Markierung“ für FocusList. Die
 | 2 | eine offene Aufgabe ist heute fällig (Grenzfall) | die Liste zeigt **kein** Badge „überfällig“ |
 | 3 | als Datum wird `2026-02-30` gesendet (Fehlerfall) | Status 400 mit Meldung zum Fälligkeitsdatum, es wird nichts gespeichert |
 | 4 | eine erledigte Aufgabe hat ein altes Datum | kein Badge „überfällig“ |
-| 5 | offene Aufgaben mit `2026-12-01`, `2026-11-15` und ohne Datum | Reihenfolge `2026-11-15`, `2026-12-01`, ohne Datum |
+| 5 | offene Aufgaben mit `2026-12-01`, `2026-11-15` und ohne Datum sowie eine erledigte Aufgabe | Reihenfolge `2026-11-15`, `2026-12-01`, ohne Datum, erledigte Aufgaben am Ende |
 
 Nicht im Umfang: Uhrzeiten, Erinnerungen, wiederkehrende Aufgaben, Filter „nur überfällige“.
 

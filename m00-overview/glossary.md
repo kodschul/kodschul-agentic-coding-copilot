@@ -20,10 +20,10 @@
 | Copilot-Harness | Standard-Harness in VS Code seit Okt 2026 | 2.2 |
 | Custom Agent | eigene Rolle mit Auftrag und erlaubten Werkzeugen | 6.1 |
 | Diff | Gegenüberstellung alt/neu einer Änderung | 2.5 |
-| Escaping | Sonderzeichen unschädlich machen, bevor sie ins HTML gehen | 5.3 |
+| Escaping | Sonderzeichen unschädlich machen, bevor sie ins HTML gehen | 3.3 |
 | Fehlerklasse | Art eines Problems im KI-Code | 3.3 |
 | Freigabe | Bestätigung, bevor der Agent ein Werkzeug nutzt | 2.5 |
-| Frontmatter | YAML-Kopf zwischen `---` am Dateianfang | 5.1 |
+| Frontmatter | YAML-Kopf zwischen `---` am Dateianfang | 4.1 |
 | Grenzfall | Eingabe am Rand des Erlaubten, z. B. 100 Zeichen | 5.2 |
 | Halluzination | plausibel klingende, aber erfundene Aussage oder API | 1.1 |
 | Harness | Laufzeit um das Modell: Werkzeuge, Dateien, Ort | 2.2 |
@@ -33,13 +33,13 @@
 | Kontextfenster | begrenzte Menge Text, die ein Modell auf einmal verarbeitet | 1.1 |
 | LLM | Sprachmodell, das das nächste Token vorhersagt | 1.1 |
 | Local-Harness | bisheriger VS-Code-Harness; hat `/explain`, `@`, Prompt-Dateien | 2.2 |
-| MCP | offener Standard, um Agenten Werkzeuge zu geben | 7.3 |
+| MCP | offener Standard, um Agenten Werkzeuge zu geben | 1.2 |
 | MCP-Server | Programm, das einem Agenten Tools bereitstellt | 7.3 |
 | Next Edit Suggestion | Vorschlag für die nächste passende Änderung | 2.3 |
 | One-Shot-Prompt | ein Prompt, der das ganze Ergebnis auf einmal beschreibt | 3.2 |
 | OpenSpec | Werkzeug für Spec-Driven Development | 8.1 |
 | OWASP Top 10 | Liste der häufigsten Sicherheitsrisiken von Web-Apps | 5.3 |
-| Path Traversal | Zugriff auf fremde Dateien über `../` im Pfad | 5.3 |
+| Path Traversal | Zugriff auf fremde Dateien über `../` im Pfad | 3.3 |
 | `permissionDecision` | Antwort eines Guard-Hooks: `deny` blockiert | 7.1 |
 | Playwright MCP | MCP-Server, mit dem der Agent einen Browser bedient | 7.4 |
 | `preToolUse` | Hook-Event vor jedem Werkzeugaufruf | 7.1 |
@@ -57,6 +57,6 @@
 | Token | Textstück, mit dem ein LLM rechnet | 1.1 |
 | `tools` | Feld eines Custom Agents: erlaubte Werkzeuge | 6.1 |
 | v0 … v5 | Versionen von FocusList, eine pro Baustein | 3.2 |
-| Validierung | Eingaben im Server prüfen | 5.3 |
+| Validierung | Eingaben im Server prüfen | 3.3 |
 | Vibecoding | Software nur per Prompt bauen, ohne den Code zu lesen | 3.1 |
-| XSS | eingeschleustes JavaScript, das im Browser anderer läuft | 5.3 |
+| XSS | eingeschleustes JavaScript, das im Browser anderer läuft | 3.3 |

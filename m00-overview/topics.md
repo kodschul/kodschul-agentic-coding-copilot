@@ -21,8 +21,8 @@
 | 14:20 | [3.3 Code-Bewertung des Prototyps](../m03-coding-approaches/l03-code-assessment.md) | Status-quo-Liste |
 | | **Modul 4 · Instructions** · [Cheatsheet](../m04-instructions/m04-cheatsheet.md) | |
 | 15:00 | [4.1 Projektregeln für den Agenten](../m04-instructions/l01-project-instructions.md) | `AGENTS.md` |
-| 15:35 | [4.2 Regeln für bestimmte Dateien](../m04-instructions/l02-scoped-instructions.md) | `*.instructions.md` |
-| 15:55 | [4.3 Vorher und nachher](../m04-instructions/l03-compare.md) | v1 |
+| 15:30 | [4.2 Regeln für bestimmte Dateien](../m04-instructions/l02-scoped-instructions.md) | `*.instructions.md` |
+| 15:50 | [4.3 Vorher und nachher](../m04-instructions/l03-compare.md) | v1 |
 
 ## Tag 2
 
@@ -44,6 +44,6 @@
 | | **Modul 8 · Spec-Driven Development** · [Cheatsheet](../m08-spec-driven/m08-cheatsheet.md) | |
 | 15:00 | [8.1 Erst Spec, dann Code](../m08-spec-driven/l01-spec-first.md) | Akzeptanzkriterien |
 | 15:10 | [8.2 OpenSpec mit dem Agenten-Team](../m08-spec-driven/l02-openspec.md) | v5 |
-| | **Modul 9 · Abschluss** | |
+| | **Modul 9 · Abschluss** · [Cheatsheet](../m09-wrap-up/m09-cheatsheet.md) | |
 | 16:00 | [9.1 Rückblick und Transfer](../m09-wrap-up/l01-recap.md) | Rückblick |
 | 16:15 | [9.2 Ausblick und Feedback](../m09-wrap-up/l02-outlook.md) | Feedback |
